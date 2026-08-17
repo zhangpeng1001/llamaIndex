@@ -25,6 +25,7 @@ class AppConfig:
     provider: str
     llm_model: str
     embed_model: str
+    api_base: str | None = None  # 自定义 OpenAI 兼容服务地址（含 /v1）
     data_dir: Path = DATA_DIR
     storage_dir: Path = STORAGE_DIR
 
@@ -58,5 +59,6 @@ def load_config(provider: str | None = None) -> AppConfig:
         embed_model=os.getenv(
             "LLAMAINDEX_EMBED_MODEL", "text-embedding-3-small"
         ),
+        api_base=os.getenv("OPENAI_API_BASE") or None,
     )
 

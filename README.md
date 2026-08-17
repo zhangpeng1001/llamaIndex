@@ -142,6 +142,31 @@ llama-demo --provider openai --rebuild quickstart "RAG 有什么优势？"
 
 这会调用外部 API 并产生费用。请勿把 `.env` 提交到版本库。
 
+### 3.1 使用公司自建 / 第三方 OpenAI 兼容服务
+
+如果无法直连 OpenAI 官方地址，或想走公司网关、本地部署、第三方平台（如 Azure OpenAI 兼容层、one-api 等），在 `.env` 中额外配置 `OPENAI_API_BASE`：
+
+```dotenv
+OPENAI_API_KEY=你的密钥
+LLAMAINDEX_MODEL_PROVIDER=openai
+LLAMAINDEX_LLM_MODEL=gpt-4.1-mini
+LLAMAINDEX_EMBED_MODEL=text-embedding-3-small
+
+# 自定义服务地址：只填到 /v1 结尾，客户端会自动补 /chat/completions、/embeddings
+OPENAI_API_BASE=https://ai2-api.i-tudou.com/v1
+```
+
+> ⚠️ 注意：`OPENAI_API_BASE` 只需填到 `/v1` 即可，**不要**带上 `/chat/completions`。
+> 客户端会根据具体调用（对话 / 向量）自动拼接对应路径。
+
+改完 `OPENAI_API_BASE` 后，Embedding 端点也会同步切换，因此必须加 `--rebuild` 重建索引：
+
+```powershell
+llama-demo --provider openai --rebuild quickstart "RAG 有什么优势？"
+```
+
+如果服务端使用的是自定义模型名（非 `gpt-4.1-mini` 等 OpenAI 官方模型名），同时修改 `LLAMAINDEX_LLM_MODEL` 与 `LLAMAINDEX_EMBED_MODEL` 为平台支持的模型名即可。
+
 ## 4. 逐项实验
 
 ```powershell
