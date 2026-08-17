@@ -45,7 +45,67 @@ source .venv/bin/activate
 python -m pip install -e ".[dev]"
 ```
 
-## 2. 五分钟跑通
+## 2. 启动方式
+
+本项目有两种启动方式：**CLI 命令行**和 **Web 服务**，二者复用同一套业务代码，区别只在交互形式。
+
+> 注意：`llama-demo` 后面跟的是**子命令**（如 `web`、`quickstart`、`chat`），**没有 `llama-demo main` 这种用法**。`main` 只是 Python 入口函数名（见 `src/llamaindex_demo/cli.py` 的 `main()`），不是 CLI 命令。完整子命令列表执行 `llama-demo --help` 查看。
+
+| 子命令 | 作用 | 是否启动 HTTP 服务 |
+|---|---|---|
+| `quickstart` | 一次 RAG 问答 | 否 |
+| `retrieve` | 只检索不生成 | 否 |
+| `chat` | 多轮命令行对话 | 否 |
+| `summary` / `router` / `structured` / `stream` / `async` / `workflow` / `evaluate` | 各功能实验 | 否 |
+| `agent` | 工具调用 Agent（需 OpenAI） | 否 |
+| `web` | 启动 FastAPI 服务 | ✅ 是 |
+
+### 2.1 启动 Web 服务（后端 API + 前端页面一条命令同时起）
+
+本项目**没有独立的前端工程**，前端是 `src/llamaindex_demo/static/` 下的静态文件，由 FastAPI 直接托管（见 `web.py` 末尾 `app.mount("/", StaticFiles(...))`）。因此 `llama-demo web` 一条命令会同时启动后端 API 和前端页面，**无需单独启动前端**。
+
+```powershell
+llama-demo web                       # 默认 127.0.0.1:8000
+llama-demo web --port 8080           # 自定义端口
+llama-demo web --host 0.0.0.0        # 允许局域网访问
+llama-demo --provider openai --rebuild web   # OpenAI 模式并重建索引
+```
+
+启动成功后：
+
+- 前端页面：浏览器打开 `http://127.0.0.1:8000`
+- API 文档（Swagger UI）：`http://127.0.0.1:8000/docs`
+- 健康检查：`http://127.0.0.1:8000/api/health`
+
+### 2.2 CLI 方式启动（不开 HTTP 服务）
+
+适合在终端里快速实验单个功能：
+
+```powershell
+llama-demo quickstart                # 五分钟跑通
+llama-demo chat                      # 多轮对话
+llama-demo retrieve "你的问题"        # 只检索
+```
+
+### 2.3 不使用 `llama-demo` 命令的原始启动方式
+
+如果没执行 `pip install -e .`，或找不到 `llama-demo` 命令，可用 `python -m` 等价启动（需先设 PYTHONPATH）：
+
+```powershell
+$env:PYTHONPATH = "src"
+
+python -m llamaindex_demo.cli web          # 等价于 llama-demo web
+python -m llamaindex_demo.cli quickstart   # 等价于 llama-demo quickstart
+```
+
+也可以直接用 `uvicorn` 启动 Web 服务（等价效果，`--reload` 适合开发调试）：
+
+```powershell
+$env:PYTHONPATH = "src"
+uvicorn llamaindex_demo.web:app --host 127.0.0.1 --port 8000 --reload
+```
+
+## 3. 五分钟跑通（CLI）
 
 ```powershell
 # 默认 local 模式：构建索引并执行问答
@@ -118,7 +178,7 @@ llama-demo --provider openai agent "查一下星河项目负责人，然后解�
 pytest -q
 ```
 
-## 5. 推荐阅读顺序
+## 6. 推荐阅读顺序
 
 1. 先读并运行 `quickstart`，在 `rag.py` 中跟踪一条问题的完整路径。
 2. 修改 `data/03_project_handbook.md`，加 `--rebuild` 后验证新事实能否检索到。
