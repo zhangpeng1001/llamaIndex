@@ -165,6 +165,24 @@ def command_agent(args: argparse.Namespace) -> None:
     asyncio.run(run())
 
 
+def command_web(args: argparse.Namespace) -> None:
+    """启动 FastAPI Web 服务，提供可视化测试界面。
+
+    业务逻辑全部复用 ``web.py`` 与现有模块；这里只负责读取配置并启动 uvicorn。
+    """
+
+    import uvicorn
+
+    from .config import load_config
+    from .web import create_app
+
+    config = load_config(args.provider)
+    app = create_app(config, rebuild=args.rebuild)
+    print(f"启动 Web 服务：provider={config.provider}，访问 http://{args.host}:{args.port}")
+    print("提示：local 模式首次启动会构建索引，OpenAI 模式请确保已配置 API Key。")
+    uvicorn.run(app, host=args.host, port=args.port, log_level=args.log_level)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="LlamaIndex 中文核心功能 Demo")
     parser.add_argument(
@@ -233,6 +251,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     agent.add_argument("question", nargs="?", default="星河项目的代号是什么？")
     agent.set_defaults(func=command_agent)
+
+    web = subparsers.add_parser("web", help="启动 FastAPI Web 测试界面")
+    web.add_argument("--host", default="127.0.0.1", help="绑定地址（默认 127.0.0.1）")
+    web.add_argument("--port", type=int, default=8000, help="监听端口（默认 8000）")
+    web.add_argument(
+        "--log-level",
+        default="info",
+        choices=["debug", "info", "warning", "error"],
+        help="uvicorn 日志级别",
+    )
+    web.set_defaults(func=command_web)
     return parser
 
 

@@ -5,3 +5,6 @@ llama-index-embeddings-openai>=0.6.0,<0.7.0
 llama-index-readers-file>=0.6.0,<0.7.0
 pydantic>=2.8,<3
 python-dotenv>=1.0,<2
+# Web 测试界面依赖（llama-demo web 子命令）
+fastapi>=0.110,<0.120
+uvicorn[standard]>=0.27,<0.35
