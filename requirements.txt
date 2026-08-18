@@ -8,3 +8,6 @@ python-dotenv>=1.0,<2
 # Web 测试界面依赖（llama-demo web 子命令）
 fastapi>=0.110,<0.120
 uvicorn[standard]>=0.27,<0.35
+# Milvus 向量存储依赖（qualityScheme 业务需要）
+llama-index-vector-stores-milvus>=0.8.0
+pymilvus>=2.5,<3
