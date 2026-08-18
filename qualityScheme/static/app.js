@@ -298,6 +298,12 @@ $("sc-run").addEventListener("click", async () => {
       requirement: requirement,
       context_top_k: parseInt($("sc-topk").value, 10) || 5,
     });
+    // 意图识别未命中质检要求时，后端返回 status=rejected + 引导提示，
+    // 这里作为友好提示展示，而非当作错误。
+    if (data && data.status === "rejected") {
+      renderSchemeRejected(el, data);
+      return;
+    }
     renderScheme(el, data);
   } catch (e) { setError(el, e.message); }
 });
@@ -347,6 +353,15 @@ function renderScheme(el, scheme) {
       <summary class="muted">查看完整 JSON</summary>
       <pre><code>${escapeHtml(JSON.stringify(scheme, null, 2))}</code></pre>
     </details>`);
+}
+
+// 意图识别未命中质检要求时，展示友好引导提示（而非红色错误）。
+function renderSchemeRejected(el, data) {
+  setHtml(el, `
+    <div class="answer-text">
+      <div>⚠️ ${escapeHtml(data.message || "未识别到质检方案要求")}</div>
+      <div class="muted">${escapeHtml(data.suggestion || "请输入具体的质检需求，例如：检测点坐标精度不超过0.5米，编号唯一。")}</div>
+    </div>`);
 }
 
 // ---------------------------------------------------------------------------

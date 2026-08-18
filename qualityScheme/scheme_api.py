@@ -19,6 +19,7 @@ from pydantic import BaseModel, Field
 
 from .check_items import list_check_items
 from .scheme_generator import generate_scheme, scheme_to_dict
+from .scheme_intent import recognize_scheme_intent
 
 logger = logging.getLogger(__name__)
 
@@ -54,9 +55,10 @@ def register_scheme_routes(app: FastAPI, get_runtime) -> None:
         """根据自然语言需求生成质检方案。
 
         流程:
-            1. 用向量索引检索相关规范条款作为上下文。
-            2. 调用 LLM 生成结构化方案（Pydantic 校验）。
-            3. 过滤非法 checkCode，补齐缺失参数。
+            1. 意图识别：判断输入是否为真实的质检方案要求，非质检要求时返回引导提示。
+            2. 用向量索引检索相关规范条款作为上下文。
+            3. 调用 LLM 生成结构化方案（Pydantic 校验）。
+            4. 过滤非法 checkCode，补齐缺失参数。
         """
 
         _, llm, _, index = get_runtime()
@@ -68,6 +70,22 @@ def register_scheme_routes(app: FastAPI, get_runtime) -> None:
             req.requirement[:100],
             req.context_top_k,
         )
+
+        # 意图识别：判断用户输入是否为质检方案要求，避免对闲聊/无关问题浪费 RAG 流程。
+        # 以预定义检查项清单（_RAW_CHECK_ITEMS 的精炼视图）作为质检能力域参照。
+        intent = await asyncio.to_thread(recognize_scheme_intent, llm, req.requirement)
+        logger.info(
+            "意图识别结果: is_quality=%s, reason=%s",
+            intent.is_quality_requirement,
+            intent.reason,
+        )
+        if not intent.is_quality_requirement:
+            # 非质检要求：返回 200 + status 标志，前端友好展示引导信息，不触发错误分支。
+            return {
+                "status": "rejected",
+                "message": "未识别到质检方案要求，请输入具体的质检需求。",
+                "suggestion": intent.suggestion,
+            }
 
         # 方案生成涉及检索+LLM调用，放到线程池避免阻塞事件循环。
         scheme = await asyncio.to_thread(
