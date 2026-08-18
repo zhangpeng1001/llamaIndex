@@ -282,6 +282,74 @@ $("as-run").addEventListener("click", async () => {
 });
 
 // ---------------------------------------------------------------------------
+// 方案编排：自然语言生成质检方案
+// ---------------------------------------------------------------------------
+
+$("sc-run").addEventListener("click", async () => {
+  const el = $("sc-result");
+  const requirement = $("sc-requirement").value.trim();
+  if (!requirement) {
+    setError(el, "请输入质检需求描述");
+    return;
+  }
+  setLoading(el, "正在检索规范并生成方案，请稍候…");
+  try {
+    const data = await postJSON("/api/scheme/generate", {
+      requirement: requirement,
+      context_top_k: parseInt($("sc-topk").value, 10) || 5,
+    });
+    renderScheme(el, data);
+  } catch (e) { setError(el, e.message); }
+});
+
+$("sc-show-items").addEventListener("click", async () => {
+  const el = $("sc-result");
+  setLoading(el, "加载检查项清单…");
+  try {
+    const data = await fetch("/api/scheme/check-items").then((r) => r.json());
+    const rows = (data.data || []).map((item) => `
+      <tr>
+        <td><code>${escapeHtml(item.checkCode)}</code></td>
+        <td>${escapeHtml(item.checkName)}</td>
+        <td>${escapeHtml(item.checkDesc)}</td>
+        <td><code>${escapeHtml(item.checkParam)}</code></td>
+      </tr>`).join("");
+    setHtml(el, `
+      <div class="sources">
+        <div class="sources-title">预定义检查项清单 (${data.data.length} 项)</div>
+        <table class="eval-table">
+          <thead><tr><th>checkCode</th><th>名称</th><th>说明</th><th>参数</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`);
+  } catch (e) { setError(el, e.message); }
+});
+
+function renderScheme(el, scheme) {
+  const items = (scheme.checkItem || []).map((item) => `
+    <div class="source-item">
+      <div class="source-meta">
+        <span class="source-file">${escapeHtml(item.checkName)}</span>
+        <span class="source-score"><code>${escapeHtml(item.checkCode)}</code></span>
+      </div>
+      <div class="source-preview"><code>${escapeHtml(JSON.stringify(item.params, null, 2))}</code></div>
+    </div>`).join("");
+  setHtml(el, `
+    <div class="answer-text">
+      <div><b>方案名称：</b>${escapeHtml(scheme.schemeName)}</div>
+      <div><b>方案描述：</b>${escapeHtml(scheme.description)}</div>
+    </div>
+    <div class="sources">
+      <div class="sources-title">检查项 (${scheme.checkItem.length})</div>
+      ${items}
+    </div>
+    <details>
+      <summary class="muted">查看完整 JSON</summary>
+      <pre><code>${escapeHtml(JSON.stringify(scheme, null, 2))}</code></pre>
+    </details>`);
+}
+
+// ---------------------------------------------------------------------------
 // 初始化
 // ---------------------------------------------------------------------------
 

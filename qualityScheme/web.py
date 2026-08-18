@@ -39,6 +39,7 @@ from .models import configure_quality_models
 from .query_engine import make_query_engine
 from .source_tracker import format_sources, sources_to_dict
 from .summary_engine import make_summary_engine
+from .scheme_api import register_scheme_routes
 
 # 配置根 logger，让 qualityScheme.* 的日志能输出到控制台。
 logging.basicConfig(
@@ -320,6 +321,11 @@ def create_app(
         engine = make_summary_engine(nodes, llm)
         response = await asyncio.to_thread(engine.query, req.question)
         return {"answer": str(response)}
+
+    # ---- 质检方案编排（自然语言生成方案） --------------------------------
+
+    # 注册方案生成相关路由；get_runtime 传入 require_runtime 避免循环依赖。
+    register_scheme_routes(app, require_runtime)
 
     # ---- 静态前端 --------------------------------------------------------
 
