@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>质检规范知识库 · 时空数据规范 RAG</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">质检规范知识库</span>
+      <span class="subtitle">实景三维质检大数据支撑库 · 时空数据规范 RAG</span>
+    </div>
+    <div class="status">
+      <span id="provider-badge" class="badge badge-local">provider: -</span>
+      <span id="model-info" class="muted">model: -</span>
+      <button id="btn-rebuild" class="btn btn-ghost" title="删除旧索引并重新切块嵌入">重建索引</button>
+      <button id="btn-refresh" class="btn btn-ghost">刷新状态</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar">
+      <a class="nav-item active" data-tab="quickstart">RAG 问答</a>
+      <a class="nav-item" data-tab="retrieve">向量检索</a>
+      <a class="nav-item" data-tab="retrieve-part">按部分检索</a>
+      <a class="nav-item" data-tab="summary">全文总结</a>
+      <a class="nav-item" data-tab="stream">流式回答</a>
+      <a class="nav-item" data-tab="async">异步查询</a>
+      <a class="nav-item nav-info" data-tab="info">使用说明</a>
+    </nav>
+
+    <main class="content">
+      <!-- RAG 问答 -->
+      <section class="tab-panel active" id="tab-quickstart">
+        <h2>RAG 问答：带来源的规范条款问答</h2>
+        <p class="hint">完整走一遍"检索 → 合成 → 输出来源"。问题会匹配到最相似的规范条款并由模型作答。</p>
+        <div class="form-row">
+          <input id="qs-question" class="input" type="text"
+                 value="检测点数据如何编号？" />
+          <label class="inline-label">top_k
+            <input id="qs-topk" class="input input-sm" type="number" value="3" min="1" max="10" />
+          </label>
+          <button id="qs-run" class="btn btn-primary">运行</button>
+        </div>
+        <div id="qs-result" class="result-block"></div>
+      </section>
+
+      <!-- 向量检索 -->
+      <section class="tab-panel" id="tab-retrieve">
+        <h2>向量检索：只检索不生成</h2>
+        <p class="hint">只调用向量检索，展示 Top-K 节点与相似度分数，便于调试检索质量。可按文件名过滤。</p>
+        <div class="form-row">
+          <input id="rt-question" class="input" type="text"
+                 value="空间基准采用什么坐标系？" />
+          <label class="inline-label">top_k
+            <input id="rt-topk" class="input input-sm" type="number" value="3" min="1" max="10" />
+          </label>
+        </div>
+        <div class="form-row">
+          <input id="rt-file" class="input" type="text"
+                 placeholder="按 file_name 过滤（可留空，如 part1_数据分类与基本规定.md）" />
+          <button id="rt-run" class="btn btn-primary">检索</button>
+        </div>
+        <div id="rt-result" class="result-block"></div>
+      </section>
+
+      <!-- 按部分检索 -->
+      <section class="tab-panel" id="tab-retrieve-part">
+        <h2>按部分检索：限定规范某一部分</h2>
+        <p class="hint">规范共 7 部分，选择部分编号后只在该部分范围内检索，避免跨部分噪声。</p>
+        <div class="form-row">
+          <input id="rp-question" class="input" type="text"
+                 value="检测线数据库结构包含哪些字段？" />
+          <label class="inline-label">部分
+            <select id="rp-part" class="input input-sm">
+              <option value="1">第1部分 数据分类</option>
+              <option value="2">第2部分 检测点</option>
+              <option value="3" selected>第3部分 检测线</option>
+              <option value="4">第4部分 标志性地物</option>
+              <option value="5">第5部分 重要要素</option>
+              <option value="6">第6部分 高精度栅格</option>
+              <option value="7">第7部分 资源数据</option>
+            </select>
+          </label>
+          <label class="inline-label">top_k
+            <input id="rp-topk" class="input input-sm" type="number" value="3" min="1" max="10" />
+          </label>
+          <button id="rp-run" class="btn btn-primary">按部分检索</button>
+        </div>
+        <div id="rp-result" class="result-block"></div>
+      </section>
+
+      <!-- 全文总结 -->
+      <section class="tab-panel" id="tab-summary">
+        <h2>全文总结：遍历全部规范做归纳</h2>
+        <p class="hint">使用 SummaryIndex + tree_summarize 遍历 7 部分全部条款做归纳，而非只取相似块。</p>
+        <div class="form-row">
+          <input id="sm-question" class="input" type="text"
+                 value="请总结时空数据规范的核心内容" />
+          <button id="sm-run" class="btn btn-primary">总结</button>
+        </div>
+        <div id="sm-result" class="result-block"></div>
+      </section>
+
+      <!-- 流式回答 -->
+      <section class="tab-panel" id="tab-stream">
+        <h2>流式回答：SSE 逐字推送</h2>
+        <p class="hint">通过 Server-Sent Events 逐 token 推送生成结果，适合长回答场景。</p>
+        <div class="form-row">
+          <input id="sr-question" class="input" type="text"
+                 value="检测点数据的采集要求有哪些？" />
+          <label class="inline-label">top_k
+            <input id="sr-topk" class="input input-sm" type="number" value="3" min="1" max="10" />
+          </label>
+          <button id="sr-run" class="btn btn-primary">开始流式</button>
+          <button id="sr-stop" class="btn btn-ghost" disabled>停止</button>
+        </div>
+        <div id="sr-result" class="result-block"></div>
+      </section>
+
+      <!-- 异步查询 -->
+      <section class="tab-panel" id="tab-async">
+        <h2>异步查询：非阻塞 RAG</h2>
+        <p class="hint">演示 aquery 接口，Web 服务中应优先使用异步避免阻塞事件循环。</p>
+        <div class="form-row">
+          <input id="as-question" class="input" type="text"
+                 value="标志性地物的选取原则是什么？" />
+          <label class="inline-label">top_k
+            <input id="as-topk" class="input input-sm" type="number" value="3" min="1" max="10" />
+          </label>
+          <button id="as-run" class="btn btn-primary">异步查询</button>
+        </div>
+        <div id="as-result" class="result-block"></div>
+      </section>
+
+      <!-- 使用说明 -->
+      <section class="tab-panel" id="tab-info">
+        <h2>使用说明</h2>
+        <div class="info-block">
+          <h3>启动方式</h3>
+          <pre><code># 默认 local 模式（无需 API Key），端口 8001
+python -m qualityScheme.web
+
+# 指定端口
+python -m qualityScheme.web --port 8080
+
+# 使用 OpenAI 真实模型并重建索引
+python -m qualityScheme.web --provider openai --rebuild</code></pre>
+
+          <h3>数据来源</h3>
+          <p>数据源位于 <code>qualityScheme/data/</code>，由 <code>standard/</code> 目录下的 7 份 PDF 规范文档提取而来：</p>
+          <ul>
+            <li>第1部分 数据分类与基本规定</li>
+            <li>第2部分 检测点</li>
+            <li>第3部分 检测线</li>
+            <li>第4部分 标志性地物</li>
+            <li>第5部分 重要要素</li>
+            <li>第6部分 高精度栅格数据</li>
+            <li>第7部分 资源数据</li>
+          </ul>
+
+          <h3>功能与代码对应</h3>
+          <ul>
+            <li><b>RAG 问答</b> ↔ <code>query_engine.py</code></li>
+            <li><b>向量检索</b> ↔ <code>metadata_filter.py</code></li>
+            <li><b>按部分检索</b> ↔ <code>metadata_filter.py/retrieve_by_part</code></li>
+            <li><b>全文总结</b> ↔ <code>summary_engine.py</code></li>
+            <li><b>流式回答</b> ↔ <code>query_engine.py</code> (streaming=True)</li>
+            <li><b>异步查询</b> ↔ <code>query_engine.py</code> (aquery)</li>
+          </ul>
+
+          <h3>模块清单</h3>
+          <ul>
+            <li><code>document_loader.py</code> — 文档加载 (SimpleDirectoryReader)</li>
+            <li><code>document_parser.py</code> — 数据摄取 (IngestionPipeline)</li>
+            <li><code>vector_index.py</code> — 向量索引 (VectorStoreIndex)</li>
+            <li><code>index_persistence.py</code> — 索引持久化 (StorageContext)</li>
+            <li><code>query_engine.py</code> — RAG 问答 (QueryEngine)</li>
+            <li><code>source_tracker.py</code> — 来源追踪 (source_nodes)</li>
+            <li><code>metadata_filter.py</code> — 元数据过滤 (MetadataFilters)</li>
+            <li><code>summary_engine.py</code> — 全文总结 (SummaryIndex)</li>
+          </ul>
+
+          <h3>注意事项</h3>
+          <ul>
+            <li>首次启动会构建索引并持久化到 <code>qualityScheme/storage/</code>，之后自动加载。</li>
+            <li>修改 <code>qualityScheme/data/</code> 中的材料后，点击右上角"重建索引"。</li>
+            <li>local 模型的回答是确定性的抽取式结果，仅用于观察框架流程。</li>
+            <li>OpenAI 模式回答更自然，但会消耗 API 额度。</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
