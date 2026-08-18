@@ -30,6 +30,7 @@ class QualitySchemeConfig:
     """质检规范业务的不可变配置。
 
     与 demo 的 AppConfig 字段保持一致，便于复用 models.configure_models。
+    新增 Milvus 向量库连接配置：向量不再写本地 JSON，而是存入 Milvus。
     """
 
     provider: str
@@ -38,6 +39,10 @@ class QualitySchemeConfig:
     api_base: str | None = None
     data_dir: Path = DATA_DIR
     storage_dir: Path = STORAGE_DIR
+    # Milvus 连接配置。默认指向用户指定的免认证实例。
+    milvus_uri: str = "http://milvus-dev1.e-tudou.com:19530"
+    milvus_db: str = "kernel_data_platform"
+    milvus_collection: str = "qualityScheme_llamaIndex"
 
     @property
     def uses_openai(self) -> bool:
@@ -76,14 +81,27 @@ def load_quality_config(provider: str | None = None) -> QualitySchemeConfig:
             "LLAMAINDEX_EMBED_MODEL", "text-embedding-3-small"
         ),
         api_base=os.getenv("OPENAI_API_BASE") or None,
+        milvus_uri=os.getenv(
+            "QUALITY_MILVUS_URI", "http://milvus-dev1.e-tudou.com:19530"
+        ),
+        milvus_db=os.getenv(
+            "QUALITY_MILVUS_DB", "kernel_data_platform"
+        ),
+        milvus_collection=os.getenv(
+            "QUALITY_MILVUS_COLLECTION", "qualityScheme_llamaIndex"
+        ),
     )
 
     logger.info(
-        "加载质检业务配置: provider=%s, llm=%s, embed=%s, data_dir=%s, storage_dir=%s",
+        "加载质检业务配置: provider=%s, llm=%s, embed=%s, data_dir=%s, storage_dir=%s, "
+        "milvus_uri=%s, milvus_db=%s, milvus_collection=%s",
         config.provider,
         config.llm_model,
         config.embed_model,
         config.data_dir,
         config.storage_dir,
+        config.milvus_uri,
+        config.milvus_db,
+        config.milvus_collection,
     )
     return config

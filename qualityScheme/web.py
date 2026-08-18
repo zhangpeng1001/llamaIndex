@@ -40,6 +40,12 @@ from .query_engine import make_query_engine
 from .source_tracker import format_sources, sources_to_dict
 from .summary_engine import make_summary_engine
 from .scheme_api import register_scheme_routes
+from .milvus_store import (
+    collection_has_data,
+    create_milvus_vector_store,
+    ensure_milvus_database,
+    get_embedding_dimension,
+)
 
 # 配置根 logger，让 qualityScheme.* 的日志能输出到控制台。
 logging.basicConfig(
@@ -62,6 +68,7 @@ class RuntimeState:
         self.llm: Any = None
         self.embed_model: Any = None
         self.index: Any = None
+        self.vector_store: Any = None
         self._lock = asyncio.Lock()
 
     @property
@@ -73,25 +80,46 @@ state = RuntimeState()
 
 
 def init_runtime(config: QualitySchemeConfig, *, rebuild: bool = False) -> None:
-    """在应用启动时构建模型与索引。
+    """在应用启动时构建模型、Milvus 向量存储与索引。
 
     参数:
         config: 质检业务配置。
-        rebuild: 是否强制重建索引。
+        rebuild: 是否强制重建索引（重建 Milvus collection）。
+
+    流程:
+        1. 配置 LLM 与嵌入模型。
+        2. 探测嵌入维度，确保 Milvus 数据库存在。
+        3. 创建 MilvusVectorStore（rebuild 时 overwrite=True）。
+        4. build_and_persist_index 据此加载已有 collection 或全量摄取写入。
     """
 
     logger.info("初始化运行时: provider=%s, rebuild=%s", config.provider, rebuild)
     llm, embed_model = configure_quality_models(config)
+
+    # 1. 探测嵌入维度（决定 Milvus collection 的向量维度）。
+    dim = get_embedding_dimension(embed_model)
+
+    # 2. 确保 Milvus 数据库存在（kernel_data_platform）。
+    ensure_milvus_database(config.milvus_uri, config.milvus_db)
+
+    # 3. 创建 Milvus 向量存储；rebuild 时删除并重建 collection。
+    vector_store = create_milvus_vector_store(
+        config, dim=dim, overwrite=rebuild
+    )
+
+    # 4. 加载或构建索引（向量写入/读取 Milvus）。
     index = build_and_persist_index(
         config.data_dir,
         config.storage_dir,
         embed_model,
         rebuild=rebuild,
+        vector_store=vector_store,
     )
     state.config = config
     state.llm = llm
     state.embed_model = embed_model
     state.index = index
+    state.vector_store = vector_store
     logger.info("运行时初始化完成")
 
 
@@ -165,7 +193,7 @@ def create_app(
 
     @app.get("/api/health")
     async def health() -> dict[str, Any]:
-        """健康检查：返回模型、数据目录、已索引文件清单。"""
+        """健康检查：返回模型、数据目录、Milvus 连接与已索引文件清单。"""
 
         cfg, _, embed_model, _ = require_runtime()
         try:
@@ -174,6 +202,15 @@ def create_app(
         except Exception as exc:
             logger.warning("健康检查读取文档失败: %s", exc)
             indexed_files = []
+
+        # 查询 Milvus collection 是否含数据（用独立连接，不影响主 store）。
+        try:
+            has_data = await asyncio.to_thread(collection_has_data, cfg)
+        except Exception as exc:
+            logger.warning("健康检查 Milvus 连接失败: %s", exc)
+            has_data = False
+
+        vector_store_type = type(state.vector_store).__name__ if state.vector_store else None
 
         return {
             "service": "qualityScheme",
@@ -184,24 +221,23 @@ def create_app(
             "data_dir": str(cfg.data_dir),
             "storage_dir": str(cfg.storage_dir),
             "indexed_files": indexed_files,
+            "milvus_uri": cfg.milvus_uri,
+            "milvus_db": cfg.milvus_db,
+            "milvus_collection": cfg.milvus_collection,
+            "vector_store_type": vector_store_type,
+            "collection_has_data": has_data,
         }
 
     @app.post("/api/rebuild")
     async def rebuild_index() -> dict[str, Any]:
-        """删除旧索引并重新切块、嵌入。"""
+        """删除旧 Milvus collection 并重新切块、嵌入写入。"""
 
-        cfg, _, embed_model, _ = require_runtime()
-        logger.info("收到重建索引请求")
-        new_index = await asyncio.to_thread(
-            build_and_persist_index,
-            cfg.data_dir,
-            cfg.storage_dir,
-            embed_model,
-            rebuild=True,
-        )
-        state.index = new_index
+        logger.info("收到重建索引请求（Milvus overwrite=True）")
+        # 重新走完整 init_runtime 流程：重建 store（overwrite=True）并重新摄取。
+        cfg = state.config or load_quality_config()
+        await asyncio.to_thread(init_runtime, cfg, rebuild=True)
         logger.info("索引重建完成")
-        return {"status": "ok", "message": "质检规范索引已重建"}
+        return {"status": "ok", "message": "质检规范 Milvus 索引已重建"}
 
     # ---- RAG 问答 -------------------------------------------------------
 

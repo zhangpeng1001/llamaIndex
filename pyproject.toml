@@ -17,6 +17,8 @@ dependencies = [
   "python-dotenv>=1.0,<2",
   "fastapi>=0.110,<0.120",
   "uvicorn[standard]>=0.27,<0.35",
+  "llama-index-vector-stores-milvus>=0.8.0",
+  "pymilvus>=2.5,<3",
 ]
 
 [project.optional-dependencies]
