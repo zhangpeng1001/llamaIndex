@@ -119,6 +119,17 @@ def _build_context_from_retrieval(
 
     logger.info("检索规范上下文: requirement=%s, top_k=%d", requirement[:80], top_k)
     nodes = retrieve(index, requirement, top_k=top_k)
+
+    # ===== 调试打印：查看 milvus 检索返回的节点 =====
+    print(f"\n===== milvus 检索返回 {len(nodes)} 个节点 =====")
+    for i, n in enumerate(nodes, start=1):
+        print(f"\n--- 节点 #{i} ---")
+        print(f"score     : {n.score}")
+        print(f"file_name : {n.node.metadata.get('file_name', '未知')}")
+        print(f"node_id   : {n.node.node_id}")
+        print(f"content   : {n.node.get_content()}")
+    print("=" * 50)
+    # ===== 调试打印结束 =====
     if not nodes:
         logger.warning("未检索到相关规范条款，方案生成将缺少业务上下文")
         return "（未检索到相关规范条款）"

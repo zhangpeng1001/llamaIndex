@@ -30,6 +30,17 @@ from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+# 兼容直接运行（python web.py / PyCharm 调试）与模块运行（python -m qualityScheme.web）。
+# 直接以脚本运行时 __package__ 为空，相对导入（from .config import ...）会抛
+# ImportError: attempted relative import with no known parent package。
+# 这里在相对导入之前补齐包上下文，并把 qualityScheme 的父目录加入 sys.path，
+# 使其作为 "qualityScheme" 包被正确识别。
+if __package__ in (None, ""):
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    __package__ = "qualityScheme"
+
 from .config import QualitySchemeConfig, load_quality_config
 from .document_loader import load_documents
 from .document_parser import parse_documents
