@@ -41,13 +41,15 @@ class QualitySchemeConfig:
     provider: str
     llm_model: str
     embed_model: str
-    api_base: str | None = None
-    data_dir: Path = DATA_DIR
-    storage_dir: Path = STORAGE_DIR
     # Milvus 连接配置：全部必须通过 .env 显式配置，无默认值。
+    # 注意：dataclass 要求无默认值字段必须排在有默认值字段之前，
+    # 因此把这三个字段放在 api_base/data_dir/storage_dir 之前。
     milvus_uri: str
     milvus_db: str
     milvus_collection: str
+    api_base: str | None = None
+    data_dir: Path = DATA_DIR
+    storage_dir: Path = STORAGE_DIR
 
     @property
     def uses_openai(self) -> bool:

@@ -123,12 +123,21 @@ def create_milvus_vector_store(
         MilvusVectorStore 实例，可直接用于 StorageContext 或 from_vector_store。
 
     日志:
-        - 创建参数（collection、db、dim、overwrite、metric）。
+        - 创建参数（collection、db、dim、overwrite、metric、enable_sparse）。
+
+    注意:
+        - ``enable_sparse=True`` 启用 BM25 稀疏向量字段，是 Hybrid 检索
+          （vector_store_query_mode="hybrid"）的前置条件。sparse_embedding_function
+          为 None 时 MilvusVectorStore 默认使用 BM25 内置函数。
+        - 稀疏向量字段只在「新建 collection」时创建；若 collection 已存在且
+          未带 sparse 字段，则必须通过 ``overwrite=True``（即 /api/rebuild）
+          重建 collection 后 Hybrid 模式才可用，否则会抛
+          ``The query mode requires sparse embedding, but enable_sparse is False.``。
     """
 
     logger.info(
         "创建 MilvusVectorStore: uri=%s, db=%s, collection=%s, dim=%d, "
-        "overwrite=%s, similarity_metric=COSINE",
+        "overwrite=%s, similarity_metric=COSINE, enable_sparse=True",
         config.milvus_uri,
         config.milvus_db,
         config.milvus_collection,
@@ -137,6 +146,8 @@ def create_milvus_vector_store(
     )
     # db_name 经 MilvusVectorStore 的 **kwargs 透传给 MilvusClient / AsyncMilvusClient，
     # 使连接指向 kernel_data_platform 数据库。
+    # enable_sparse=True 开启稀疏向量字段，配合 metadata_filter 中的
+    # vector_store_query_mode="hybrid"（Dense + BM25 Sparse）使用。
     store = MilvusVectorStore(
         uri=config.milvus_uri,
         collection_name=config.milvus_collection,
@@ -144,6 +155,7 @@ def create_milvus_vector_store(
         overwrite=overwrite,
         similarity_metric="COSINE",
         db_name=config.milvus_db,
+        enable_sparse=True,
     )
     return store
 
