@@ -255,6 +255,131 @@ def _normalize_param(raw: str) -> list[str]:
     return []
 
 
+# ---------------------------------------------------------------------------
+# 参数名别名映射：解决 dataName vs data_name 这种驼峰/蛇形混用问题
+# 原理：
+#   1. LLM 生成参数时，Prompt 里统一引导使用「蛇形」命名（更符合中文拼音直觉）
+#   2. 但平台实际 checkParam 可能是驼峰（如 dataName），所以在后处理阶段
+#      需要把 LLM 生成的蛇形参数名，映射回对应检查项真正声明的参数名
+# ---------------------------------------------------------------------------
+
+# 通用「蛇形 ↔ 驼峰」双向别名表（所有检查项共享的通用别名）
+COMMON_PARAM_ALIASES: dict[str, str] = {
+    # 数据层名相关
+    "data_name": "dataName",
+    "dataname": "dataName",
+    "dataName": "data_name",
+    # 字段相关
+    "field_names": "fieldNames",
+    "fieldnames": "fieldNames",
+    "fieldNames": "field_names",
+    "field_types": "fieldTypes",
+    "fieldtypes": "fieldTypes",
+    "fieldTypes": "field_types",
+    "field_lengths": "fieldLengths",
+    "fieldlengths": "fieldLengths",
+    "fieldLengths": "field_lengths",
+    "field_scales": "fieldScales",
+    "fieldscales": "fieldScales",
+    "fieldScales": "field_scales",
+    "field_values": "fieldValues",
+    "fieldvalues": "fieldValues",
+    "fieldValues": "field_values",
+    # 几何/阈值相关
+    "geometry_type": "geometry_type",  # 本身就是蛇形
+    "min_length": "min_length",
+    "min_area": "min_area",
+    "min_angle": "min_angle",
+    "date_start": "dateStart",
+    "datestart": "dateStart",
+    "dateStart": "date_start",
+    "date_end": "dateEnd",
+    "dateend": "dateEnd",
+    "dateEnd": "date_end",
+    # 跨图层相关
+    "dz_data_name": "dz_data_name",  # 本身蛇形
+    "compare_fields_first": "compare_fields_first",
+    "compare_fields_second": "compare_fields_second",
+    "key_field_first": "key_field_first",
+    "key_field_second": "key_field_second",
+}
+
+
+def _build_param_snake_to_original(check_code: str) -> dict[str, str]:
+    """为指定检查项构造「蛇形参数名 → 平台原始参数名」映射。
+
+    例：layerPolygonAreaConsistencyCheck 的平台参数是 ["dataName","fieldNames","threshold","unit"]，
+    用户/LLM可能写成 data_name / field_names。这里返回一个双向映射字典用于最后一步还原。
+    """
+    item = get_check_item(check_code)
+    if item is None:
+        return {}
+    out: dict[str, str] = {}
+    for orig in item["param_names"]:
+        # 原始名本身就是 key
+        out[orig] = orig
+        # 加通用别名
+        if orig in COMMON_PARAM_ALIASES:
+            alias = COMMON_PARAM_ALIASES[orig]
+            out[alias] = orig
+        # 简单蛇形/驼峰互转兜底
+        snake = _camel_to_snake(orig)
+        if snake != orig:
+            out[snake] = orig
+        camel = _snake_to_camel(orig)
+        if camel != orig:
+            out[camel] = orig
+    return out
+
+
+def _camel_to_snake(s: str) -> str:
+    import re as _re
+    s1 = _re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", s)
+    return _re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
+
+
+def _snake_to_camel(s: str) -> str:
+    parts = s.split("_")
+    return parts[0] + "".join(p.title() for p in parts[1:])
+
+
+def canonicalize_params(check_code: str, params: dict[str, Any]) -> dict[str, Any]:
+    """把 LLM 生成的 params 字典规范化为平台检查项实际要求的参数名。
+
+    步骤：
+        1. 取该检查项的别名映射（蛇形→平台原始）
+        2. 对每个 params 的 key，尝试匹配别名；若匹配则改 key
+        3. 未匹配到的参数按原样保留（可能是未知的额外参数，交由下游处理）
+
+    这解决了「平台中 data_name 和 dataName 混用，LLM 容易写错」的问题。
+    """
+    alias = _build_param_snake_to_original(check_code)
+    if not alias:
+        return dict(params)
+    out: dict[str, Any] = {}
+    for k, v in params.items():
+        mapped_key = alias.get(k, k)  # 别名命中则替换，否则用原名
+        out[mapped_key] = v
+    return out
+
+
+# Prompt 用的「引导LLM使用蛇形名」的参数名表。
+def format_param_names_snake_case(param_names: list[str]) -> str:
+    """把平台原始参数名列表，转成「蛇形（若有别名）+ 括号说明原名」的格式，
+    便于 Prompt 中引导 LLM 使用统一风格。
+
+    例：["dataName", "fieldNames"] → "data_name(即 dataName), field_names(即 fieldNames)"
+    """
+    parts: list[str] = []
+    for orig in param_names:
+        snake = _camel_to_snake(orig)
+        if snake != orig:
+            parts.append(f"{snake}(即 {orig})")
+        else:
+            parts.append(orig)
+    return ", ".join(parts)
+
+
 # 规范化后的检查项列表：每项包含解析后的 param_names。
 CHECK_ITEMS: list[dict[str, Any]] = []
 # checkCode -> 检查项详情，便于 O(1) 校验。

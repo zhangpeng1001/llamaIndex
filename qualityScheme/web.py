@@ -13,15 +13,18 @@
 
 所有业务逻辑复用 qualityScheme 内的模块，本文件只负责 HTTP 协议适配：
     - 启动时构建一次索引，跨请求复用；
-    - 流式输出通过 Server-Sent Events 推送。
+    - 流式输出通过 Server-Sent Events 推送；
+    - /api/summary 结果带内存缓存，避免每次请求都重新切块+总结。
 """
 
 from __future__ import annotations
 
 import argparse
 import asyncio
+import hashlib
 import json
 import logging
+import time
 from pathlib import Path
 from typing import Any
 
@@ -71,6 +74,12 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 
+# Summary 缓存的 TTL（秒）。默认 1 小时，足以覆盖日常使用且不会因规范更新而太陈旧。
+_SUMMARY_CACHE_TTL = 3600
+# Summary 缓存最大条目数（按 question 维度），避免无边界内存增长。
+_SUMMARY_CACHE_MAX = 32
+
+
 class RuntimeState:
     """保存配置、模型、索引等共享对象。"""
 
@@ -81,10 +90,67 @@ class RuntimeState:
         self.index: Any = None
         self.vector_store: Any = None
         self._lock = asyncio.Lock()
+        # Summary 节点缓存：key = data_dir 路径，value = (生成时间戳, nodes)
+        # SummaryIndex 每次都需要全量 nodes，这里缓存一次，跨 summary 请求复用。
+        self._summary_nodes_cache: dict[str, tuple[float, Any]] = {}
+        # Summary 结果缓存：key = question_hash，value = (生成时间戳, answer)
+        self._summary_answer_cache: dict[str, tuple[float, str]] = {}
 
     @property
     def ready(self) -> bool:
         return self.config is not None and self.index is not None
+
+    def _evict_expired(self) -> None:
+        """清理过期缓存（懒清理：每次读写时调用一次）。"""
+        now = time.time()
+        for cache in (self._summary_nodes_cache, self._summary_answer_cache):
+            expired_keys = [k for k, (ts, _) in cache.items() if now - ts > _SUMMARY_CACHE_TTL]
+            for k in expired_keys:
+                cache.pop(k, None)
+
+    def get_summary_nodes(self, data_dir: Path) -> Any | None:
+        """读取已缓存的 summary 节点；不存在或过期返回 None。"""
+        self._evict_expired()
+        entry = self._summary_nodes_cache.get(str(data_dir))
+        if entry is None:
+            return None
+        return entry[1]
+
+    def set_summary_nodes(self, data_dir: Path, nodes: Any) -> None:
+        """写入 summary 节点缓存。"""
+        self._evict_expired()
+        if len(self._summary_nodes_cache) >= _SUMMARY_CACHE_MAX:
+            # 淘汰最早的一条
+            oldest_key = min(self._summary_nodes_cache, key=lambda k: self._summary_nodes_cache[k][0])
+            self._summary_nodes_cache.pop(oldest_key, None)
+        self._summary_nodes_cache[str(data_dir)] = (time.time(), nodes)
+        logger.info("Summary 节点已缓存: data_dir=%s, 条目数=%d", data_dir, len(self._summary_nodes_cache))
+
+    def get_summary_answer(self, question: str) -> str | None:
+        """读取已缓存的 summary 回答；不存在或过期返回 None。"""
+        self._evict_expired()
+        key = hashlib.md5(question.encode("utf-8")).hexdigest()
+        entry = self._summary_answer_cache.get(key)
+        if entry is None:
+            return None
+        logger.info("Summary 回答命中缓存: question=%s", question[:50])
+        return entry[1]
+
+    def set_summary_answer(self, question: str, answer: str) -> None:
+        """写入 summary 回答缓存。"""
+        self._evict_expired()
+        if len(self._summary_answer_cache) >= _SUMMARY_CACHE_MAX:
+            oldest_key = min(self._summary_answer_cache, key=lambda k: self._summary_answer_cache[k][0])
+            self._summary_answer_cache.pop(oldest_key, None)
+        key = hashlib.md5(question.encode("utf-8")).hexdigest()
+        self._summary_answer_cache[key] = (time.time(), answer)
+        logger.info("Summary 回答已缓存: question=%s, 缓存条目=%d", question[:50], len(self._summary_answer_cache))
+
+    def invalidate_summary_cache(self) -> None:
+        """在 rebuild 索引时清空 summary 缓存，保证新旧数据不混杂。"""
+        self._summary_nodes_cache.clear()
+        self._summary_answer_cache.clear()
+        logger.info("Summary 缓存已清空（索引重建触发）")
 
 
 state = RuntimeState()
@@ -244,11 +310,13 @@ def create_app(
         """删除旧 Milvus collection 并重新切块、嵌入写入。"""
 
         logger.info("收到重建索引请求（Milvus overwrite=True）")
+        # rebuild 前先清空 summary 缓存，保证新旧数据不混杂。
+        state.invalidate_summary_cache()
         # 重新走完整 init_runtime 流程：重建 store（overwrite=True）并重新摄取。
         cfg = state.config or load_quality_config()
         await asyncio.to_thread(init_runtime, cfg, rebuild=True)
         logger.info("索引重建完成")
-        return {"status": "ok", "message": "质检规范 Milvus 索引已重建"}
+        return {"status": "ok", "message": "质检规范 Milvus 索引已重建，summary 缓存已清空"}
 
     # ---- RAG 问答 -------------------------------------------------------
 
@@ -357,17 +425,40 @@ def create_app(
 
     @app.post("/api/summary")
     async def summary(req: QuestionRequest) -> dict[str, Any]:
-        """使用 SummaryIndex + tree_summarize 遍历全部材料做归纳。"""
+        """使用 SummaryIndex + tree_summarize 遍历全部材料做归纳。
+
+        带两级缓存：
+        1. answer 缓存：相同 question 直接返回上次结果（TTL 1 小时）。
+        2. nodes 缓存：跨 question 复用切块结果（避免每次 parse_documents）。
+        """
 
         cfg, llm, embed_model, _ = require_runtime()
         logger.info("/api/summary: question=%s", req.question[:80])
-        # SummaryIndex 需要节点，这里每次重新切块（生产环境可缓存）。
-        nodes = await asyncio.to_thread(
-            parse_documents, load_documents(cfg.data_dir), embed_model
-        )
+
+        # 1. 先查 answer 缓存（命中直接返回，省掉 LLM 调用）。
+        cached_answer = state.get_summary_answer(req.question)
+        if cached_answer is not None:
+            return {"answer": cached_answer, "cached": True}
+
+        # 2. 再查 nodes 缓存（命中省掉 load+parse 全量文档的时间）。
+        nodes = state.get_summary_nodes(cfg.data_dir)
+        if nodes is None:
+            logger.info("/api/summary: nodes 缓存未命中，重新切块")
+            nodes = await asyncio.to_thread(
+                parse_documents, load_documents(cfg.data_dir), embed_model
+            )
+            state.set_summary_nodes(cfg.data_dir, nodes)
+        else:
+            logger.info("/api/summary: nodes 缓存命中，node_count=%d", len(nodes))
+
+        # 3. 构造 summary engine 并查询。
         engine = make_summary_engine(nodes, llm)
         response = await asyncio.to_thread(engine.query, req.question)
-        return {"answer": str(response)}
+        answer_text = str(response)
+
+        # 4. 写入 answer 缓存。
+        state.set_summary_answer(req.question, answer_text)
+        return {"answer": answer_text, "cached": False}
 
     # ---- 质检方案编排（自然语言生成方案） --------------------------------
 
