@@ -623,7 +623,7 @@ def main() -> None:
     parser.add_argument("--port", type=int, default=8082, help="监听端口(默认 8082)")
     parser.add_argument(
         "--log-level",
-        default="info",
+        default="debug",
         choices=["debug", "info", "warning", "error"],
         help="uvicorn 日志级别",
     )

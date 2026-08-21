@@ -101,29 +101,6 @@ def run_loading(
     # ------------------------------------------------------------------
     config.data_dir.mkdir(parents=True, exist_ok=True)
     md_files = sorted(config.data_dir.glob("*.md"))
-    if not md_files:
-        # src/data 为空:fallback 读取 qualityScheme/data 的现有 MD
-        fallback_dir = STANDARD_DIR.parent / "qualityScheme" / "data"
-        logger.warning(
-            "src/data 为空,尝试 fallback 读取 qualityScheme/data: %s",
-            fallback_dir,
-        )
-        if fallback_dir.exists() and fallback_dir != config.data_dir:
-            fallback_mds = sorted(fallback_dir.glob("*.md"))
-            if fallback_mds:
-                logger.info(
-                    "  fallback 目录有 %d 个 MD,直接读取该目录",
-                    len(fallback_mds),
-                )
-                # 直接用 fallback 目录加载
-                documents = load_documents_with_enhanced_metadata(fallback_dir)
-                _log_loading_result(documents, source_dir=fallback_dir)
-                return documents
-        raise RuntimeError(
-            f"数据目录 {config.data_dir} 为空,且 qualityScheme/data 也无 MD。"
-            "请先执行 Loading(re_extract_pdf=true)从 PDF 提取。"
-        )
-
     logger.info("Step 2: 数据目录检查通过, MD 文件数=%d", len(md_files))
     logger.debug("  MD 文件清单: %s", [f.name for f in md_files])
 
