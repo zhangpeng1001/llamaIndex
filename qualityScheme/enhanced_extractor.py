@@ -158,23 +158,69 @@ PARAM_HINT_RE = re.compile(
 
 @dataclass
 class ExtractedLine:
-    """PDF 提取后的单条结构化行。"""
+    """PDF 提取后的单条结构化行。
+
+    用于承载从 PDF 中提取的每一行文本及其结构化解析结果，
+    包含章节归属、知识分类、噪声标记、业务关键字段等丰富元信息，
+    供后续切块（chunking）时直接继承到 LlamaIndex Node/Document 的 metadata 中。
+    """
 
     text: str
+    """提取的原始文本内容（去除首尾空白后的单行文本）。"""
+
     page: int
+    """文本所在的 PDF 页码（从 1 开始计数）。"""
+
     chapter_no: str | None = None
+    """章节编号，如 "5.2.4"、"附录A"、"A.1"；非章节标题行则为 None。"""
+
     chapter_title: str | None = None
+    """章节标题文本，如 "采集数量与方式"；非章节标题行则为 None。"""
+
     chapter_path: str | None = None
+    """章节层级路径，由父级章节编号用 "/" 拼接而成，如 "5/5.2/5.2.4"，
+    用于快速定位文档层级关系和实现按章节检索。"""
+
     section_type: str = "正文_其他"
+    """大章节类别（规范文档的固定分区），取值范围：
+    "前言/引言"、"范围"、"引用文件"、"术语定义"、"时空基准"、
+    "数据采集"、"数据整理"、"数据库"、"质量要求"、"附录"、"参考文献"、"正文_其他"。
+    用于 metadata 过滤和分区域检索。"""
+
     knowledge_type: str = "正文_其他"
+    """知识类型（细分业务语义），取值范围：
+    "term_definition"(术语定义)、"references"(引用文件)、"preface"(前言)、
+    "scope_intro"(范围介绍)、"quality_rule"(质量规则/阈值约束)、
+    "data_spec"(数据规范)、"field_rule"(字段规则)、"appendix_table"(附录表格)、
+    "appendix"(附录)、"chapter_title"(章节标题)、"正文_其他"。
+    用于检索时的知识类型过滤和答案质量控制。"""
+
     is_toc: bool = False
+    """是否为目录(TOC)行噪声，True 表示该行是目录引导点行，应在输出中过滤丢弃。"""
+
     is_page_header: bool = False
+    """是否为页眉行噪声，True 表示该行是文档页眉（如"部省共建项目"等），应过滤丢弃。"""
+
     is_page_num: bool = False
+    """是否为纯页码行噪声，True 表示该行只包含页码数字，应过滤丢弃。"""
+
     is_table: bool = False
+    """是否为表格内容行，True 表示该行来源于 PDF 表格提取（预留字段，当前版本暂未填充）。"""
+
     data_names: list[str] = field(default_factory=list)
+    """数据对象名列表，识别本行涉及的时空数据业务对象，
+    如 ["检测点", "检测线", "标志性地物"]，上限 5 个，用于按数据对象检索。"""
+
     field_names: list[str] = field(default_factory=list)
+    """字段名称列表，启发式匹配本行中出现的业务字段名，
+    如 ["检测点编号", "坐标X", "字段类型"]，上限 8 个，用于按字段名检索和问答。"""
+
     param_hints: list[str] = field(default_factory=list)
+    """参数提示词列表，提取本行中出现的阈值/约束/精度等关键词，
+    如 ["不超过", "精度±0.5米", "10个"]，上限 8 个，用于数值类问答的召回增强。"""
+
     raw_meta: dict[str, Any] = field(default_factory=dict)
+    """原始扩展元数据字典，预留字段用于存放后续新增的其他提取信息（如表格行坐标、PDF 原始布局等）。"""
 
     def to_markdown(self) -> str:
         """转成带 metadata 注释的 Markdown 行（便于人读+Document metadata提取）。"""
