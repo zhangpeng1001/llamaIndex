@@ -40,27 +40,58 @@ logger = logging.getLogger(__name__)
 # 正则规则集：针对 GB/T 1.1 类标准文档调优
 # ---------------------------------------------------------------------------
 
-# 目录行：引导点 + 末尾页码。例："前 言 .......................................................................................................................................................... 1"
+# 普通标题 TOC 行：标题不含点，页码为阿拉伯或罗马数字。
+# 例："前 言 ........ I" "范围 ........ 1"
+# 修复点1:原正则页码仅 \d+,漏掉罗马数字 I/V/X(前言页码常见);
+#        标题 [^\s.] 禁点,但本正则本就不匹配含章节号的 TOC 行(由 TOC_WITH_CHAPTER_RE 处理)。
+# 修复点2:引导点 [.。…·]{4,} 要求连续,但 part4 的 TOC 行引导点被空格分割
+#        ("................................ ................................ ...... 1"),改为
+#        (?:[.。…·]\s*){4,} 允许点间空格(part4 PDF 提取产生的格式变形)。
 TOC_LINE_RE = re.compile(
     r"""^
     (?P<title>[^\s.]+(?:\s+[^\s.]+)*)   # 标题文本（不含点）
     \s*
-    [.。…·]{4,}                         # 引导点（至少4个）
+    (?:[.。…·]\s*){4,}                  # 引导点（至少4个点，允许点间空格）
     \s*
-    (?P<page>\d+)\s*$                   # 末尾页码
+    (?P<page>\d+|[IVXLCDM]+)\s*$        # 末尾页码（阿拉伯或罗马数字）
     """,
     re.VERBOSE,
 )
+
+# 含章节号的 TOC 行：标题前缀为章节号(含点)，如 "3.1 检测点数据分类 ........ 1"
+# 单独匹配，因为 TOC_LINE_RE 的 [^\s.] 禁点规则会误伤章节号 "3.1"。
+# 修复点:原 TOC_LINE_RE 漏匹配此类行,导致 "3.1 标题......1" 被 CHAPTER_TITLE_RE
+#        当成正文章节标题,输出 "## 3.1 标题......1" 噪声(已确认 4 份 part 文件共 39 处)。
+# 引导点同样允许点间空格,兼容 part4 的变形格式。
+TOC_WITH_CHAPTER_RE = re.compile(
+    r"""^
+    (?P<no>\d{1,2}(?:\.\d{1,2}){0,4})   # 章节号（1-2位数字，可带子级，最多4级）
+    [.、\s]+                             # 分隔符（点号/顿号/空格）
+    (?P<title>[^.。…·]*?)                # 标题文本（不含引导点，允许空标题如 "3.1 .... 1"）
+    \s*
+    (?:[.。…·]\s*){4,}                   # 引导点（至少4个点，允许点间空格）
+    \s*
+    (?P<page>\d+|[IVXLCDM]+)\s*$         # 页码（阿拉伯或罗马）
+    """,
+    re.VERBOSE,
+)
+
+# 目录区段字面量："目  录"（中间可有多个空格，用于区段级 TOC 识别兜底）
+TOC_SECTION_RE = re.compile(r"^目\s*录\s*$")
 
 # 纯页码行：整行只有 1~4 位数字（页眉上的"1""2"）
 PAGE_NUM_ONLY_RE = re.compile(r"^\s*\d{1,4}\s*$")
 
 # 章节标题：数字层级编号开头。例："5.2.4 采集数量与方式" "附录A" "A.1"
+# 修复点1:编号 \d+ 误匹配年份(如 "2025 年7 月" 被识别为 chapter_no=2025);
+#         改为 \d{1,2}(?:\.\d{1,2}){0,4},限制每段1-2位(GB/T 1.1 章节号不会超过2位)。
+# 修复点2:title 用 .+? 会吞掉 "........ 1" 等引导点+页码噪声(双保险,TOC_WITH_CHAPTER_RE 已先过滤);
+#         改为 [^\s.。…·][^.。…·]*?,要求非空白非点开头且不含引导点。
 CHAPTER_TITLE_RE = re.compile(
     r"""^
-    (?P<no>(?:\d+(?:\.\d+)*)|(?:附录[A-Z][A-Z0-9]*(?:\.\d+)*))  # 编号
-    [.、\s]+                                                    # 分隔符
-    (?P<title>.+?)\s*$                                          # 标题
+    (?P<no>(?:\d{1,2}(?:\.\d{1,2}){0,4})|(?:附录[A-Z][A-Z0-9]*(?:\.\d+)*))  # 编号（1-2位，避免误匹配年份）
+    [.、\s]+                                                                 # 分隔符
+    (?P<title>[^\s.。…·][^.。…·]*?)\s*$                                      # 标题（非空白非点开头，不含引导点）
     """,
     re.VERBOSE,
 )
@@ -247,11 +278,17 @@ class EnhancedPdfExtractor:
                 el.is_page_header = True
                 continue  # 不append
 
-            # 3. TOC目录行
+            # 3. TOC目录行(普通标题:"前 言 ........ I")
             if TOC_LINE_RE.match(line):
                 el.is_toc = True
-                # 不append，丢弃目录噪声
-                continue
+                continue  # 不append，丢弃目录噪声
+
+            # 3.1 TOC目录行(含章节号:"3.1 检测点数据分类 ........ 1")
+            # 修复:原 TOC_LINE_RE 因 [^\s.] 禁点漏匹配章节号,导致此类行被
+            #      CHAPTER_TITLE_RE 误识别为正文章节标题,输出 "## 3.1 标题......1" 噪声。
+            if TOC_WITH_CHAPTER_RE.match(line):
+                el.is_toc = True
+                continue  # 不append，丢弃目录噪声
 
             # 到这里是有效正文行。
             lines.append(el)
@@ -260,6 +297,52 @@ class EnhancedPdfExtractor:
     # ------------------------------------------------------------------
     # 跨页后处理：章节解析 + 知识分类 + metadata推断
     # ------------------------------------------------------------------
+
+    def _mark_toc_section(self, lines: list[ExtractedLine]) -> list[ExtractedLine]:
+        """区段级 TOC 识别兜底:从"目  录"字面量到下一个真实章节之间的行标记为 is_toc。
+
+        背景:
+            _extract_page_lines 用 TOC_LINE_RE / TOC_WITH_CHAPTER_RE 做单行过滤,
+            但仍可能遗漏(如"目  录"字面量本身无引导点、PDF 提取产生的变形行)。
+            本方法在全局行列表上做区段级兜底:一旦进入目录区段,后续所有行
+            (含任何单行正则遗漏的 TOC 行)统一标记为噪声,直到遇到真实章节起点。
+
+        退出目录区段的判据(GB/T 1.1 标准结构):
+            - "前 言" / "引 言"        → 前言/引言章节起点
+            - "1 范围" / "1  范围"     → 第1章范围起点
+            - "2 规范性引用文件"       → 第2章引用文件起点
+
+        参数:
+            lines: 已经过 _extract_page_lines 单行过滤的 ExtractedLine 列表
+                   (页码/页眉/单行TOC已 continue 掉,但"目  录"字面量仍保留)。
+
+        返回:
+            同一列表(in-place 修改 is_toc 标志),后续由 to_markdown 统一过滤。
+        """
+        in_toc = False
+        toc_start_page: int | None = None
+        for el in lines:
+            text = el.text.strip()
+            # 进入目录区段
+            if TOC_SECTION_RE.match(text):
+                in_toc = True
+                toc_start_page = el.page
+                el.is_toc = True
+                logger.debug("  目录区段开始: page=%d, 行='%s'", el.page, text)
+                continue
+            # 退出目录区段:遇到真实章节起点
+            if in_toc:
+                if re.match(r"^(前\s*言|引\s*言|1\s+范\s*围|2\s+规范性引用文件)", text):
+                    in_toc = False
+                    # 该行是正文,不标记 is_toc,保留
+                    logger.debug(
+                        "  目录区段结束(遇到真实章节): page=%d, 行='%s'",
+                        el.page, text[:30],
+                    )
+                else:
+                    # 目录区段内所有行(含遗漏的 TOC 行)标记为噪声
+                    el.is_toc = True
+        return lines
 
     def _annotate_structure(self, lines: list[ExtractedLine]) -> list[ExtractedLine]:
         """对已过滤噪声的行进行结构注解。"""
@@ -384,7 +467,18 @@ class EnhancedPdfExtractor:
             all_lines.extend(page_lines)
         logger.info("  原始行数(去噪前噪声已滤): %d (共%d页)", len(all_lines), total_pages)
 
-        annotated = self._annotate_structure(all_lines)
+        # 区段级 TOC 识别兜底:标记"目  录"区段内的所有行为 is_toc
+        # (修复 _extract_page_lines 单行正则的遗漏,如"目  录"字面量本身)
+        self._mark_toc_section(all_lines)
+        toc_marked_cnt = sum(1 for el in all_lines if el.is_toc)
+        logger.info("  区段级TOC兜底: 标记噪声行数=%d", toc_marked_cnt)
+
+        # 过滤掉所有噪声行(is_toc/is_page_header/is_page_num),只保留正文行
+        # (单行 TOC 已在 _extract_page_lines 中 continue 掉,这里再过滤区段级标记的)
+        valid_lines = [el for el in all_lines if not el.is_toc]
+        logger.info("  有效正文行数: %d (过滤噪声后)", len(valid_lines))
+
+        annotated = self._annotate_structure(valid_lines)
         logger.info(
             "  结构注解完成: chapter_title行数=%d, knowledge_type分布=%s",
             sum(1 for l in annotated if l.chapter_no),
@@ -406,10 +500,11 @@ class EnhancedPdfExtractor:
         doc_meta = {
             "part_number": self.part_number,
             "part_name": self.part_name,
-            "extractor_version": "enhanced_v1",
+            "extractor_version": "enhanced_v2",  # v1→v2: 修复 TOC/章节正则 + 区段级兜底
             "noise_removed": True,
             "structure_parsed": True,
             "total_valid_lines": len(annotated),
+            "toc_lines_removed": toc_marked_cnt,  # 新增:记录过滤的TOC噪声行数
             "default_data_name": self._default_data_names(),
         }
         logger.info(
