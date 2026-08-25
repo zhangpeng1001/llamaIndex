@@ -144,85 +144,64 @@ T/CAGIS 15-2024 1：500 1：1000 1：2000 地形图检测点采集及建库技�
 <!-- section_type=术语定义; knowledge_type=term_definition -->
 下列术语和定义适用于本文件。
 
-<!-- chapter_no=3; chapter_title=1; section_type=术语定义; knowledge_type=term_definition -->
+<!-- chapter_no=3; chapter_title=1; knowledge_type=chapter_title -->
 # 3 1
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 地理实体 Fundamental Geo-entity
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 现实世界中占据一定空间、具有同一属性或完整功能的地理对象。
 
-<!-- chapter_no=3; chapter_title=2; section_type=术语定义; knowledge_type=term_definition -->
+<!-- chapter_no=3; chapter_title=2; knowledge_type=chapter_title -->
 # 3 2
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 基础地理实体 Fundamental Geo-entity
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 通过基础测绘采集和表达的地理实体，是其他地理实体和相关信息的定位框架与承载基础，包括
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 自然地理实体、人工地理实体和管理地理实体三类。
 
-<!-- chapter_no=3; chapter_title=3; section_type=术语定义; knowledge_type=term_definition -->
+<!-- chapter_no=3; chapter_title=3; knowledge_type=chapter_title -->
 # 3 3
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 基础地理实体数据 Fundamental Geo-entity Data
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 基础地理实体空间、语义等信息在计算机系统中的数字化描述。
 
-<!-- chapter_no=3; chapter_title=4; section_type=术语定义; knowledge_type=term_definition -->
+<!-- chapter_no=3; chapter_title=4; knowledge_type=chapter_title -->
 # 3 4
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 基础地理实体数据表达模型 Fundamental Geo-entity Representation Model
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 用于在计算机系统内对基础地理实体空间信息进行概括或精细表示的数学模型。
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 注：依据表达尺度、几何结构等空间信息差异，同一基础地理实体可包含多种表达模型。
 
-<!-- chapter_no=3; chapter_title=5; section_type=术语定义; knowledge_type=term_definition -->
+<!-- chapter_no=3; chapter_title=5; knowledge_type=chapter_title -->
 # 3 5
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 基础地理实体数据成果 Fundamental Geo-entity Data Products
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 对一定空间范围内基础地理实体空间位置、几何形态、属性信息、相互关系、空间分布等进行数
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 字化描述，且满足一定精度、粒度及表达模型等技术要求的基础地理实体数据集。
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 注 1:依据不同空间尺度的应用需求差异， 同一空间范围内基础地理实体数据可划分为不同层级数
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 据成果。
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 注 2:基础地理实体数据成果为成果管理单位统一对外提供、满足一定技术指标要求、具有标准格
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 式的最终形式数据集，与数据采集、建库阶段形成的阶段性数据成果，应有所区分。
 
-<!-- chapter_no=3; chapter_title=6; section_type=术语定义; knowledge_type=term_definition -->
+<!-- chapter_no=3; chapter_title=6; knowledge_type=chapter_title -->
 # 3 6
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 图元 Geometry Element
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 空间内单一、连通并用于表达实体几何特征的图形对象，一般表达为点、线、面、体。
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 注 1:点、线、面图元属于二维图元；体图元属于三维图元。
 
-<!-- section_type=术语定义; knowledge_type=term_definition -->
 注 2:图元不指代比基础地理实体粒度更小的地理对象。
 
 <!-- chapter_no=4; chapter_title=时空基准; section_type=时空基准; knowledge_type=data_spec -->
@@ -384,175 +363,129 @@ g) 近景拍摄乡镇/街道办事处、村（居）委会、学校院落等重�
 <!-- section_type=数据采集; knowledge_type=data_spec -->
 桥梁等重要要素名称牌匾，远景拍摄重要单位、要素及周边环境；
 
-<!-- chapter_no=1; chapter_title=《实景三维中国建设成果质量核验方案（2023-2025 年）》质量检查与验收、质量核查涉及的主要数据成果包括 5 米; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=1; chapter_title=《实景三维中国建设成果质量核验方案（2023-2025 年）》质量检查与验收、质量核查涉及的主要数据成果包括 5 米; knowledge_type=chapter_title -->
 # 1 《实景三维中国建设成果质量核验方案（2023-2025 年）》质量检查与验收、质量核查涉及的主要数据成果包括 5 米
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 格网数字高程模型（DEM）、数字表面模型（DSM）、优于 2 米格网 DEM、DSM、近岸海域 10 米以浅 DEM、2 米分辨
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 率数字正射影像（DOM）、优于 1 米分辨率 DOM、优于 0.5 米分辨率 DOM、地形级基础地理实体数据、城市级基础地
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 理实体数据。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 h) 外业采集时需录入地物外业代码，代码见表 C.1。
 
-<!-- chapter_no=5.2.5; chapter_title=平面检测点采集; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.2.5; chapter_title=平面检测点采集; knowledge_type=chapter_title -->
 ### 5.2.5 平面检测点采集
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 平面检测点采集应满足下列要求：
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 a) 平面精度应不低于相应比例尺地形图的明显特征点位精度要求。
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 b) 采集数量视地物复杂程度、比例尺等具体情况确定，按照 5.2.4 要求执行。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 c) 位置应均匀分布，应选择明显点状地物、线状地物交叉点、地物角点和拐点等，如房屋角点、围
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 墙角点、电杆、通讯杆、路灯、消防栓、检修井盖中心点等。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 d) 采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读 平面检测点位
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 置。
 
-<!-- chapter_no=5.2.6; chapter_title=高程检测点采集; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.2.6; chapter_title=高程检测点采集; knowledge_type=chapter_title -->
 ### 5.2.6 高程检测点采集
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 高程检测点采集满足下列要求：
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 a) 高程精度应不低于相应比例尺地形图的高程注记点精度要求。
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 b) 采集数量视地物复杂程度、比例尺等具体情况确定，按照5.2.4 要求执行。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 c) 位置应均匀分布，应选取实地能准确判读的明显地形地貌特征点，避免选择高程急剧变化处。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 d) 同名高程注记点采集位置宜准确， 避免选择难以准确判读的高程注记点； 城区内高程注记点应注
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 重选取城区的街道中心线、街道交叉中心、桥面、广场、较大庭院内或空地上等特征点。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 e) 可采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读高程检测点
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 位置。
 
-<!-- chapter_no=5.2.7; chapter_title=平高检测点采集; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.2.7; chapter_title=平高检测点采集; knowledge_type=chapter_title -->
 ### 5.2.7 平高检测点采集
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 平高检测点应同时满足 5.2.5 和 5.2.6 的要求。
 
-<!-- chapter_no=5.2.8; chapter_title=实地照片和影像图采集; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.2.8; chapter_title=实地照片和影像图采集; knowledge_type=chapter_title -->
 ### 5.2.8 实地照片和影像图采集
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 实地照片和影像图采集满足下列要求：
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 a) 实地照片宜把采集检测点时拍摄的主体地物点置于图面中间， 有一定的位置参照物， 拍摄距离宜
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 为 5m～20m，能清晰表现地物。顺序拍摄近景（竖屏）、远景（横屏）各不少于 1 张实地照片。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 b) 影像图应从参考数据中裁切， 以检测点位置为中心点， 以明显标识标注检测点位置， 裁剪长宽为
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 511 像素511 像素大小的图像。
 
-<!-- chapter_no=5.3; chapter_title=采集方法; section_type=数据采集; knowledge_type=quality_rule -->
+<!-- chapter_no=5.3; chapter_title=采集方法; knowledge_type=chapter_title -->
 ## 5.3 采集方法
 
-<!-- chapter_no=5.3.1; chapter_title=GNSS RTK 实测法; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.3.1; chapter_title=GNSS RTK 实测法; knowledge_type=chapter_title -->
 ### 5.3.1 GNSS RTK 实测法
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 GNSS RTK 实测法采集检测点应满足 GB/T 39616 或 CH/T 2009 相关要求，此方法包括利用影像 RTK
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 采集检测点，也可采集实地照片。宜采用控制点或地形点模式进行采集，要求如下：
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 a) 采用控制点测量模式时：
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 1) 采用固定值测量，观测测回数大于等于 1；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 3) 观测采用三脚架/手持对中、整平，每次观测历元数应不少于 10 个，采样间隔应不小于
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 2s；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 4) 各次测量的大地高较差不应大于 4cm；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 5) 各次测量的平面坐标较差不应大于 4cm；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 6) 采用多次测量时应取各次测量的平均坐标中数作为最终结果。
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 b) 采用地形点测量模式时：
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 1) 采用固定值测量；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 3) 每次观测历元数应不少于 10 个，采样间隔应不小于 2s。
 
-<!-- chapter_no=5.3.2; chapter_title=全站仪实测法; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.3.2; chapter_title=全站仪实测法; knowledge_type=chapter_title -->
 ### 5.3.2 全站仪实测法
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 全站仪实测法使用全站仪极坐标法采集检测点，应满足 CH/T 1020 相关要求。
 
-<!-- chapter_no=5.3.3; chapter_title=摄影测量法; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.3.3; chapter_title=摄影测量法; knowledge_type=chapter_title -->
 ### 5.3.3 摄影测量法
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 使用低空无人机航空摄影测量方法采集检测点，应满足 CH/T 3003、CH/T 3004 和 CH/T 3005 相关要
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 求。
 
-<!-- chapter_no=5.3.4; chapter_title=激光雷达实测法; section_type=数据采集; knowledge_type=data_spec -->
+<!-- chapter_no=5.3.4; chapter_title=激光雷达实测法; knowledge_type=chapter_title -->
 ### 5.3.4 激光雷达实测法
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 使用无人机搭载机载激光雷达扫描仪采集激光雷达点云数据， 提取检测点应满足CH/T 8023 和 CH/T
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 8024 相关要求；使用车载移动测量系统采集车载激光点云数据，提取检测点应满足 CH/T 6003 和 CH/T
 
-<!-- section_type=数据采集; knowledge_type=quality_rule -->
 6004 相关要求。
 
-<!-- chapter_no=5.3.5; chapter_title=其他方法; section_type=数据采集; knowledge_type=quality_rule -->
+<!-- chapter_no=5.3.5; chapter_title=其他方法; knowledge_type=chapter_title -->
 ### 5.3.5 其他方法
 
-<!-- section_type=数据采集; knowledge_type=data_spec -->
 可从质量检验合格的成果中采集检测点，包括但不限于空中三角测量成果、实景三维成果等。
 
 <!-- chapter_no=6; chapter_title=数据整理; section_type=数据整理; knowledge_type=data_spec -->
@@ -1044,521 +977,405 @@ P/G/PG
 <!-- section_type=质量要求; knowledge_type=data_spec -->
 值域 约束/条件 备注
 
-<!-- chapter_no=1; chapter_title=检测点编号 BH 字符型 20 — — M 见注 2; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=1; chapter_title=检测点编号 BH 字符型 20 — — M 见注 2; knowledge_type=chapter_title -->
 # 1 检测点编号 BH 字符型 20 — — M 见注 2
 
-<!-- chapter_no=2; chapter_title=纬度值 B 双精度型 — 9; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=2; chapter_title=纬度值 B 双精度型 — 9; knowledge_type=chapter_title -->
 # 2 纬度值 B 双精度型 — 9
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 DD.DDDD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 DDDDD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 M 见注 3
 
-<!-- chapter_no=3; chapter_title=经度值 L 双精度型 — 9; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=3; chapter_title=经度值 L 双精度型 — 9; knowledge_type=chapter_title -->
 # 3 经度值 L 双精度型 — 9
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 DDD.DDD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 DDDDDD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 M 见注 4
 
-<!-- chapter_no=4; chapter_title=大地高 H 双精度型 — 3 —; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=4; chapter_title=大地高 H 双精度型 — 3 —; knowledge_type=chapter_title -->
 # 4 大地高 H 双精度型 — 3 —
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C/能获取大地
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 高时必填
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 见注 5
 
-<!-- chapter_no=5; chapter_title=北坐标 x 双精度型 — 3 ≥0; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=5; chapter_title=北坐标 x 双精度型 — 3 ≥0; knowledge_type=chapter_title -->
 # 5 北坐标 x 双精度型 — 3 ≥0
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C/能获取平面
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 坐标时必填
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 见注 6
 
-<!-- chapter_no=6; chapter_title=东坐标 y 双精度型 — 3 ≥0; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=6; chapter_title=东坐标 y 双精度型 — 3 ≥0; knowledge_type=chapter_title -->
 # 6 东坐标 y 双精度型 — 3 ≥0
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C/能获取平面
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 坐标时必填
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 见注 7
 
-<!-- chapter_no=7; chapter_title=高程 h1 双精度型 — 3 —; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=7; chapter_title=高程 h1 双精度型 — 3 —; knowledge_type=chapter_title -->
 # 7 高程 h1 双精度型 — 3 —
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C/能获取高程
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 时必填
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 见注 8
 
-<!-- chapter_no=8; chapter_title=中央子午线; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=8; chapter_title=中央子午线; knowledge_type=chapter_title -->
 # 8 中央子午线
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 ZYZW
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 X
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 双精度型 — — ≥0 M 见注 9
 
-<!-- chapter_no=9; chapter_title=投影面高程 h0 双精度型 — 3 — O 见注 10; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=9; chapter_title=投影面高程 h0 双精度型 — 3 — O 见注 10; knowledge_type=chapter_title -->
 # 9 投影面高程 h0 双精度型 — 3 — O 见注 10
 
-<!-- chapter_no=10; chapter_title=仪器高 YQG 双精度型 — 3 ≥0 O —; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=10; chapter_title=仪器高 YQG 双精度型 — 3 ≥0 O —; knowledge_type=chapter_title -->
 # 10 仪器高 YQG 双精度型 — 3 ≥0 O —
 
-<!-- chapter_no=11; chapter_title=地物代码; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=11; chapter_title=地物代码; knowledge_type=chapter_title -->
 # 11 地物代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 DWD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 M
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字符型 10 — — M 注 11
 
-<!-- chapter_no=12; chapter_title=地物名称; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=12; chapter_title=地物名称; knowledge_type=chapter_title -->
 # 12 地物名称
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 DWM
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字符型 10 — — O 注 12
 
-<!-- chapter_no=13; chapter_title=检测点类型 LX 字符型 10 — P/G/PG M —; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=13; chapter_title=检测点类型 LX 字符型 10 — P/G/PG M —; knowledge_type=chapter_title -->
 # 13 检测点类型 LX 字符型 10 — P/G/PG M —
 
-<!-- chapter_no=14; chapter_title=平面精度 PMJD 双精度型 — — ≥0; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=14; chapter_title=平面精度 PMJD 双精度型 — — ≥0; knowledge_type=chapter_title -->
 # 14 平面精度 PMJD 双精度型 — — ≥0
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C/类型为“P”
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 或“PG”时必填
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 见注 13
 
-<!-- chapter_no=15; chapter_title=高程精度 GCJD 双精度型 — — ≥0; section_type=质量要求; knowledge_type=quality_rule -->
+<!-- chapter_no=15; chapter_title=高程精度 GCJD 双精度型 — — ≥0; knowledge_type=chapter_title -->
 # 15 高程精度 GCJD 双精度型 — — ≥0
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C/类型为“G”
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 或“PG”时必填
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 见注 14
 
-<!-- chapter_no=16; chapter_title=采集方式 CJFS 字符型 20 — — M 见注 15; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=16; chapter_title=采集方式 CJFS 字符型 20 — — M 见注 15; knowledge_type=chapter_title -->
 # 16 采集方式 CJFS 字符型 20 — — M 见注 15
 
-<!-- chapter_no=17; chapter_title=位置描述 MS 字符型 254 — — O 见注 16; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=17; chapter_title=位置描述 MS 字符型 254 — — O 见注 16; knowledge_type=chapter_title -->
 # 17 位置描述 MS 字符型 254 — — O 见注 16
 
-<!-- chapter_no=18; chapter_title=影像截图 YX 字符型 254 — — O 见注 17; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=18; chapter_title=影像截图 YX 字符型 254 — — O 见注 17; knowledge_type=chapter_title -->
 # 18 影像截图 YX 字符型 254 — — O 见注 17
 
-<!-- chapter_no=19; chapter_title=实地照片 ZP 字符型 254 — — O 见注 18; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=19; chapter_title=实地照片 ZP 字符型 254 — — O 见注 18; knowledge_type=chapter_title -->
 # 19 实地照片 ZP 字符型 254 — — O 见注 18
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 序
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 号
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字段
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 名称
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字段
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字段
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 类型
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字段
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 长度
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 小数
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 位数
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 值域 约束/条件 备注
 
-<!-- chapter_no=20; chapter_title=采集日期 RQ 日期型 — —; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=20; chapter_title=采集日期 RQ 日期型 — —; knowledge_type=chapter_title -->
 # 20 采集日期 RQ 日期型 — —
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 YYYY/MM
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 /DD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 M 见注 19
 
-<!-- chapter_no=21; chapter_title=行政区代码; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=21; chapter_title=行政区代码; knowledge_type=chapter_title -->
 # 21 行政区代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 XZQD
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 M
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 整型 10 — — M 见注 20
 
-<!-- chapter_no=22; chapter_title=项目名称; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=22; chapter_title=项目名称; knowledge_type=chapter_title -->
 # 22 项目名称
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 XMM
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 C
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 字符型 60 — — O 见注 21
 
-<!-- chapter_no=23; chapter_title=是否可用 SFKY 字符型 254 — — O 见注 22; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=23; chapter_title=是否可用 SFKY 字符型 254 — — O 见注 22; knowledge_type=chapter_title -->
 # 23 是否可用 SFKY 字符型 254 — — O 见注 22
 
-<!-- chapter_no=24; chapter_title=备注 BZ 字符型 254 — — O; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=24; chapter_title=备注 BZ 字符型 254 — — O; knowledge_type=chapter_title -->
 # 24 备注 BZ 字符型 254 — — O
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时必
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 须填写的信息；“O”为可选项，可根据实际情况选择填写。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 2：进行全库统一编码。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 3：检测点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 4：检测点经度地理坐标，单位为“度”，小数点后保留有效位数 9 位。
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 注 5：单位：米。采集时的地物点大地高，保留 3 位小数，RTK 采集时必须填写原始大地高。其他方
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 式、内业图解方式采集时，此项填写 0。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 6：北坐标（投影平面 x 坐标），全站仪极坐标采集坐标必填。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 7：东坐标（投影平面 y 坐标），全站仪极坐标采集坐标必填。
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 注 8： 检测点高程，DLG/DOM 平面位置检测点不位于地面时， 即代码为P 不需要求取高程值， 如房檐、
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 房角等，否则代码为 G、PG 时必填。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 9：中央子午线，根据项目实际的中央子午线填写。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 10：投影面高程，根据项目实际的投影面高程填写。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 11：检测地物代码，以 3 位代码表示，取值见附录 C.1。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 12：地物名称，采集地物的名称，取值见附录 C.1。
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 注 13：平面精度，实测法采集时，填写仪器的平面位置标称精度；图解法采集时，填写数据源的平
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 面位置标称精度，单位为“米”。
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 注 14：高程精度，实测法采集时，填写仪器的高程标称精度；图解法采集时，填写数据源的高程标
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 称精度，单位为“米”。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 15：外业采集：GNSS-RTK 实测法、全站仪实测法、激光雷达实测法；内业采集：已有成果提取，
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 如空中三角测量、实景三维模型采集等。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 16：位置描述，如：花坛西南角点等。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 17：存储影像图文件所在的物理路径及文件名，当文件名不存在时此项为空。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 18：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 19：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足位
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 的用 0 补足，例如“2024/03/06”。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 20：填写该检测点所属县级行政区代码。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 21：可填写项目名称或编号。填写检测点采集项目编号时，可以年份+顺序号表示，如 2024-001。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 注 22：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 附录C
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 （规范性）
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 采集地物内外业代码对照表
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 采集地物内外业代码对照关系见表 C.1.
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 表 C.1 采集地物内外业代码对照表
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 序号
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 外业代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 （地物+检测点类型）
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 地物名称 地物代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 检测点
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 类型
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 含义 采集说明
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 控制测量方式下
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 是否偏心
 
-<!-- chapter_no=1; chapter_title=BZJPG 标志角 BZJ PG 标志线角点 地面标志线角点，如车位线等 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=1; chapter_title=BZJPG 标志角 BZJ PG 标志线角点 地面标志线角点，如车位线等 否; knowledge_type=chapter_title -->
 # 1 BZJPG 标志角 BZJ PG 标志线角点 地面标志线角点，如车位线等 否
 
-<!-- chapter_no=2; chapter_title=BZXP 标志线 BZX P 标志线平面点 交通标志线顶点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=2; chapter_title=BZXP 标志线 BZX P 标志线平面点 交通标志线顶点 否; knowledge_type=chapter_title -->
 # 2 BZXP 标志线 BZX P 标志线平面点 交通标志线顶点 否
 
-<!-- chapter_no=3; chapter_title=DLMG 道路面 DLM G 路面高程点 道路交叉口中心点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=3; chapter_title=DLMG 道路面 DLM G 路面高程点 道路交叉口中心点 否; knowledge_type=chapter_title -->
 # 3 DLMG 道路面 DLM G 路面高程点 道路交叉口中心点 否
 
-<!-- chapter_no=4; chapter_title=DLMPG 道路面 DLM PG 路面平高点 道路面内带有标志的平高点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=4; chapter_title=DLMPG 道路面 DLM PG 路面平高点 道路面内带有标志的平高点 否; knowledge_type=chapter_title -->
 # 4 DLMPG 道路面 DLM PG 路面平高点 道路面内带有标志的平高点 否
 
-<!-- chapter_no=5; chapter_title=DLXPG 道路线 DLX PG 道路线平高点 道路边线交叉点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=5; chapter_title=DLXPG 道路线 DLX PG 道路线平高点 道路边线交叉点 否; knowledge_type=chapter_title -->
 # 5 DLXPG 道路线 DLX PG 道路线平高点 道路边线交叉点 否
 
-<!-- chapter_no=6; chapter_title=DZJPG 地砖角 DZJ PG 地砖角平高点 广场地砖不同色块界线角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=6; chapter_title=DZJPG 地砖角 DZJ PG 地砖角平高点 广场地砖不同色块界线角点 否; knowledge_type=chapter_title -->
 # 6 DZJPG 地砖角 DZJ PG 地砖角平高点 广场地砖不同色块界线角点 否
 
-<!-- chapter_no=7; chapter_title=DXGPG 电线杆 DXG PG 电线杆平高点 电线杆外边缘 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=7; chapter_title=DXGPG 电线杆 DXG PG 电线杆平高点 电线杆外边缘 是; knowledge_type=chapter_title -->
 # 7 DXGPG 电线杆 DXG PG 电线杆平高点 电线杆外边缘 是
 
-<!-- chapter_no=8; chapter_title=FJDP 房角点 FJD P 房角平面点 不落地的房角 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=8; chapter_title=FJDP 房角点 FJD P 房角平面点 不落地的房角 否; knowledge_type=chapter_title -->
 # 8 FJDP 房角点 FJD P 房角平面点 不落地的房角 否
 
-<!-- chapter_no=9; chapter_title=FJDPG 房角点 FJD PG 房角平高点 房屋墙基脚点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=9; chapter_title=FJDPG 房角点 FJD PG 房角平高点 房屋墙基脚点 否; knowledge_type=chapter_title -->
 # 9 FJDPG 房角点 FJD PG 房角平高点 房屋墙基脚点 否
 
-<!-- chapter_no=10; chapter_title=FYDPG 房檐点 FYD PG 房檐平高点 房檐角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=10; chapter_title=FYDPG 房檐点 FYD PG 房檐平高点 房檐角点 否; knowledge_type=chapter_title -->
 # 10 FYDPG 房檐点 FYD PG 房檐平高点 房檐角点 否
 
-<!-- chapter_no=11; chapter_title=GSCP 固水池 GSC P 水池平面点 固化水池角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=11; chapter_title=GSCP 固水池 GSC P 水池平面点 固化水池角点 否; knowledge_type=chapter_title -->
 # 11 GSCP 固水池 GSC P 水池平面点 固化水池角点 否
 
-<!-- chapter_no=12; chapter_title=HTJPG 花坛角 HTJ PG 花坛平高点 花坛角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=12; chapter_title=HTJPG 花坛角 HTJ PG 花坛平高点 花坛角点 否; knowledge_type=chapter_title -->
 # 12 HTJPG 花坛角 HTJ PG 花坛平高点 花坛角点 否
 
-<!-- chapter_no=13; chapter_title=JGXPG 井盖中心点 JGX PG 井盖平高点 地面井盖中心点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=13; chapter_title=JGXPG 井盖中心点 JGX PG 井盖平高点 地面井盖中心点 否; knowledge_type=chapter_title -->
 # 13 JGXPG 井盖中心点 JGX PG 井盖平高点 地面井盖中心点 否
 
-<!-- chapter_no=14; chapter_title=LDGPG 路灯杆 LDG PG 路灯平高点 路灯杆外边缘 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=14; chapter_title=LDGPG 路灯杆 LDG PG 路灯平高点 路灯杆外边缘 是; knowledge_type=chapter_title -->
 # 14 LDGPG 路灯杆 LDG PG 路灯平高点 路灯杆外边缘 是
 
-<!-- chapter_no=15; chapter_title=QGYP 旗杆 QGY P 旗杆平面点 旗杆外缘底点 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=15; chapter_title=QGYP 旗杆 QGY P 旗杆平面点 旗杆外缘底点 是; knowledge_type=chapter_title -->
 # 15 QGYP 旗杆 QGY P 旗杆平面点 旗杆外缘底点 是
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 序号
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 外业代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 （地物+检测点类型）
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 地物名称 地物代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 检测点
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 类型
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 含义 采集说明
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 控制测量方式下
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 是否偏心
 
-<!-- chapter_no=16; chapter_title=QCJPG 球场角 QCJ PG 球场平高点 球场不同色块界线角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=16; chapter_title=QCJPG 球场角 QCJ PG 球场平高点 球场不同色块界线角点 否; knowledge_type=chapter_title -->
 # 16 QCJPG 球场角 QCJ PG 球场平高点 球场不同色块界线角点 否
 
-<!-- chapter_no=17; chapter_title=TJJPG 台阶角 TJJ PG 台阶平高点 台阶角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=17; chapter_title=TJJPG 台阶角 TJJ PG 台阶平高点 台阶角点 否; knowledge_type=chapter_title -->
 # 17 TJJPG 台阶角 TJJ PG 台阶平高点 台阶角点 否
 
-<!-- chapter_no=18; chapter_title=TXGPG 通讯杆 TXG PG 通讯杆平高点 通讯杆外边缘 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=18; chapter_title=TXGPG 通讯杆 TXG PG 通讯杆平高点 通讯杆外边缘 是; knowledge_type=chapter_title -->
 # 18 TXGPG 通讯杆 TXG PG 通讯杆平高点 通讯杆外边缘 是
 
-<!-- chapter_no=19; chapter_title=WQJPG 围墙角 WQJ PG 围墙角平高点 围墙角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=19; chapter_title=WQJPG 围墙角 WQJ PG 围墙角平高点 围墙角点 否; knowledge_type=chapter_title -->
 # 19 WQJPG 围墙角 WQJ PG 围墙角平高点 围墙角点 否
 
-<!-- chapter_no=20; chapter_title=WSBPG 污水篦子 WSB PG 污水篦子平高点 污水篦子中心点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=20; chapter_title=WSBPG 污水篦子 WSB PG 污水篦子平高点 污水篦子中心点 否; knowledge_type=chapter_title -->
 # 20 WSBPG 污水篦子 WSB PG 污水篦子平高点 污水篦子中心点 否
 
-<!-- chapter_no=21; chapter_title=XHSPG 消火栓 XHS PG 消火栓中心点 消火栓中心点 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=21; chapter_title=XHSPG 消火栓 XHS PG 消火栓中心点 消火栓中心点 是; knowledge_type=chapter_title -->
 # 21 XHSPG 消火栓 XHS PG 消火栓中心点 消火栓中心点 是
 
-<!-- chapter_no=22; chapter_title=LPJPG 楼牌角 LPJ PG 楼牌角点平高点 较大楼牌的角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=22; chapter_title=LPJPG 楼牌角 LPJ PG 楼牌角点平高点 较大楼牌的角点 否; knowledge_type=chapter_title -->
 # 22 LPJPG 楼牌角 LPJ PG 楼牌角点平高点 较大楼牌的角点 否
 
-<!-- chapter_no=23; chapter_title=PLJPG 飘楼角 PLJ PG 飘楼角点平高点 飘楼角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=23; chapter_title=PLJPG 飘楼角 PLJ PG 飘楼角点平高点 飘楼角点 否; knowledge_type=chapter_title -->
 # 23 PLJPG 飘楼角 PLJ PG 飘楼角点平高点 飘楼角点 否
 
-<!-- chapter_no=24; chapter_title=YTJPG 阳台角 YTJ PG 阳台角点平高点 阳台角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=24; chapter_title=YTJPG 阳台角 YTJ PG 阳台角点平高点 阳台角点 否; knowledge_type=chapter_title -->
 # 24 YTJPG 阳台角 YTJ PG 阳台角点平高点 阳台角点 否
 
-<!-- chapter_no=25; chapter_title=MDJPG 门墩角 MDJ PG 门墩角点平高点 门墩地面角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=25; chapter_title=MDJPG 门墩角 MDJ PG 门墩角点平高点 门墩地面角点 否; knowledge_type=chapter_title -->
 # 25 MDJPG 门墩角 MDJ PG 门墩角点平高点 门墩地面角点 否
 
-<!-- chapter_no=26; chapter_title=ZZJPG 支柱角 ZZJ PG 支柱角点平高点 支柱地面角点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=26; chapter_title=ZZJPG 支柱角 ZZJ PG 支柱角点平高点 支柱地面角点 否; knowledge_type=chapter_title -->
 # 26 ZZJPG 支柱角 ZZJ PG 支柱角点平高点 支柱地面角点 否
 
-<!-- chapter_no=27; chapter_title=XHDPG 信号灯柱 XHD PG 信号灯平高点 信号灯外缘平高点 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=27; chapter_title=XHDPG 信号灯柱 XHD PG 信号灯平高点 信号灯外缘平高点 是; knowledge_type=chapter_title -->
 # 27 XHDPG 信号灯柱 XHD PG 信号灯平高点 信号灯外缘平高点 是
 
-<!-- chapter_no=28; chapter_title=JKGPG 监控杆 JKG PG 监控杆平高点 监控杆外缘平高点 是; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=28; chapter_title=JKGPG 监控杆 JKG PG 监控杆平高点 监控杆外缘平高点 是; knowledge_type=chapter_title -->
 # 28 JKGPG 监控杆 JKG PG 监控杆平高点 监控杆外缘平高点 是
 
-<!-- chapter_no=29; chapter_title=HDDG 旱地 HDD G 旱地中心高程 平坦旱地地块中心 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=29; chapter_title=HDDG 旱地 HDD G 旱地中心高程 平坦旱地地块中心 否; knowledge_type=chapter_title -->
 # 29 HDDG 旱地 HDD G 旱地中心高程 平坦旱地地块中心 否
 
-<!-- chapter_no=30; chapter_title=STDG 水田 STD G 水田中心高程 水田地块高程 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=30; chapter_title=STDG 水田 STD G 水田中心高程 水田地块高程 否; knowledge_type=chapter_title -->
 # 30 STDG 水田 STD G 水田中心高程 水田地块高程 否
 
-<!-- chapter_no=31; chapter_title=YLDG 院落地面点 YLD G 单位院落高程 单位院落中心点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=31; chapter_title=YLDG 院落地面点 YLD G 单位院落高程 单位院落中心点 否; knowledge_type=chapter_title -->
 # 31 YLDG 院落地面点 YLD G 单位院落高程 单位院落中心点 否
 
-<!-- chapter_no=32; chapter_title=PFJPG 棚房角 PFJ PG 棚房角点平高点 棚房角地面点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=32; chapter_title=PFJPG 棚房角 PFJ PG 棚房角点平高点 棚房角地面点 否; knowledge_type=chapter_title -->
 # 32 PFJPG 棚房角 PFJ PG 棚房角点平高点 棚房角地面点 否
 
-<!-- chapter_no=33; chapter_title=QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否; section_type=质量要求; knowledge_type=data_spec -->
+<!-- chapter_no=33; chapter_title=QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否; knowledge_type=chapter_title -->
 # 33 QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 参 考 文 献
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 [1] GB/T 13923—2022 基础地理信息要素分类与代码
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 [2] GB/T 20257.1—2017 国家基本比例尺地图图式 第 1 部分：1：500 1：1000 1：2000
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 地形图图式
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 [3] GB/T 20258.1—2019 基础地理信息要素数据字典 第 1 部分：1：500 1 ：1000 1 ：
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 2000 比例尺
 
-<!-- section_type=质量要求; knowledge_type=quality_rule -->
 [4] GB/T 24356-2023 测绘成果质量检查与验收
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 [5] CH/T 1025—2011 数字线划图（DLG）质量检验技术规程
 
-<!-- section_type=质量要求; knowledge_type=data_spec -->
 [6] CH/T 1026—2012 数字高程模型质量检验技术规程

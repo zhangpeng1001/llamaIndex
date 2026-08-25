@@ -1,6 +1,6 @@
 {
   "source_file": "part2_检测点.md",
-  "total_documents": 183,
+  "total_documents": 151,
   "documents": [
     {
       "text": "# 实景三维质检大数据支撑库 时空数据规范 第2部分 检测点\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第2部分 检测点.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第 2 部分 检测点\n\n（草案）\n\n2025 年7 月\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规则》的规定\n\n起草。\n\n第1部分 数据分类与基本规定\n\n第3部分 检测线\n\n第4部分 标志性地物\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：\n\n引  言\n\n为满足实景三维中国建设项目成果质量检验的快速响应需求，同时适应\n\n大数据、人工智能等新技术的飞速发展对高可靠质检参考数据的要求，探索\n\n构建高精度检测点数据库，本文件提出实景三维检测点数据采集、整理、建\n\n库、质检要求，指导质检大数据支撑库检测点子库建设，实现实景三维成果\n\n质检工作效率和成果质量的提升。",
@@ -16,7 +16,7 @@
       }
     },
     {
-      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。\n\n# 3 1\n\n地理实体 Fundamental Geo-entity\n\n现实世界中占据一定空间、具有同一属性或完整功能的地理对象。\n\n# 3 2\n\n基础地理实体 Fundamental Geo-entity\n\n通过基础测绘采集和表达的地理实体，是其他地理实体和相关信息的定位框架与承载基础，包括\n\n自然地理实体、人工地理实体和管理地理实体三类。\n\n# 3 3\n\n基础地理实体数据 Fundamental Geo-entity Data\n\n基础地理实体空间、语义等信息在计算机系统中的数字化描述。\n\n# 3 4\n\n基础地理实体数据表达模型 Fundamental Geo-entity Representation Model\n\n用于在计算机系统内对基础地理实体空间信息进行概括或精细表示的数学模型。\n\n注：依据表达尺度、几何结构等空间信息差异，同一基础地理实体可包含多种表达模型。\n\n# 3 5\n\n基础地理实体数据成果 Fundamental Geo-entity Data Products\n\n对一定空间范围内基础地理实体空间位置、几何形态、属性信息、相互关系、空间分布等进行数\n\n字化描述，且满足一定精度、粒度及表达模型等技术要求的基础地理实体数据集。\n\n注 1:依据不同空间尺度的应用需求差异， 同一空间范围内基础地理实体数据可划分为不同层级数\n\n据成果。\n\n注 2:基础地理实体数据成果为成果管理单位统一对外提供、满足一定技术指标要求、具有标准格\n\n式的最终形式数据集，与数据采集、建库阶段形成的阶段性数据成果，应有所区分。\n\n# 3 6\n\n图元 Geometry Element\n\n空间内单一、连通并用于表达实体几何特征的图形对象，一般表达为点、线、面、体。\n\n注 1:点、线、面图元属于二维图元；体图元属于三维图元。\n\n注 2:图元不指代比基础地理实体粒度更小的地理对象。",
+      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
@@ -27,6 +27,22 @@
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "术语和定义",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      }
+    },
+    {
+      "text": "# 3 1\n\n地理实体 Fundamental Geo-entity\n\n现实世界中占据一定空间、具有同一属性或完整功能的地理对象。\n\n# 3 2\n\n基础地理实体 Fundamental Geo-entity\n\n通过基础测绘采集和表达的地理实体，是其他地理实体和相关信息的定位框架与承载基础，包括\n\n自然地理实体、人工地理实体和管理地理实体三类。\n\n# 3 3\n\n基础地理实体数据 Fundamental Geo-entity Data\n\n基础地理实体空间、语义等信息在计算机系统中的数字化描述。\n\n# 3 4\n\n基础地理实体数据表达模型 Fundamental Geo-entity Representation Model\n\n用于在计算机系统内对基础地理实体空间信息进行概括或精细表示的数学模型。\n\n注：依据表达尺度、几何结构等空间信息差异，同一基础地理实体可包含多种表达模型。\n\n# 3 5\n\n基础地理实体数据成果 Fundamental Geo-entity Data Products\n\n对一定空间范围内基础地理实体空间位置、几何形态、属性信息、相互关系、空间分布等进行数\n\n字化描述，且满足一定精度、粒度及表达模型等技术要求的基础地理实体数据集。\n\n注 1:依据不同空间尺度的应用需求差异， 同一空间范围内基础地理实体数据可划分为不同层级数\n\n据成果。\n\n注 2:基础地理实体数据成果为成果管理单位统一对外提供、满足一定技术指标要求、具有标准格\n\n式的最终形式数据集，与数据采集、建库阶段形成的阶段性数据成果，应有所区分。\n\n# 3 6\n\n图元 Geometry Element\n\n空间内单一、连通并用于表达实体几何特征的图形对象，一般表达为点、线、面、体。\n\n注 1:点、线、面图元属于二维图元；体图元属于三维图元。\n\n注 2:图元不指代比基础地理实体粒度更小的地理对象。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "1",
         "chapter_path": "3",
         "data_name": "检测点"
       }
@@ -327,7 +343,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "《实景三维中国建设成果质量核验方案（2023-2025 年）》质量检查与验收、质量核查涉及的主要数据成果包括 5 米",
@@ -336,14 +352,14 @@
       }
     },
     {
-      "text": "### 5.2.5 平面检测点采集",
+      "text": "### 5.2.5 平面检测点采集\n\n平面检测点采集应满足下列要求：\n\na) 平面精度应不低于相应比例尺地形图的明显特征点位精度要求。\n\nb) 采集数量视地物复杂程度、比例尺等具体情况确定，按照 5.2.4 要求执行。\n\nc) 位置应均匀分布，应选择明显点状地物、线状地物交叉点、地物角点和拐点等，如房屋角点、围\n\n墙角点、电杆、通讯杆、路灯、消防栓、检修井盖中心点等。\n\nd) 采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读 平面检测点位\n\n置。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2.5",
         "chapter_title": "平面检测点采集",
@@ -352,162 +368,50 @@
       }
     },
     {
-      "text": "平面检测点采集应满足下列要求：\n\na) 平面精度应不低于相应比例尺地形图的明显特征点位精度要求。\n\nb) 采集数量视地物复杂程度、比例尺等具体情况确定，按照 5.2.4 要求执行。",
+      "text": "### 5.2.6 高程检测点采集\n\n高程检测点采集满足下列要求：\n\na) 高程精度应不低于相应比例尺地形图的高程注记点精度要求。\n\nb) 采集数量视地物复杂程度、比例尺等具体情况确定，按照5.2.4 要求执行。\n\nc) 位置应均匀分布，应选取实地能准确判读的明显地形地貌特征点，避免选择高程急剧变化处。\n\nd) 同名高程注记点采集位置宜准确， 避免选择难以准确判读的高程注记点； 城区内高程注记点应注\n\n重选取城区的街道中心线、街道交叉中心、桥面、广场、较大庭院内或空地上等特征点。\n\ne) 可采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读高程检测点\n\n位置。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.2.5",
-        "chapter_title": "平面检测点采集",
-        "chapter_path": "1/5.2.5/5.2.5",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "c) 位置应均匀分布，应选择明显点状地物、线状地物交叉点、地物角点和拐点等，如房屋角点、围\n\n墙角点、电杆、通讯杆、路灯、消防栓、检修井盖中心点等。\n\nd) 采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读 平面检测点位\n\n置。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5.2.5",
-        "chapter_title": "平面检测点采集",
-        "chapter_path": "5.2.5",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.2.6 高程检测点采集",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2.6",
         "chapter_title": "高程检测点采集",
-        "chapter_path": "5.2.5/5.2.6",
+        "chapter_path": "1/5.2.5/5.2.6",
         "data_name": "检测点"
       }
     },
     {
-      "text": "高程检测点采集满足下列要求：\n\na) 高程精度应不低于相应比例尺地形图的高程注记点精度要求。\n\nb) 采集数量视地物复杂程度、比例尺等具体情况确定，按照5.2.4 要求执行。",
+      "text": "### 5.2.7 平高检测点采集\n\n平高检测点应同时满足 5.2.5 和 5.2.6 的要求。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.2.6",
-        "chapter_title": "高程检测点采集",
-        "chapter_path": "5.2.5/5.2.6/5.2.6",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "c) 位置应均匀分布，应选取实地能准确判读的明显地形地貌特征点，避免选择高程急剧变化处。\n\nd) 同名高程注记点采集位置宜准确， 避免选择难以准确判读的高程注记点； 城区内高程注记点应注\n\n重选取城区的街道中心线、街道交叉中心、桥面、广场、较大庭院内或空地上等特征点。\n\ne) 可采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读高程检测点\n\n位置。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5.2.6",
-        "chapter_title": "高程检测点采集",
-        "chapter_path": "5.2.6",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.2.7 平高检测点采集",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2.7",
         "chapter_title": "平高检测点采集",
-        "chapter_path": "5.2.6/5.2.7",
+        "chapter_path": "5.2.7",
         "data_name": "检测点"
       }
     },
     {
-      "text": "平高检测点应同时满足 5.2.5 和 5.2.6 的要求。",
+      "text": "### 5.2.8 实地照片和影像图采集\n\n实地照片和影像图采集满足下列要求：\n\na) 实地照片宜把采集检测点时拍摄的主体地物点置于图面中间， 有一定的位置参照物， 拍摄距离宜\n\n为 5m～20m，能清晰表现地物。顺序拍摄近景（竖屏）、远景（横屏）各不少于 1 张实地照片。\n\nb) 影像图应从参考数据中裁切， 以检测点位置为中心点， 以明显标识标注检测点位置， 裁剪长宽为\n\n511 像素511 像素大小的图像。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.2.7",
-        "chapter_title": "平高检测点采集",
-        "chapter_path": "5.2.6/5.2.7/5.2.7",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.2.8 实地照片和影像图采集",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2.8",
         "chapter_title": "实地照片和影像图采集",
-        "chapter_path": "5.2.8",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "实地照片和影像图采集满足下列要求：",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.2.8",
-        "chapter_title": "实地照片和影像图采集",
-        "chapter_path": "5.2.8/5.2.8",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "a) 实地照片宜把采集检测点时拍摄的主体地物点置于图面中间， 有一定的位置参照物， 拍摄距离宜\n\n为 5m～20m，能清晰表现地物。顺序拍摄近景（竖屏）、远景（横屏）各不少于 1 张实地照片。\n\nb) 影像图应从参考数据中裁切， 以检测点位置为中心点， 以明显标识标注检测点位置， 裁剪长宽为\n\n511 像素511 像素大小的图像。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5.2.8",
-        "chapter_title": "实地照片和影像图采集",
-        "chapter_path": "5.2.8/5.2.8/5.2.8",
+        "chapter_path": "5.2.7/5.2.8",
         "data_name": "检测点"
       }
     },
@@ -519,7 +423,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.3",
         "chapter_title": "采集方法",
@@ -528,14 +432,14 @@
       }
     },
     {
-      "text": "### 5.3.1 GNSS RTK 实测法",
+      "text": "### 5.3.1 GNSS RTK 实测法\n\nGNSS RTK 实测法采集检测点应满足 GB/T 39616 或 CH/T 2009 相关要求，此方法包括利用影像 RTK\n\n采集检测点，也可采集实地照片。宜采用控制点或地形点模式进行采集，要求如下：\n\na) 采用控制点测量模式时：\n\n1) 采用固定值测量，观测测回数大于等于 1；\n\n2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；\n\n3) 观测采用三脚架/手持对中、整平，每次观测历元数应不少于 10 个，采样间隔应不小于\n\n2s；\n\n4) 各次测量的大地高较差不应大于 4cm；\n\n5) 各次测量的平面坐标较差不应大于 4cm；\n\n6) 采用多次测量时应取各次测量的平均坐标中数作为最终结果。\n\nb) 采用地形点测量模式时：\n\n1) 采用固定值测量；\n\n2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；\n\n3) 每次观测历元数应不少于 10 个，采样间隔应不小于 2s。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.3.1",
         "chapter_title": "GNSS RTK 实测法",
@@ -544,78 +448,30 @@
       }
     },
     {
-      "text": "GNSS RTK 实测法采集检测点应满足 GB/T 39616 或 CH/T 2009 相关要求，此方法包括利用影像 RTK\n\n采集检测点，也可采集实地照片。宜采用控制点或地形点模式进行采集，要求如下：",
+      "text": "### 5.3.2 全站仪实测法\n\n全站仪实测法使用全站仪极坐标法采集检测点，应满足 CH/T 1020 相关要求。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.3.1",
-        "chapter_title": "GNSS RTK 实测法",
-        "chapter_path": "5.3/5.3.1/5.3.1",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "a) 采用控制点测量模式时：\n\n1) 采用固定值测量，观测测回数大于等于 1；\n\n2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；\n\n3) 观测采用三脚架/手持对中、整平，每次观测历元数应不少于 10 个，采样间隔应不小于\n\n2s；\n\n4) 各次测量的大地高较差不应大于 4cm；\n\n5) 各次测量的平面坐标较差不应大于 4cm；\n\n6) 采用多次测量时应取各次测量的平均坐标中数作为最终结果。\n\nb) 采用地形点测量模式时：\n\n1) 采用固定值测量；\n\n2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；\n\n3) 每次观测历元数应不少于 10 个，采样间隔应不小于 2s。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5.3.1",
-        "chapter_title": "GNSS RTK 实测法",
-        "chapter_path": "5.3.1",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.3.2 全站仪实测法",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.3.2",
         "chapter_title": "全站仪实测法",
-        "chapter_path": "5.3.1/5.3.2",
+        "chapter_path": "5.3/5.3.1/5.3.2",
         "data_name": "检测点"
       }
     },
     {
-      "text": "全站仪实测法使用全站仪极坐标法采集检测点，应满足 CH/T 1020 相关要求。",
+      "text": "### 5.3.3 摄影测量法\n\n使用低空无人机航空摄影测量方法采集检测点，应满足 CH/T 3003、CH/T 3004 和 CH/T 3005 相关要\n\n求。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.3.2",
-        "chapter_title": "全站仪实测法",
-        "chapter_path": "5.3.1/5.3.2/5.3.2",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.3.3 摄影测量法",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.3.3",
         "chapter_title": "摄影测量法",
@@ -624,98 +480,34 @@
       }
     },
     {
-      "text": "使用低空无人机航空摄影测量方法采集检测点，应满足 CH/T 3003、CH/T 3004 和 CH/T 3005 相关要",
+      "text": "### 5.3.4 激光雷达实测法\n\n使用无人机搭载机载激光雷达扫描仪采集激光雷达点云数据， 提取检测点应满足CH/T 8023 和 CH/T\n\n8024 相关要求；使用车载移动测量系统采集车载激光点云数据，提取检测点应满足 CH/T 6003 和 CH/T\n\n6004 相关要求。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.3.3",
-        "chapter_title": "摄影测量法",
-        "chapter_path": "5.3.3/5.3.3",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "求。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5.3.3",
-        "chapter_title": "摄影测量法",
-        "chapter_path": "5.3.3/5.3.3/5.3.3",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.3.4 激光雷达实测法\n\n使用无人机搭载机载激光雷达扫描仪采集激光雷达点云数据， 提取检测点应满足CH/T 8023 和 CH/T",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.3.4",
         "chapter_title": "激光雷达实测法",
-        "chapter_path": "5.3.4",
+        "chapter_path": "5.3.3/5.3.4",
         "data_name": "检测点"
       }
     },
     {
-      "text": "8024 相关要求；使用车载移动测量系统采集车载激光点云数据，提取检测点应满足 CH/T 6003 和 CH/T\n\n6004 相关要求。",
+      "text": "### 5.3.5 其他方法\n\n可从质量检验合格的成果中采集检测点，包括但不限于空中三角测量成果、实景三维成果等。",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "5.3.4",
-        "chapter_title": "激光雷达实测法",
-        "chapter_path": "5.3.4/5.3.4",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "### 5.3.5 其他方法",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.3.5",
         "chapter_title": "其他方法",
-        "chapter_path": "5.3.4/5.3.4/5.3.5",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "可从质量检验合格的成果中采集检测点，包括但不限于空中三角测量成果、实景三维成果等。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "数据采集",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5.3.5",
-        "chapter_title": "其他方法",
-        "chapter_path": "5.3.5",
+        "chapter_path": "5.3.3/5.3.4/5.3.5",
         "data_name": "检测点"
       }
     },
@@ -1719,7 +1511,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测点编号 BH 字符型 20 — — M 见注 2",
@@ -1728,14 +1520,14 @@
       }
     },
     {
-      "text": "# 2 纬度值 B 双精度型 — 9",
+      "text": "# 2 纬度值 B 双精度型 — 9\n\nDD.DDDD\n\nDDDDD\n\nM 见注 3",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "纬度值 B 双精度型 — 9",
@@ -1744,30 +1536,14 @@
       }
     },
     {
-      "text": "DD.DDDD\n\nDDDDD\n\nM 见注 3",
+      "text": "# 3 经度值 L 双精度型 — 9\n\nDDD.DDD\n\nDDDDDD\n\nM 见注 4",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "2",
-        "chapter_title": "纬度值 B 双精度型 — 9",
-        "chapter_path": "2",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 3 经度值 L 双精度型 — 9",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "经度值 L 双精度型 — 9",
@@ -1776,30 +1552,14 @@
       }
     },
     {
-      "text": "DDD.DDD\n\nDDDDDD\n\nM 见注 4",
+      "text": "# 4 大地高 H 双精度型 — 3 —\n\nC/能获取大地\n\n高时必填\n\n见注 5",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "3",
-        "chapter_title": "经度值 L 双精度型 — 9",
-        "chapter_path": "3",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 4 大地高 H 双精度型 — 3 —",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "大地高 H 双精度型 — 3 —",
@@ -1808,30 +1568,14 @@
       }
     },
     {
-      "text": "C/能获取大地\n\n高时必填\n\n见注 5",
+      "text": "# 5 北坐标 x 双精度型 — 3 ≥0\n\nC/能获取平面\n\n坐标时必填\n\n见注 6",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "4",
-        "chapter_title": "大地高 H 双精度型 — 3 —",
-        "chapter_path": "4",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 5 北坐标 x 双精度型 — 3 ≥0",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "北坐标 x 双精度型 — 3 ≥0",
@@ -1840,30 +1584,14 @@
       }
     },
     {
-      "text": "C/能获取平面\n\n坐标时必填\n\n见注 6",
+      "text": "# 6 东坐标 y 双精度型 — 3 ≥0\n\nC/能获取平面\n\n坐标时必填\n\n见注 7",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "5",
-        "chapter_title": "北坐标 x 双精度型 — 3 ≥0",
-        "chapter_path": "5",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 6 东坐标 y 双精度型 — 3 ≥0",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "东坐标 y 双精度型 — 3 ≥0",
@@ -1872,30 +1600,14 @@
       }
     },
     {
-      "text": "C/能获取平面\n\n坐标时必填\n\n见注 7",
+      "text": "# 7 高程 h1 双精度型 — 3 —\n\nC/能获取高程\n\n时必填\n\n见注 8",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "6",
-        "chapter_title": "东坐标 y 双精度型 — 3 ≥0",
-        "chapter_path": "6",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 7 高程 h1 双精度型 — 3 —",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "高程 h1 双精度型 — 3 —",
@@ -1904,46 +1616,14 @@
       }
     },
     {
-      "text": "C/能获取高程\n\n时必填\n\n见注 8",
+      "text": "# 8 中央子午线\n\nZYZW\n\nX\n\n双精度型 — — ≥0 M 见注 9",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "7",
-        "chapter_title": "高程 h1 双精度型 — 3 —",
-        "chapter_path": "7",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 8 中央子午线\n\nZYZW\n\nX",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "8",
-        "chapter_title": "中央子午线",
-        "chapter_path": "8",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "双精度型 — — ≥0 M 见注 9",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "中央子午线",
@@ -1959,7 +1639,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "投影面高程 h0 双精度型 — 3 — O 见注 10",
@@ -1975,7 +1655,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "仪器高 YQG 双精度型 — 3 ≥0 O —",
@@ -1991,7 +1671,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "地物代码",
@@ -2007,7 +1687,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "地物名称",
@@ -2023,7 +1703,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "13",
         "chapter_title": "检测点类型 LX 字符型 10 — P/G/PG M —",
@@ -2032,14 +1712,14 @@
       }
     },
     {
-      "text": "# 14 平面精度 PMJD 双精度型 — — ≥0",
+      "text": "# 14 平面精度 PMJD 双精度型 — — ≥0\n\nC/类型为“P”\n\n或“PG”时必填\n\n见注 13",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "14",
         "chapter_title": "平面精度 PMJD 双精度型 — — ≥0",
@@ -2048,46 +1728,14 @@
       }
     },
     {
-      "text": "C/类型为“P”\n\n或“PG”时必填\n\n见注 13",
+      "text": "# 15 高程精度 GCJD 双精度型 — — ≥0\n\nC/类型为“G”\n\n或“PG”时必填\n\n见注 14",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "14",
-        "chapter_title": "平面精度 PMJD 双精度型 — — ≥0",
-        "chapter_path": "14",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "# 15 高程精度 GCJD 双精度型 — — ≥0",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "15",
-        "chapter_title": "高程精度 GCJD 双精度型 — — ≥0",
-        "chapter_path": "15",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "C/类型为“G”\n\n或“PG”时必填\n\n见注 14",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "15",
         "chapter_title": "高程精度 GCJD 双精度型 — — ≥0",
@@ -2103,7 +1751,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "16",
         "chapter_title": "采集方式 CJFS 字符型 20 — — M 见注 15",
@@ -2119,7 +1767,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "17",
         "chapter_title": "位置描述 MS 字符型 254 — — O 见注 16",
@@ -2135,7 +1783,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "18",
         "chapter_title": "影像截图 YX 字符型 254 — — O 见注 17",
@@ -2151,7 +1799,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "19",
         "chapter_title": "实地照片 ZP 字符型 254 — — O 见注 18",
@@ -2167,7 +1815,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "20",
         "chapter_title": "采集日期 RQ 日期型 — —",
@@ -2183,7 +1831,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "21",
         "chapter_title": "行政区代码",
@@ -2199,7 +1847,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "22",
         "chapter_title": "项目名称",
@@ -2215,7 +1863,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "23",
         "chapter_title": "是否可用 SFKY 字符型 254 — — O 见注 22",
@@ -2224,142 +1872,14 @@
       }
     },
     {
-      "text": "# 24 备注 BZ 字符型 254 — — O",
+      "text": "# 24 备注 BZ 字符型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时必\n\n须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 4：检测点经度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 5：单位：米。采集时的地物点大地高，保留 3 位小数，RTK 采集时必须填写原始大地高。其他方\n\n式、内业图解方式采集时，此项填写 0。\n\n注 6：北坐标（投影平面 x 坐标），全站仪极坐标采集坐标必填。\n\n注 7：东坐标（投影平面 y 坐标），全站仪极坐标采集坐标必填。\n\n注 8： 检测点高程，DLG/DOM 平面位置检测点不位于地面时， 即代码为P 不需要求取高程值， 如房檐、\n\n房角等，否则代码为 G、PG 时必填。\n\n注 9：中央子午线，根据项目实际的中央子午线填写。\n\n注 10：投影面高程，根据项目实际的投影面高程填写。\n\n注 11：检测地物代码，以 3 位代码表示，取值见附录 C.1。\n\n注 12：地物名称，采集地物的名称，取值见附录 C.1。\n\n注 13：平面精度，实测法采集时，填写仪器的平面位置标称精度；图解法采集时，填写数据源的平\n\n面位置标称精度，单位为“米”。\n\n注 14：高程精度，实测法采集时，填写仪器的高程标称精度；图解法采集时，填写数据源的高程标\n\n称精度，单位为“米”。\n\n注 15：外业采集：GNSS-RTK 实测法、全站仪实测法、激光雷达实测法；内业采集：已有成果提取，\n\n如空中三角测量、实景三维模型采集等。\n\n注 16：位置描述，如：花坛西南角点等。\n\n注 17：存储影像图文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 18：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 19：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足位\n\n的用 0 补足，例如“2024/03/06”。\n\n注 20：填写该检测点所属县级行政区代码。\n\n注 21：可填写项目名称或编号。填写检测点采集项目编号时，可以年份+顺序号表示，如 2024-001。\n\n注 22：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n附录C\n\n（规范性）\n\n采集地物内外业代码对照表\n\n采集地物内外业代码对照关系见表 C.1.\n\n表 C.1 采集地物内外业代码对照表\n\n序号\n\n外业代码\n\n（地物+检测点类型）\n\n地物名称 地物代码\n\n检测点\n\n类型\n\n含义 采集说明\n\n控制测量方式下\n\n是否偏心",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时必",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 4：检测点经度地理坐标，单位为“度”，小数点后保留有效位数 9 位。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "注 5：单位：米。采集时的地物点大地高，保留 3 位小数，RTK 采集时必须填写原始大地高。其他方",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "式、内业图解方式采集时，此项填写 0。\n\n注 6：北坐标（投影平面 x 坐标），全站仪极坐标采集坐标必填。\n\n注 7：东坐标（投影平面 y 坐标），全站仪极坐标采集坐标必填。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "注 8： 检测点高程，DLG/DOM 平面位置检测点不位于地面时， 即代码为P 不需要求取高程值， 如房檐、",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "房角等，否则代码为 G、PG 时必填。\n\n注 9：中央子午线，根据项目实际的中央子午线填写。\n\n注 10：投影面高程，根据项目实际的投影面高程填写。\n\n注 11：检测地物代码，以 3 位代码表示，取值见附录 C.1。\n\n注 12：地物名称，采集地物的名称，取值见附录 C.1。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "注 13：平面精度，实测法采集时，填写仪器的平面位置标称精度；图解法采集时，填写数据源的平\n\n面位置标称精度，单位为“米”。\n\n注 14：高程精度，实测法采集时，填写仪器的高程标称精度；图解法采集时，填写数据源的高程标\n\n称精度，单位为“米”。",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "24",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "24",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "注 15：外业采集：GNSS-RTK 实测法、全站仪实测法、激光雷达实测法；内业采集：已有成果提取，\n\n如空中三角测量、实景三维模型采集等。\n\n注 16：位置描述，如：花坛西南角点等。\n\n注 17：存储影像图文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 18：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 19：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足位\n\n的用 0 补足，例如“2024/03/06”。\n\n注 20：填写该检测点所属县级行政区代码。\n\n注 21：可填写项目名称或编号。填写检测点采集项目编号时，可以年份+顺序号表示，如 2024-001。\n\n注 22：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n附录C\n\n（规范性）\n\n采集地物内外业代码对照表\n\n采集地物内外业代码对照关系见表 C.1.\n\n表 C.1 采集地物内外业代码对照表\n\n序号\n\n外业代码\n\n（地物+检测点类型）\n\n地物名称 地物代码\n\n检测点\n\n类型\n\n含义 采集说明\n\n控制测量方式下\n\n是否偏心",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "24",
         "chapter_title": "备注 BZ 字符型 254 — — O",
@@ -2375,7 +1895,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "BZJPG 标志角 BZJ PG 标志线角点 地面标志线角点，如车位线等 否",
@@ -2391,7 +1911,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "BZXP 标志线 BZX P 标志线平面点 交通标志线顶点 否",
@@ -2407,7 +1927,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "DLMG 道路面 DLM G 路面高程点 道路交叉口中心点 否",
@@ -2423,7 +1943,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "DLMPG 道路面 DLM PG 路面平高点 道路面内带有标志的平高点 否",
@@ -2439,7 +1959,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "DLXPG 道路线 DLX PG 道路线平高点 道路边线交叉点 否",
@@ -2455,7 +1975,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "DZJPG 地砖角 DZJ PG 地砖角平高点 广场地砖不同色块界线角点 否",
@@ -2471,7 +1991,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "DXGPG 电线杆 DXG PG 电线杆平高点 电线杆外边缘 是",
@@ -2487,7 +2007,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "FJDP 房角点 FJD P 房角平面点 不落地的房角 否",
@@ -2503,7 +2023,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "FJDPG 房角点 FJD PG 房角平高点 房屋墙基脚点 否",
@@ -2519,7 +2039,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "FYDPG 房檐点 FYD PG 房檐平高点 房檐角点 否",
@@ -2535,7 +2055,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "GSCP 固水池 GSC P 水池平面点 固化水池角点 否",
@@ -2551,7 +2071,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "HTJPG 花坛角 HTJ PG 花坛平高点 花坛角点 否",
@@ -2567,7 +2087,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "13",
         "chapter_title": "JGXPG 井盖中心点 JGX PG 井盖平高点 地面井盖中心点 否",
@@ -2583,7 +2103,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "14",
         "chapter_title": "LDGPG 路灯杆 LDG PG 路灯平高点 路灯杆外边缘 是",
@@ -2599,7 +2119,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "15",
         "chapter_title": "QGYP 旗杆 QGY P 旗杆平面点 旗杆外缘底点 是",
@@ -2615,7 +2135,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "16",
         "chapter_title": "QCJPG 球场角 QCJ PG 球场平高点 球场不同色块界线角点 否",
@@ -2631,7 +2151,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "17",
         "chapter_title": "TJJPG 台阶角 TJJ PG 台阶平高点 台阶角点 否",
@@ -2647,7 +2167,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "18",
         "chapter_title": "TXGPG 通讯杆 TXG PG 通讯杆平高点 通讯杆外边缘 是",
@@ -2663,7 +2183,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "19",
         "chapter_title": "WQJPG 围墙角 WQJ PG 围墙角平高点 围墙角点 否",
@@ -2679,7 +2199,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "20",
         "chapter_title": "WSBPG 污水篦子 WSB PG 污水篦子平高点 污水篦子中心点 否",
@@ -2695,7 +2215,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "21",
         "chapter_title": "XHSPG 消火栓 XHS PG 消火栓中心点 消火栓中心点 是",
@@ -2711,7 +2231,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "22",
         "chapter_title": "LPJPG 楼牌角 LPJ PG 楼牌角点平高点 较大楼牌的角点 否",
@@ -2727,7 +2247,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "23",
         "chapter_title": "PLJPG 飘楼角 PLJ PG 飘楼角点平高点 飘楼角点 否",
@@ -2743,7 +2263,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "24",
         "chapter_title": "YTJPG 阳台角 YTJ PG 阳台角点平高点 阳台角点 否",
@@ -2759,7 +2279,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "MDJPG 门墩角 MDJ PG 门墩角点平高点 门墩地面角点 否",
@@ -2775,7 +2295,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "ZZJPG 支柱角 ZZJ PG 支柱角点平高点 支柱地面角点 否",
@@ -2791,7 +2311,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "27",
         "chapter_title": "XHDPG 信号灯柱 XHD PG 信号灯平高点 信号灯外缘平高点 是",
@@ -2807,7 +2327,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "28",
         "chapter_title": "JKGPG 监控杆 JKG PG 监控杆平高点 监控杆外缘平高点 是",
@@ -2823,7 +2343,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "29",
         "chapter_title": "HDDG 旱地 HDD G 旱地中心高程 平坦旱地地块中心 否",
@@ -2839,7 +2359,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "30",
         "chapter_title": "STDG 水田 STD G 水田中心高程 水田地块高程 否",
@@ -2855,7 +2375,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "31",
         "chapter_title": "YLDG 院落地面点 YLD G 单位院落高程 单位院落中心点 否",
@@ -2871,7 +2391,7 @@
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "32",
         "chapter_title": "PFJPG 棚房角 PFJ PG 棚房角点平高点 棚房角地面点 否",
@@ -2880,46 +2400,14 @@
       }
     },
     {
-      "text": "# 33 QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否\n\n参 考 文 献\n\n[1] GB/T 13923—2022 基础地理信息要素分类与代码\n\n[2] GB/T 20257.1—2017 国家基本比例尺地图图式 第 1 部分：1：500 1：1000 1：2000\n\n地形图图式\n\n[3] GB/T 20258.1—2019 基础地理信息要素数据字典 第 1 部分：1：500 1 ：1000 1 ：\n\n2000 比例尺",
+      "text": "# 33 QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否\n\n参 考 文 献\n\n[1] GB/T 13923—2022 基础地理信息要素分类与代码\n\n[2] GB/T 20257.1—2017 国家基本比例尺地图图式 第 1 部分：1：500 1：1000 1：2000\n\n地形图图式\n\n[3] GB/T 20258.1—2019 基础地理信息要素数据字典 第 1 部分：1：500 1 ：1000 1 ：\n\n2000 比例尺\n\n[4] GB/T 24356-2023 测绘成果质量检查与验收\n\n[5] CH/T 1025—2011 数字线划图（DLG）质量检验技术规程\n\n[6] CH/T 1026—2012 数字高程模型质量检验技术规程",
       "metadata": {
         "file_name": "part2_检测点.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
         "part_number": 2,
         "part_name": "检测点",
         "section_type": "质量要求",
-        "knowledge_type": "data_spec",
-        "is_table": false,
-        "chapter_no": "33",
-        "chapter_title": "QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否",
-        "chapter_path": "33",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "[4] GB/T 24356-2023 测绘成果质量检查与验收",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "quality_rule",
-        "is_table": false,
-        "chapter_no": "33",
-        "chapter_title": "QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否",
-        "chapter_path": "33",
-        "data_name": "检测点"
-      }
-    },
-    {
-      "text": "[5] CH/T 1025—2011 数字线划图（DLG）质量检验技术规程\n\n[6] CH/T 1026—2012 数字高程模型质量检验技术规程",
-      "metadata": {
-        "file_name": "part2_检测点.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
-        "part_number": 2,
-        "part_name": "检测点",
-        "section_type": "质量要求",
-        "knowledge_type": "data_spec",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "33",
         "chapter_title": "QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否",

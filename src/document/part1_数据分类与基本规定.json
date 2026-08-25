@@ -1,6 +1,6 @@
 {
   "source_file": "part1_数据分类与基本规定.md",
-  "total_documents": 10,
+  "total_documents": 11,
   "documents": [
     {
       "text": "# 实景三维质检大数据支撑库 时空数据规范 第1部分 数据分类与基本规定\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第1部分 数据分类与基本规定.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第1部分 数据分类及基本规定\n\n（草案）\n\n部属单位： 国家测绘产品质量检验测试中心\n\n省级单位： 北京市测绘设计研究院\n\n浙江省测绘科学技术研究院\n\n广东省测绘产品质量监督检验中心\n\n甘肃省测绘产品质量监督检验站\n\n湖北省测绘质量监督检验站\n\n参与单位： 土豆数据科技集团有限公司\n\n2025年7月\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规\n\n则》的规定起草。\n\n第2部分 检测点\n\n第3部分 检测线\n\n第4部分 标志性地物\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：",
@@ -16,7 +16,7 @@
       }
     },
     {
-      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。\n\n# 3 1\n\n质检支撑库 Quality Inspection Support Repository\n\n质检支撑库是基于统一数据架构构建的专用数据库系统，用以存储和管理支\n\n撑质检时空数据、 标准规范等数据， 并支持数据的查询检索、 数据评估、 数据推\n\n送等。\n\n# 3 2\n\n时空大数据 spatio-temporal big data\n\n具有大数据的基本特征， 描述地理实体的时间、 空间和专题特征，或业务管\n\n理、生活服务等时空过程与状态的数据集。\n\n[来源：GB/T 42528-2023，3.1]",
+      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。",
       "metadata": {
         "file_name": "part1_数据分类与基本规定.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part1_数据分类与基本规定.md",
@@ -32,6 +32,22 @@
       }
     },
     {
+      "text": "# 3 1\n\n质检支撑库 Quality Inspection Support Repository\n\n质检支撑库是基于统一数据架构构建的专用数据库系统，用以存储和管理支\n\n撑质检时空数据、 标准规范等数据， 并支持数据的查询检索、 数据评估、 数据推\n\n送等。\n\n# 3 2\n\n时空大数据 spatio-temporal big data\n\n具有大数据的基本特征， 描述地理实体的时间、 空间和专题特征，或业务管\n\n理、生活服务等时空过程与状态的数据集。\n\n[来源：GB/T 42528-2023，3.1]",
+      "metadata": {
+        "file_name": "part1_数据分类与基本规定.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part1_数据分类与基本规定.md",
+        "part_number": 1,
+        "part_name": "数据分类与基本规定",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "1",
+        "chapter_path": "3",
+        "data_name": "数据分类与基本规定"
+      }
+    },
+    {
       "text": "# 4 时空数据分类\n\n时空数据作为重要质检支撑数据由背景数据、 标准数据及资源数据组成，如\n\n图 1 所示。\n\n背景数据。 背景数据指进行数据查询检索时可作为背景，以表达被查询数据\n\n在空间上的位置、完整性等特点。\n\n标准数据。标准数据指支撑质检的常用数据，必须保证其准确性、完整性，\n\n且需要持续更新。 包括检测点数据、 标志性地物数据、 重要要素数据、 高精度影\n\n像数据等。\n\n资源数据。 资源数据指可作为支撑质检的备用数据，但较标准数据应用频率\n\n低。\n\n时空数据\n\n标准数据\n\n资源数据\n\n背景数据\n\n检查点数据\n\n全国矢量数据（缺省打开）\n\n基本比例尺接图表\n\n影像数据\n\n行政区划数据\n\n特征数据\n\n标志性地物数据\n\n重要要素数据\n\n高精影像数据\n\n专题（项）数据\n\n基本比例尺地形图\n\n(需要再细化吗？) 1：10000\n\n1：50000\n\n……\n\n实景三维 LOD1.3\n\n基础地理实体\n\n调查监测 基础调查\n\n专项调查\n\n全球 核心要素\n\n影像\n\nOSM\n\nDOM\n\nDEM\n\nLiDAR 原始数据\n\n分类数据\n\n图 1 时空数据框架",
       "metadata": {
         "file_name": "part1_数据分类与基本规定.md",
@@ -39,7 +55,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "时空数据分类",
@@ -55,7 +71,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "基本规定",
@@ -71,7 +87,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.1",
         "chapter_title": "时空基准",
@@ -87,7 +103,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.1.1",
         "chapter_title": "空间基准",
@@ -103,7 +119,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.1.2",
         "chapter_title": "时间基准",
@@ -119,7 +135,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2",
         "chapter_title": "数据组织与格式",
@@ -135,7 +151,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2.1",
         "chapter_title": "数据单元划分",
@@ -151,7 +167,7 @@
         "part_number": 1,
         "part_name": "数据分类与基本规定",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5.2.2",
         "chapter_title": "数据格式",

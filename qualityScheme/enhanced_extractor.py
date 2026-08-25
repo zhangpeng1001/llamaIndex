@@ -97,16 +97,39 @@ CHAPTER_TITLE_RE = re.compile(
 )
 
 # 大章节类别：规范中的固定章节名（用于 metadata.section_type）
+# 修复点1: part4 第2章标题是"2 引用文件"(缺"规范性"前缀),原正则"^2\s+规范性引用文件$"
+#         不匹配 → 改为 "^2\s+规范性?引用文件$" 兼容两种写法
+# 修复点2: part4/part5 第3章标题是"3 术语与定义"(用"与"而非"和"),
+#         原正则 "^3\s+术语和定义" 不匹配 → 改为 "^3\s+术语[和与]定义"
+# 修复点3: part4/part5 第4-9章业务章节名(选取原则/分类与代码/数据要求/数据结构/
+#         数据处理/数据更新/检查方法/入库流程/数据应用)在原表中无对应规则,
+#         导致 current_section 粘性继承上一章的值 → 新增覆盖规则
 SECTION_TYPE_PATTERNS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"^(前\s*言|引\s*言)$"), "前言/引言"),
     (re.compile(r"^1\s+范\s*围$"), "范围"),
-    (re.compile(r"^2\s+规范性引用文件$"), "引用文件"),
-    (re.compile(r"^3\s+术语和定义"), "术语定义"),
+    # 修复 part4: "2 引用文件"(缺"规范性"前缀)
+    (re.compile(r"^2\s+规范性?引用文件$"), "引用文件"),
+    # 修复 part4/part5: "3 术语与定义"(用"与"而非"和")
+    (re.compile(r"^3\s+术语[和与]定义"), "术语定义"),
     (re.compile(r"^4\s+时空基准"), "时空基准"),
+    # 新增 part4: "4 选取原则" / part5: "4 数据要求"
+    (re.compile(r"^4\s+(数据要求|选取原则)"), "数据采集"),
     (re.compile(r"^5\s+数据采集"), "数据采集"),
+    # 新增 part4: "5 分类与代码" / part5: "5 数据结构"
+    (re.compile(r"^5\s+(分类与代码|数据结构)"), "数据整理"),
     (re.compile(r"^6\s+数据整理"), "数据整理"),
+    # 新增 part4: "6 数据要求" / part5: "6 数据处理"
+    (re.compile(r"^6\s+(数据处理|入库流程)"), "数据库"),
+    # 新增 part4: "6 数据要求"(含时空基准/数学精度/属性精度/存储格式等数据规范内容)
+    (re.compile(r"^6\s+数据要求"), "数据采集"),
     (re.compile(r"^7\s+数据库组织"), "数据库"),
+    # 新增 part4: "7 采集要求及数据结构" / part5: "7 数据更新"
+    (re.compile(r"^7\s+(数据更新|采集要求)"), "数据整理"),
     (re.compile(r"^8\s+质量要求"), "质量要求"),
+    # 新增 part4: "8 入库流程" / part5: "8 检查方法"
+    (re.compile(r"^8\s+(检查方法|入库流程)"), "质量要求"),
+    # 新增 part4: "9 数据应用"
+    (re.compile(r"^9\s+数据应用"), "数据整理"),
     (re.compile(r"^附录[A-Z]"), "附录"),
     (re.compile(r"^参考文献"), "参考文献"),
 ]
@@ -422,15 +445,35 @@ class EnhancedPdfExtractor:
                 el.chapter_path = "/".join(no for no, _ in chapter_stack)
 
                 # --- section_type 更新 ---
-                section_key = f"{chapter_no} {chapter_title}" if chapter_no[0].isdigit() else chapter_title
+                # 修复:旧逻辑嵌套混乱(search+match 多层条件),且不匹配时不重置 →
+                #      导致 part4 整篇继承"范围"、part5 第3章以后整篇继承"引用文件",
+                #      被 smart_chunker 的低价值过滤全部丢弃,只剩 1 条封面/前言 Document。
+                # 新逻辑:1) 按 chapter_no[0] + title 组成 section_key(顶级)或按 title(附录);
+                #        2) 顶级章节(chapter_no 不含".")未匹配任何 pattern → 重置为"正文_其他",
+                #           避免无关章节错误继承;子章节(如 5.2.4)仍继承父章节的 section_type。
+                if chapter_no[0].isdigit():
+                    section_key = f"{chapter_no[0]} {chapter_title}"
+                else:
+                    # 附录/参考文献:用 chapter_no 或 chapter_title 匹配(如 "附录A" / "参考文献")
+                    section_key = chapter_no if chapter_no.startswith("附录") else chapter_title
+                matched_section = False
                 for pat, stype in SECTION_TYPE_PATTERNS:
-                    if pat.search(section_key) or pat.match(section_key.split()[-1] if " " in section_key else section_key):
-                        # 更严格：直接用 title 检查
-                        if pat.match(chapter_title) or (chapter_no[0].isdigit() and pat.match(f"{chapter_no[0]} {chapter_title}")):
-                            current_section = stype
-                            break
-                        if not chapter_no[0].isdigit() and pat.match(chapter_no + chapter_title[0] if False else ""):
-                            pass
+                    if pat.match(section_key) or pat.match(chapter_title):
+                        current_section = stype
+                        matched_section = True
+                        break
+                # 修复粘性继承:顶级章节(无".")且非附录未匹配 → 重置为"正文_其他"
+                if (
+                    not matched_section
+                    and "." not in chapter_no
+                    and not chapter_no.startswith("附录")
+                ):
+                    current_section = "正文_其他"
+
+            # 修复:el.section_type = current_section 必须放在 if m: 之外,
+            #      让正文行(非章节标题)也继承最近一次匹配到的 current_section,
+            #      否则正文行会全部退化为 dataclass 默认值 "正文_其他",
+            #      导致 smart_chunker 失去 section_type 上下文,无法按章节区域检索。
             el.section_type = current_section
 
             # --- knowledge_type 判定 ---

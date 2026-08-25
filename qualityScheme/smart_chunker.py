@@ -48,8 +48,12 @@ DEFAULT_CHUNK_SIZE = 384
 DEFAULT_CHUNK_OVERLAP = 64
 
 # 建议过滤的噪声 knowledge_type（会被直接排除，不进入Chunk）
+# 修复:原表含 scope_intro,与 DEFAULT_LOW_VALUE_SECTIONS 中"范围"section_type 冗余;
+#      且 enhanced_extractor 修复前会把 part4 整篇误标记为 scope_intro 导致全量丢弃。
+#      修复后 scope_intro 只跟随第 1 章"范围",由 section_type="范围"过滤即可覆盖,
+#      移除 scope_intro 避免任何残余误伤。
 DEFAULT_NOISE_KTYPES: frozenset[str] = frozenset(
-    {"toc_noise", "preface", "references", "scope_intro"}
+    {"toc_noise", "preface", "references"}
 )
 # 可选过滤：也可以把 term_definition 单独保留做术语索引
 DEFAULT_LOW_VALUE_SECTIONS: frozenset[str] = frozenset(
