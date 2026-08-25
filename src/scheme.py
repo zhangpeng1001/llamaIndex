@@ -96,22 +96,22 @@ def run_scheme_generate(
     # ------------------------------------------------------------------
     # Step 1: 意图识别(判断是否为质检方案要求)
     # ------------------------------------------------------------------
-    logger.info("Step 1: 意图识别")
-    intent = recognize_scheme_intent(llm, requirement)
-    logger.info(
-        "  意图识别结果: is_quality=%s, reason=%s",
-        intent.is_quality_requirement,
-        intent.reason,
-    )
-
-    if not intent.is_quality_requirement:
-        # 非质检要求:返回 200 + status 标志,前端友好展示引导信息
-        logger.info("  非质检要求,返回 rejected")
-        return {
-            "status": "rejected",
-            "message": "未识别到质检方案要求,请输入具体的质检需求。",
-            "suggestion": intent.suggestion,
-        }
+    # logger.info("Step 1: 意图识别")
+    # intent = recognize_scheme_intent(llm, requirement)
+    # logger.info(
+    #     "  意图识别结果: is_quality=%s, reason=%s",
+    #     intent.is_quality_requirement,
+    #     intent.reason,
+    # )
+    #
+    # if not intent.is_quality_requirement:
+    #     # 非质检要求:返回 200 + status 标志,前端友好展示引导信息
+    #     logger.info("  非质检要求,返回 rejected")
+    #     return {
+    #         "status": "rejected",
+    #         "message": "未识别到质检方案要求,请输入具体的质检需求。",
+    #         "suggestion": intent.suggestion,
+    #     }
 
     # ------------------------------------------------------------------
     # Step 2: 方案生成(查询分解 + TopN候选 + Pydantic)
