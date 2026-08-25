@@ -4,10 +4,11 @@
     1. ✅ 先做 Query Decomposition：复合需求 → 拆多个子意图 → 每个子意图独立检索
        （解决「复合需求漏项」，如"精度+编号+必填"只命中精度的问题）
     2. ✅ 检查项 TopN 语义匹配：先在 Milvus 检索 Top-3 候选检查项，再给 LLM 看 3 项
-       （解决「28项大表浪费Token + LLM长上下文记忆力不足漏选」）
+       （解决「27项大表浪费Token + LLM长上下文记忆力不足漏选」）
     3. ✅ 规范上下文：优先检索 knowledge_type=quality_rule/field_rule，过滤 TOC 噪声
        （解决「检索结果30%是目录，信噪比低」）
-    4. ✅ 参数名规范化：Prompt 引导蛇形名，最后通过别名映射回平台要求的驼峰/蛇形混合
+    4. ✅ dataName 顶层 + 参数名原样使用：对齐 Java SchemeGeneratorService，
+       图层名统一放顶层 dataName（不在 params 中），参数名直接用平台原始命名
        （解决「data_name / dataName 写错，下游执行报找不到参数」）
     5. ✅ 删除 print 调试输出 → 用 logger.debug；且子查询数=方案检查项数上限（防画蛇添足）
 
@@ -23,14 +24,14 @@
       ↓
     [LLM + Pydantic] → 生成 QualityScheme（检查项只从候选项并集里选）
       ↓
-    后处理：checkCode 白名单校验 + canonicalize_params 参数名规范化 + 缺失参数补齐
+    后处理：checkCode 白名单校验 + dataName 顶层归一化 + 数组→字符串归一化 + 缺失参数补齐
       ↓
     最终结构化方案 JSON
 
 学习要点：
     - 「复杂业务方案生成」不是一个 LLM 调用能解决的，要做「检索前置 + 结构分解 + 校验后置」。
-    - LLM 擅长「裁决和填充」，不擅长「在 28 项长列表中记忆+匹配」。
-    - 检查项选择的「白名单」必须是「语义检索命中的候选项」，不是全量 28 项。
+    - LLM 擅长「裁决和填充」，不擅长「在 27 项长列表中记忆+匹配」。
+    - 检查项选择的「白名单」必须是「语义检索命中的候选项」，不是全量 27 项。
 
 业务背景：
     用户需求的「结构复杂度」和「子查询数量」直接决定最终方案的检查项数量。
@@ -49,8 +50,6 @@ from llama_index.core.program import LLMTextCompletionProgram
 from pydantic import BaseModel, Field
 
 from .check_items import (
-    canonicalize_params,
-    format_param_names_snake_case,
     get_check_item,
     is_valid_check_code,
 )
@@ -74,11 +73,18 @@ class CheckItem(BaseModel):
 
     checkCode: str = Field(description="检查项编码，必须从「候选项检查项清单」中选择")
     checkName: str = Field(description="检查项中文名称（必须和清单保持一致）")
+    dataName: str | None = Field(
+        default=None,
+        description=(
+            "被检查的图层名称（如'检测点'、'电杆检测线'）；"
+            "上下文有英文名则用英文（如 JCD），否则保留用户原始名称，不要编造"
+        ),
+    )
     params: dict[str, Any] = Field(
         description=(
-            "检查项参数，键名请尽量使用蛇形（如 data_name, field_names, min_length），"
-            "系统最后会自动映射回平台实际需要的参数名（dataName/fieldNames等）。"
-            "必须包含该检查项声明的所有参数，值为具体取值（字段名数组、阈值、坐标系等）"
+            "检查项规则参数，键名使用候选项清单中声明的原始参数名（不含 dataName）。"
+            "必须包含该检查项声明的全部参数；无法确定时填 null。"
+            "fieldNames 等多值参数使用英文逗号分隔的字符串（如 'id,name'）。"
         )
     )
 
@@ -92,14 +98,15 @@ class QualityScheme(BaseModel):
 
 
 # ---------------------------------------------------------------------------
-# Prompt 模板（改进版：只给候选项，不给 28 项全表）
+# Prompt 模板（对齐 Java SchemeGeneratorService.buildSchemePrompt 风格：
+# dataName 顶层、fieldNames 逗号分隔字符串、参数名用平台原始命名）
 # ---------------------------------------------------------------------------
 
 PROMPT_TEMPLATE = """你是实景三维质检方案编排专家。请根据：
     ① 用户需求摘要
     ② 拆分出的子意图详情
     ③ 从知识库语义检索到的「规范条款上下文」（用于推断字段名、阈值等）
-    ④ 从「28项检查项字典」语义匹配到的「候选项检查项清单」（注意：checkCode 必须只能从此清单里来，严禁自创！）
+    ④ 从「27项检查项字典」语义匹配到的「候选项检查项清单」（注意：checkCode 必须只能从此清单里来，严禁自创！）
 生成一份结构化质检方案 JSON。
 
 ## ① 用户需求摘要
@@ -112,7 +119,7 @@ PROMPT_TEMPLATE = """你是实景三维质检方案编排专家。请根据：
 以下是从 Milvus 知识库通过「quality_rule/field_rule 优先过滤 + Hybrid 检索」取到的相关条款：
 {context}
 
-## ④ 候选项检查项清单（checkCode 必须只能从此表中选！总共 {candidate_count} 项，请从中挑选最合适的）
+## ④ 候选项检查项清单（checkCode 必须只能从此清单中选！共 {candidate_count} 项）
 {check_items_candidates}
 
 ## 输出要求（严格遵守）
@@ -120,17 +127,16 @@ PROMPT_TEMPLATE = """你是实景三维质检方案编排专家。请根据：
 2. description：1-2 句描述方案目标与检查范围，可引用需求摘要。
 3. checkItem：
    a) 数量控制：检查项数 ≤ 子意图数 + 1（一般 == 子意图数，极个别子意图需拆2项检查时才超过），**严禁添加用户未提及的任何检查项**。
-   b) checkCode：必须来自上方④候选项清单（候选项是从28项字典中语义匹配的结果，若不在里面说明不是本次需求需要的）。
+   b) checkCode：必须来自上方④候选项清单（候选项是从27项字典中语义匹配的结果，若不在里面说明不是本次需求需要的）。
    c) checkName：必须与候选项清单中的名称完全一致（系统后处理会再次强制覆盖）。
-   d) params：
-      - 键名推荐用「蛇形」：如 data_name(或dataName), field_names, min_length, threshold, date_start, min_area。系统会自动映射到平台需要的实际参数名。
-      - 必须包含候选项清单中「参数名」列声明的**全部参数**，不得缺键。
-      - data_name：对应用户需求提到的数据对象中文名（如"检测点"、"检测线"）。
-      - field_names：优先参考③规范上下文中出现过的字段名（检测点编号、坐标X/Y、地物代码、采集日期等）；若无明确上下文，对应用户需求里的关键词。
-      - 数值阈值：如果②子意图中有"≤0.5米"、"唯一"、"必填"、"不小于"等明确约束，优先使用用户给的数值。
-      - 无法确定的值，可以填 null，但不要编造不存在的字段名和数值。
+   d) dataName：填写用户需求中提到的图层或数据集名称；上下文有英文代码则用英文代码（如'检测点'对应'JCD'）；无法确认则保留用户原始名称，不要编造。
+   e) params：仅包含该检查项「规则参数」中声明的参数（不含 dataName），键名与参数名完全一致。
+      - 参数值优先参考③规范上下文；无法确定填 null，不要猜测。
+      - fieldNames 为字段名列表，使用英文逗号分隔的字符串（如 "id,name"）；上下文有英文字段名则用英文，否则用中文。
+      - fieldLengths、fieldScales、fieldTypes、fieldValues 等多值参数必须与 fieldNames 的字段顺序一一对应。
+      - 数值阈值：子意图/需求中如明确给出（如"不超过0.5米"），直接填入对应参数（threshold/min_length/min_area/min_angle），不用写小于号。
 4. 禁止：
-   - 从④之外的检查项挑（会被系统过滤丢弃，白名单校验失败）
+   - 从④之外的检查项挑（白名单校验失败会被过滤）
    - 添加用户未提及的检查项
    - 参数值瞎编（真不知道填 null）
 
@@ -153,6 +159,42 @@ def _format_sub_queries_for_prompt(decomposed: DecomposedQuery) -> str:
             f"- 独立检索问句: {sq.standalone_question}"
         )
     return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# 后处理归一化辅助：dataName 顶层提取 + 数组→逗号字符串
+# 对齐 Java SchemeGeneratorService.normalizeDataName / normalizeParamValue。
+# ---------------------------------------------------------------------------
+
+
+def _normalize_data_name(data_name: str | None, params: dict[str, Any]) -> str | None:
+    """从顶层 dataName 或 params.dataName/data_name 兜底提取图层名到顶层。
+
+    新版 prompt 要求 LLM 输出顶层 ``dataName``。为兼容历史 prompt 或模型惯性，
+    这里也从 ``params.dataName`` / ``params.data_name`` 中兜底提取，提取后
+    不会再把这些旧键写回 params，这样最终结构始终只有一处图层名。
+    """
+    if data_name and data_name.strip():
+        return data_name.strip()
+    for key in ("dataName", "data_name"):
+        v = params.get(key)
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+    return None
+
+
+def _normalize_param_value(value: Any) -> Any:
+    """把 LLM 生成的参数值归一化为下游接口期望的形态。
+
+    参考 prompt 明确要求 ``fieldNames`` 等字段列表用英文逗号分隔的字符串。
+    实际结构化输出时，LLM 有时会把它们生成为 JSON 数组；这里将数组统一拼接
+    为字符串，避免下游执行接口收到不兼容类型。其他类型保持原样。
+    """
+    if isinstance(value, list):
+        return ",".join(str(v).strip() for v in value if str(v).strip())
+    if isinstance(value, str):
+        return value.strip()
+    return value
 
 
 # ---------------------------------------------------------------------------
@@ -299,7 +341,7 @@ def generate_scheme(
         checkitem_top_k_per_subquery=3,
     )
 
-    # 如果检索出来的候选项为空（极端场景），退回「按intent_type直接找预设检查编码+全表28项」
+    # 如果检索出来的候选项为空（极端场景），退回「按intent_type直接找预设检查编码+全表27项」
     # 这里做个兜底保证不会让候选为空 → LLM白名单为空会过滤掉所有 → 输出空方案
     if not allowed_codes:
         logger.warning("检查项语义检索未命中，退回: 从分解的intent_types里直接映射检查项白名单")
@@ -309,7 +351,7 @@ def generate_scheme(
             extra_codes.extend(INTENT_TYPES.get(it, {}).get("check_codes", []))
         allowed_codes = list(dict.fromkeys(extra_codes))[:8]  # 去重保序，上限8
         if allowed_codes:
-            # 构造一个假的候选项表格文本（从CHECK_ITEMS中直接拼）
+            # 构造一个假的候选项表格文本（从CHECK_ITEMS中直接拼，参数名使用平台原始命名）
             pseudo_lines = ["| checkCode | checkName | checkDesc | 参数名 | 匹配分数 |",
                             "|---|---|---|---|---|"]
             from .check_items import CHECK_ITEM_BY_CODE
@@ -317,12 +359,12 @@ def generate_scheme(
                 info = CHECK_ITEM_BY_CODE.get(c)
                 if not info:
                     continue
-                pnames = format_param_names_snake_case(info["param_names"])
+                pnames = ", ".join(info["param_names"])
                 pseudo_lines.append(f"| {c} | {info['checkName']} | {info['checkDesc']} | {pnames} | fallback |")
             candidate_table = "\n".join(pseudo_lines)
-        # 真的还是空 → 只能允许全量28项（最后手段）
+        # 真的还是空 → 只能允许全量27项（最后手段）
         if not allowed_codes:
-            logger.warning("  意图映射也空，最后兜底：允许全部28项")
+            logger.warning("  意图映射也空，最后兜底：允许全部27项")
             from .check_items import CHECK_ITEMS
             allowed_codes = [c["checkCode"] for c in CHECK_ITEMS]
 
@@ -358,7 +400,8 @@ def generate_scheme(
         allowed_codes,
     )
 
-    # 4. 校验：checkCode 合法性 + 白名单（必须来自 allowed_codes）+ 名称修正 + 参数规范化 + 缺失补齐
+    # 4. 校验：checkCode 合法性 + 白名单（必须来自 allowed_codes）+ 名称修正 +
+    #    dataName 归一化 + 参数值归一化 + 缺失参数补齐
     valid_items: list[CheckItem] = []
     filtered_not_in_dict: list[str] = []
     filtered_not_whitelist: list[str] = []
@@ -367,12 +410,12 @@ def generate_scheme(
     max_check_items = max(len(decomposed.sub_queries) + 1, 1)
 
     for item in raw_scheme.checkItem:
-        # 4a. 合法性（预定义28项中是否存在）
+        # 4a. 合法性（预定义27项中是否存在）
         if not is_valid_check_code(item.checkCode):
-            logger.warning("过滤非法checkCode(不在28项): %s", item.checkCode)
+            logger.warning("过滤非法checkCode(不在27项): %s", item.checkCode)
             filtered_not_in_dict.append(item.checkCode)
             continue
-        # 4b. 白名单（不在本次需求检索的候选项里 → LLM硬从28项里编）
+        # 4b. 白名单（不在本次需求检索的候选项里 → LLM硬从27项里编）
         if item.checkCode not in allowed_set:
             logger.warning(
                 "过滤checkCode(不在候选项白名单，可能是LLM画蛇添足): %s",
@@ -391,26 +434,41 @@ def generate_scheme(
 
         # 4d. 用标准 checkName 覆盖
         canonical = get_check_item(item.checkCode)
-        corrected = item.model_copy(update={"checkName": canonical["checkName"]})
 
-        # 4e. 参数名规范化：蛇形 → 平台实际参数名
-        canonical_params = canonicalize_params(corrected.checkCode, dict(corrected.params))
+        # 4e. dataName 归一化：从顶层或 params.dataName/data_name 兜底提取到顶层
+        #     （参考 Java SchemeGeneratorService.normalizeDataName）
+        original_params = dict(item.params)
+        normalized_data_name = _normalize_data_name(item.dataName, original_params)
+        # 从 params 中移除 dataName/data_name，避免与顶层字段重复
+        original_params.pop("dataName", None)
+        original_params.pop("data_name", None)
 
-        # 4f. 补齐缺失参数（值为None），保证下游不缺键
+        # 4f. 参数值归一化：JSON 数组 → 英文逗号分隔字符串
+        #     （参考 Java SchemeGeneratorService.normalizeParamValue）
+        normalized_params: dict[str, Any] = {
+            k: _normalize_param_value(v) for k, v in original_params.items()
+        }
+
+        # 4g. 补齐缺失参数（值为None），保证下游不缺键
         required_params = canonical["param_names"]
         for param_name in required_params:
-            if param_name not in canonical_params:
+            if param_name not in normalized_params:
                 logger.debug(
                     "补齐缺失参数: checkCode=%s, param=%s -> None",
-                    corrected.checkCode,
+                    item.checkCode,
                     param_name,
                 )
-                canonical_params[param_name] = None
-        corrected = corrected.model_copy(update={"params": canonical_params})
+                normalized_params[param_name] = None
+
+        corrected = item.model_copy(update={
+            "checkName": canonical["checkName"],
+            "dataName": normalized_data_name,
+            "params": normalized_params,
+        })
         valid_items.append(corrected)
 
     if filtered_not_in_dict:
-        logger.warning("被过滤(不在28项字典): %s", filtered_not_in_dict)
+        logger.warning("被过滤(不在27项字典): %s", filtered_not_in_dict)
     if filtered_not_whitelist:
         logger.warning("被过滤(不在候选项白名单): %s", filtered_not_whitelist)
 

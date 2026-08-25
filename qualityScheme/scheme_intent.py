@@ -11,8 +11,8 @@
 
 实现思路:
     1. 复用 ``check_items.format_check_items_for_prompt()`` 把检查项清单格式化为
-       markdown 表格（仅含 checkCode/checkName/checkDesc/参数名，去掉对意图识别
-       无用的 checkRequestUrl 等字段，更省 token）。
+       结构化文本（含 checkCode/checkName/checkDesc + 参数描述/示例；不再保留
+       对意图识别无用的 checkRequestUrl/checkObjType 等字段，更省 token）。
     2. 用 ``LLMTextCompletionProgram + Pydantic`` 获得可校验的结构化判断结果，
        与 ``scheme_generator.py`` 保持一致的范式。
     3. 异常兜底：意图识别自身 LLM 调用失败时默认放行，保证主流程可用性优先。

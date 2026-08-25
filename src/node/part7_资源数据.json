@@ -1,0 +1,4413 @@
+{
+  "source_file": "part7_资源数据.md",
+  "total_nodes": 245,
+  "nodes": [
+    {
+      "node_id": "7ada75c0-cf11-4966-a423-e575a22628b2",
+      "text": "# 实景三维质检大数据支撑库 时空数据规范 第7部分 资源数据\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第7部分 资源数据.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第 7 部分 资源数据\n\n（草案）\n\n2025 年 7 月\n\nI\n\n目  次\n\nII\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规则》的规定\n\n起草。\n\n第1部分 数据分类与基本规定\n\n第2部分 检测点\n\n第3部分 检测线\n\n第4部分 标志性地物\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "正文_其他",
+        "knowledge_type": "正文_其他",
+        "is_table": false,
+        "data_name": "资源数据"
+      },
+      "chunk_index": 0
+    },
+    {
+      "node_id": "70e5da45-038b-4088-a5cb-762a837ae9f8",
+      "text": "# 3 术语和定义",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "术语和定义",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 1
+    },
+    {
+      "node_id": "03356e84-f6ab-4916-9b08-2531670c1f30",
+      "text": "## 3.1 资源数据库\n\n用于存储、管理和分析大规模、多类型数据的数据库，数据类型包括矢量、栅格、三维数据、二维\n\n实体、三维实体、原始影像以及航飞照片等数据。",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3.1",
+        "chapter_title": "资源数据库",
+        "chapter_path": "3/3.1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 2
+    },
+    {
+      "node_id": "4de442b9-2d47-4241-b876-b6b5604b99c9",
+      "text": "# 4 数据内容\n\n资源数据由数据体及元数据组成。\n\n——数据体。数据体是作为资源进行管理的时空大数据，按文件进行存储和管理。\n\n——元数据是数据的说明文件，采用空间元数据形式进行存储和管理，以矢量面表示数据集范围，\n\n以属性信息记录数据集的来源、质量、管理等信息。",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "数据内容",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 3
+    },
+    {
+      "node_id": "5c2b1928-aab2-428b-9dc7-4af90b5a4b45",
+      "text": "# 5 数据范围文件\n\n数据体范围文件采用shape files格式的面文件，面的范围即为数据体的范围，面文件的命名与数\n\n据体命名一致。",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "数据范围文件",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 4
+    },
+    {
+      "node_id": "a9bf31eb-e564-45cc-9b39-e3a7d8dfafe1",
+      "text": "# 6 元数据表结构\n\n——各属性项约束条件中，“ M”为必选项；“ O”为可选项。\n\n——每个元素表对应一个空间索引的多边形文件。\n\n表1 矢量数据元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "元数据表结构",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 5
+    },
+    {
+      "node_id": "276b53b5-bb07-4d0d-bc6d-739ffdeb13d5",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 6
+    },
+    {
+      "node_id": "225111e3-63e9-4bbc-86a6-5f9077dcd174",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 7
+    },
+    {
+      "node_id": "6426648e-a87e-4a8c-b230-07d33fc83b2c",
+      "text": "# 3 Datum_ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 8
+    },
+    {
+      "node_id": "8b5f295d-eacf-4b03-8dc6-66cfe39974d2",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 9
+    },
+    {
+      "node_id": "e3e56480-4cc7-4196-b04e-c738f1667d14",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 10
+    },
+    {
+      "node_id": "91ba4264-9378-48a3-b45c-4da42ea262a0",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 11
+    },
+    {
+      "node_id": "8e64ed0e-1404-4520-a6b2-40079ebd7caa",
+      "text": "# 7 SheetNumber 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SheetNumber 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 12
+    },
+    {
+      "node_id": "c0fb5e69-6e74-4a88-a270-ca6a4fb279ee",
+      "text": "# 8 Bbox 四至范围 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Bbox 四至范围 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 13
+    },
+    {
+      "node_id": "e38a334a-09c4-4b35-aa43-b7c4fcb6e25f",
+      "text": "# 9 Program 所属项目 字符型 M 数据所属项目名\n\n称",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "Program 所属项目 字符型 M 数据所属项目名",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 14
+    },
+    {
+      "node_id": "f70715b0-ff74-4d65-a2f9-f71ddaf1b5d8",
+      "text": "# 10 Userid 上传者 整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "Userid 上传者 整型 M",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 15
+    },
+    {
+      "node_id": "1d7c2655-e31e-4703-94dc-ead296152116",
+      "text": "# 11 Collecttime 生产时间 日期型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "Collecttime 生产时间 日期型 M",
+        "chapter_path": "11",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 16
+    },
+    {
+      "node_id": "13207c50-3b57-4e23-a0c0-d53d554d76fe",
+      "text": "# 12 Manufacturer 数据生产单位 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "Manufacturer 数据生产单位 字符型 O",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 17
+    },
+    {
+      "node_id": "421c4ad2-a8ca-4ad1-ad82-fd5d20a8fa82",
+      "text": "# 13 Metadata Files 元数据文件 字符型 O\n\n14  Datatype 数据类型 字符型 O DEM\\DLG\\DOM…\n\n15  Dataformat 数据格式 字符型 O Shp\\GDB\\TIFF..\n\n.",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Metadata Files 元数据文件 字符型 O",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 18
+    },
+    {
+      "node_id": "3a0261fb-5b70-43ca-83ea-e91b63a7bf7c",
+      "text": "# 16 Accy_H 高程精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 19
+    },
+    {
+      "node_id": "9a407825-8720-4e5b-adeb-d6b043bfb606",
+      "text": "# 17 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 20
+    },
+    {
+      "node_id": "33212f93-b75b-49ad-a0ff-17a436c1f2a8",
+      "text": "# 18 ClassSTD 分类标准 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "ClassSTD 分类标准 字符型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 21
+    },
+    {
+      "node_id": "32456782-2c66-4a8b-8bac-f52bf8d70cc3",
+      "text": "# 19 LayerName 图层名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "LayerName 图层名称 字符型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 22
+    },
+    {
+      "node_id": "e9e28fe8-c8c0-40c7-9cdf-966e035a97b1",
+      "text": "# 20 LayerStructure 图层结构 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "LayerStructure 图层结构 字符型 O",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 23
+    },
+    {
+      "node_id": "656432d8-54f4-4cf6-9110-1dc1a3a4266a",
+      "text": "# 21 FileName 所属文件 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "FileName 所属文件 字符型 O",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 24
+    },
+    {
+      "node_id": "e6925566-c65c-44b4-878f-d6ae441f7b2f",
+      "text": "# 22 FilePath 文件路径/存\n\n储地址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "FilePath 文件路径/存",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 25
+    },
+    {
+      "node_id": "6c8f6231-bc30-4167-9996-83327f9dc82a",
+      "text": "# 23 File 文件大小 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "File 文件大小 字符型 O",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 26
+    },
+    {
+      "node_id": "2fe8a77b-1f3b-4563-9bbf-95126102b641",
+      "text": "# 24 Notes 备注 字符型 O\n\n表2 栅格数据元数据表\n\n序号 字段名称 数据项 字段类型 约束\n\n条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "24",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 27
+    },
+    {
+      "node_id": "1c74f3e6-eb09-4bdf-a440-f951578fa7c0",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 28
+    },
+    {
+      "node_id": "f4ef308d-08a4-4cad-800c-6fc26fd8cfc1",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M\n\n序号 字段名称 数据项 字段类型 约束\n\n条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 29
+    },
+    {
+      "node_id": "588cd22a-784d-40a9-ad3b-1477b401a4ed",
+      "text": "# 3 Datum_ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 30
+    },
+    {
+      "node_id": "0e66fa7f-e354-4600-8b3a-2b41685c31f6",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 31
+    },
+    {
+      "node_id": "54ce8b60-6f3c-43d6-b67b-d36f1d816ad6",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 32
+    },
+    {
+      "node_id": "71c275cb-5916-401b-bd74-8ccff8a7aeda",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 33
+    },
+    {
+      "node_id": "2df19e76-3aca-4e40-a71c-a79443211eb3",
+      "text": "# 7 SheetNumber 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SheetNumber 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 34
+    },
+    {
+      "node_id": "50bbcfc2-566b-459a-ba72-393213c8372d",
+      "text": "# 8 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 35
+    },
+    {
+      "node_id": "29b072c5-6439-40de-bf40-0d04ac8134bf",
+      "text": "# 9 Userid 上传者 整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "Userid 上传者 整型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 36
+    },
+    {
+      "node_id": "03ed5714-0f43-4b43-93c9-32d9975a8eea",
+      "text": "# 10 Accy_H 高程精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 37
+    },
+    {
+      "node_id": "b145bfe4-c933-4263-a223-d5c77a508be2",
+      "text": "# 11 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "11",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 38
+    },
+    {
+      "node_id": "de1775ae-963e-42aa-95fb-0bf6703ee0e9",
+      "text": "# 12 FilePath 文件路径/存储地址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "FilePath 文件路径/存储地址 字符型 M",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 39
+    },
+    {
+      "node_id": "3843edd6-ceec-47f2-9251-04d2e460142a",
+      "text": "# 13 Notes 备注 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 40
+    },
+    {
+      "node_id": "a28a0cff-e608-4511-b4db-e42a0365189a",
+      "text": "# 14 DOM\\DEM\n\n15  ImageType 影像类型 DOM\\DEM\\... M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "DOM\\DEM",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 41
+    },
+    {
+      "node_id": "b0917d56-d8d5-4951-a883-254a941ed007",
+      "text": "# 16 Frequency 周期频次 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "Frequency 周期频次 整型 O",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 42
+    },
+    {
+      "node_id": "f1413d51-d24e-420c-8a47-26bedf286a64",
+      "text": "# 17 ImageResolution 影像分辨率像素 浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "ImageResolution 影像分辨率像素 浮点型 M",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 43
+    },
+    {
+      "node_id": "d1dd3fee-6e48-45da-9e91-8438c4906e55",
+      "text": "# 18 ImageSource 影像来源类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "ImageSource 影像来源类型 字符型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 44
+    },
+    {
+      "node_id": "3cd999d1-3f6a-4636-ad71-c53934f234dd",
+      "text": "# 19 ImageEPSGID 影像 EPSG 代码 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "ImageEPSGID 影像 EPSG 代码 字符型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 45
+    },
+    {
+      "node_id": "7041a900-8a91-421b-8b61-2e5742c5fca9",
+      "text": "# 20 TransformCoef 变换系数 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "TransformCoef 变换系数 字符型 O",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 46
+    },
+    {
+      "node_id": "7d974418-f627-49df-98c8-0c4db4eb03f1",
+      "text": "# 21 BandsNum 波段数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "BandsNum 波段数 整型 O",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 47
+    },
+    {
+      "node_id": "7f503dd5-8944-407e-9514-fc35960e9f4c",
+      "text": "# 22 PixelWidth 像元宽度 浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "PixelWidth 像元宽度 浮点型 O",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 48
+    },
+    {
+      "node_id": "30297ef0-4771-480b-9164-d861288a5ea4",
+      "text": "# 23 PixelHeight 像元高度 浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "PixelHeight 像元高度 浮点型 O",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 49
+    },
+    {
+      "node_id": "a7a28e6d-d3a4-4c71-af97-47c438805159",
+      "text": "# 24 DepthType 位深类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "DepthType 位深类型 字符型 O",
+        "chapter_path": "24",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 50
+    },
+    {
+      "node_id": "38fe76c0-919f-4e3b-b20e-970b49078b15",
+      "text": "# 25 RowsNum 行总数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "RowsNum 行总数 整型 O",
+        "chapter_path": "25",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 51
+    },
+    {
+      "node_id": "60db45dd-a209-4165-abf5-9079bd0f408b",
+      "text": "# 26 ColumnsNum 列总数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "ColumnsNum 列总数 整型 O",
+        "chapter_path": "26",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 52
+    },
+    {
+      "node_id": "7feef88d-80c2-4d55-afa1-9ca28401f023",
+      "text": "# 27 InvalidValue 无效值 整型 O\n\n序号 字段名称 数据项 字段类型 约束\n\n条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "InvalidValue 无效值 整型 O",
+        "chapter_path": "27",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 53
+    },
+    {
+      "node_id": "83c4a45a-64b6-4e15-bcba-dfab20aa44d0",
+      "text": "# 28 EffectiveArea 有效面积 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "EffectiveArea 有效面积 双精度浮点型 O",
+        "chapter_path": "28",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 54
+    },
+    {
+      "node_id": "f526914d-441b-4f92-9ac5-c0002d92845c",
+      "text": "# 29 LeftUpper x 四至左上角 x 坐标 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "29",
+        "chapter_title": "LeftUpper x 四至左上角 x 坐标 双精度浮点型 O",
+        "chapter_path": "29",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 55
+    },
+    {
+      "node_id": "d3674da9-88da-4cd7-8373-63d7668caee9",
+      "text": "# 30 LeftUpper y 四至左上角 y 坐标 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "30",
+        "chapter_title": "LeftUpper y 四至左上角 y 坐标 双精度浮点型 O",
+        "chapter_path": "30",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 56
+    },
+    {
+      "node_id": "9c42d533-793a-497c-a0ea-07415fd25f61",
+      "text": "# 31 LowerRight x 四至右下角 x 坐标 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "31",
+        "chapter_title": "LowerRight x 四至右下角 x 坐标 双精度浮点型 O",
+        "chapter_path": "31",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 57
+    },
+    {
+      "node_id": "479d0ec4-6b18-41d4-8149-fe502558f6a0",
+      "text": "# 32 LowerRight y 四至右下角 y 坐标 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "32",
+        "chapter_title": "LowerRight y 四至右下角 y 坐标 双精度浮点型 O",
+        "chapter_path": "32",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 58
+    },
+    {
+      "node_id": "28cb861a-e0ba-4951-84fc-d889df20e04e",
+      "text": "# 33 CenterPoi lon 中心点经度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "CenterPoi lon 中心点经度 双精度浮点型 O",
+        "chapter_path": "33",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 59
+    },
+    {
+      "node_id": "5f865fc5-b468-4d66-a6b1-11ae7aa7972a",
+      "text": "# 34 CenterPoi lat 中心点纬度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "34",
+        "chapter_title": "CenterPoi lat 中心点纬度 双精度浮点型 O",
+        "chapter_path": "34",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 60
+    },
+    {
+      "node_id": "79f13e1c-02db-4744-bec7-3b7fa0620472",
+      "text": "# 35 ThumbnailName 缩略图名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "35",
+        "chapter_title": "ThumbnailName 缩略图名称 字符型 O",
+        "chapter_path": "35",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 61
+    },
+    {
+      "node_id": "94bfce61-5eb6-4b6a-8756-92538b7f73b7",
+      "text": "# 36 UsageLabel 用途标记 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "36",
+        "chapter_title": "UsageLabel 用途标记 字符型 O",
+        "chapter_path": "36",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 62
+    },
+    {
+      "node_id": "00117b11-d9ce-424c-bdb5-22887e129bda",
+      "text": "# 37 MetadataName 影像元数据名称 字符型 O\n\n表3 三维数据元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "37",
+        "chapter_title": "MetadataName 影像元数据名称 字符型 O",
+        "chapter_path": "37",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 63
+    },
+    {
+      "node_id": "b5dcd66f-c020-4893-afa1-225e869ca91d",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 64
+    },
+    {
+      "node_id": "95c2aa89-d648-4e27-86c8-2af307ec55b1",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 65
+    },
+    {
+      "node_id": "a4e1daa0-a166-478b-8e8f-f2ce98a00e5b",
+      "text": "# 3 Datum_ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 66
+    },
+    {
+      "node_id": "553da6ac-c796-452d-8a8b-84d13bdee7ee",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 67
+    },
+    {
+      "node_id": "ae456f77-9763-4357-8a43-01b4585e1811",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 68
+    },
+    {
+      "node_id": "e671bec6-eba0-472e-95f0-c9183e3fade3",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 69
+    },
+    {
+      "node_id": "d685ffcb-c929-42b5-9d55-48e2c7fac939",
+      "text": "# 7 SheetNumber 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SheetNumber 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 70
+    },
+    {
+      "node_id": "4feeb9ad-8ab7-452e-abdd-e82c53234266",
+      "text": "# 8 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 71
+    },
+    {
+      "node_id": "382d0e75-9ab3-46df-aab9-f8dcc70941f3",
+      "text": "# 9 Userid 上传者 整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "Userid 上传者 整型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 72
+    },
+    {
+      "node_id": "4232d18c-9aca-495c-a5cb-59b9b012879c",
+      "text": "# 10 Collecttime 生产时间 日期型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "Collecttime 生产时间 日期型 M",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 73
+    },
+    {
+      "node_id": "5e1e1fbf-1d70-48ec-bb24-c09b131d62ae",
+      "text": "# 11 Datatype 数据类型 字符型 M Shp\\GDB\\T\n\nIFF...",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "Datatype 数据类型 字符型 M Shp\\GDB\\T",
+        "chapter_path": "11",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 74
+    },
+    {
+      "node_id": "eba41e28-2e93-465e-b10e-7ba9b48c269f",
+      "text": "# 12 Dataformat 数据格式 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "Dataformat 数据格式 字符型 M",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 75
+    },
+    {
+      "node_id": "800f95fe-ea04-4927-8fff-b9f5597cfd48",
+      "text": "# 13 Accy_H 高程精度 双精度浮点型 M\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 76
+    },
+    {
+      "node_id": "fad8cb13-0da5-4d2e-bd13-8e11df9c1dae",
+      "text": "# 14 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 77
+    },
+    {
+      "node_id": "b2bb80fb-50dc-4631-a2c0-b9ab7e207cef",
+      "text": "# 15 FilePath 文件路径/存储地址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "FilePath 文件路径/存储地址 字符型 M",
+        "chapter_path": "15",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 78
+    },
+    {
+      "node_id": "d64f8880-fe36-4a76-a546-be0e7d5e9716",
+      "text": "# 16 CenterPoi lon 中心点经度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "CenterPoi lon 中心点经度 双精度浮点型 O",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 79
+    },
+    {
+      "node_id": "fd1aa002-0e46-4ae1-bfd3-63d89bf150e4",
+      "text": "# 17 CenterPoi lat 中心点纬度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "CenterPoi lat 中心点纬度 双精度浮点型 O",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 80
+    },
+    {
+      "node_id": "498d7192-803c-473b-937c-a21567a44b26",
+      "text": "# 18 ModelResolution 影像分辨率像素 浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "ModelResolution 影像分辨率像素 浮点型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 81
+    },
+    {
+      "node_id": "6e2b27b1-92dc-4d2e-8db9-d467653081f1",
+      "text": "# 19 ImageEPSGID 影像 EPSG 代码 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "ImageEPSGID 影像 EPSG 代码 字符型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 82
+    },
+    {
+      "node_id": "fdce221c-33d9-49ec-9422-3e1c234703c5",
+      "text": "# 20 MetadataName 模型元数据文件 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "MetadataName 模型元数据文件 字符型 O",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 83
+    },
+    {
+      "node_id": "07b454f6-6e16-46ce-9f4f-13d0255a89df",
+      "text": "# 21 mesh 三维",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "mesh 三维",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 84
+    },
+    {
+      "node_id": "c772a6e3-4675-4aae-9f11-20419dd8d92a",
+      "text": "# 22 SpatialRef 空间参考 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "SpatialRef 空间参考 字符型 M",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 85
+    },
+    {
+      "node_id": "e7af9d60-73f1-4ce2-aaff-1b1a377c04a4",
+      "text": "# 23 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 86
+    },
+    {
+      "node_id": "69a8f122-92ce-4720-aab3-64237f9e3b52",
+      "text": "# 24 Resolution 空间分辨率 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "Resolution 空间分辨率 字符型 M",
+        "chapter_path": "24",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 87
+    },
+    {
+      "node_id": "0133ff90-1ade-4713-aed7-10c03eadecd5",
+      "text": "# 25 SensorType 传感器类型 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "SensorType 传感器类型 字符型 M",
+        "chapter_path": "25",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 88
+    },
+    {
+      "node_id": "033954dd-d1f2-41bf-b201-061a33705571",
+      "text": "# 26 AcquisitionTime 获取时间 日期 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "AcquisitionTime 获取时间 日期 M",
+        "chapter_path": "26",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 89
+    },
+    {
+      "node_id": "6401aa09-ff4a-4ddd-a7db-f0069acdb9b0",
+      "text": "# 27 TriNetNum 三角网数量 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "TriNetNum 三角网数量 双精度浮点型 O",
+        "chapter_path": "27",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 90
+    },
+    {
+      "node_id": "f3d5ad98-d550-4894-9ab3-9f623ba10e01",
+      "text": "# 28 TexturesNum 纹理数量 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "TexturesNum 纹理数量 双精度浮点型 O",
+        "chapter_path": "28",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 91
+    },
+    {
+      "node_id": "025cadf9-b885-4309-8010-9956aa1ab77d",
+      "text": "# 29 TextureSize 纹理尺寸 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "29",
+        "chapter_title": "TextureSize 纹理尺寸 双精度浮点型 O",
+        "chapter_path": "29",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 92
+    },
+    {
+      "node_id": "cd991081-17fa-4eb0-b32f-12d217ae748c",
+      "text": "# 30 Lidar",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "30",
+        "chapter_title": "Lidar",
+        "chapter_path": "30",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 93
+    },
+    {
+      "node_id": "44e1142d-61e7-4f0c-ae3f-1b4aef9a4fbb",
+      "text": "# 31 Datum_Geodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "31",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "31",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 94
+    },
+    {
+      "node_id": "982dd853-8181-4f08-b6ae-208361df838d",
+      "text": "# 32 Datum_ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "32",
+        "chapter_title": "Datum_ele 高程基准 字符型 M",
+        "chapter_path": "32",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 95
+    },
+    {
+      "node_id": "4fd67a28-941b-4886-8c81-d71bf0541a34",
+      "text": "# 33 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "33",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 96
+    },
+    {
+      "node_id": "cc563980-f683-43b2-9ef0-f0719bdbbdce",
+      "text": "# 34 Reslution  空间分辨率 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "34",
+        "chapter_title": "Reslution  空间分辨率 字符型 M",
+        "chapter_path": "34",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 97
+    },
+    {
+      "node_id": "9defff82-b37d-4b63-8066-40979f25787f",
+      "text": "# 35 SensorType 传感器类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "35",
+        "chapter_title": "SensorType 传感器类型 字符型 O",
+        "chapter_path": "35",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 98
+    },
+    {
+      "node_id": "f7d07b8d-dc7c-4472-b069-413335c0abbc",
+      "text": "# 36 Density 点云密度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "36",
+        "chapter_title": "Density 点云密度 双精度浮点型 O",
+        "chapter_path": "36",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 99
+    },
+    {
+      "node_id": "2db87455-bd77-4a58-bf57-9a0b5c50710f",
+      "text": "# 37 PointNum 点云数量 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "37",
+        "chapter_title": "PointNum 点云数量 双精度浮点型 O",
+        "chapter_path": "37",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 100
+    },
+    {
+      "node_id": "7ddf5d28-365a-47b2-9389-024346dee993",
+      "text": "# 38 Classify 是否分类 布尔型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "38",
+        "chapter_title": "Classify 是否分类 布尔型 O",
+        "chapter_path": "38",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 101
+    },
+    {
+      "node_id": "2119b93e-ae65-401d-8642-0080e5b1aa9b",
+      "text": "# 39 Notes 备注 字符型 O\n\n表4 二维实体元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "39",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "39",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 102
+    },
+    {
+      "node_id": "4aeb10de-6d4c-4698-8cdd-55bcc1e7501d",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 103
+    },
+    {
+      "node_id": "dc0594ac-a5f5-4aac-9ce9-40caf8ae6059",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 104
+    },
+    {
+      "node_id": "0b9732af-9b8a-4325-b361-b553c8909105",
+      "text": "# 3 Datum_Ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_Ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 105
+    },
+    {
+      "node_id": "91eb61de-2eb5-499f-8363-b0e641a2b26f",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 106
+    },
+    {
+      "node_id": "118b7782-232d-4720-bbda-c9cc5e71d54a",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 107
+    },
+    {
+      "node_id": "132ad540-8bd4-4f67-a8a6-7a3adfb67e66",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 108
+    },
+    {
+      "node_id": "1fed7514-cf51-4cf5-9bee-1658439d22f9",
+      "text": "# 7 AdminRegionNum 所属行政区划代码 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "AdminRegionNum 所属行政区划代码 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 109
+    },
+    {
+      "node_id": "200a19a0-97b8-4fb9-b8ee-eb382008ca9f",
+      "text": "# 8 SheetNumber 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "SheetNumber 分幅号 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 110
+    },
+    {
+      "node_id": "25cc7115-6c01-4f12-ae77-7cbb1f23662d",
+      "text": "# 9 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 111
+    },
+    {
+      "node_id": "085b9d56-4a48-4bc7-ac6a-2401600ce3f7",
+      "text": "# 10 UserId 上传者 整型 M\n\n11  CollectTime 生产时间 日期型 M DEM\\DLG\\DOM…\n\n12  DataType 数据类型 字符型 M Shp\\GDB\\TIFF.\n\n..",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "UserId 上传者 整型 M",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 112
+    },
+    {
+      "node_id": "d0d3c277-54f8-4098-9ade-6192d4548cf0",
+      "text": "# 13 DataFormat 数据格式 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "DataFormat 数据格式 字符型 M",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 113
+    },
+    {
+      "node_id": "1e144993-0097-4e59-ac74-82aa93bac8ce",
+      "text": "# 14 Accy_H 高程精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 114
+    },
+    {
+      "node_id": "2133c8b4-58fd-4b63-9074-12ace8fbdd1d",
+      "text": "# 15 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "15",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 115
+    },
+    {
+      "node_id": "320a8879-c49e-49bd-a2de-27ea894d4cda",
+      "text": "# 16 LayerName 图层名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "LayerName 图层名称 字符型 O",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 116
+    },
+    {
+      "node_id": "db889665-1986-417a-8a34-ebb24b83d685",
+      "text": "# 17 EntityName 实体名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "EntityName 实体名称 字符型 O",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 117
+    },
+    {
+      "node_id": "94c70295-91f0-48da-9fbc-e9fe7f9a59ef",
+      "text": "# 18 FilePath 文件路径/存储地\n\n址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "FilePath 文件路径/存储地",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 118
+    },
+    {
+      "node_id": "f34c03d2-593f-4083-b14b-c3a36fccbbee",
+      "text": "# 19 Notes 备注 字符型 O\n\n表5 三维实体（LOD）元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 119
+    },
+    {
+      "node_id": "2a119652-c242-4515-8212-003ffd1e4646",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 120
+    },
+    {
+      "node_id": "5aa214f5-a278-4089-89bc-626a7430ec38",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 121
+    },
+    {
+      "node_id": "1f50b467-b9cb-486c-a6a8-1f8d93befad5",
+      "text": "# 3 Datum_Ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_Ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 122
+    },
+    {
+      "node_id": "8d46e469-b23a-4193-bf93-82153097f089",
+      "text": "# 4 Projection 空间投影 字符型 M\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 123
+    },
+    {
+      "node_id": "e4031b8b-9366-43e2-b49e-67fc6aa716fd",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 124
+    },
+    {
+      "node_id": "e71491c8-b438-44fd-bb37-bd7d661f6525",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 125
+    },
+    {
+      "node_id": "751511b4-5be2-43af-b674-a37c64d094f4",
+      "text": "# 7 SheetNumber 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SheetNumber 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 126
+    },
+    {
+      "node_id": "cf2306ee-1686-4ed7-989d-94d988e55218",
+      "text": "# 8 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 127
+    },
+    {
+      "node_id": "93de3aa9-e174-4d4f-9038-34aa7cf28793",
+      "text": "# 9 UserId 上传者 整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "UserId 上传者 整型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 128
+    },
+    {
+      "node_id": "a51311ed-7e94-44d6-a883-bb677e488adb",
+      "text": "# 10 CollectTime 生产时间 日期型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "CollectTime 生产时间 日期型 M",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 129
+    },
+    {
+      "node_id": "bcf23123-458f-48d5-ac8b-638e2571c9b1",
+      "text": "# 11 DataType 数据类型 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "DataType 数据类型 字符型 M",
+        "chapter_path": "11",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 130
+    },
+    {
+      "node_id": "aa4f1962-a9e2-4449-8820-0aec5eca154d",
+      "text": "# 12 DataFormat 数据格式 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "DataFormat 数据格式 字符型 M",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 131
+    },
+    {
+      "node_id": "ba00da13-ae63-4299-8fd6-ac41afc4d467",
+      "text": "# 13 Accy_H 高程精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 132
+    },
+    {
+      "node_id": "60c86f47-9e8f-4023-80e3-89724433f696",
+      "text": "# 14 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 133
+    },
+    {
+      "node_id": "016658ba-b05c-41e3-9b6c-1023bb967e45",
+      "text": "# 15 EntityName                                                                                                                   实体名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "EntityName                                                                                                                   实体名称 字符型 O",
+        "chapter_path": "15",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 134
+    },
+    {
+      "node_id": "7520085d-e5a7-4359-a992-5e1f7d3cbc9e",
+      "text": "# 16 MinLon 数据范围最小经度值 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "MinLon 数据范围最小经度值 双精度浮点型 O",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 135
+    },
+    {
+      "node_id": "37d3fe68-59dd-425e-9446-84a90ea62d06",
+      "text": "# 17 MaxLon 数据范围最大经度值 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "MaxLon 数据范围最大经度值 双精度浮点型 O",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 136
+    },
+    {
+      "node_id": "feaf29a1-b45c-45b4-be32-48ae6be650ef",
+      "text": "# 18 MinLat 数据范围最小纬度值 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "MinLat 数据范围最小纬度值 双精度浮点型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 137
+    },
+    {
+      "node_id": "0bd49fcf-1ea3-4700-b36b-f04f459b278f",
+      "text": "# 19 MaxLat 数据范围最小纬度值 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "MaxLat 数据范围最小纬度值 双精度浮点型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 138
+    },
+    {
+      "node_id": "839ac2b5-a249-4db1-9419-c61e450e8427",
+      "text": "# 20 Inspection1srt 一级检查结论 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "Inspection1srt 一级检查结论 字符型 O",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 139
+    },
+    {
+      "node_id": "f574e58e-3809-4e42-a488-097e4f563f6a",
+      "text": "# 21 Manufacture 生产单位 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "Manufacture 生产单位 字符型 O",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 140
+    },
+    {
+      "node_id": "a8795c18-b8be-489e-9660-93d52bf2250f",
+      "text": "# 22 FilePath 文件路径/存储地址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "FilePath 文件路径/存储地址 字符型 M",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 141
+    },
+    {
+      "node_id": "15a5ae88-8474-48ec-87a7-61047b312118",
+      "text": "# 23 Notes 备注 字符型 O\n\n表6 卫星影像元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 142
+    },
+    {
+      "node_id": "52ee95dc-08b4-43fe-95dc-af1951f377ef",
+      "text": "# 1 ID 数据id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 143
+    },
+    {
+      "node_id": "ad9d9b5b-7010-481e-9641-2b56b3964714",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 144
+    },
+    {
+      "node_id": "1379fe41-02ed-4eca-aa9e-d7996587d4f5",
+      "text": "# 3 Datum_Ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_Ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 145
+    },
+    {
+      "node_id": "ed9b6d1b-23cc-4e67-9b84-44f000a06052",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 146
+    },
+    {
+      "node_id": "0436a94c-b7f0-4cfc-b9c1-dc581955a021",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 147
+    },
+    {
+      "node_id": "57ffa5c6-a148-47cf-abc3-b9d6391d690a",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 148
+    },
+    {
+      "node_id": "84421ec9-ac20-4da6-9863-514bcc9637f2",
+      "text": "# 7 SheetNumber 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SheetNumber 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 149
+    },
+    {
+      "node_id": "aeb096fa-a6af-4da3-8044-95dd41965224",
+      "text": "# 8 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 150
+    },
+    {
+      "node_id": "12d76936-506d-4c29-aa23-7c30547e3c2f",
+      "text": "# 9 UserId 上传者 字符型 M\n\n10  CollectTime 生产时间 日期型 M DEM\\DLG\\DOM…\n\n11  DataType 数据类型 字符型 M Shp\\GDB\\TIFF.\n\n..",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "UserId 上传者 字符型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 151
+    },
+    {
+      "node_id": "c3223fab-da5a-4a09-8e98-5154cde1d7dc",
+      "text": "# 12 DataFormat 数据格式 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "DataFormat 数据格式 字符型 M",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 152
+    },
+    {
+      "node_id": "9f407f02-020b-4ba7-a6eb-a92febd4aa33",
+      "text": "# 13 Accy_H 高程精度 双精度浮\n\n点型\n\nM",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Accy_H 高程精度 双精度浮",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 153
+    },
+    {
+      "node_id": "001e4b34-7ab4-4c38-a86c-e86c16949af9",
+      "text": "# 14 Accy_V 平面精度 双精度浮\n\n点型\n\nM",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Accy_V 平面精度 双精度浮",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 154
+    },
+    {
+      "node_id": "012eb06e-f702-4474-b5dd-cf324086a09e",
+      "text": "# 15 SatelliteID 卫星ID 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "SatelliteID 卫星ID 字符型 O",
+        "chapter_path": "15",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 155
+    },
+    {
+      "node_id": "bc65afd5-8aca-4cd3-8512-7cc9fdef1292",
+      "text": "# 16 SatelliteSeries 卫星系列 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "SatelliteSeries 卫星系列 字符型 O",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 156
+    },
+    {
+      "node_id": "f14a3865-79ff-4223-90c2-772ead7c8946",
+      "text": "# 17 Unique 数据采集记录\n\n唯一值 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "Unique 数据采集记录",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 157
+    },
+    {
+      "node_id": "98a40e86-6c2e-4650-b1b5-25117042daa7",
+      "text": "# 18 SpectralType 波谱类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "SpectralType 波谱类型 字符型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 158
+    },
+    {
+      "node_id": "10115de9-6fff-4278-be23-ebeb76749e26",
+      "text": "# 19 ImageFormat 影像格式 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "ImageFormat 影像格式 字符型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 159
+    },
+    {
+      "node_id": "05d15a42-6e89-4a3e-b89f-8fe34520ddd6",
+      "text": "# 20 ControlPoiRef 控制点空间参\n\n考 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "ControlPoiRef 控制点空间参",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 160
+    },
+    {
+      "node_id": "09689542-351d-47ad-98cc-dd598bdaa4b1",
+      "text": "# 21 SatelliteCollectTim\n\ne 卫星采集时间 日期型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "SatelliteCollectTim",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 161
+    },
+    {
+      "node_id": "8ad372e7-c5db-4997-871b-084b7403d654",
+      "text": "# 22 PyramidLevel 金字塔级别 双精度浮\n\n点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "PyramidLevel 金字塔级别 双精度浮",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 162
+    },
+    {
+      "node_id": "97b880dd-e370-4d82-9724-8c561c44d53e",
+      "text": "# 23 ControlPoiNum 控制点个数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "ControlPoiNum 控制点个数 整型 O",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 163
+    },
+    {
+      "node_id": "46bcc252-d873-43ba-9e96-35ff4a6a4424",
+      "text": "# 24 ControlPoiCor 控制点坐标 双精度浮\n\n点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "ControlPoiCor 控制点坐标 双精度浮",
+        "chapter_path": "24",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 164
+    },
+    {
+      "node_id": "759421a6-ef7c-4c28-b15b-6b6a352d7372",
+      "text": "# 25 Resolution 卫星分辨率 浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "Resolution 卫星分辨率 浮点型 O",
+        "chapter_path": "25",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 165
+    },
+    {
+      "node_id": "65df1323-6b00-4dba-ade8-b7340bdb4f4c",
+      "text": "# 26 CompressionType 压缩类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "CompressionType 压缩类型 字符型 O",
+        "chapter_path": "26",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 166
+    },
+    {
+      "node_id": "59b56b4d-7521-4da3-b29b-dbab194afb82",
+      "text": "# 27 SensorType 传感器类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "SensorType 传感器类型 字符型 O",
+        "chapter_path": "27",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 167
+    },
+    {
+      "node_id": "edc68e45-629a-4ea3-8601-b090e2b90ee1",
+      "text": "# 28 ProductID 产品号 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "ProductID 产品号 字符型 O",
+        "chapter_path": "28",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 168
+    },
+    {
+      "node_id": "c8ba39c6-01b5-4e76-9089-89d5f6e26ad3",
+      "text": "# 29 TrackNum 轨道号 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "29",
+        "chapter_title": "TrackNum 轨道号 字符型 O",
+        "chapter_path": "29",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 169
+    },
+    {
+      "node_id": "32c463bb-a4f5-4c9b-9bf1-a41cae08029f",
+      "text": "# 30 CloudCov 云覆盖量 浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "30",
+        "chapter_title": "CloudCov 云覆盖量 浮点型 O",
+        "chapter_path": "30",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 170
+    },
+    {
+      "node_id": "c8ab3214-8524-434f-8db6-8c8faf625874",
+      "text": "# 31 SnowCov 雪覆盖量 浮点型 O\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "31",
+        "chapter_title": "SnowCov 雪覆盖量 浮点型 O",
+        "chapter_path": "31",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 171
+    },
+    {
+      "node_id": "393fef10-36ca-4d0f-a60a-959b7d63636d",
+      "text": "# 32 ProductLevel 产品级别 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "32",
+        "chapter_title": "ProductLevel 产品级别 整型 O",
+        "chapter_path": "32",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 172
+    },
+    {
+      "node_id": "0523ebc3-d6d0-4072-b967-7b92e8a0ec93",
+      "text": "# 33 ConsecutiveSceneNum 连续景数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "ConsecutiveSceneNum 连续景数 整型 O",
+        "chapter_path": "33",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 173
+    },
+    {
+      "node_id": "0c407513-ef69-4af0-9858-a58c900ba6a2",
+      "text": "# 34 ShootDirection 拍摄方向 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "34",
+        "chapter_title": "ShootDirection 拍摄方向 字符型 O",
+        "chapter_path": "34",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 174
+    },
+    {
+      "node_id": "1775e815-91c7-4579-b8fe-a72d12d3eba4",
+      "text": "# 35 ReceivingStation 接收站 字符型 O\n\nSame origin and same\n\nscene\n\nidentification\n\n同源同景标识 字符型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "35",
+        "chapter_title": "ReceivingStation 接收站 字符型 O",
+        "chapter_path": "35",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 175
+    },
+    {
+      "node_id": "cc0b388c-2e7a-4024-99e2-ec85a09c6d9f",
+      "text": "# 37 AttachedRPC 附属 RPC 文件\n\n名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "37",
+        "chapter_title": "AttachedRPC 附属 RPC 文件",
+        "chapter_path": "37",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 176
+    },
+    {
+      "node_id": "b2d53965-99cb-438c-9741-4fe9fd986f8b",
+      "text": "# 38 AttachedThumbnail 附属缩略图文\n\n件名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "38",
+        "chapter_title": "AttachedThumbnail 附属缩略图文",
+        "chapter_path": "38",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 177
+    },
+    {
+      "node_id": "c9a096b4-1abf-484f-b317-855937f81e61",
+      "text": "# 39 AttachedThumbName 附属拇指 图文\n\n件名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "39",
+        "chapter_title": "AttachedThumbName 附属拇指 图文",
+        "chapter_path": "39",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 178
+    },
+    {
+      "node_id": "8de90de4-3d50-4ad1-8fa3-b2fb69ed425e",
+      "text": "# 40 DetectFileName 检测 文件的\n\nshp 数据名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "40",
+        "chapter_title": "DetectFileName 检测 文件的",
+        "chapter_path": "40",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 179
+    },
+    {
+      "node_id": "52d411cf-9c5d-4672-a35f-3ea3c0a7f805",
+      "text": "# 41 FileSize 文件大小 双精度浮\n\n点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "41",
+        "chapter_title": "FileSize 文件大小 双精度浮",
+        "chapter_path": "41",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 180
+    },
+    {
+      "node_id": "4a7e372a-9e29-431b-bd14-29f20f6994a3",
+      "text": "# 42 CloudCovFile 云 覆盖量的\n\nshp 数据名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "42",
+        "chapter_title": "CloudCovFile 云 覆盖量的",
+        "chapter_path": "42",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 181
+    },
+    {
+      "node_id": "cae2e013-2d2f-4cda-a477-b553e8072eee",
+      "text": "# 43 FilePath 文件路径 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "43",
+        "chapter_title": "FilePath 文件路径 字符型 M",
+        "chapter_path": "43",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 182
+    },
+    {
+      "node_id": "2c3a22a3-b4c6-477a-945e-9780b15492ea",
+      "text": "# 44 Notes 备注 字符型 O\n\n表7 航摄成果元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "44",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "44",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 183
+    },
+    {
+      "node_id": "eaa378fa-56f4-442e-b092-d91932365cb7",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 184
+    },
+    {
+      "node_id": "b512bc99-6a17-454f-becc-a99c22387148",
+      "text": "# 2 DatumGeodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "DatumGeodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 185
+    },
+    {
+      "node_id": "7a61e053-e436-48a2-a749-5f1c9f07a624",
+      "text": "# 3 DatumEle 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "DatumEle 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 186
+    },
+    {
+      "node_id": "acc177cc-96cd-4b43-bbf1-e3ed24a6ca4f",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 187
+    },
+    {
+      "node_id": "1b9dd2dd-398d-4bec-9dac-4a74646f01e6",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 188
+    },
+    {
+      "node_id": "ab41d8c9-57f9-4681-bc5d-36fe7e638b63",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 189
+    },
+    {
+      "node_id": "22b2c6ea-2f2c-4090-ab13-90ebfc0f0357",
+      "text": "# 7 SubdivisionNum 分幅号 字符型 M\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SubdivisionNum 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 190
+    },
+    {
+      "node_id": "e5d94ddf-386e-4116-8d80-589eefb07156",
+      "text": "# 8 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 191
+    },
+    {
+      "node_id": "a5d2dc4f-09b6-43fc-82bc-afb8fa352030",
+      "text": "# 9 Userid 上传者 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "Userid 上传者 字符型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 192
+    },
+    {
+      "node_id": "4b41ee4e-7ead-49dd-970c-1ec565756031",
+      "text": "# 10 Collecttime 采集时间 日期型 M DEM\\DLG\\DOM\n\n…",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "Collecttime 采集时间 日期型 M DEM\\DLG\\DOM",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 193
+    },
+    {
+      "node_id": "e7485ffd-bfaa-4757-a20a-99f2fac036a8",
+      "text": "# 11 Datatype 数据类型 字符型 M Shp\\GDB\\TIFF\n\n…",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "Datatype 数据类型 字符型 M Shp\\GDB\\TIFF",
+        "chapter_path": "11",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 194
+    },
+    {
+      "node_id": "f02e7def-93df-4809-9166-1194cc50bba0",
+      "text": "# 12 Dataformat 数据格式 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "Dataformat 数据格式 字符型 M",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 195
+    },
+    {
+      "node_id": "54076915-ab2d-4f95-9328-892d35dfca5f",
+      "text": "# 13 Accy_H 高程精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 196
+    },
+    {
+      "node_id": "52957994-8b29-46c4-b05b-ba1169bb169f",
+      "text": "# 14 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 197
+    },
+    {
+      "node_id": "03ba5d93-b487-47ca-b5f1-cdfea77d17c0",
+      "text": "# 15 AttachmentName 附件名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "AttachmentName 附件名称 字符型 O",
+        "chapter_path": "15",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 198
+    },
+    {
+      "node_id": "312e923d-43cf-4db8-9919-a3fd7839c10c",
+      "text": "# 16 AttachmentAddr\n\ness 附件地址 字符型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "AttachmentAddr",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 199
+    },
+    {
+      "node_id": "812da385-a97f-4f37-82c2-d149a971ec56",
+      "text": "# 17 AttachmentSour\n\nceEquipment 附件来源设备 字符型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "AttachmentSour",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 200
+    },
+    {
+      "node_id": "7557eb0f-efb8-4150-bb88-4215d4c77c5a",
+      "text": "# 18 AttachmentType 附件类型 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "AttachmentType 附件类型 字符型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 201
+    },
+    {
+      "node_id": "865a7c74-eaa4-4f5e-903b-d71650a03bd3",
+      "text": "# 19 TakeOffLon 起飞点经度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "TakeOffLon 起飞点经度 双精度浮点型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 202
+    },
+    {
+      "node_id": "fa3811e2-8a13-4595-b949-f7af868553f8",
+      "text": "# 20 TakeOffLat 起飞点纬度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "TakeOffLat 起飞点纬度 双精度浮点型 O",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 203
+    },
+    {
+      "node_id": "833e9e73-5e8c-4e14-aed9-fdddfc38127e",
+      "text": "# 21 TakeOff 起飞点相对地面高\n\n度 双精度浮点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "TakeOff 起飞点相对地面高",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 204
+    },
+    {
+      "node_id": "9c81bb42-88b2-4ccf-a1d3-dee741fd276e",
+      "text": "# 22 TakeOff 起飞点地面海拔 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "TakeOff 起飞点地面海拔 双精度浮点型 O",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 205
+    },
+    {
+      "node_id": "e273e793-74f7-4852-95a3-655068a86e59",
+      "text": "# 23 Time 拍摄时间 日期型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "Time 拍摄时间 日期型 O",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 206
+    },
+    {
+      "node_id": "875552e8-8ca0-4cac-bbf9-3d5df52b931a",
+      "text": "# 24 Angle 拍摄角度 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "Angle 拍摄角度 双精度浮点型 O",
+        "chapter_path": "24",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 207
+    },
+    {
+      "node_id": "fa10eb42-c23c-4b0c-8951-dd79e8510958",
+      "text": "# 25 PitchAngle 拍摄俯仰角 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "PitchAngle 拍摄俯仰角 双精度浮点型 O",
+        "chapter_path": "25",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 208
+    },
+    {
+      "node_id": "020f44f3-ae74-4710-9ce5-f542a5e61a00",
+      "text": "# 26 Elevation 拍摄点地面海拔 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "Elevation 拍摄点地面海拔 双精度浮点型 O",
+        "chapter_path": "26",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 209
+    },
+    {
+      "node_id": "a099ac89-8428-4078-bfe4-cae7a7eb256c",
+      "text": "# 27 ShootingPositi\n\nonLon 拍摄位置经度 双精度浮点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "ShootingPositi",
+        "chapter_path": "27",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 210
+    },
+    {
+      "node_id": "7e0a571c-f277-4a3b-94d9-01333d6eedff",
+      "text": "# 28 ShootingPositi\n\nonLat 拍摄位置纬度 双精度浮点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "ShootingPositi",
+        "chapter_path": "28",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 211
+    },
+    {
+      "node_id": "c24e0c5e-480f-49ce-a992-90623003191d",
+      "text": "# 29 ShootingPositi\n\nonX 拍摄位置 X 双精度浮点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "29",
+        "chapter_title": "ShootingPositi",
+        "chapter_path": "29",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 212
+    },
+    {
+      "node_id": "155fc966-c40c-4553-87e9-e0030cfa661a",
+      "text": "# 30 ShootingPositi\n\nonY 拍摄位置 Y 双精度浮点型\n\nO",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "30",
+        "chapter_title": "ShootingPositi",
+        "chapter_path": "30",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 213
+    },
+    {
+      "node_id": "123fd391-8298-4405-abe7-36474b22d653",
+      "text": "# 31 Metadata 元数据 字符型 O\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "31",
+        "chapter_title": "Metadata 元数据 字符型 O",
+        "chapter_path": "31",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 214
+    },
+    {
+      "node_id": "63cc43cf-c44f-4a56-9528-8812c39a0f7a",
+      "text": "# 32 FilePath 文件路径/存储地址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "32",
+        "chapter_title": "FilePath 文件路径/存储地址 字符型 M",
+        "chapter_path": "32",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 215
+    },
+    {
+      "node_id": "a7a4e260-a09e-4b36-bf40-201132164c65",
+      "text": "# 33 Notes 备注 字符型 O\n\n表8 成果包元数据表\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "33",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 216
+    },
+    {
+      "node_id": "76a3ea82-fb56-401f-b364-352b6c6be240",
+      "text": "# 1 ID 数据 id 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "ID 数据 id 字符型 M",
+        "chapter_path": "1",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 217
+    },
+    {
+      "node_id": "6c439634-27b4-472b-bc65-3d99ff36061b",
+      "text": "# 2 Datum_Geodetic 大地基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Datum_Geodetic 大地基准 字符型 M",
+        "chapter_path": "2",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 218
+    },
+    {
+      "node_id": "cf7433d0-4d52-4c4d-937f-57d58146f200",
+      "text": "# 3 Datum_ele 高程基准 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "Datum_ele 高程基准 字符型 M",
+        "chapter_path": "3",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 219
+    },
+    {
+      "node_id": "1f45e1fa-4c9f-416b-aa8b-c742057d9536",
+      "text": "# 4 Projection 空间投影 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "Projection 空间投影 字符型 M",
+        "chapter_path": "4",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 220
+    },
+    {
+      "node_id": "680dcac1-dffb-4c04-8f2d-2e5b57c9db98",
+      "text": "# 5 Accuracy 比例尺 长整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "Accuracy 比例尺 长整型 M",
+        "chapter_path": "5",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 221
+    },
+    {
+      "node_id": "32d04b45-9d26-4b52-b771-8b9bf2709e4d",
+      "text": "# 6 AdminRegion 所属行政区划 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "AdminRegion 所属行政区划 字符型 M",
+        "chapter_path": "6",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 222
+    },
+    {
+      "node_id": "5eedc275-e7c9-4d05-b2e0-e30fdba320eb",
+      "text": "# 7 SubdivisionNum 分幅号 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "SubdivisionNum 分幅号 字符型 M",
+        "chapter_path": "7",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 223
+    },
+    {
+      "node_id": "9914ff81-8c68-4eb6-b901-3ddd37ea5ed8",
+      "text": "# 8 Program 所属项目 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "Program 所属项目 字符型 M",
+        "chapter_path": "8",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 224
+    },
+    {
+      "node_id": "345c2c4d-da55-46e5-978d-21559ccbde85",
+      "text": "# 9 Userid 上传者 整型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "Userid 上传者 整型 M",
+        "chapter_path": "9",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 225
+    },
+    {
+      "node_id": "c17fbcf1-e80f-42db-80bf-c718510ae5c4",
+      "text": "# 10 Collecttime 采集时间 日期型 M DEM\\DLG\\D\n\nOM…",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "Collecttime 采集时间 日期型 M DEM\\DLG\\D",
+        "chapter_path": "10",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 226
+    },
+    {
+      "node_id": "adf1cd40-2001-4670-97bf-ed1208487c13",
+      "text": "# 11 Datatype 数据类型 字符型 M Shp\\GDB\\T\n\nIFF...",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "Datatype 数据类型 字符型 M Shp\\GDB\\T",
+        "chapter_path": "11",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 227
+    },
+    {
+      "node_id": "4565373b-9805-48c1-9176-f3a997c121d6",
+      "text": "# 12 Dataformat 数据格式 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "Dataformat 数据格式 字符型 M",
+        "chapter_path": "12",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 228
+    },
+    {
+      "node_id": "57348c4b-8f35-449e-afca-307c97bcddc8",
+      "text": "# 13 Accy_H 高程精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "Accy_H 高程精度 双精度浮点型 M",
+        "chapter_path": "13",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 229
+    },
+    {
+      "node_id": "cfc8a310-798d-47f4-845b-d2197900d189",
+      "text": "# 14 Accy_V 平面精度 双精度浮点型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Accy_V 平面精度 双精度浮点型 M",
+        "chapter_path": "14",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 230
+    },
+    {
+      "node_id": "a37d4b3d-f27d-410b-839b-37c13d178afa",
+      "text": "# 15 PackageName 文件包名称 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "PackageName 文件包名称 字符型 O",
+        "chapter_path": "15",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 231
+    },
+    {
+      "node_id": "983c57e6-eb17-4f03-800b-85b20105c81f",
+      "text": "# 16 PackageSize 文件包大小 双精度浮点型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "PackageSize 文件包大小 双精度浮点型 O",
+        "chapter_path": "16",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 232
+    },
+    {
+      "node_id": "1e7c7eba-cb6b-4896-b99d-83dc7954eeb4",
+      "text": "# 17 SubdirectoriesNum 子目录数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "SubdirectoriesNum 子目录数 整型 O",
+        "chapter_path": "17",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 233
+    },
+    {
+      "node_id": "95bb0c33-04f8-4dee-9237-c53b73d53f02",
+      "text": "# 18 FileNum 文件数 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "FileNum 文件数 整型 O",
+        "chapter_path": "18",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 234
+    },
+    {
+      "node_id": "3f7fa3dc-c0d9-44e8-b3aa-1599176eb82e",
+      "text": "# 19 FolderDepth 文件夹深度 整型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "FolderDepth 文件夹深度 整型 O",
+        "chapter_path": "19",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 235
+    },
+    {
+      "node_id": "4876aa5f-c8f6-4ede-b3f3-ab1573896792",
+      "text": "# 20 FilePath 文件路径/存储地址 字符型 M",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "FilePath 文件路径/存储地址 字符型 M",
+        "chapter_path": "20",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 236
+    },
+    {
+      "node_id": "c929f567-c783-4acd-82f5-2b4444521133",
+      "text": "# 21 MetadataFiles 元数据文件 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "MetadataFiles 元数据文件 字符型 O",
+        "chapter_path": "21",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 237
+    },
+    {
+      "node_id": "3f19e121-0de0-49d7-8d5a-4c94e2adf24e",
+      "text": "# 22 Manufacture 数据生产单位 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "Manufacture 数据生产单位 字符型 O",
+        "chapter_path": "22",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 238
+    },
+    {
+      "node_id": "73990640-34b7-41d9-bd48-163cea0a1a84",
+      "text": "# 23 BornTime 数据生产日期 日期型 O\n\n序号 字段名称 数据项 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "BornTime 数据生产日期 日期型 O",
+        "chapter_path": "23",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 239
+    },
+    {
+      "node_id": "b8c1c4d4-aad8-4428-ba1e-4546ea848a88",
+      "text": "# 24 InspectionUnit 数据质检单位 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "InspectionUnit 数据质检单位 字符型 O",
+        "chapter_path": "24",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 240
+    },
+    {
+      "node_id": "c7a16c9e-6cf6-47bf-b5b5-b2bd713d6f39",
+      "text": "# 25 InspectionTime 数据质检日期 日期型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "InspectionTime 数据质检日期 日期型 O",
+        "chapter_path": "25",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 241
+    },
+    {
+      "node_id": "353301e1-1c76-4c00-80b6-175834b13a93",
+      "text": "# 26 PublishUnit 数据发布单位 字符型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "PublishUnit 数据发布单位 字符型 O",
+        "chapter_path": "26",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 242
+    },
+    {
+      "node_id": "8eb9289b-4b41-4f78-aef3-bfaaf9b58a0c",
+      "text": "# 27 PublishTime 数据发布日期 日期型 O",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "PublishTime 数据发布日期 日期型 O",
+        "chapter_path": "27",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 243
+    },
+    {
+      "node_id": "dcd23fff-da1e-485b-9ef2-fe7f92f7bc21",
+      "text": "# 28 Notes 备注 字符型 O\n\n参考文献\n\n[1] 实景三维数据库建库技术规范。",
+      "metadata": {
+        "file_name": "part7_资源数据.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part7_资源数据.md",
+        "part_number": 7,
+        "part_name": "资源数据",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "Notes 备注 字符型 O",
+        "chapter_path": "28",
+        "data_name": "资源数据"
+      },
+      "chunk_index": 244
+    }
+  ]
+}

@@ -254,10 +254,10 @@ def retrieve_check_items(
     top_k: int = 5,
     use_hybrid: bool = True,
 ) -> list[NodeWithScore]:
-    """专用：只在检查项字典（28项）中做语义检索，返回 Top-N 候选检查项。
+    """专用：只在检查项字典（27项）中做语义检索，返回 Top-N 候选检查项。
 
     用于 scheme_generator 生成方案前的一步：
-        "用户需求 → 检索 Top3 检查项 → 只给 LLM 看 3 项而不是 28 项"
+        "用户需求 → 检索 Top3 检查项 → 只给 LLM 看 3 项而不是 27 项"
     """
     logger.info("检查项检索: top_k=%d, question=%s", top_k, question[:80])
     filters = RetrievalFilters(only_check_items=True)

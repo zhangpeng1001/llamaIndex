@@ -1,0 +1,3420 @@
+{
+  "source_file": "part2_检测点.md",
+  "total_nodes": 190,
+  "nodes": [
+    {
+      "node_id": "87bddbeb-9f35-4b1a-a697-ac7bfef4198c",
+      "text": "# 实景三维质检大数据支撑库 时空数据规范 第2部分 检测点\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第2部分 检测点.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第 2 部分 检测点\n\n（草案）\n\n2025 年7 月\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规则》的规定\n\n起草。\n\n第1部分 数据分类与基本规定\n\n第3部分 检测线\n\n第4部分 标志性地物\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "正文_其他",
+        "knowledge_type": "正文_其他",
+        "is_table": false,
+        "data_name": "检测点"
+      },
+      "chunk_index": 0
+    },
+    {
+      "node_id": "6716b29b-3a98-4dfa-96ac-b980d62d48bd",
+      "text": "本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：\n\n引  言\n\n为满足实景三维中国建设项目成果质量检验的快速响应需求，同时适应\n\n大数据、人工智能等新技术的飞速发展对高可靠质检参考数据的要求，探索\n\n构建高精度检测点数据库，本文件提出实景三维检测点数据采集、整理、建\n\n库、质检要求，指导质检大数据支撑库检测点子库建设，实现实景三维成果\n\n质检工作效率和成果质量的提升。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "正文_其他",
+        "knowledge_type": "正文_其他",
+        "is_table": false,
+        "data_name": "检测点"
+      },
+      "chunk_index": 1
+    },
+    {
+      "node_id": "38a90264-864e-484c-b274-d8c90f63ac85",
+      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。\n\n# 3 1\n\n地理实体 Fundamental Geo-entity\n\n现实世界中占据一定空间、具有同一属性或完整功能的地理对象。\n\n# 3 2\n\n基础地理实体 Fundamental Geo-entity\n\n通过基础测绘采集和表达的地理实体，是其他地理实体和相关信息的定位框架与承载基础，包括\n\n自然地理实体、人工地理实体和管理地理实体三类。\n\n# 3 3\n\n基础地理实体数据 Fundamental Geo-entity Data\n\n基础地理实体空间、语义等信息在计算机系统中的数字化描述。\n\n# 3 4\n\n基础地理实体数据表达模型 Fundamental Geo-entity Representation Model\n\n用于在计算机系统内对基础地理实体空间信息进行概括或精细表示的数学模型。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "术语和定义",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 2
+    },
+    {
+      "node_id": "0da4cf32-c528-4107-bc39-9f59fbd1c572",
+      "text": "# 3 4\n\n基础地理实体数据表达模型 Fundamental Geo-entity Representation Model\n\n用于在计算机系统内对基础地理实体空间信息进行概括或精细表示的数学模型。\n\n注：依据表达尺度、几何结构等空间信息差异，同一基础地理实体可包含多种表达模型。\n\n# 3 5\n\n基础地理实体数据成果 Fundamental Geo-entity Data Products\n\n对一定空间范围内基础地理实体空间位置、几何形态、属性信息、相互关系、空间分布等进行数\n\n字化描述，且满足一定精度、粒度及表达模型等技术要求的基础地理实体数据集。\n\n注 1:依据不同空间尺度的应用需求差异， 同一空间范围内基础地理实体数据可划分为不同层级数\n\n据成果。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "术语和定义",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 3
+    },
+    {
+      "node_id": "1e8d62c7-7b1e-44aa-9e46-58986b196ab9",
+      "text": "注 1:依据不同空间尺度的应用需求差异， 同一空间范围内基础地理实体数据可划分为不同层级数\n\n据成果。\n\n注 2:基础地理实体数据成果为成果管理单位统一对外提供、满足一定技术指标要求、具有标准格\n\n式的最终形式数据集，与数据采集、建库阶段形成的阶段性数据成果，应有所区分。\n\n# 3 6\n\n图元 Geometry Element\n\n空间内单一、连通并用于表达实体几何特征的图形对象，一般表达为点、线、面、体。\n\n注 1:点、线、面图元属于二维图元；体图元属于三维图元。\n\n注 2:图元不指代比基础地理实体粒度更小的地理对象。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "术语和定义",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 4
+    },
+    {
+      "node_id": "765d8d0d-7797-4748-99cd-b1d4904316ab",
+      "text": "# 4 时空基准",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "时空基准",
+        "chapter_path": "4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 5
+    },
+    {
+      "node_id": "b78f0f5c-98df-45dd-b4b0-d1b3a69001c8",
+      "text": "## 4.1 空间参考\n\n检测点数据应采用国家规定的、统一的地理空间参考系，应满足下列要求：\n\na) 大地基准为 2000 国家大地坐标系，或采用依法批准的独立坐标系，并与 2000 国家大地坐标系\n\n建立联系。\n\nb) 高程基准为 1985 国家高程基准。\n\nc) 投影采用高斯-克吕格投影，3°分带。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.1",
+        "chapter_title": "空间参考",
+        "chapter_path": "4/4.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 6
+    },
+    {
+      "node_id": "870d4f10-8927-4a35-b501-10f32eb5e6a4",
+      "text": "## 4.2 时间参考\n\n日期应采用公历纪元，时间应采用北京时间。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.2",
+        "chapter_title": "时间参考",
+        "chapter_path": "4.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 7
+    },
+    {
+      "node_id": "3cb531b2-2c2c-417c-89eb-5ffc589500a4",
+      "text": "# 5 数据采集",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "数据采集",
+        "chapter_path": "5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 8
+    },
+    {
+      "node_id": "25fa8cc1-985e-45fe-9968-c78c42f5d5d7",
+      "text": "## 5.1 基本要求",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.1",
+        "chapter_title": "基本要求",
+        "chapter_path": "5/5.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 9
+    },
+    {
+      "node_id": "59720435-470a-4076-b40c-e6b9488004ad",
+      "text": "### 5.1.1 检测点数据",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.1.1",
+        "chapter_title": "检测点数据",
+        "chapter_path": "5/5.1/5.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 10
+    },
+    {
+      "node_id": "5c0f1880-0228-4031-bd81-f80ffe2b4cc2",
+      "text": "检测点数据应满足以下基本要求：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.1.1",
+        "chapter_title": "检测点数据",
+        "chapter_path": "5.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 11
+    },
+    {
+      "node_id": "b376edba-ab92-4dfa-8497-5ae143ae8ed0",
+      "text": "a) 检测点数据一般包括检测点坐标文件、采集登记表、实地照片、标注了检测点的影像图等。\n\nb) 空间位置数据以点要素的信息方式存储。\n\nc) 检测点坐标文件存储点要素的空间坐标位置信息， 作为录入矢量信息的主要数据源， 检测点数据\n\n内容见 6.2。\n\nd) 采集登记表存储检测点项目信息，采集登记表见附录 A。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.1.1",
+        "chapter_title": "检测点数据",
+        "chapter_path": "5.1.1/5.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 12
+    },
+    {
+      "node_id": "05138319-adca-44c5-a63f-9aa27d76e551",
+      "text": "### 5.1.2 其他数据\n\n用于辅助检测点显示及查询的水系、 交通、 地形、行政区界线矢量数据、地名地址数据、1：500 1：\n\n1000 1：2000 标准分幅范围等其他数据。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.1.2",
+        "chapter_title": "其他数据",
+        "chapter_path": "5.1.1/5.1.1/5.1.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 13
+    },
+    {
+      "node_id": "1707c469-e5bf-418c-8171-a51a67f02edd",
+      "text": "## 5.2 采集要求",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2",
+        "chapter_title": "采集要求",
+        "chapter_path": "5.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 14
+    },
+    {
+      "node_id": "9765366e-26c3-449f-a820-6d5ba507f2c0",
+      "text": "### 5.2.1 仪器检定\n\n检测点采集所使用仪器应经过计量检定合格后，在有效期内使用。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.1",
+        "chapter_title": "仪器检定",
+        "chapter_path": "5.2/5.2.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 15
+    },
+    {
+      "node_id": "0894c767-0e04-40d2-ab4d-40e0c975a62f",
+      "text": "### 5.2.2 采集范围划定",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.2",
+        "chapter_title": "采集范围划定",
+        "chapter_path": "5.2/5.2.1/5.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 16
+    },
+    {
+      "node_id": "1a23c5b0-bbc6-420e-b294-b12cc350868e",
+      "text": "检测点采集范围划定应满足下列要求：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.2",
+        "chapter_title": "采集范围划定",
+        "chapter_path": "5.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 17
+    },
+    {
+      "node_id": "b1eedabe-7302-41f4-bf37-cb107d218614",
+      "text": "a) 地理场景数据1宜以“幅”为单位划定采集范围，涉及全域成果时，一般以县级行政区或乡镇行\n\n政区为单位划定采集范围。\n\nb) 转换生产实体数据、 采集生产地理实体数据宜以行政区划单元为单位划定采集范围（其中， 地形\n\n级实体数据宜以县级行政区 （市辖区、 县等） 为单位划定， 城市级实体数据宜以乡级行政区 （街道、 乡、\n\n镇等）为单位划定），也可结合成果实际情况，以生产单元等为单位划定采集范围。\n\nc) 城市三维模型（LOD1.",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.2",
+        "chapter_title": "采集范围划定",
+        "chapter_path": "5.2.2/5.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 18
+    },
+    {
+      "node_id": "06bb0152-0694-4c86-9f91-4e1ffba6d1c1",
+      "text": "c) 城市三维模型（LOD1.3 级）成果宜以乡级行政区 （街道、 乡、镇等）为单位划定采集范围， 也可\n\n结合成果实际情况，以存储的三维模型数据文件、建模单元为单位划定采集范围。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.2",
+        "chapter_title": "采集范围划定",
+        "chapter_path": "5.2.2/5.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 19
+    },
+    {
+      "node_id": "5eeb8dc9-607d-49c1-9895-f3ab53deb525",
+      "text": "### 5.2.3 采集点位选择",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.3",
+        "chapter_title": "采集点位选择",
+        "chapter_path": "5.2.2/5.2.2/5.2.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 20
+    },
+    {
+      "node_id": "cb263361-b717-44fb-a681-a821b55a03f0",
+      "text": "采集检测点点位选择应满足下列要求：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.3",
+        "chapter_title": "采集点位选择",
+        "chapter_path": "5.2.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 21
+    },
+    {
+      "node_id": "070abc75-69f6-4d8f-b524-52a918569a3c",
+      "text": "a) 城区街道（办事处）宜以“田”字型布设采集路线，均匀采集区域内街道办、社区服务中心、学\n\n校、机关院落等重要地物，主干道、小区、商场、运动场等配套地物。\n\nb) 乡镇宜以“回”字型布设采集路线，均匀采集镇中心、街道办、学校、医院、村（居）委会等重\n\n要地物。\n\nc) 点位可补充其他重要单位、要素等，如水库、县级及以上公路及其桥梁、测量控制点（涉军涉密\n\n除外）。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.3",
+        "chapter_title": "采集点位选择",
+        "chapter_path": "5.2.3/5.2.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 22
+    },
+    {
+      "node_id": "88c72356-0897-44f5-bbbe-6703105e65e1",
+      "text": "### 5.2.4 采集数量与方式\n\n每个点位采用组合方式采集，每个村（居）定位点及附近区域，数量不低于 5 个、总体不低于\n\n100 个（平面检测点大于 50 个，高程检测点大于 50 个，平高点可同时按平面检测点和高程检测点计\n\n数），并按如下组合进行采集：\n\na) 房檐角+房角底点对 ≥ 1；\n\nb) 路面高程点 ≥ 1；\n\nc) 标志线或道路边线交叉点 ≥ 1；\n\nd) 独立地物（路灯、电杆、井盖、路牌、信号灯柱等） ≥ 1；\n\ne) 耕地（农村地区水田、旱地中心高程） ≥ 1；\n\nf)",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.4",
+        "chapter_title": "采集数量与方式",
+        "chapter_path": "5.2.3/5.2.3/5.2.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 23
+    },
+    {
+      "node_id": "1bfb19e2-d58a-44ec-a20d-49bd96dbf2ac",
+      "text": "≥ 1；\n\ne) 耕地（农村地区水田、旱地中心高程） ≥ 1；\n\nf) 其他地物，结合定位点周边实际地物分布情况采集；\n\ng) 近景拍摄乡镇/街道办事处、村（居）委会、学校院落等重要单位，水库、县级及以上公路及其\n\n桥梁等重要要素名称牌匾，远景拍摄重要单位、要素及周边环境；",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.4",
+        "chapter_title": "采集数量与方式",
+        "chapter_path": "5.2.3/5.2.3/5.2.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 24
+    },
+    {
+      "node_id": "b611732f-6b4e-4329-a270-10e0d9378506",
+      "text": "# 1 《实景三维中国建设成果质量核验方案（2023-2025 年）》质量检查与验收、质量核查涉及的主要数据成果包括 5 米\n\n格网数字高程模型（DEM）、数字表面模型（DSM）、优于 2 米格网 DEM、DSM、近岸海域 10 米以浅 DEM、2 米分辨\n\n率数字正射影像（DOM）、优于 1 米分辨率 DOM、优于 0.5 米分辨率 DOM、地形级基础地理实体数据、城市级基础地\n\n理实体数据。\n\nh) 外业采集时需录入地物外业代码，代码见表 C.1。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "《实景三维中国建设成果质量核验方案（2023-2025 年）》质量检查与验收、质量核查涉及的主要数据成果包括 5 米",
+        "chapter_path": "1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 25
+    },
+    {
+      "node_id": "eb89eb66-05ce-4147-be1c-fac61bd83b65",
+      "text": "### 5.2.5 平面检测点采集",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.5",
+        "chapter_title": "平面检测点采集",
+        "chapter_path": "1/5.2.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 26
+    },
+    {
+      "node_id": "67718eba-df8b-4ab6-b5a8-8c35ea929a04",
+      "text": "平面检测点采集应满足下列要求：\n\na) 平面精度应不低于相应比例尺地形图的明显特征点位精度要求。\n\nb) 采集数量视地物复杂程度、比例尺等具体情况确定，按照 5.2.4 要求执行。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.5",
+        "chapter_title": "平面检测点采集",
+        "chapter_path": "1/5.2.5/5.2.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 27
+    },
+    {
+      "node_id": "86af74a9-873f-4ae9-85e7-f5f674b9f422",
+      "text": "c) 位置应均匀分布，应选择明显点状地物、线状地物交叉点、地物角点和拐点等，如房屋角点、围\n\n墙角点、电杆、通讯杆、路灯、消防栓、检修井盖中心点等。\n\nd) 采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读 平面检测点位\n\n置。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.5",
+        "chapter_title": "平面检测点采集",
+        "chapter_path": "5.2.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 28
+    },
+    {
+      "node_id": "93187332-61de-4445-9e75-1c7056ac26a9",
+      "text": "### 5.2.6 高程检测点采集",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.6",
+        "chapter_title": "高程检测点采集",
+        "chapter_path": "5.2.5/5.2.6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 29
+    },
+    {
+      "node_id": "ea9129bb-2a2d-4125-803c-0d2a5bbd0f16",
+      "text": "高程检测点采集满足下列要求：\n\na) 高程精度应不低于相应比例尺地形图的高程注记点精度要求。\n\nb) 采集数量视地物复杂程度、比例尺等具体情况确定，按照5.2.4 要求执行。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.6",
+        "chapter_title": "高程检测点采集",
+        "chapter_path": "5.2.5/5.2.6/5.2.6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 30
+    },
+    {
+      "node_id": "0e18ff87-6380-4266-bf36-5ae4c167160f",
+      "text": "c) 位置应均匀分布，应选取实地能准确判读的明显地形地貌特征点，避免选择高程急剧变化处。\n\nd) 同名高程注记点采集位置宜准确， 避免选择难以准确判读的高程注记点； 城区内高程注记点应注\n\n重选取城区的街道中心线、街道交叉中心、桥面、广场、较大庭院内或空地上等特征点。\n\ne) 可采用采集检测点时的实地照片、检测点叠加影像图或检测地形图的截图辅助判读高程检测点\n\n位置。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.6",
+        "chapter_title": "高程检测点采集",
+        "chapter_path": "5.2.6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 31
+    },
+    {
+      "node_id": "395c63a0-bf46-4e00-b042-a99668dd48a0",
+      "text": "### 5.2.7 平高检测点采集",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.7",
+        "chapter_title": "平高检测点采集",
+        "chapter_path": "5.2.6/5.2.7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 32
+    },
+    {
+      "node_id": "591bc5a8-0512-44fb-aadc-b49e06d1c66f",
+      "text": "平高检测点应同时满足 5.2.5 和 5.2.6 的要求。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.7",
+        "chapter_title": "平高检测点采集",
+        "chapter_path": "5.2.6/5.2.7/5.2.7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 33
+    },
+    {
+      "node_id": "4e270983-15ca-4ae4-a466-ff58e2b137d8",
+      "text": "### 5.2.8 实地照片和影像图采集",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.8",
+        "chapter_title": "实地照片和影像图采集",
+        "chapter_path": "5.2.8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 34
+    },
+    {
+      "node_id": "6a1e62a9-0d95-4c79-be79-846a213a811a",
+      "text": "实地照片和影像图采集满足下列要求：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.2.8",
+        "chapter_title": "实地照片和影像图采集",
+        "chapter_path": "5.2.8/5.2.8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 35
+    },
+    {
+      "node_id": "16d855b5-7077-4e92-8212-6ea6367beb4d",
+      "text": "a) 实地照片宜把采集检测点时拍摄的主体地物点置于图面中间， 有一定的位置参照物， 拍摄距离宜\n\n为 5m～20m，能清晰表现地物。顺序拍摄近景（竖屏）、远景（横屏）各不少于 1 张实地照片。\n\nb) 影像图应从参考数据中裁切， 以检测点位置为中心点， 以明显标识标注检测点位置， 裁剪长宽为\n\n511 像素511 像素大小的图像。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.2.8",
+        "chapter_title": "实地照片和影像图采集",
+        "chapter_path": "5.2.8/5.2.8/5.2.8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 36
+    },
+    {
+      "node_id": "d978b1f7-d0a5-459e-8bea-9fa05f6147eb",
+      "text": "## 5.3 采集方法",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.3",
+        "chapter_title": "采集方法",
+        "chapter_path": "5.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 37
+    },
+    {
+      "node_id": "a33c45d3-9456-40fa-92aa-147187ead48c",
+      "text": "### 5.3.1 GNSS RTK 实测法",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.1",
+        "chapter_title": "GNSS RTK 实测法",
+        "chapter_path": "5.3/5.3.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 38
+    },
+    {
+      "node_id": "731fdc57-cf06-4b5d-92de-0e3eda59fcfe",
+      "text": "GNSS RTK 实测法采集检测点应满足 GB/T 39616 或 CH/T 2009 相关要求，此方法包括利用影像 RTK\n\n采集检测点，也可采集实地照片。宜采用控制点或地形点模式进行采集，要求如下：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.3.1",
+        "chapter_title": "GNSS RTK 实测法",
+        "chapter_path": "5.3/5.3.1/5.3.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 39
+    },
+    {
+      "node_id": "523b242a-a15d-40af-ab15-7dc4d966a015",
+      "text": "a) 采用控制点测量模式时：\n\n1) 采用固定值测量，观测测回数大于等于 1；\n\n2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；\n\n3) 观测采用三脚架/手持对中、整平，每次观测历元数应不少于 10 个，采样间隔应不小于\n\n2s；\n\n4) 各次测量的大地高较差不应大于 4cm；\n\n5) 各次测量的平面坐标较差不应大于 4cm；\n\n6) 采用多次测量时应取各次测量的平均坐标中数作为最终结果。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.1",
+        "chapter_title": "GNSS RTK 实测法",
+        "chapter_path": "5.3.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 40
+    },
+    {
+      "node_id": "b6d1ec7c-f6e4-4978-a398-8a500142b7a8",
+      "text": "b) 采用地形点测量模式时：\n\n1) 采用固定值测量；\n\n2) 观测前设置平面收敛阈值不大于 2cm、高程收敛阈值不大于 3cm；\n\n3) 每次观测历元数应不少于 10 个，采样间隔应不小于 2s。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.1",
+        "chapter_title": "GNSS RTK 实测法",
+        "chapter_path": "5.3.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 41
+    },
+    {
+      "node_id": "2b655bb9-01bd-4acd-a972-b2cc9bf08fc6",
+      "text": "### 5.3.2 全站仪实测法",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.2",
+        "chapter_title": "全站仪实测法",
+        "chapter_path": "5.3.1/5.3.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 42
+    },
+    {
+      "node_id": "f17665dd-9df8-4f8a-8267-40962b277f22",
+      "text": "全站仪实测法使用全站仪极坐标法采集检测点，应满足 CH/T 1020 相关要求。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.3.2",
+        "chapter_title": "全站仪实测法",
+        "chapter_path": "5.3.1/5.3.2/5.3.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 43
+    },
+    {
+      "node_id": "fc3a2417-c81f-4020-ac3c-06f5fcd488d0",
+      "text": "### 5.3.3 摄影测量法",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.3",
+        "chapter_title": "摄影测量法",
+        "chapter_path": "5.3.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 44
+    },
+    {
+      "node_id": "a9f88a9f-5ab6-4cc2-91c8-0bac9246bef1",
+      "text": "使用低空无人机航空摄影测量方法采集检测点，应满足 CH/T 3003、CH/T 3004 和 CH/T 3005 相关要",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.3.3",
+        "chapter_title": "摄影测量法",
+        "chapter_path": "5.3.3/5.3.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 45
+    },
+    {
+      "node_id": "ba3329b2-625e-4fe1-a157-6736c484e166",
+      "text": "求。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.3",
+        "chapter_title": "摄影测量法",
+        "chapter_path": "5.3.3/5.3.3/5.3.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 46
+    },
+    {
+      "node_id": "6d051d33-93a6-4bca-bc22-d42d6d6982fd",
+      "text": "### 5.3.4 激光雷达实测法\n\n使用无人机搭载机载激光雷达扫描仪采集激光雷达点云数据， 提取检测点应满足CH/T 8023 和 CH/T",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.4",
+        "chapter_title": "激光雷达实测法",
+        "chapter_path": "5.3.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 47
+    },
+    {
+      "node_id": "6048a1af-c4f0-42b1-99fa-5b93b3b10e3c",
+      "text": "8024 相关要求；使用车载移动测量系统采集车载激光点云数据，提取检测点应满足 CH/T 6003 和 CH/T\n\n6004 相关要求。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.3.4",
+        "chapter_title": "激光雷达实测法",
+        "chapter_path": "5.3.4/5.3.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 48
+    },
+    {
+      "node_id": "37df42f5-ff55-4d27-b96c-18962142b987",
+      "text": "### 5.3.5 其他方法",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5.3.5",
+        "chapter_title": "其他方法",
+        "chapter_path": "5.3.4/5.3.4/5.3.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 49
+    },
+    {
+      "node_id": "d36d38b9-56c6-4c17-9319-09960701a2a6",
+      "text": "可从质量检验合格的成果中采集检测点，包括但不限于空中三角测量成果、实景三维成果等。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5.3.5",
+        "chapter_title": "其他方法",
+        "chapter_path": "5.3.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 50
+    },
+    {
+      "node_id": "f6159bce-a818-4182-b1df-d1b1c18fad0a",
+      "text": "# 6 数据整理",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据整理",
+        "chapter_path": "6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 51
+    },
+    {
+      "node_id": "6f46bed2-f0d3-42ca-923b-7e387ad47fc3",
+      "text": "## 6.1 检测点编号\n\n检测点数据以县级行政区为单元， 按照统一规则入库编号。 检测点编号由类别、 行政区划、 采集日\n\n期及序号组成，编号共 19 位，具体编号规则如图 1 所示。检测点编号应满足下列要求：\n\na) 检测点获取方式取 1 位，“Y”代表外业实测检测点，“N”代表从已有成果数据内业提取。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "检测点编号",
+        "chapter_path": "6/6.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 52
+    },
+    {
+      "node_id": "3b2f05ba-c2c3-40b7-8807-f2b802c32813",
+      "text": "b) 行政区代码由县（区）6 位区划代码组成。行政区代码与 GB/T 2260 规定保持一致。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "检测点编号",
+        "chapter_path": "6.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 53
+    },
+    {
+      "node_id": "5d3333af-9187-45f4-bd4f-356fe7055322",
+      "text": "c) 根据采集时间对每个基本单元内的检测点进行流水编号。采集日期取至年月日，保留8 位。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "检测点编号",
+        "chapter_path": "6.1/6.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 54
+    },
+    {
+      "node_id": "00e22c47-2df0-4b50-ad81-f871f91728f9",
+      "text": "d) 序号保留 4 位，不足四位前补“0”。\n\nx         xxxxxx       xxxxxxxx        xxxx\n\n获取方式    行政区代码     采集日期        序号",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "检测点编号",
+        "chapter_path": "6.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 55
+    },
+    {
+      "node_id": "56b9f253-09d9-406e-b847-db02787b8056",
+      "text": "图 1 检测点编号规则",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "检测点编号",
+        "chapter_path": "6.1/6.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 56
+    },
+    {
+      "node_id": "6ef0b472-44d7-4e69-8270-9fe9ff5dcc41",
+      "text": "## 6.2 坐标文件整理\n\n检测点坐标文件整理满足如下要求：\n\na) 使用测量仪器采集检测点时， 坐标文件应从测量仪器中直接导出， 以检测仪器为单位， 整理到一\n\n个检测点坐标文件中。原始坐标文件一般包含名称、代码、北坐标、东坐标、高程、目标纬度、目标经",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "坐标文件整理",
+        "chapter_path": "6.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 57
+    },
+    {
+      "node_id": "4665dcbb-3563-419a-92f8-7246a507782a",
+      "text": "度、 目标大地高、 天线类型、 天线高、 测量方法、 观测卫星数、PDOP、HDOP、VDOP、GDOP 水平误差、\n\n垂直误差、RMS 误差、开始时刻、结束时刻、观测数。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "坐标文件整理",
+        "chapter_path": "6.2/6.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 58
+    },
+    {
+      "node_id": "106dab8d-5591-4298-ad37-1b93c2d622cf",
+      "text": "b) 应在采集登记表中登记检测点坐标文件相关信息，采集登记表见附录A。\n\nc) 利用已有成果采集检测点时，应将已有成果范围内采集的检测点整理到一个检测点坐标文件中。\n\nd) 原始数据仅采集了平面坐标和高程的， 应进行坐标转换获取经纬度坐标， 检测点记录格式为： 流",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "坐标文件整理",
+        "chapter_path": "6.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 59
+    },
+    {
+      "node_id": "82a5535e-1629-4253-a8eb-693a4bbb838a",
+      "text": "水号、检测点类型、纬度、经度、大地高、北坐标、东坐标、高程、仪器高、地物代码、地物名称、重\n\n要要素名称。\n\ne) 检测点坐标经纬度，单位为“度”，取值至小数点后 9 位；平面坐标、大地高、高程，单位为\n\n“米”，取值至小数点后 3 位，采用独立坐标系时需转换为 2000 国家大地坐标系坐标。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "坐标文件整理",
+        "chapter_path": "6.2/6.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 60
+    },
+    {
+      "node_id": "d6e17b93-4d0b-48ab-8d51-3d0ab143c8c9",
+      "text": "f) 坐标文件命名为“仪器编号或软件名称+采集方式+采集日期”，文件名备注“原始数据” “成果",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "坐标文件整理",
+        "chapter_path": "6.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 61
+    },
+    {
+      "node_id": "3896b04d-067e-42db-904c-d927373403da",
+      "text": "数据”，区分原始数据和整理成果数据。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "坐标文件整理",
+        "chapter_path": "6.2/6.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 62
+    },
+    {
+      "node_id": "474c72ba-d20a-4180-b3d3-10bfcfc7348f",
+      "text": "## 6.3 实地照片和影像图整理\n\n实地照片和影像图整理满足如下要求：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.3",
+        "chapter_title": "实地照片和影像图整理",
+        "chapter_path": "6.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 63
+    },
+    {
+      "node_id": "d575c336-3a87-4321-bc8d-12fc32636b31",
+      "text": "a) 实地照片、标注了检测点的影像图应按类别建立文件夹以图片文件方式存储。\n\nb) 图片文件命名应唯一， 文件命名应包含检测点编号， 并附加标识码和图片序号， 其命名规则为：\n\n“标识码+检测点编号+图片序号”，其中实地照片标识码用字母“ZP”代替，影像图以“YX”代替。\n\nc) 图片序号按照每个检测点所包含的实地照片 （或影像图） 数量进行流水编号， 图片序号保留2 位，",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.3",
+        "chapter_title": "实地照片和影像图整理",
+        "chapter_path": "6.3/6.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 64
+    },
+    {
+      "node_id": "74c42d73-986b-4d21-bb86-bf16d868f827",
+      "text": "不足两位前补“0”。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.3",
+        "chapter_title": "实地照片和影像图整理",
+        "chapter_path": "6.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 65
+    },
+    {
+      "node_id": "af674b7d-8899-46b2-b1ad-91cb9ece0f3b",
+      "text": "## 6.4 检测点数据目录组织\n\n检测点整理后成果目录以“年度+地级市+县级行政区名称+项目名称检测点数据”命名，存放该项\n\n目采集的检测点坐标文件、采集登记表等资料。目录组织如表 1 所示：\n\n表 1 外业检测点目录组织方式",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "检测点数据目录组织",
+        "chapter_path": "6.3/6.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 66
+    },
+    {
+      "node_id": "0988ef39-2496-449d-a8ea-77149a877e2e",
+      "text": "目 录 结 构 示例\n\n年度+地级市+县级行政区名称+项目名称+检\n\n测点数据\n\n|……仪仪仪仪+仪仪仪仪+仪仪仪仪（成果\n\n数据）.csv\n\n|……仪仪仪仪+仪仪仪仪+仪仪仪仪（原始\n\n数据）.csv\n\n|……仪仪仪仪仪仪仪仪",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "检测点数据目录组织",
+        "chapter_path": "6.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 67
+    },
+    {
+      "node_id": "02f167ac-f2fc-4527-bb27-6b4016d2c4e2",
+      "text": "|……采集登记表.xlsx\n\n|……地物管径记录表.xlsx",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "检测点数据目录组织",
+        "chapter_path": "6.4/6.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 68
+    },
+    {
+      "node_id": "9ec741af-995a-4d69-845a-69b655535274",
+      "text": "|……仪器检定证书（扫描件）.pdf\n\n|……数据真实性申明（扫描件）.pdf\n\nXXXX 年 XX 市 XX 县（市、区）+项目名称+检测点数据\n\n|……88888888GNSSRTK 实测 20250101（成果数据）.csv\n\n|……88888888GNSSRTK仪仪20250101仪仪仪数据仪.csv\n\n|……仪仪仪仪仪仪仪仪\n\n|……ZPY42010020250101000101.jpg\n\n|……YXN42010020250101000101.jpg\n\n|……ZPY42010020250101000102.jpg\n\n|……YXN42010020250101000102.jpg\n\n……",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "检测点数据目录组织",
+        "chapter_path": "6.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 69
+    },
+    {
+      "node_id": "21fce764-9492-45ae-ab90-36277fbc3d4f",
+      "text": "|……采集登记表.xlsx\n\n|……地物管径记录表.xlsx",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "检测点数据目录组织",
+        "chapter_path": "6.4/6.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 70
+    },
+    {
+      "node_id": "35d1937b-4227-41e8-8fbb-f92c008471fa",
+      "text": "|……仪器检定证书（扫描件）.pdf\n\n|……数据真实性申明（扫描件）.pdf",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "检测点数据目录组织",
+        "chapter_path": "6.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 71
+    },
+    {
+      "node_id": "d0c997b3-8611-4e8a-aa27-a00e9646537c",
+      "text": "## 6.5 数据汇交\n\n检测数据采集完成，提交以下成果资料：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.5",
+        "chapter_title": "数据汇交",
+        "chapter_path": "6.4/6.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 72
+    },
+    {
+      "node_id": "68a95f97-84bc-4d9b-b91b-da8851f4dcfb",
+      "text": "a) 按目录组织的检测点数据（采集登记表、坐标文件、实地照片、影像图、仪器检定证书、数据真",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.5",
+        "chapter_title": "数据汇交",
+        "chapter_path": "6.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 73
+    },
+    {
+      "node_id": "83ed0d89-5d6a-414f-9c29-f4a6f92ad3b5",
+      "text": "实性申明等）；\n\nb) 任务区范围线；",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.5",
+        "chapter_title": "数据汇交",
+        "chapter_path": "6.5/6.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 74
+    },
+    {
+      "node_id": "fb6a7c81-a163-4b02-9d01-8c9c7958e2d6",
+      "text": "c) 项目成果结合表；",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.5",
+        "chapter_title": "数据汇交",
+        "chapter_path": "6.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 75
+    },
+    {
+      "node_id": "a781adb4-2ace-4c56-beff-70723f103ac0",
+      "text": "d) 其他有关资料。\n\n以上资料按照实景三维检测点档案管理规定进行管理。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.5",
+        "chapter_title": "数据汇交",
+        "chapter_path": "6.5/6.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 76
+    },
+    {
+      "node_id": "1456fde5-d093-4bb7-832d-ff813a7847a6",
+      "text": "# 7 数据库组织与建库",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "数据库组织与建库",
+        "chapter_path": "7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 77
+    },
+    {
+      "node_id": "3f42024f-0de3-45f7-9355-6169ddb92ebb",
+      "text": "## 7.1 数据组织",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1",
+        "chapter_title": "数据组织",
+        "chapter_path": "7/7.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 78
+    },
+    {
+      "node_id": "fd31e0be-71e0-4081-99a0-2fd773651108",
+      "text": "### 7.1.1 数据关联及组织\n\n检测点数据库实体间建立逻辑关联，并采用优化的数据结构和组织方法，减少数据冗\n\n余。数据组织采用分类组织方式，检测点数据库数据组织关系如图2 所示。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.1",
+        "chapter_title": "数据关联及组织",
+        "chapter_path": "7/7.1/7.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 79
+    },
+    {
+      "node_id": "89baceb5-41bb-41e7-9988-2a4559023c3f",
+      "text": "检测点数据库\n\n矢量数据\n\n原始文件\n\n影像数据\n\n行政区划\n\n坐标文件",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1.1",
+        "chapter_title": "数据关联及组织",
+        "chapter_path": "7.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 80
+    },
+    {
+      "node_id": "055cd7fd-81fe-48f2-98d0-ed39e01887ef",
+      "text": "采集登记表",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.1",
+        "chapter_title": "数据关联及组织",
+        "chapter_path": "7.1.1/7.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 81
+    },
+    {
+      "node_id": "c777d076-8867-45ab-a224-8db45e1cb021",
+      "text": "检测点数据\n\n其他数据\n\n地名地址\n\n水系\n\n交通\n\n地形\n\n图幅范围\n\n实地照片\n\n影像图\n\n属性数据",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1.1",
+        "chapter_title": "数据关联及组织",
+        "chapter_path": "7.1.1/7.1.1/7.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 82
+    },
+    {
+      "node_id": "2e4286d2-c688-44d8-9ffc-7b184a2121a6",
+      "text": "图 2 检测点数据库数据组织关系",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.1",
+        "chapter_title": "数据关联及组织",
+        "chapter_path": "7.1.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 83
+    },
+    {
+      "node_id": "6d441e5a-27b4-4ff0-9bf7-f30fc7b8d854",
+      "text": "### 7.1.2 矢量数据组织\n\n矢量数据以点要素表示，以地理坐标存储。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.2",
+        "chapter_title": "矢量数据组织",
+        "chapter_path": "7.1.1/7.1.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 84
+    },
+    {
+      "node_id": "66373411-13b8-438f-a230-e8f7e1191c06",
+      "text": "### 7.1.3 属性数据组织",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.3",
+        "chapter_title": "属性数据组织",
+        "chapter_path": "7.1.1/7.1.2/7.1.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 85
+    },
+    {
+      "node_id": "5d956a92-8b25-41f8-bec0-e38aea2c85ad",
+      "text": "属性数据内容及定义按照附录 B 执行。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1.3",
+        "chapter_title": "属性数据组织",
+        "chapter_path": "7.1.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 86
+    },
+    {
+      "node_id": "0faf3e8f-1f43-4b69-aaeb-396b494429df",
+      "text": "### 7.1.4 原始文件组织\n\n原始文件包括坐标文件、采集登记表，以文件方式存储。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.4",
+        "chapter_title": "原始文件组织",
+        "chapter_path": "7.1.3/7.1.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 87
+    },
+    {
+      "node_id": "9bfb2b42-765a-423d-9a4f-79c02eb41e93",
+      "text": "### 7.1.5 影像数据组织",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.5",
+        "chapter_title": "影像数据组织",
+        "chapter_path": "7.1.3/7.1.4/7.1.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 88
+    },
+    {
+      "node_id": "41285c32-3d62-47be-b1e1-20365c0d3e02",
+      "text": "影像图包括实地照片、影像图，以图片文件方式存储，按类别建立文件夹存储不同类\n\n别的图片。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1.5",
+        "chapter_title": "影像数据组织",
+        "chapter_path": "7.1.5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 89
+    },
+    {
+      "node_id": "4a2051f0-2422-4690-a380-07ee274e18ee",
+      "text": "### 7.1.6 其他数据组织",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.1.6",
+        "chapter_title": "其他数据组织",
+        "chapter_path": "7.1.5/7.1.6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 90
+    },
+    {
+      "node_id": "fd520301-8aac-4c8e-aff9-f747371d7469",
+      "text": "其他数据为矢量或栅格数据，以地理坐标存储。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1.6",
+        "chapter_title": "其他数据组织",
+        "chapter_path": "7.1.5/7.1.6/7.1.6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 91
+    },
+    {
+      "node_id": "7eb6b70b-484f-47bd-9833-046084be3603",
+      "text": "### 7.1.7 数据库命名与构成\n\n数据集命名和构成应满足如下要求：\n\na) 检测点数据库一般包含检测点数据集、其他数据集。检测点数据集命名为“JCD”，\n\n其他数据集命名“QT”。\n\nb) 检测点数据集包括 1 个检测点数据层。\n\nc) 其他数据集一般包括行政区划数据层、地名地址数据层等。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1.7",
+        "chapter_title": "数据库命名与构成",
+        "chapter_path": "7.1.7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 92
+    },
+    {
+      "node_id": "a527c7a7-0784-4ed0-b889-9f8b2a6f8fda",
+      "text": "## 7.2 数据库建设",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2",
+        "chapter_title": "数据库建设",
+        "chapter_path": "7.1.7/7.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 93
+    },
+    {
+      "node_id": "6d96fa0a-9525-481a-824e-52cab7f74297",
+      "text": "### 7.2.1 库体创建",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.1",
+        "chapter_title": "库体创建",
+        "chapter_path": "7.1.7/7.2/7.2.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 94
+    },
+    {
+      "node_id": "954def84-3915-49d8-9234-7fd43eb901f9",
+      "text": "按照数据库组织要求， 对每类数据分配物理空间， 设置相关参数， 创建数据表等， 物理",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.2.1",
+        "chapter_title": "库体创建",
+        "chapter_path": "7.2.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 95
+    },
+    {
+      "node_id": "80d1e584-70f2-4750-b9f8-47c482762a67",
+      "text": "空间分配时应考虑数据库的扩充性。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.1",
+        "chapter_title": "库体创建",
+        "chapter_path": "7.2.1/7.2.1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 96
+    },
+    {
+      "node_id": "0e250053-559b-406e-9ed1-0ff84c5741c1",
+      "text": "### 7.2.2 数据准备",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.2",
+        "chapter_title": "数据准备",
+        "chapter_path": "7.2.1/7.2.1/7.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 97
+    },
+    {
+      "node_id": "2aabf087-32e3-4a9d-8ba5-d92f271c21d5",
+      "text": "对整理后的检测点坐标文件按照数据组织的要求进行一致性转换，主要包括代码转换、",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.2.2",
+        "chapter_title": "数据准备",
+        "chapter_path": "7.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 98
+    },
+    {
+      "node_id": "14393ce0-8f00-4cf4-96ee-81ba5107a0ba",
+      "text": "格式转换、坐标变换、投影转换等。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.2",
+        "chapter_title": "数据准备",
+        "chapter_path": "7.2.2/7.2.2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 99
+    },
+    {
+      "node_id": "d744ca83-aac1-440b-b61c-7ef47c169134",
+      "text": "### 7.2.3 数据入库",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.3",
+        "chapter_title": "数据入库",
+        "chapter_path": "7.2.2/7.2.2/7.2.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 100
+    },
+    {
+      "node_id": "ad349775-2d01-4d32-9fd1-267a11b3bee4",
+      "text": "根据数据组织方式进行检测点空间数据及属性入库。 数据入库可以选用手动添加或程序",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.2.3",
+        "chapter_title": "数据入库",
+        "chapter_path": "7.2.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 101
+    },
+    {
+      "node_id": "a3875002-235d-4c76-992b-24f93ce5b004",
+      "text": "批量入库。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.3",
+        "chapter_title": "数据入库",
+        "chapter_path": "7.2.3/7.2.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 102
+    },
+    {
+      "node_id": "471081e1-bcf0-4499-9402-ffed31a9dd09",
+      "text": "### 7.2.4 检测点文件存储\n\n检测点文件以文件方式存储， 按项目名称命名文件夹， 依次存放检测点坐标文件、采集",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2.4",
+        "chapter_title": "检测点文件存储",
+        "chapter_path": "7.2.3/7.2.3/7.2.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 103
+    },
+    {
+      "node_id": "c3a09e0a-2694-4218-8ad6-ce959024b1f2",
+      "text": "登记表、实地照片目录、影像图目录。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.2.4",
+        "chapter_title": "检测点文件存储",
+        "chapter_path": "7.2.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 104
+    },
+    {
+      "node_id": "d18c8840-3b3f-496c-9edf-ec6237a20b14",
+      "text": "## 7.3 数据库更新\n\n数据库中的检测点数据应按需求对数据进行更新，保持数据的现势性。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.3",
+        "chapter_title": "数据库更新",
+        "chapter_path": "7.2.4/7.3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 105
+    },
+    {
+      "node_id": "792a26cc-4e71-4b14-8524-0c1c19bac921",
+      "text": "## 7.4 安全要求\n\n数据库安全防护、保密和数据库备份与恢复应符合 GB/T 33453 的规定。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.4",
+        "chapter_title": "安全要求",
+        "chapter_path": "7.4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 106
+    },
+    {
+      "node_id": "c4f41935-587a-4eb8-93c6-b47fd82c81d1",
+      "text": "# 8 质量要求\n\n数据库的质量要求应符合 GB/T 33453 的规定，同时满足以下要求：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "质量要求",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 107
+    },
+    {
+      "node_id": "799e8c80-e28d-428c-8cd6-144f2db5007a",
+      "text": "a) 完整性： 检测点坐标文件、 影像图应完整， 与入库数据保持一致、 数据无重复入库。\n\nb) 逻辑一致性：",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "质量要求",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 108
+    },
+    {
+      "node_id": "3e18c5be-a53a-4cbe-b6d8-6daa3e4732e0",
+      "text": "1) 概念一致性：检测点数据的数据集、数据层表结构应符合 7.1 的规定；",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "质量要求",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 109
+    },
+    {
+      "node_id": "42a2fbe6-739b-49af-8cf8-4af4936a9655",
+      "text": "2) 值域一致性：属性项的取值应在值域界定的范围内；\n\n3) 格式一致性：应与规定格式保持一致。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "质量要求",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 110
+    },
+    {
+      "node_id": "52631e91-2c4f-483f-84f7-93e949706d50",
+      "text": "c) 属性精度：数据的属性项及属性值等应正确。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "质量要求",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 111
+    },
+    {
+      "node_id": "e41cf5e9-a276-4862-93d4-242bad4a32f4",
+      "text": "附录A\n\n（资料性）\n\n采集登记表\n\n采集登记表见表 A.1。\n\n表 A.1 采集登记表\n\n项目名称：\n\n类型代码 原始坐标文件 中央子午线 仪器品牌型号 仪器编号/软件名称 采集单位 采集人员 采集日期\n\nP/G/PG\n\n注 1：P 为平面检测点类型代码，G 为高程检测点类型代码，PG 为平高检测点类型代码。\n\n注 2：检测点采用内业采集方式时，不填写仪器品牌型号。\n\n附录 B\n\n（规范性）\n\n检测点属性表结构\n\n检测点属性表结构见表 B.1。\n\n表 B.1 检测点属性表结构\n\n序\n\n号\n\n字段\n\n名称\n\n字段\n\n代码\n\n字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数\n\n值域 约束/条件 备注",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "质量要求",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 112
+    },
+    {
+      "node_id": "55fc4e33-0924-4629-af3f-ff5f1cb8c4b1",
+      "text": "# 1 检测点编号 BH 字符型 20 — — M 见注 2",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "检测点编号 BH 字符型 20 — — M 见注 2",
+        "chapter_path": "1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 113
+    },
+    {
+      "node_id": "f0381d07-000a-4bca-b020-cebcdd16c999",
+      "text": "# 2 纬度值 B 双精度型 — 9",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "纬度值 B 双精度型 — 9",
+        "chapter_path": "2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 114
+    },
+    {
+      "node_id": "fd273cbf-f9bb-447d-bcdf-2f89156bd002",
+      "text": "DD.DDDD\n\nDDDDD\n\nM 见注 3",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "纬度值 B 双精度型 — 9",
+        "chapter_path": "2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 115
+    },
+    {
+      "node_id": "eed5013f-5f94-40c9-8aba-d09a7841cae5",
+      "text": "# 3 经度值 L 双精度型 — 9",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "经度值 L 双精度型 — 9",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 116
+    },
+    {
+      "node_id": "e1ed8ee9-f0d1-4298-95af-45de267a30a5",
+      "text": "DDD.DDD\n\nDDDDDD\n\nM 见注 4",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "经度值 L 双精度型 — 9",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 117
+    },
+    {
+      "node_id": "5e7253b9-96d4-4b11-b25f-e5474f1a9058",
+      "text": "# 4 大地高 H 双精度型 — 3 —",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "大地高 H 双精度型 — 3 —",
+        "chapter_path": "4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 118
+    },
+    {
+      "node_id": "85037121-df9b-4dac-8f4e-84850626af79",
+      "text": "C/能获取大地\n\n高时必填\n\n见注 5",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "大地高 H 双精度型 — 3 —",
+        "chapter_path": "4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 119
+    },
+    {
+      "node_id": "31f8aac7-fd59-4d82-b750-a1a945fd2617",
+      "text": "# 5 北坐标 x 双精度型 — 3 ≥0",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "北坐标 x 双精度型 — 3 ≥0",
+        "chapter_path": "5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 120
+    },
+    {
+      "node_id": "db48e8db-7951-4eaa-b004-a518bb913d75",
+      "text": "C/能获取平面\n\n坐标时必填\n\n见注 6",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "北坐标 x 双精度型 — 3 ≥0",
+        "chapter_path": "5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 121
+    },
+    {
+      "node_id": "590e91af-0387-4258-94c6-aadaad16e169",
+      "text": "# 6 东坐标 y 双精度型 — 3 ≥0",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "东坐标 y 双精度型 — 3 ≥0",
+        "chapter_path": "6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 122
+    },
+    {
+      "node_id": "524bf587-f465-4309-a4f0-a323bd95ea71",
+      "text": "C/能获取平面\n\n坐标时必填\n\n见注 7",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "东坐标 y 双精度型 — 3 ≥0",
+        "chapter_path": "6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 123
+    },
+    {
+      "node_id": "4add71c5-627a-482a-bf22-1fc35e70d4d0",
+      "text": "# 7 高程 h1 双精度型 — 3 —",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "高程 h1 双精度型 — 3 —",
+        "chapter_path": "7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 124
+    },
+    {
+      "node_id": "ea401349-7340-4168-8729-add4bc6ae822",
+      "text": "C/能获取高程\n\n时必填\n\n见注 8",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "高程 h1 双精度型 — 3 —",
+        "chapter_path": "7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 125
+    },
+    {
+      "node_id": "fb60cbb6-fa72-409d-969c-24cc146e23c8",
+      "text": "# 8 中央子午线\n\nZYZW\n\nX",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "中央子午线",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 126
+    },
+    {
+      "node_id": "2fc0386a-3b9a-4096-bd6b-9616e0472a33",
+      "text": "双精度型 — — ≥0 M 见注 9",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "中央子午线",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 127
+    },
+    {
+      "node_id": "5bb43300-8ce2-404b-9dc4-1aab3c2319ec",
+      "text": "# 9 投影面高程 h0 双精度型 — 3 — O 见注 10",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "投影面高程 h0 双精度型 — 3 — O 见注 10",
+        "chapter_path": "9",
+        "data_name": "检测点"
+      },
+      "chunk_index": 128
+    },
+    {
+      "node_id": "ab4ede5b-946c-40b3-9fc1-dda1ce1c505a",
+      "text": "# 10 仪器高 YQG 双精度型 — 3 ≥0 O —",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "仪器高 YQG 双精度型 — 3 ≥0 O —",
+        "chapter_path": "10",
+        "data_name": "检测点"
+      },
+      "chunk_index": 129
+    },
+    {
+      "node_id": "64af6c79-3236-4b70-81b8-f864d9da468b",
+      "text": "# 11 地物代码\n\nDWD\n\nM\n\n字符型 10 — — M 注 11",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "地物代码",
+        "chapter_path": "11",
+        "data_name": "检测点"
+      },
+      "chunk_index": 130
+    },
+    {
+      "node_id": "e37420ac-a861-4db7-96c0-340c95e10544",
+      "text": "# 12 地物名称\n\nDWM\n\nC\n\n字符型 10 — — O 注 12",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "地物名称",
+        "chapter_path": "12",
+        "data_name": "检测点"
+      },
+      "chunk_index": 131
+    },
+    {
+      "node_id": "7840ea96-50fd-4bd7-80bc-8bec57208d74",
+      "text": "# 13 检测点类型 LX 字符型 10 — P/G/PG M —",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "检测点类型 LX 字符型 10 — P/G/PG M —",
+        "chapter_path": "13",
+        "data_name": "检测点"
+      },
+      "chunk_index": 132
+    },
+    {
+      "node_id": "f86d284e-414b-4344-ba8a-97e10d1db12c",
+      "text": "# 14 平面精度 PMJD 双精度型 — — ≥0",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "平面精度 PMJD 双精度型 — — ≥0",
+        "chapter_path": "14",
+        "data_name": "检测点"
+      },
+      "chunk_index": 133
+    },
+    {
+      "node_id": "611e192c-6fa4-4184-9b79-92738aa82fd8",
+      "text": "C/类型为“P”\n\n或“PG”时必填\n\n见注 13",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "平面精度 PMJD 双精度型 — — ≥0",
+        "chapter_path": "14",
+        "data_name": "检测点"
+      },
+      "chunk_index": 134
+    },
+    {
+      "node_id": "f63339b3-3819-4dfc-b49d-6e635c2bbbea",
+      "text": "# 15 高程精度 GCJD 双精度型 — — ≥0",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "高程精度 GCJD 双精度型 — — ≥0",
+        "chapter_path": "15",
+        "data_name": "检测点"
+      },
+      "chunk_index": 135
+    },
+    {
+      "node_id": "6e50c1af-033f-4767-b1be-5964ba2d61b9",
+      "text": "C/类型为“G”\n\n或“PG”时必填\n\n见注 14",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "高程精度 GCJD 双精度型 — — ≥0",
+        "chapter_path": "15",
+        "data_name": "检测点"
+      },
+      "chunk_index": 136
+    },
+    {
+      "node_id": "eceafe57-e8d4-4ba8-9c15-39220ef6c0f4",
+      "text": "# 16 采集方式 CJFS 字符型 20 — — M 见注 15",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "采集方式 CJFS 字符型 20 — — M 见注 15",
+        "chapter_path": "16",
+        "data_name": "检测点"
+      },
+      "chunk_index": 137
+    },
+    {
+      "node_id": "59005ac0-b7c8-4c7d-a649-144e2045ff10",
+      "text": "# 17 位置描述 MS 字符型 254 — — O 见注 16",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "位置描述 MS 字符型 254 — — O 见注 16",
+        "chapter_path": "17",
+        "data_name": "检测点"
+      },
+      "chunk_index": 138
+    },
+    {
+      "node_id": "eda643d0-88b4-42b2-92f9-602e335e296c",
+      "text": "# 18 影像截图 YX 字符型 254 — — O 见注 17",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "影像截图 YX 字符型 254 — — O 见注 17",
+        "chapter_path": "18",
+        "data_name": "检测点"
+      },
+      "chunk_index": 139
+    },
+    {
+      "node_id": "25409f5b-7a2b-4aa4-bc67-1e8edd0e61ae",
+      "text": "# 19 实地照片 ZP 字符型 254 — — O 见注 18\n\n序\n\n号\n\n字段\n\n名称\n\n字段\n\n代码\n\n字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数\n\n值域 约束/条件 备注",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "实地照片 ZP 字符型 254 — — O 见注 18",
+        "chapter_path": "19",
+        "data_name": "检测点"
+      },
+      "chunk_index": 140
+    },
+    {
+      "node_id": "bbf7fc62-3e84-498a-bc7f-5238b92b7d0f",
+      "text": "# 20 采集日期 RQ 日期型 — —\n\nYYYY/MM\n\n/DD\n\nM 见注 19",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "采集日期 RQ 日期型 — —",
+        "chapter_path": "20",
+        "data_name": "检测点"
+      },
+      "chunk_index": 141
+    },
+    {
+      "node_id": "f15de898-98bc-4f4a-ba59-175b7bd3c453",
+      "text": "# 21 行政区代码\n\nXZQD\n\nM\n\n整型 10 — — M 见注 20",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "行政区代码",
+        "chapter_path": "21",
+        "data_name": "检测点"
+      },
+      "chunk_index": 142
+    },
+    {
+      "node_id": "620f1942-7374-409c-b1b1-36879a7472b5",
+      "text": "# 22 项目名称\n\nXMM\n\nC\n\n字符型 60 — — O 见注 21",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "项目名称",
+        "chapter_path": "22",
+        "data_name": "检测点"
+      },
+      "chunk_index": 143
+    },
+    {
+      "node_id": "c9cd1dbc-001d-42db-83f4-3409a35ca348",
+      "text": "# 23 是否可用 SFKY 字符型 254 — — O 见注 22",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "是否可用 SFKY 字符型 254 — — O 见注 22",
+        "chapter_path": "23",
+        "data_name": "检测点"
+      },
+      "chunk_index": 144
+    },
+    {
+      "node_id": "d486f642-72b7-4840-bff8-33429e1b11c0",
+      "text": "# 24 备注 BZ 字符型 254 — — O",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 145
+    },
+    {
+      "node_id": "da320153-a2da-4c6d-a7be-8038a0eb5b25",
+      "text": "注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时必",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 146
+    },
+    {
+      "node_id": "e60a1115-9e5a-45b9-8228-55ba46ed703e",
+      "text": "须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 4：检测点经度地理坐标，单位为“度”，小数点后保留有效位数 9 位。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 147
+    },
+    {
+      "node_id": "9fead0f1-a3db-4941-b31b-fcb6117b3f47",
+      "text": "注 5：单位：米。采集时的地物点大地高，保留 3 位小数，RTK 采集时必须填写原始大地高。其他方",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 148
+    },
+    {
+      "node_id": "e0408069-13e0-4839-8b50-f788490ced48",
+      "text": "式、内业图解方式采集时，此项填写 0。\n\n注 6：北坐标（投影平面 x 坐标），全站仪极坐标采集坐标必填。\n\n注 7：东坐标（投影平面 y 坐标），全站仪极坐标采集坐标必填。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 149
+    },
+    {
+      "node_id": "5b81c09b-6771-40be-9eba-f326874b2456",
+      "text": "注 8： 检测点高程，DLG/DOM 平面位置检测点不位于地面时， 即代码为P 不需要求取高程值， 如房檐、",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 150
+    },
+    {
+      "node_id": "5fb387ae-fc4f-4341-8f2b-0493560e4238",
+      "text": "房角等，否则代码为 G、PG 时必填。\n\n注 9：中央子午线，根据项目实际的中央子午线填写。\n\n注 10：投影面高程，根据项目实际的投影面高程填写。\n\n注 11：检测地物代码，以 3 位代码表示，取值见附录 C.1。\n\n注 12：地物名称，采集地物的名称，取值见附录 C.1。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 151
+    },
+    {
+      "node_id": "1615174f-e056-4859-9faa-205bddc16981",
+      "text": "注 13：平面精度，实测法采集时，填写仪器的平面位置标称精度；图解法采集时，填写数据源的平\n\n面位置标称精度，单位为“米”。\n\n注 14：高程精度，实测法采集时，填写仪器的高程标称精度；图解法采集时，填写数据源的高程标\n\n称精度，单位为“米”。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 152
+    },
+    {
+      "node_id": "78c898bc-a62f-4358-9608-aa7a15925338",
+      "text": "注 15：外业采集：GNSS-RTK 实测法、全站仪实测法、激光雷达实测法；内业采集：已有成果提取，\n\n如空中三角测量、实景三维模型采集等。\n\n注 16：位置描述，如：花坛西南角点等。\n\n注 17：存储影像图文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 18：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 19：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足位\n\n的用 0 补足，例如“2024/03/06”。\n\n注 20：填写该检测点所属县级行政区代码。\n\n注 21：可填写项目名称或编号。",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 153
+    },
+    {
+      "node_id": "02489ed9-be0e-4837-8d4d-7cea023a886e",
+      "text": "注 20：填写该检测点所属县级行政区代码。\n\n注 21：可填写项目名称或编号。填写检测点采集项目编号时，可以年份+顺序号表示，如 2024-001。\n\n注 22：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n附录C\n\n（规范性）\n\n采集地物内外业代码对照表\n\n采集地物内外业代码对照关系见表 C.1.\n\n表 C.1 采集地物内外业代码对照表\n\n序号\n\n外业代码\n\n（地物+检测点类型）\n\n地物名称 地物代码\n\n检测点\n\n类型\n\n含义 采集说明\n\n控制测量方式下\n\n是否偏心",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 154
+    },
+    {
+      "node_id": "b2b85d01-7020-461f-8dfd-7762951ee697",
+      "text": "# 1 BZJPG 标志角 BZJ PG 标志线角点 地面标志线角点，如车位线等 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "BZJPG 标志角 BZJ PG 标志线角点 地面标志线角点，如车位线等 否",
+        "chapter_path": "1",
+        "data_name": "检测点"
+      },
+      "chunk_index": 155
+    },
+    {
+      "node_id": "3884ea35-5302-42d6-a1e9-1cd93ab13a34",
+      "text": "# 2 BZXP 标志线 BZX P 标志线平面点 交通标志线顶点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "BZXP 标志线 BZX P 标志线平面点 交通标志线顶点 否",
+        "chapter_path": "2",
+        "data_name": "检测点"
+      },
+      "chunk_index": 156
+    },
+    {
+      "node_id": "37d234c8-8b99-47fa-90e3-75ce4107fbfc",
+      "text": "# 3 DLMG 道路面 DLM G 路面高程点 道路交叉口中心点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "DLMG 道路面 DLM G 路面高程点 道路交叉口中心点 否",
+        "chapter_path": "3",
+        "data_name": "检测点"
+      },
+      "chunk_index": 157
+    },
+    {
+      "node_id": "dae03261-e177-4939-b9d8-a438818a7dcc",
+      "text": "# 4 DLMPG 道路面 DLM PG 路面平高点 道路面内带有标志的平高点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "DLMPG 道路面 DLM PG 路面平高点 道路面内带有标志的平高点 否",
+        "chapter_path": "4",
+        "data_name": "检测点"
+      },
+      "chunk_index": 158
+    },
+    {
+      "node_id": "75360582-6fbc-4d73-9559-4b360908969d",
+      "text": "# 5 DLXPG 道路线 DLX PG 道路线平高点 道路边线交叉点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "DLXPG 道路线 DLX PG 道路线平高点 道路边线交叉点 否",
+        "chapter_path": "5",
+        "data_name": "检测点"
+      },
+      "chunk_index": 159
+    },
+    {
+      "node_id": "139f53e4-4462-40bf-ba55-270c0b6d43c2",
+      "text": "# 6 DZJPG 地砖角 DZJ PG 地砖角平高点 广场地砖不同色块界线角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "DZJPG 地砖角 DZJ PG 地砖角平高点 广场地砖不同色块界线角点 否",
+        "chapter_path": "6",
+        "data_name": "检测点"
+      },
+      "chunk_index": 160
+    },
+    {
+      "node_id": "38d4013f-1bb7-4661-81d3-2d7f641f7f66",
+      "text": "# 7 DXGPG 电线杆 DXG PG 电线杆平高点 电线杆外边缘 是",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "DXGPG 电线杆 DXG PG 电线杆平高点 电线杆外边缘 是",
+        "chapter_path": "7",
+        "data_name": "检测点"
+      },
+      "chunk_index": 161
+    },
+    {
+      "node_id": "b8debcc2-53ad-4573-b166-30600a5968c2",
+      "text": "# 8 FJDP 房角点 FJD P 房角平面点 不落地的房角 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "FJDP 房角点 FJD P 房角平面点 不落地的房角 否",
+        "chapter_path": "8",
+        "data_name": "检测点"
+      },
+      "chunk_index": 162
+    },
+    {
+      "node_id": "93d89cb9-4008-4f29-b632-e9ab8894d5dd",
+      "text": "# 9 FJDPG 房角点 FJD PG 房角平高点 房屋墙基脚点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "FJDPG 房角点 FJD PG 房角平高点 房屋墙基脚点 否",
+        "chapter_path": "9",
+        "data_name": "检测点"
+      },
+      "chunk_index": 163
+    },
+    {
+      "node_id": "51f7b3a9-571b-4158-b135-0152b681170f",
+      "text": "# 10 FYDPG 房檐点 FYD PG 房檐平高点 房檐角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "FYDPG 房檐点 FYD PG 房檐平高点 房檐角点 否",
+        "chapter_path": "10",
+        "data_name": "检测点"
+      },
+      "chunk_index": 164
+    },
+    {
+      "node_id": "34cd30f1-0e6c-43d3-badc-8893083b6df1",
+      "text": "# 11 GSCP 固水池 GSC P 水池平面点 固化水池角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "GSCP 固水池 GSC P 水池平面点 固化水池角点 否",
+        "chapter_path": "11",
+        "data_name": "检测点"
+      },
+      "chunk_index": 165
+    },
+    {
+      "node_id": "cafc1703-1ea6-416b-a59e-c58fd4dd8405",
+      "text": "# 12 HTJPG 花坛角 HTJ PG 花坛平高点 花坛角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "HTJPG 花坛角 HTJ PG 花坛平高点 花坛角点 否",
+        "chapter_path": "12",
+        "data_name": "检测点"
+      },
+      "chunk_index": 166
+    },
+    {
+      "node_id": "6cba208e-74dd-48a7-b0d1-4c95f2f3920a",
+      "text": "# 13 JGXPG 井盖中心点 JGX PG 井盖平高点 地面井盖中心点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "JGXPG 井盖中心点 JGX PG 井盖平高点 地面井盖中心点 否",
+        "chapter_path": "13",
+        "data_name": "检测点"
+      },
+      "chunk_index": 167
+    },
+    {
+      "node_id": "bc5e7b33-c645-4f9e-9287-66adba3a20ea",
+      "text": "# 14 LDGPG 路灯杆 LDG PG 路灯平高点 路灯杆外边缘 是",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "LDGPG 路灯杆 LDG PG 路灯平高点 路灯杆外边缘 是",
+        "chapter_path": "14",
+        "data_name": "检测点"
+      },
+      "chunk_index": 168
+    },
+    {
+      "node_id": "dca7160f-beac-4a84-af76-a7e91ea19917",
+      "text": "# 15 QGYP 旗杆 QGY P 旗杆平面点 旗杆外缘底点 是\n\n序号\n\n外业代码\n\n（地物+检测点类型）\n\n地物名称 地物代码\n\n检测点\n\n类型\n\n含义 采集说明\n\n控制测量方式下\n\n是否偏心",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "QGYP 旗杆 QGY P 旗杆平面点 旗杆外缘底点 是",
+        "chapter_path": "15",
+        "data_name": "检测点"
+      },
+      "chunk_index": 169
+    },
+    {
+      "node_id": "6c1748d5-78fd-4afe-90be-e1308e11b2bc",
+      "text": "# 16 QCJPG 球场角 QCJ PG 球场平高点 球场不同色块界线角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "QCJPG 球场角 QCJ PG 球场平高点 球场不同色块界线角点 否",
+        "chapter_path": "16",
+        "data_name": "检测点"
+      },
+      "chunk_index": 170
+    },
+    {
+      "node_id": "0c3f1e56-396b-40e6-9e19-eb66c09f0090",
+      "text": "# 17 TJJPG 台阶角 TJJ PG 台阶平高点 台阶角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "TJJPG 台阶角 TJJ PG 台阶平高点 台阶角点 否",
+        "chapter_path": "17",
+        "data_name": "检测点"
+      },
+      "chunk_index": 171
+    },
+    {
+      "node_id": "619b0e5d-3dca-4d5a-9bae-449865a95274",
+      "text": "# 18 TXGPG 通讯杆 TXG PG 通讯杆平高点 通讯杆外边缘 是",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "TXGPG 通讯杆 TXG PG 通讯杆平高点 通讯杆外边缘 是",
+        "chapter_path": "18",
+        "data_name": "检测点"
+      },
+      "chunk_index": 172
+    },
+    {
+      "node_id": "73819765-edf4-434e-8eaf-c17a1b345164",
+      "text": "# 19 WQJPG 围墙角 WQJ PG 围墙角平高点 围墙角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "WQJPG 围墙角 WQJ PG 围墙角平高点 围墙角点 否",
+        "chapter_path": "19",
+        "data_name": "检测点"
+      },
+      "chunk_index": 173
+    },
+    {
+      "node_id": "872f5b3f-fc17-4ddf-8706-81f0ad26676f",
+      "text": "# 20 WSBPG 污水篦子 WSB PG 污水篦子平高点 污水篦子中心点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "WSBPG 污水篦子 WSB PG 污水篦子平高点 污水篦子中心点 否",
+        "chapter_path": "20",
+        "data_name": "检测点"
+      },
+      "chunk_index": 174
+    },
+    {
+      "node_id": "4a160a26-60ad-4c95-a877-aea75ed873b0",
+      "text": "# 21 XHSPG 消火栓 XHS PG 消火栓中心点 消火栓中心点 是",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "XHSPG 消火栓 XHS PG 消火栓中心点 消火栓中心点 是",
+        "chapter_path": "21",
+        "data_name": "检测点"
+      },
+      "chunk_index": 175
+    },
+    {
+      "node_id": "7c9c4e39-d0bb-4a79-bdce-fb81d0c2cc66",
+      "text": "# 22 LPJPG 楼牌角 LPJ PG 楼牌角点平高点 较大楼牌的角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "LPJPG 楼牌角 LPJ PG 楼牌角点平高点 较大楼牌的角点 否",
+        "chapter_path": "22",
+        "data_name": "检测点"
+      },
+      "chunk_index": 176
+    },
+    {
+      "node_id": "f39912d4-448d-4bf5-a78f-9d35975c319f",
+      "text": "# 23 PLJPG 飘楼角 PLJ PG 飘楼角点平高点 飘楼角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "PLJPG 飘楼角 PLJ PG 飘楼角点平高点 飘楼角点 否",
+        "chapter_path": "23",
+        "data_name": "检测点"
+      },
+      "chunk_index": 177
+    },
+    {
+      "node_id": "feb14d22-6972-4053-9914-9f22934f5da8",
+      "text": "# 24 YTJPG 阳台角 YTJ PG 阳台角点平高点 阳台角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "YTJPG 阳台角 YTJ PG 阳台角点平高点 阳台角点 否",
+        "chapter_path": "24",
+        "data_name": "检测点"
+      },
+      "chunk_index": 178
+    },
+    {
+      "node_id": "f3f650e9-645c-46cf-b4c5-a2fa06bdfbb0",
+      "text": "# 25 MDJPG 门墩角 MDJ PG 门墩角点平高点 门墩地面角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "MDJPG 门墩角 MDJ PG 门墩角点平高点 门墩地面角点 否",
+        "chapter_path": "25",
+        "data_name": "检测点"
+      },
+      "chunk_index": 179
+    },
+    {
+      "node_id": "04c47b2b-b9f0-4ee4-84a7-feeefb51ef2a",
+      "text": "# 26 ZZJPG 支柱角 ZZJ PG 支柱角点平高点 支柱地面角点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "ZZJPG 支柱角 ZZJ PG 支柱角点平高点 支柱地面角点 否",
+        "chapter_path": "26",
+        "data_name": "检测点"
+      },
+      "chunk_index": 180
+    },
+    {
+      "node_id": "faba53aa-e7a2-4a6e-87cb-95192e2125d4",
+      "text": "# 27 XHDPG 信号灯柱 XHD PG 信号灯平高点 信号灯外缘平高点 是",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "XHDPG 信号灯柱 XHD PG 信号灯平高点 信号灯外缘平高点 是",
+        "chapter_path": "27",
+        "data_name": "检测点"
+      },
+      "chunk_index": 181
+    },
+    {
+      "node_id": "9ab924fa-415e-4263-abd7-36f29bcdd8e5",
+      "text": "# 28 JKGPG 监控杆 JKG PG 监控杆平高点 监控杆外缘平高点 是",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "JKGPG 监控杆 JKG PG 监控杆平高点 监控杆外缘平高点 是",
+        "chapter_path": "28",
+        "data_name": "检测点"
+      },
+      "chunk_index": 182
+    },
+    {
+      "node_id": "20e69f6f-b063-4ee3-8412-46e30996da53",
+      "text": "# 29 HDDG 旱地 HDD G 旱地中心高程 平坦旱地地块中心 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "29",
+        "chapter_title": "HDDG 旱地 HDD G 旱地中心高程 平坦旱地地块中心 否",
+        "chapter_path": "29",
+        "data_name": "检测点"
+      },
+      "chunk_index": 183
+    },
+    {
+      "node_id": "e9b0746d-c1f4-4300-92f3-dc8e87d095d1",
+      "text": "# 30 STDG 水田 STD G 水田中心高程 水田地块高程 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "30",
+        "chapter_title": "STDG 水田 STD G 水田中心高程 水田地块高程 否",
+        "chapter_path": "30",
+        "data_name": "检测点"
+      },
+      "chunk_index": 184
+    },
+    {
+      "node_id": "ffaef7d0-8f25-496c-b6c6-2fb9dc0d7a6d",
+      "text": "# 31 YLDG 院落地面点 YLD G 单位院落高程 单位院落中心点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "31",
+        "chapter_title": "YLDG 院落地面点 YLD G 单位院落高程 单位院落中心点 否",
+        "chapter_path": "31",
+        "data_name": "检测点"
+      },
+      "chunk_index": 185
+    },
+    {
+      "node_id": "e95a3d24-5d75-4f48-a23c-de9d4a5b539b",
+      "text": "# 32 PFJPG 棚房角 PFJ PG 棚房角点平高点 棚房角地面点 否",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "32",
+        "chapter_title": "PFJPG 棚房角 PFJ PG 棚房角点平高点 棚房角地面点 否",
+        "chapter_path": "32",
+        "data_name": "检测点"
+      },
+      "chunk_index": 186
+    },
+    {
+      "node_id": "42185249-4dba-4de4-aec8-6f8bb2249aab",
+      "text": "# 33 QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否\n\n参 考 文 献\n\n[1] GB/T 13923—2022 基础地理信息要素分类与代码\n\n[2] GB/T 20257.1—2017 国家基本比例尺地图图式 第 1 部分：1：500 1：1000 1：2000\n\n地形图图式\n\n[3] GB/T 20258.1—2019 基础地理信息要素数据字典 第 1 部分：1：500 1 ：1000 1 ：\n\n2000 比例尺",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否",
+        "chapter_path": "33",
+        "data_name": "检测点"
+      },
+      "chunk_index": 187
+    },
+    {
+      "node_id": "e9ad9fc6-f0c5-4735-9ddc-d1bebbf8c62d",
+      "text": "[4] GB/T 24356-2023 测绘成果质量检查与验收",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否",
+        "chapter_path": "33",
+        "data_name": "检测点"
+      },
+      "chunk_index": 188
+    },
+    {
+      "node_id": "96e9f70c-28e6-427a-9e5f-034a0e143a49",
+      "text": "[5] CH/T 1025—2011 数字线划图（DLG）质量检验技术规程\n\n[6] CH/T 1026—2012 数字高程模型质量检验技术规程",
+      "metadata": {
+        "file_name": "part2_检测点.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part2_检测点.md",
+        "part_number": 2,
+        "part_name": "检测点",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "33",
+        "chapter_title": "QLMG 桥梁 QLM G 桥梁中心高程 桥梁面中心点 否",
+        "chapter_path": "33",
+        "data_name": "检测点"
+      },
+      "chunk_index": 189
+    }
+  ]
+}

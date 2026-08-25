@@ -1,0 +1,21 @@
+{
+  "source_file": "part4_标志性地物.md",
+  "total_nodes": 1,
+  "nodes": [
+    {
+      "node_id": "03261bc6-f99f-45c2-bfea-d81b370bc516",
+      "text": "# 实景三维质检大数据支撑库 时空数据规范 第4部分 标志性地物\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第4部分 标志性地物.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第 4 部分 标志性地物\n\n（草案）\n\n2025 年7 月\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规\n\n则》的规定起草。\n\n第1部分 数据分类与基本规定\n\n第2部分 检测点\n\n第3部分 检测线\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "正文_其他",
+        "knowledge_type": "正文_其他",
+        "is_table": false,
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 0
+    }
+  ]
+}

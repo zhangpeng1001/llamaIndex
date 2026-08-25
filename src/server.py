@@ -488,7 +488,7 @@ def create_app() -> FastAPI:
 
     @app.get("/api/scheme/check-items")
     async def scheme_check_items() -> dict[str, Any]:
-        """返回预定义检查项清单(28 项)。"""
+        """返回预定义检查项清单(27 项)。"""
 
         logger.info("/api/scheme/check-items: 返回检查项清单")
         return {"data": get_check_items()}

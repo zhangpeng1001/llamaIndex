@@ -2,8 +2,8 @@
 
 学习要点:
     - 复杂业务方案生成不是一个 LLM 调用能解决的,要做「检索前置 + 结构分解 + 校验后置」。
-    - LLM 擅长「裁决和填充」,不擅长「在 28 项长列表中记忆+匹配」。
-    - 检查项选择的「白名单」必须是「语义检索命中的候选项」,不是全量 28 项。
+    - LLM 擅长「裁决和填充」,不擅长「在 27 项长列表中记忆+匹配」。
+    - 检查项选择的「白名单」必须是「语义检索命中的候选项」,不是全量 27 项。
     - 意图识别:非质检要求时友好拒绝,避免对闲聊/无关问题浪费 RAG 流程。
 
 业务背景:
@@ -139,12 +139,13 @@ def run_scheme_generate(
 
 
 def get_check_items() -> list[dict[str, Any]]:
-    """返回预定义检查项清单(28 项)。
+    """返回预定义检查项清单(27 项)。
 
     用于前端展示与选择参考。复用 qualityScheme.check_items.list_check_items。
 
     返回:
-        list[dict]: 每项含 checkCode/checkName/checkDesc/checkParam/checkObjType/checkRequestUrl。
+        list[dict]: 每项含 checkCode/checkName/checkDesc/checkParam/param_specs
+        （param_names 在加载阶段由 checkParam 解析得到）。
     """
 
     logger.info("返回预定义检查项清单")

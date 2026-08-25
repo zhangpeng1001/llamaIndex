@@ -1,22 +1,20 @@
 """预定义检查项入库模块。
 
 核心改进：
-    原来的方案是「把 28 项检查项拼成 Markdown 大表格塞给 Prompt，让 LLM 读表选」。
+    原来的方案是「把 27 项检查项拼成 Markdown 大表格塞给 Prompt，让 LLM 读表选」。
     问题：
-        1. Token 昂贵（28 项 × 每次调用）
+        1. Token 昂贵（27 项 × 每次调用）
         2. LLM 长上下文记忆力有限，长表容易漏看最合适项
         3. 用户问"编号唯一检查"时，本该先通过语义检索直接命中 QualityCheckUniqueValue，
-           而不是让 LLM 读完 28 条自己匹配。
+           而不是让 LLM 读完 27 条自己匹配。
 
-本模块把 `_RAW_CHECK_ITEMS`（28 项）也做成 TextNode，连同规范文档一起存入 Milvus：
+本模块把 `_RAW_CHECK_ITEMS`（27 项）也做成 TextNode，连同规范文档一起存入 Milvus：
     - Node.text = "检查项中文名 + 说明 + 参数名列表"（用于 Embedding 语义检索）
     - Node.metadata = {
         "doc_type": "check_item",  # ← 关键！和规范文档 doc_type=data_spec 区分
         "check_code": "...",
         "check_name": "...",
-        "param_names_str": "data_name, fieldNames",
-        "check_obj_type": "VECTOR",
-        "request_url": "...",
+        "param_names_str": "fieldNames, fieldLengths",  # 不含 dataName（顶层字段）
       }
     - part_number=0 (特殊)，不与 part1~7 真实规范冲突
 
@@ -31,7 +29,7 @@
       （比拆多 Collection 更灵活，也符合 GPT 文档的方案 B）。
 
 业务背景：
-    28 项检查项是质检平台的字典表，更新频率极低（季度/年度级）。
+    27 项检查项是质检平台的字典表，更新频率极低（季度/年度级）。
     首次启动时构建一次即可，后续随平台字典更新时 rebuild。
 """
 
@@ -83,7 +81,6 @@ def build_check_item_nodes(
             f"质检检查项【{item['checkName']}】（编码{item['checkCode']}）："
             f"{item['checkDesc']}。"
             f"所需参数：{param_names_str if param_names_str else '无参数'}。"
-            f"检查对象类型：{item.get('checkObjType', 'VECTOR')}。"
         )
         # 另外把 "编号唯一" "非空" "必填" 等关键词作为synonyms补充（提高召回率）
         synonyms = _build_synonyms(item)
@@ -96,13 +93,11 @@ def build_check_item_nodes(
             "knowledge_type": "check_item_catalog",
             "part_number": CHECK_ITEM_PART_NUMBER,
             "part_name": CHECK_ITEM_PART_NAME,
-            # 检查项自身字段
+            # 检查项自身字段（对齐 check_items.py：已移除 checkObjType/checkRequestUrl）
             "check_code": item["checkCode"],
             "check_name": item["checkName"],
             "check_desc": item["checkDesc"],
-            "check_obj_type": item.get("checkObjType", "VECTOR"),
             "param_names_str": param_names_str,  # Milvus scalar 字符串字段，可检索
-            "request_url": item.get("checkRequestUrl", ""),
             # 通用兼容字段
             "section_type": "检查项字典",
             "data_name": "质检平台检查项",
@@ -196,29 +191,68 @@ def format_top_check_items_for_prompt(
     *,
     max_items: int = 5,
 ) -> str:
-    """把「通过语义检索拿到的 TopN 检查项 Node」格式化为 Prompt 里的小表格。
+    """把「通过语义检索拿到的 TopN 检查项 Node」格式化为 Prompt 里的清单文本。
 
-    替代原来「28 项全表」，只给 LLM 最相关的 3~5 项。
+    替代原来「27 项全表」，只给 LLM 最相关的 3~5 项。
+
+    输出形态对齐 Java `CheckItemCatalog.formatForPrompt()`：
+        1. 顶部表格：checkCode/checkName/checkDesc/参数名/匹配分数（一图概览）
+        2. 底部「### 候选项参数详情」节：对每个候选项，从 CHECK_ITEM_BY_CODE
+           查询 param_specs，输出参数名/描述/示例，让 LLM 明确知道每个参数的
+           业务语义，避免把阈值填错参数名。
     """
     if not nodes:
         return "（未检索到相关检查项）"
     actual = nodes[:max_items]
+
+    # 延迟导入避免循环依赖（check_items 与本模块互引过符号）
+    from .check_items import CHECK_ITEM_BY_CODE
+
+    # 顶部表格：一图概览
     lines = [
         "| checkCode | checkName | checkDesc | 参数名 | 匹配分数 |",
         "|---|---|---|---|---|",
     ]
+    # 同时收集 check_code 列表，便于后面按序追加参数详情
+    ordered_codes: list[str] = []
     for n in actual:
         try:
             meta = n.node.metadata if hasattr(n, "node") else getattr(n, "metadata", {})
             score = getattr(n, "score", None)
             score_str = f"{score:.4f}" if score is not None else "-"
             params = meta.get("param_names_str", "")
+            code = meta.get("check_code", "")
             lines.append(
-                f"| {meta.get('check_code','')} | {meta.get('check_name','')} | "
+                f"| {code} | {meta.get('check_name','')} | "
                 f"{meta.get('check_desc','')} | {params} | {score_str} |"
             )
+            if code:
+                ordered_codes.append(code)
         except Exception as exc:  # pragma: no cover - 调试兜底
             logger.warning("格式化候选项异常: %s", exc)
+
+    # 底部详情：参考 Java formatForPrompt 的「规则参数」节
+    if ordered_codes:
+        lines.append("")
+        lines.append("### 候选项参数详情")
+        lines.append("")
+        for code in ordered_codes:
+            info = CHECK_ITEM_BY_CODE.get(code)
+            if not info:
+                continue
+            param_specs = info.get("param_specs") or []
+            lines.append(f"#### {code} — {info['checkName']}")
+            lines.append(f"说明：{info['checkDesc']}")
+            if not param_specs:
+                lines.append("规则参数：无（仅需 dataName）")
+            else:
+                lines.append("规则参数：")
+                for spec in param_specs:
+                    lines.append(
+                        f"  - {spec['name']}：{spec['description']}。示例：{spec['example']}"
+                    )
+            lines.append("")
+
     return "\n".join(lines)
 
 
