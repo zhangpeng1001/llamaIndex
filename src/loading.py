@@ -21,6 +21,7 @@
 
 from __future__ import annotations
 
+import json
 import logging
 from pathlib import Path
 
@@ -29,9 +30,12 @@ from llama_index.core.schema import Document
 from qualityScheme.enhanced_extractor import run_enhanced_extraction
 from qualityScheme.smart_chunker import load_documents_with_enhanced_metadata
 
-from .config import STANDARD_DIR, QualitySchemeConfig
+from .config import PACKAGE_DIR, STANDARD_DIR, QualitySchemeConfig
 
 logger = logging.getLogger(__name__)
+
+# Document 存储目录:存放按源 markdown 文件分组的 Document JSON
+DOCUMENT_DIR = PACKAGE_DIR / "document"
 
 
 def run_loading(
@@ -110,6 +114,12 @@ def run_loading(
     logger.info("Step 3: 加载增强 MD → 章节级 Document(解析 metadata 注释)")
     documents = load_documents_with_enhanced_metadata(config.data_dir)
 
+    # ------------------------------------------------------------------
+    # Step 4: 将 Document 按源 markdown 文件保存为 JSON
+    # ------------------------------------------------------------------
+    logger.info("Step 4: 将 Document 按源文件保存到 %s", DOCUMENT_DIR)
+    save_documents_to_files(documents, DOCUMENT_DIR)
+
     _log_loading_result(documents, source_dir=config.data_dir)
     logger.info("===== Loading 阶段完成 =====")
     return documents
@@ -159,3 +169,95 @@ def _log_loading_result(documents: list[Document], *, source_dir: Path) -> None:
             len(d.get_content()),
             preview,
         )
+
+
+def save_documents_to_files(
+    documents: list[Document],
+    output_dir: Path,
+) -> None:
+    """将 Document 列表按源 markdown 文件分组,保存为独立的 JSON 文件。
+
+    每个源 markdown 文件对应一个 JSON 文件,文件名与源文件同名(扩展名改为 .json)。
+    JSON 结构:
+        {
+            "source_file": "part1_数据分类与基本规定.md",
+            "total_documents": 10,
+            "documents": [
+                {"text": "...", "metadata": {...}},
+                ...
+            ]
+        }
+
+    参数:
+        documents: 从 load_documents_with_enhanced_metadata 返回的 Document 列表。
+        output_dir: 输出目录(如 src/document)。不存在会自动创建。
+
+    日志:
+        - 输出目录路径
+        - 每个源文件生成的 JSON 文件名与 Document 数量
+        - 汇总统计
+
+    异常:
+        IOError: 写入文件失败时抛出。
+    """
+    logger.info(
+        "保存 Document 到文件: output_dir=%s, 总 Document 数=%d",
+        output_dir,
+        len(documents),
+    )
+
+    # 创建输出目录
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # 按源文件分组 Document
+    file_groups: dict[str, list[Document]] = {}
+    for doc in documents:
+        source_file = doc.metadata.get("file_name", "unknown.md")
+        if source_file not in file_groups:
+            file_groups[source_file] = []
+        file_groups[source_file].append(doc)
+
+    logger.info("  按源文件分组: %d 个源文件", len(file_groups))
+
+    # 为每个源文件生成一个 JSON
+    saved_count = 0
+    for source_file, docs in file_groups.items():
+        # 生成输出文件名: part1_数据分类与基本规定.md -> part1_数据分类与基本规定.json
+        output_name = Path(source_file).stem + ".json"
+        output_path = output_dir / output_name
+
+        # 构建 JSON 数据
+        json_data: dict = {
+            "source_file": source_file,
+            "total_documents": len(docs),
+            "documents": [],
+        }
+
+        for doc in docs:
+            doc_entry: dict = {
+                "text": doc.get_content(),
+                "metadata": dict(doc.metadata),
+            }
+            json_data["documents"].append(doc_entry)
+
+        # 写入 JSON 文件
+        try:
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(json_data, f, ensure_ascii=False, indent=2)
+            saved_count += 1
+            logger.info(
+                "  保存: %s → %s (Document 数=%d)",
+                source_file,
+                output_name,
+                len(docs),
+            )
+        except Exception as e:
+            logger.error("  保存失败: %s → %s, 错误=%s", source_file, output_name, e)
+            raise IOError(f"保存 Document 文件失败: {output_path}") from e
+
+    logger.info(
+        "Document 保存完成: 成功保存 %d/%d 个文件, 输出目录=%s",
+        saved_count,
+        len(file_groups),
+        output_dir,
+    )
