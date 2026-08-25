@@ -1,9 +1,9 @@
 {
   "source_file": "part3_检测线.md",
-  "total_nodes": 167,
+  "total_nodes": 168,
   "nodes": [
     {
-      "node_id": "e8aad77d-c05c-4937-a12c-2799a8f84071",
+      "node_id": "871cf1cc-b82b-480c-a0c1-549012f78314",
       "text": "# 实景三维质检大数据支撑库 时空数据规范 第3部分 检测线\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第3部分 检测线.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第 3 部分 检测线\n\n（草案）\n\n2025 年7 月\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规\n\n则》的规定起草。\n\n第1部分 数据分类和基本规定\n\n第2部分 检测点\n\n第4部分 标志性地物\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -18,7 +18,7 @@
       "chunk_index": 0
     },
     {
-      "node_id": "d9800df2-cf40-4570-90f4-172bc3350eb6",
+      "node_id": "38c0aab8-fdc2-4969-ac41-0bcdc6672dae",
       "text": "本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：\n\nII\n\n引 言\n\n为满足实景三维中国建设项目成果质量检验的快速响应需求， 同时适应大数\n\n据、 人工智能等新技术的飞速发展对高可靠、 高更新频次质检参考数据的要求，\n\n探索构建基于车载激光扫描技术或机载航摄技术采集的检测线数据库，规范检\n\n测线数据的结构和内容，同时充分利用已有时空信息数据，探索数据收集、整\n\n理、质检、建库应用于更新体系化建设，实现实景三维质检工作效率和成果质\n\n量的提高，开展质检大数据支撑库检测线子库建设，建设方案如下。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -33,8 +33,8 @@
       "chunk_index": 1
     },
     {
-      "node_id": "aa942ccf-22c8-4a92-b145-5c9b21c7b0e1",
-      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。\n\n# 3 1\n\n检测线\n\n为进行实景三维空间地理信息成果位置精度检测，基于 车载激光扫描技术\n\n或机载航摄技术采集的线状特征，包括：建筑物水平特征检测线、建筑物垂直\n\n特征检测线、杆状物检测线、路面漆检测线、路边线检测网。\n\n# 3 2\n\n建筑物水平特征检测线\n\n沿着建筑物水平方向采集的线状特征，包括：建筑物外轮廓水平特征线、\n\n建筑物门窗水平特征线、围墙水平特征线。",
+      "node_id": "a74564bb-4a63-45c8-bcd4-52242ac726d3",
+      "text": "# 3 术语和定义\n\n下列术语和定义适用于本文件。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
@@ -51,7 +51,25 @@
       "chunk_index": 2
     },
     {
-      "node_id": "4abcdbb5-a305-4cf1-825c-0f79c8bcd90c",
+      "node_id": "fb6cdb94-8a27-404e-a7d6-ee265ff5bdc3",
+      "text": "# 3 1\n\n检测线\n\n为进行实景三维空间地理信息成果位置精度检测，基于 车载激光扫描技术\n\n或机载航摄技术采集的线状特征，包括：建筑物水平特征检测线、建筑物垂直\n\n特征检测线、杆状物检测线、路面漆检测线、路边线检测网。\n\n# 3 2\n\n建筑物水平特征检测线\n\n沿着建筑物水平方向采集的线状特征，包括：建筑物外轮廓水平特征线、\n\n建筑物门窗水平特征线、围墙水平特征线。",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "1",
+        "chapter_path": "3",
+        "data_name": "检测线"
+      },
+      "chunk_index": 3
+    },
+    {
+      "node_id": "e84dda37-bf4e-478a-be74-fd8d8161160b",
       "text": "# 3 3\n\n建筑物垂直特征检测线\n\n沿着建筑物水垂直向采集的线状特征，包括：建筑物外轮廓垂直特征线、\n\n建筑物门窗垂直特征线、围墙垂直特征线。\n\n# 3 4\n\n杆状物检测线\n\n基于车载激光扫描技术采集的路边杆状物垂直特征， 包括： 路灯、电杆、 标\n\n识牌等。\n\n# 3 5\n\n路面漆检测线\n\n基于车载激光扫描技术或机载航摄技术采集的路面漆范围线。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -59,17 +77,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
-        "chapter_title": "术语和定义",
+        "chapter_title": "1",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 3
+      "chunk_index": 4
     },
     {
-      "node_id": "8cbcd06b-8588-4b1d-8615-b3614487d677",
+      "node_id": "43531d1f-b074-48c1-847f-94cf949270a0",
       "text": "# 3 5\n\n路面漆检测线\n\n基于车载激光扫描技术或机载航摄技术采集的路面漆范围线。\n\n# 3 6\n\n路边线检测网\n\n基于车载激光扫描技术或机载航摄技术采集的路边线，高密度时构成检测\n\n网。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -77,17 +95,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
-        "chapter_title": "术语和定义",
+        "chapter_title": "1",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 4
+      "chunk_index": 5
     },
     {
-      "node_id": "f6920bae-fe00-4fc3-bb42-e36d90fe0a12",
+      "node_id": "84d52339-017d-4274-b361-441a045eb2bc",
       "text": "# 4 入库前数据要求",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -95,17 +113,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "入库前数据要求",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 5
+      "chunk_index": 6
     },
     {
-      "node_id": "b0e7f40d-ff3d-4941-8db5-3c7a6b3c87c3",
+      "node_id": "01c6c20e-f3f9-4393-9a7c-ad7844157349",
       "text": "## 4.1 空间参考\n\n检测线数据应采用国家规定的、 统一的地理空间参考系， 应满足下列要求：\n\na) 大地基准为 2000 国家大地坐标系，或采用依法批准的独立坐标系。\n\nb) 高程基准为 1985 国家高程基准。\n\nc) 投影采用高斯-克吕格投影，3°分带，加带号。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -113,17 +131,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4.1",
         "chapter_title": "空间参考",
         "chapter_path": "4/4.1",
         "data_name": "检测线"
       },
-      "chunk_index": 6
+      "chunk_index": 7
     },
     {
-      "node_id": "62183dcf-c0a5-44cf-89a8-611c2daf142d",
+      "node_id": "3591da0a-225f-4898-a818-0e7f4c6f0823",
       "text": "## 4.2 时间参考\n\n日期应采用公历纪元，时间应采用北京时间。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -131,17 +149,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4.2",
         "chapter_title": "时间参考",
         "chapter_path": "4.2",
         "data_name": "检测线"
       },
-      "chunk_index": 7
+      "chunk_index": 8
     },
     {
-      "node_id": "ad00fc4d-589d-4a5b-ae13-8282e158fdcf",
+      "node_id": "fe0aefd2-6d05-48be-b962-f78325171134",
       "text": "## 4.3 数学精度\n\n检测线的平面位置精度应达到 1:1000 地形图平面精度要求， 高程精度应达\n\n到1:2000 地形图平地丘陵地高程精度要求。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -149,17 +167,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4.3",
         "chapter_title": "数学精度",
         "chapter_path": "4.2/4.3",
         "data_name": "检测线"
       },
-      "chunk_index": 8
+      "chunk_index": 9
     },
     {
-      "node_id": "9a39ca7a-93da-47c7-a23f-3e9d105b4820",
+      "node_id": "775c0dcf-4f52-47f3-bd0d-bc84730e7c6a",
       "text": "## 4.4 属性精度\n\n检测线数据属性表结构、 属性项内容名称及值域等应符合表1 至表 6 填写要\n\n求，各地可结合实景三维成果质量检验要求，扩展属性项。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -167,17 +185,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4.4",
         "chapter_title": "属性精度",
         "chapter_path": "4.4",
         "data_name": "检测线"
       },
-      "chunk_index": 9
+      "chunk_index": 10
     },
     {
-      "node_id": "7c3923cd-f60d-4965-a9bd-35a52da7cc1e",
+      "node_id": "869deac3-ae57-4a0d-b431-a4f693b1cc70",
       "text": "## 4.5 存储格式\n\n检测线文件以*.shap 或*.mdb 文件方式存储， 检测数据按特征类别命名文件\n\n夹， 建筑物水平特征检测线、 建筑物垂直特征检测线、 电杆检测线、 路灯检测线、\n\n路面漆检测线、路边线检测网数据。\n\n实地照片数据可采用 JPG、TIF 数据格式。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -185,17 +203,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4.5",
         "chapter_title": "存储格式",
         "chapter_path": "4.4/4.5",
         "data_name": "检测线"
       },
-      "chunk_index": 10
+      "chunk_index": 11
     },
     {
-      "node_id": "2b809181-7d61-4f15-994c-4cdfbf826cd2",
+      "node_id": "9b2dec4d-ab05-4cbf-b77e-368748ad22f8",
       "text": "# 5 检测线数据库结构\n\n质检大数据支撑库检测线子库数据以*.gdb 格式存储， 检测数据按特征类别\n\n划分不同图层， 包括： 建筑物水平特征检测线、 建筑物垂直特征检测线、 电杆检\n\n测线、 路灯检测线、 路面漆检测线、 路边线检测网。 各图层数据结构见表1 至表\n\n6。\n\n表1 建筑物水平特征检测线属性结构表\n\n建筑物水平特征检测线属性结构表\n\n序\n\n号\n\n字段名\n\n称 字段代码 字段类型 字段\n\n长度\n\n小数\n\n位数 值域 约束/条\n\n件 备注",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -203,17 +221,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "检测线数据库结构",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 11
+      "chunk_index": 12
     },
     {
-      "node_id": "ccd106bb-9170-43ef-9154-2023a4c4a062",
+      "node_id": "3ed4c309-0309-44b4-8657-6eb6c212c41e",
       "text": "# 1 检测线\n\n编号 jiancexianbianhao 字符型 20 — — M 见注2",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -221,17 +239,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测线",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 12
+      "chunk_index": 13
     },
     {
-      "node_id": "bd54da0a-290c-47df-8720-b657e425888f",
+      "node_id": "900017d2-c4a9-42e8-83a0-d0495a5e78a7",
       "text": "# 2 端点纬\n\n度值 duandian_B 双精度型 — 9 DD.DDDDD\n\nDDDD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -239,17 +257,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "端点纬",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 13
+      "chunk_index": 14
     },
     {
-      "node_id": "4deb177e-3c5f-4e88-9c46-df571d5af671",
+      "node_id": "b9f501bb-ec17-4ab2-b196-d1b544536404",
       "text": "# 3 端点经\n\n度值 duandian_L 双精度型 — 9 DDD.DDDD\n\nDDDDD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -257,17 +275,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "端点经",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 14
+      "chunk_index": 15
     },
     {
-      "node_id": "bbc3bcab-31e4-4cae-930e-9b2ad2ccc557",
+      "node_id": "c45134c0-c43a-48d6-b280-e9dbfdc94e48",
       "text": "# 4 端点大\n\n地高 duandian_H 双精度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -275,17 +293,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "端点大",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 15
+      "chunk_index": 16
     },
     {
-      "node_id": "33384068-3c65-4ded-92ed-02acd8731471",
+      "node_id": "50857a60-3f67-46a0-af96-8d2bb1e216ea",
       "text": "# 5 结点纬\n\n度值 jiedian_B 双精度型 — 9 DD.DDDDD\n\nDDDD M 见注3\n\n6 结点经 jiedian_L 双精度型 — 9 DDD.DDDD M 见注4\n\n度值 DDDDD",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -293,17 +311,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "结点纬",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 16
+      "chunk_index": 17
     },
     {
-      "node_id": "1048a838-b13c-44b3-b50d-461d9f08f2d0",
+      "node_id": "69adde84-8962-437f-8231-47e4067f9225",
       "text": "# 7 结点大\n\n地高 jiedian_H 双精度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -311,17 +329,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "结点大",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 17
+      "chunk_index": 18
     },
     {
-      "node_id": "272d7650-89d9-40cd-a123-e728668af339",
+      "node_id": "ce2d46c8-e92a-43e2-8dbd-dbc99c08b1f2",
       "text": "# 8 端点北\n\n坐标 duandian_X 双精度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -329,17 +347,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "端点北",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 18
+      "chunk_index": 19
     },
     {
-      "node_id": "abdfcbb5-54fa-4552-80b8-f3bc12bfc568",
+      "node_id": "d2add86d-9fe4-4be9-be3c-c9fa7f50c9c9",
       "text": "# 9 端点东\n\n坐标 duandian_Y 双精度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -347,17 +365,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "端点东",
         "chapter_path": "9",
         "data_name": "检测线"
       },
-      "chunk_index": 19
+      "chunk_index": 20
     },
     {
-      "node_id": "26531723-a3a0-467a-8e4e-206cd41e56c5",
+      "node_id": "4cbbfa2f-7a89-4b2a-bcdb-4e3ae842955c",
       "text": "# 10 端点高\n\n程 duandian_H85 双精度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -365,17 +383,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "端点高",
         "chapter_path": "10",
         "data_name": "检测线"
       },
-      "chunk_index": 20
+      "chunk_index": 21
     },
     {
-      "node_id": "a1c0bec8-b58b-48ae-af16-33727326fd10",
+      "node_id": "596574eb-edcc-4e15-b84e-0dce83f42577",
       "text": "# 11 结点北\n\n坐标 jiedian_X 双精度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -383,17 +401,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "结点北",
         "chapter_path": "11",
         "data_name": "检测线"
       },
-      "chunk_index": 21
+      "chunk_index": 22
     },
     {
-      "node_id": "430fac1d-1fc8-436f-b389-530c648d368f",
+      "node_id": "e124bacb-f785-4eef-89b7-eeb5cc0d8271",
       "text": "# 12 结点东\n\n坐标 jiedian_Y 双精度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -401,17 +419,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "结点东",
         "chapter_path": "12",
         "data_name": "检测线"
       },
-      "chunk_index": 22
+      "chunk_index": 23
     },
     {
-      "node_id": "1c9aea89-109e-4a63-96a5-6a01ce908177",
+      "node_id": "1d460855-bc49-4df3-be11-63832528fe60",
       "text": "# 13 结点高\n\n程 jiedian_H85 双精度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -419,17 +437,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "13",
         "chapter_title": "结点高",
         "chapter_path": "13",
         "data_name": "检测线"
       },
-      "chunk_index": 23
+      "chunk_index": 24
     },
     {
-      "node_id": "4980284f-498e-4163-a38a-17a2b7bcc448",
+      "node_id": "53de26bf-18a8-4652-bfe9-3e34f60f65bf",
       "text": "# 14 85 高高\n\n程均值 junzhi_H85 双精度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -437,17 +455,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "14",
         "chapter_title": "85 高高",
         "chapter_path": "14",
         "data_name": "检测线"
       },
-      "chunk_index": 24
+      "chunk_index": 25
     },
     {
-      "node_id": "091ea05f-a6af-4a63-99f6-4ca39138519f",
+      "node_id": "650eceb3-e61e-4c87-8414-4d1a7a14e777",
       "text": "# 15 中央子\n\n午线 ZYZWX 双精度型 — — ≥0 M 见注 10",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -455,17 +473,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "15",
         "chapter_title": "中央子",
         "chapter_path": "15",
         "data_name": "检测线"
       },
-      "chunk_index": 25
+      "chunk_index": 26
     },
     {
-      "node_id": "09c2f26d-6858-4eb7-8e26-2fc54b7d76a5",
+      "node_id": "123f18cd-ef56-44f8-b705-c48ce7854ada",
       "text": "# 16 投影面\n\n高程 h0 双精度型 — 3 — O 见注 11",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -473,17 +491,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "16",
         "chapter_title": "投影面",
         "chapter_path": "16",
         "data_name": "检测线"
       },
-      "chunk_index": 26
+      "chunk_index": 27
     },
     {
-      "node_id": "f049293d-a58a-452c-9ff9-fe064c5dc92d",
+      "node_id": "b92c16db-42c8-4c80-a3ce-d71a8d12ccf7",
       "text": "# 17 地物代\n\n码 DWDM 字符型 15 —\n\nJZWWLK_S\n\nPTZX、\n\nJZWMC_SP\n\nTZX、\n\nWQ_SPTZX\n\nM 见注 12",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -491,17 +509,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "17",
         "chapter_title": "地物代",
         "chapter_path": "17",
         "data_name": "检测线"
       },
-      "chunk_index": 27
+      "chunk_index": 28
     },
     {
-      "node_id": "8b2a329e-f85f-4504-bbd3-3205a0a5dfd0",
+      "node_id": "53626546-299b-43be-9e74-339b118bb422",
       "text": "# 18 地物名\n\n称 DWMC 字符型 30 —\n\n建筑物外\n\n轮廓水平\n\n特征线、\n\n建筑物门\n\n窗水平特\n\n征线、围\n\n墙水平特\n\n征线\n\nM 见注 13",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -509,17 +527,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "18",
         "chapter_title": "地物名",
         "chapter_path": "18",
         "data_name": "检测线"
       },
-      "chunk_index": 28
+      "chunk_index": 29
     },
     {
-      "node_id": "7a80bdb7-4012-4547-ba4e-e39ba2d58e27",
+      "node_id": "55db649f-1c09-4215-89ae-e0b421e51565",
       "text": "# 19 高程精\n\n度水平 GCJDSP 双精度型 — 2 ≥0 M 见注 14",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -527,17 +545,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "19",
         "chapter_title": "高程精",
         "chapter_path": "19",
         "data_name": "检测线"
       },
-      "chunk_index": 29
+      "chunk_index": 30
     },
     {
-      "node_id": "f42ae854-126b-4841-9f55-77937c3d3c26",
+      "node_id": "e00a2f63-d723-4365-b8f2-fb78759a4a90",
       "text": "# 20 采集方\n\n式 CJFS 字符型 20 —\n\n车载激光\n\n雷达实\n\n测、机载\n\n激光雷达\n\n实测、\n\nMESH 模型\n\n内业采集\n\nM 见注 15\n\n表2 建筑物垂直特征检测线属性结构表",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -545,17 +563,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "20",
         "chapter_title": "采集方",
         "chapter_path": "20",
         "data_name": "检测线"
       },
-      "chunk_index": 30
+      "chunk_index": 31
     },
     {
-      "node_id": "947ad356-3548-46a4-af48-0986b6dfd78a",
+      "node_id": "2d8e133f-6ff2-4164-8b2d-e8bf6b5f13f7",
       "text": "# 21 实地照\n\n片 ZP 字符型 254 — — O 见注 16",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -563,17 +581,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "21",
         "chapter_title": "实地照",
         "chapter_path": "21",
         "data_name": "检测线"
       },
-      "chunk_index": 31
+      "chunk_index": 32
     },
     {
-      "node_id": "a7222ffd-4c1c-4565-b4be-bdaf11e581d0",
+      "node_id": "bba86f71-6022-48b8-8443-09e9368a5a41",
       "text": "# 22 采集日\n\n期 RQ 日期型 — — YYYY/MM/\n\nDD M 见注 17",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -581,17 +599,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "22",
         "chapter_title": "采集日",
         "chapter_path": "22",
         "data_name": "检测线"
       },
-      "chunk_index": 32
+      "chunk_index": 33
     },
     {
-      "node_id": "decbd3f9-8e36-4c60-a4c7-663c3de07f53",
+      "node_id": "2cc42741-dd64-462b-96e0-4ed0d2eda18c",
       "text": "# 23 行政区\n\n代码 XZQDM 整型 10 — — M 见注 18",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -599,17 +617,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "23",
         "chapter_title": "行政区",
         "chapter_path": "23",
         "data_name": "检测线"
       },
-      "chunk_index": 33
+      "chunk_index": 34
     },
     {
-      "node_id": "6e630a9e-6572-4736-b656-99846b8a9251",
+      "node_id": "17589a76-a2e7-4c3d-b8e9-4be9e3546cf8",
       "text": "# 24 是否可\n\n用 SFKY 字符型 254 — — O 见注 19",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -617,17 +635,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "24",
         "chapter_title": "是否可",
         "chapter_path": "24",
         "data_name": "检测线"
       },
-      "chunk_index": 34
+      "chunk_index": 35
     },
     {
-      "node_id": "d6b5fd2b-feba-433f-8341-e9d678227e02",
+      "node_id": "10e3ca42-74dc-45b5-83cb-f2d05385bb7c",
       "text": "# 25 备注 BZ 字符型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时\n\n必须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 4：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -635,25 +653,7 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "25",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "25",
-        "data_name": "检测线"
-      },
-      "chunk_index": 35
-    },
-    {
-      "node_id": "5d425358-1433-4587-9ad9-9e3785324359",
-      "text": "注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的平均 85 高程，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，以 3 位代码表示，取值见附录 B.1。",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "备注 BZ 字符型 254 — — O",
@@ -663,15 +663,15 @@
       "chunk_index": 36
     },
     {
-      "node_id": "31478622-b2eb-4b1c-a684-4948a43b37f8",
-      "text": "注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，以 3 位代码表示，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14： 经评估的高程精度水平， 该检测线能用来进行高精度检测的最高高程中误差水平， 单位： 米。 如：\n\n0.15 米、0.25 米、0.5 米、1 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
+      "node_id": "2e307efb-5882-4492-8676-82682e7ed71e",
+      "text": "注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的平均 85 高程，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，以 3 位代码表示，取值见附录 B.1。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "备注 BZ 字符型 254 — — O",
@@ -681,15 +681,15 @@
       "chunk_index": 37
     },
     {
-      "node_id": "af23c153-5bc9-4058-bb06-3be968533922",
-      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不\n\n足位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n建筑物垂直特征检测线属性结构表\n\n序\n\n号 字段名称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/\n\n条件 备注",
+      "node_id": "9f51ea13-a98a-40b5-9bd4-5e8a4421ad55",
+      "text": "注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，以 3 位代码表示，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14： 经评估的高程精度水平， 该检测线能用来进行高精度检测的最高高程中误差水平， 单位： 米。 如：\n\n0.15 米、0.25 米、0.5 米、1 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "备注 BZ 字符型 254 — — O",
@@ -699,7 +699,25 @@
       "chunk_index": 38
     },
     {
-      "node_id": "f1e2cba6-485c-448f-b146-72f9431da6b9",
+      "node_id": "097563d9-476c-44d1-ba74-3467816e2027",
+      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不\n\n足位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n建筑物垂直特征检测线属性结构表\n\n序\n\n号 字段名称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/\n\n条件 备注",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "25",
+        "data_name": "检测线"
+      },
+      "chunk_index": 39
+    },
+    {
+      "node_id": "152bc50f-9408-47f3-b0b6-2fd6472dab11",
       "text": "# 1 检测线编\n\n号\n\njiancexianbian\n\nhao\n\n字符\n\n型 20 — — M 见注2",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -707,17 +725,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测线编",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 39
+      "chunk_index": 40
     },
     {
-      "node_id": "d11a9780-4c65-4c63-9c18-e8429a31f802",
+      "node_id": "55fdfa74-a975-4d39-b2df-d5ab2dcb403e",
       "text": "# 2 端点纬度\n\n值 duandian_B 双精\n\n度型 — 9 DD.DDDDDDD\n\nDD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -725,17 +743,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "端点纬度",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 40
+      "chunk_index": 41
     },
     {
-      "node_id": "f4eead88-6d18-4fbb-8695-4c60093ddf29",
+      "node_id": "6ed39c79-bf02-49f8-8315-ddcbab5a7f5a",
       "text": "# 3 端点经度\n\n值 duandian_L 双精\n\n度型 — 9 DDD.DDDDDD\n\nDDD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -743,17 +761,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "端点经度",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 41
+      "chunk_index": 42
     },
     {
-      "node_id": "1c9c128f-541b-4167-9509-f9cf3c3dd37a",
+      "node_id": "1c49e0c1-39d3-41a6-8add-011687cb5e3c",
       "text": "# 4 端点大地\n\n高 duandian_H 双精\n\n度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -761,17 +779,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "端点大地",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 42
+      "chunk_index": 43
     },
     {
-      "node_id": "ea41620e-77d1-44cc-982c-9c4c107be53c",
+      "node_id": "0e33e5d1-0aec-4f61-afa1-c95b486a10aa",
       "text": "# 5 结点纬度\n\n值 jiedian_B 双精\n\n度型 — 9 DD.DDDDDDD\n\nDD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -779,17 +797,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "结点纬度",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 43
+      "chunk_index": 44
     },
     {
-      "node_id": "01c518ec-edb9-46d0-a48e-6523b88b0165",
+      "node_id": "46f6005c-8789-441c-9be8-750967ef1be9",
       "text": "# 6 结点经度\n\n值 jiedian_L 双精\n\n度型 — 9 DDD.DDDDDD\n\nDDD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -797,17 +815,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "结点经度",
         "chapter_path": "6",
         "data_name": "检测线"
       },
-      "chunk_index": 44
+      "chunk_index": 45
     },
     {
-      "node_id": "bc9dda47-785a-4768-90fd-2bad1c556b65",
+      "node_id": "7a1eece7-bae9-4d1f-b3b9-78009b260271",
       "text": "# 7 结点大地\n\n高 jiedian_H 双精\n\n度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -815,17 +833,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "结点大地",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 45
+      "chunk_index": 46
     },
     {
-      "node_id": "20dadfaa-bdd3-4451-8ad8-3ee2c4bd0d49",
+      "node_id": "b3d0f128-adf0-4916-b06a-15059b78193d",
       "text": "# 8 端点北坐\n\n标 duandian_X 双精\n\n度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -833,17 +851,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "端点北坐",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 46
+      "chunk_index": 47
     },
     {
-      "node_id": "a4de1406-8b02-43f1-b0df-e415efdf1003",
+      "node_id": "735ab742-ab0f-4272-957a-1c36d8f7b078",
       "text": "# 9 端点东坐\n\n标 duandian_Y 双精\n\n度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -851,17 +869,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "端点东坐",
         "chapter_path": "9",
         "data_name": "检测线"
       },
-      "chunk_index": 47
+      "chunk_index": 48
     },
     {
-      "node_id": "97a53fe2-aabf-4de4-9aeb-aa4288c8e141",
+      "node_id": "548d806e-fcd4-48ef-bba3-ff46c7e95272",
       "text": "# 10 端点高程 duandian_H85 双精\n\n度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -869,17 +887,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "端点高程 duandian_H85 双精",
         "chapter_path": "10",
         "data_name": "检测线"
       },
-      "chunk_index": 48
+      "chunk_index": 49
     },
     {
-      "node_id": "267d2aa9-b276-4201-bfc3-eed65bb23fb5",
+      "node_id": "2cadcc47-6f39-4a1f-95ab-7a2648c99425",
       "text": "# 11 结点北坐\n\n标 jiedian_X 双精\n\n度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -887,17 +905,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "结点北坐",
         "chapter_path": "11",
         "data_name": "检测线"
       },
-      "chunk_index": 49
+      "chunk_index": 50
     },
     {
-      "node_id": "04490982-147d-48f2-8c68-8163d235f985",
+      "node_id": "9e327750-2058-4edf-aff7-5afb544a2255",
       "text": "# 12 结点东坐\n\n标 jiedian_Y 双精\n\n度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -905,17 +923,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "结点东坐",
         "chapter_path": "12",
         "data_name": "检测线"
       },
-      "chunk_index": 50
+      "chunk_index": 51
     },
     {
-      "node_id": "4e5bbd3c-ad90-4498-b34e-70551617aa28",
+      "node_id": "b5340d48-d96f-408c-b83c-28cd469b97f0",
       "text": "# 13 结点高程 jiedian_H85 双精\n\n度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -923,17 +941,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "13",
         "chapter_title": "结点高程 jiedian_H85 双精",
         "chapter_path": "13",
         "data_name": "检测线"
       },
-      "chunk_index": 51
+      "chunk_index": 52
     },
     {
-      "node_id": "bb85ffff-fab9-4c36-8e15-d3ec20f08711",
+      "node_id": "2e37bd41-a62d-42b9-bc1f-c62ed9d0343f",
       "text": "# 14 检测线北\n\n坐标均值 junzhi_X 双精\n\n度型 — 3 — M 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -941,17 +959,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "14",
         "chapter_title": "检测线北",
         "chapter_path": "14",
         "data_name": "检测线"
       },
-      "chunk_index": 52
+      "chunk_index": 53
     },
     {
-      "node_id": "67a012f6-0a17-41b8-8ec9-b094b3d31a71",
+      "node_id": "5b88bcf3-b482-4d24-90df-e175ae72332b",
       "text": "# 15 检测线东\n\n坐标均值 junzhi_Y 双精\n\n度型 — 3 — M 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -959,17 +977,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "15",
         "chapter_title": "检测线东",
         "chapter_path": "15",
         "data_name": "检测线"
       },
-      "chunk_index": 53
+      "chunk_index": 54
     },
     {
-      "node_id": "93674dbc-b042-486c-8b2f-ea0ea013cd94",
+      "node_id": "86ec4dff-eaff-428f-a762-3887ab5a97b2",
       "text": "# 16 中央子午\n\n线 ZYZWX 双精\n\n度型 — — ≥0 M 见注10",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -977,17 +995,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "16",
         "chapter_title": "中央子午",
         "chapter_path": "16",
         "data_name": "检测线"
       },
-      "chunk_index": 54
+      "chunk_index": 55
     },
     {
-      "node_id": "8c4153cb-baa8-4720-9d39-da48fa870b67",
+      "node_id": "ef52c6ce-ed1f-40f0-bf92-e9111f502234",
       "text": "# 17 投影面高\n\n程 h0 双精\n\n度型 — 3 — O 见注11",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -995,17 +1013,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "17",
         "chapter_title": "投影面高",
         "chapter_path": "17",
         "data_name": "检测线"
       },
-      "chunk_index": 55
+      "chunk_index": 56
     },
     {
-      "node_id": "2d3188b9-b6d0-40ac-95b2-9fa22c641f19",
+      "node_id": "eaad8e42-057e-43ff-b5f5-7ba178889025",
       "text": "# 18 地物代码 DWDM 字符\n\n型 15 —\n\nJZWWLK_CZT\n\nZX、\n\nJZWMC_CZTZ\n\nX、WQ_CZTZX\n\nM 见注12",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1013,17 +1031,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "18",
         "chapter_title": "地物代码 DWDM 字符",
         "chapter_path": "18",
         "data_name": "检测线"
       },
-      "chunk_index": 56
+      "chunk_index": 57
     },
     {
-      "node_id": "aaeaebb0-eb30-4c57-a270-aba35a00b8e9",
+      "node_id": "6a039437-345b-49af-a777-ffd83a3246da",
       "text": "# 19 地物名称 DWMC 字符\n\n型 30 —\n\n建筑物外轮\n\n廓垂直特征\n\n线、建筑物\n\n门窗垂直特\n\n征线、围墙\n\n垂直特征线\n\nM 见注13",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1031,17 +1049,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "19",
         "chapter_title": "地物名称 DWMC 字符",
         "chapter_path": "19",
         "data_name": "检测线"
       },
-      "chunk_index": 57
+      "chunk_index": 58
     },
     {
-      "node_id": "763b1e28-0e65-403d-b0a0-03968fecd94b",
+      "node_id": "ac58fc75-60e0-4ecb-8d4a-3a5c74c8c7f4",
       "text": "# 20 平面位置\n\n精度水平 GCJDSP 双精\n\n度型 — 2 ≥0 M 见注14",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1049,17 +1067,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "20",
         "chapter_title": "平面位置",
         "chapter_path": "20",
         "data_name": "检测线"
       },
-      "chunk_index": 58
+      "chunk_index": 59
     },
     {
-      "node_id": "e35aa5a5-c41c-442b-b4c0-626586b5190b",
+      "node_id": "d4e31e41-1ef1-47c7-84b8-f9b3b3a479bc",
       "text": "# 21 采集方式 CJFS 字符\n\n型 20 —\n\n车载激光雷\n\n达实测、机\n\n载激光雷达\n\n实测、MESH\n\n模型内业采\n\n集\n\nM 见注15",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1067,17 +1085,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "21",
         "chapter_title": "采集方式 CJFS 字符",
         "chapter_path": "21",
         "data_name": "检测线"
       },
-      "chunk_index": 59
+      "chunk_index": 60
     },
     {
-      "node_id": "01346c6d-a93c-4945-81c5-1848a9459d50",
+      "node_id": "ff59499a-f34f-4fa8-a9c2-96f3a6bda108",
       "text": "# 22 实地照片 ZP 字符\n\n型 254 — — O 见注16",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1085,17 +1103,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "22",
         "chapter_title": "实地照片 ZP 字符",
         "chapter_path": "22",
         "data_name": "检测线"
       },
-      "chunk_index": 60
+      "chunk_index": 61
     },
     {
-      "node_id": "9878ba43-9fdc-4a9e-a4f8-82d1b603630a",
+      "node_id": "2b2a37f1-da77-4ad4-80d6-345cbcd95191",
       "text": "# 23 采集日期 RQ 日期\n\n型 — — YYYY/MM/DD M 见注17",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1103,17 +1121,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "23",
         "chapter_title": "采集日期 RQ 日期",
         "chapter_path": "23",
         "data_name": "检测线"
       },
-      "chunk_index": 61
+      "chunk_index": 62
     },
     {
-      "node_id": "07c1d732-aff8-4e97-b220-969370b1d8e5",
+      "node_id": "43a114df-adab-4fd7-922a-c0aca09f161b",
       "text": "# 24 行政区代\n\n码 XZQDM 整型 10 — — M 见注18",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1121,17 +1139,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "24",
         "chapter_title": "行政区代",
         "chapter_path": "24",
         "data_name": "检测线"
       },
-      "chunk_index": 62
+      "chunk_index": 63
     },
     {
-      "node_id": "e4a6c5ad-523c-4329-8962-1db8d5d4459c",
+      "node_id": "6074f55d-7370-4327-a976-97dcf436bb8c",
       "text": "# 25 是否可用 SFKY 字符\n\n型 254 — — O 见注19",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1139,17 +1157,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "是否可用 SFKY 字符",
         "chapter_path": "25",
         "data_name": "检测线"
       },
-      "chunk_index": 63
+      "chunk_index": 64
     },
     {
-      "node_id": "6ad904b9-18b3-4f42-b5f9-e702d107cf3f",
+      "node_id": "fafaea94-40ae-495a-a9eb-c37b8dfff949",
       "text": "# 26 备注 BZ 字符\n\n型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求\n\n时必须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数9 位。端点指该检测线\n\n高程值最低的点，结点指该检测线高程值最高的点。\n\n注 4：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1157,25 +1175,7 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "26",
-        "chapter_title": "备注 BZ 字符",
-        "chapter_path": "26",
-        "data_name": "检测线"
-      },
-      "chunk_index": 64
-    },
-    {
-      "node_id": "c7ea7e92-e0f3-42e8-96e4-ded89ed7818a",
-      "text": "注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的北坐标平均值及东坐标平均值，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -1185,15 +1185,15 @@
       "chunk_index": 65
     },
     {
-      "node_id": "a5c27edb-3bda-471d-93a1-dcd576618043",
-      "text": "注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单\n\n位：米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
+      "node_id": "067cb25a-7ecc-47a3-9f8e-9342454d4c4c",
+      "text": "注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的北坐标平均值及东坐标平均值，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -1203,15 +1203,15 @@
       "chunk_index": 66
     },
     {
-      "node_id": "16d4717e-5ecb-4ae2-9d7e-5c7f1d1787ae",
-      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不\n\n足位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n表3 电杆检测线属性结构表\n\n电杆检测线属性结构表\n\n序\n\n号 字段名称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/条\n\n件 备注",
+      "node_id": "6e298836-1253-40af-b95c-d8bbde49a3f9",
+      "text": "注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单\n\n位：米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -1221,7 +1221,25 @@
       "chunk_index": 67
     },
     {
-      "node_id": "38592495-f83b-4259-b4dc-0b75202e1f73",
+      "node_id": "a9f0d0d6-75bf-44fb-a016-cd0f7045fc2e",
+      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不\n\n足位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n表3 电杆检测线属性结构表\n\n电杆检测线属性结构表\n\n序\n\n号 字段名称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/条\n\n件 备注",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "备注 BZ 字符",
+        "chapter_path": "26",
+        "data_name": "检测线"
+      },
+      "chunk_index": 68
+    },
+    {
+      "node_id": "f87a657b-b68d-4119-9490-e634030cb650",
       "text": "# 1 检测线编\n\n号 jiancexianbianhao 字符\n\n型 20 — — M 见注2",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1229,17 +1247,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测线编",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 68
+      "chunk_index": 69
     },
     {
-      "node_id": "aff22e28-b595-43f6-9ffa-029d22e74aa3",
+      "node_id": "37159050-628b-4156-ab97-5ea3c8cee544",
       "text": "# 2 端点纬度\n\n值 duandian_B 双精\n\n度型 — 9 DD.DDDDDDDD\n\nD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1247,17 +1265,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "端点纬度",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 69
+      "chunk_index": 70
     },
     {
-      "node_id": "102b5c32-ff72-4962-8b41-59baba05737c",
+      "node_id": "87dc01ba-3d49-41dd-89f1-ec89f8635423",
       "text": "# 3 端点经度\n\n值 duandian_L 双精\n\n度型 — 9 DDD.DDDDDDD\n\nDD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1265,17 +1283,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "端点经度",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 70
+      "chunk_index": 71
     },
     {
-      "node_id": "383c150f-33c0-404c-b081-a1e1f826b7b8",
+      "node_id": "84ed4d9d-cf1b-430b-9abb-01c96c60a5be",
       "text": "# 4 端点大地\n\n高 duandian_H 双精\n\n度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1283,17 +1301,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "端点大地",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 71
+      "chunk_index": 72
     },
     {
-      "node_id": "8e2c5377-f366-4e46-90d4-0131106668b3",
+      "node_id": "a8ecdd79-9ae9-4c75-ad06-523d4a1e4510",
       "text": "# 5 结点纬度\n\n值 jiedian_B 双精\n\n度型 — 9 DD.DDDDDDDD\n\nD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1301,17 +1319,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "结点纬度",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 72
+      "chunk_index": 73
     },
     {
-      "node_id": "f1378069-5aca-43b9-8342-d5ade50a1395",
+      "node_id": "aff6364c-11c1-4edb-a616-bba0ee2e924e",
       "text": "# 6 结点经度\n\n值 jiedian_L 双精\n\n度型 — 9 DDD.DDDDDDD\n\nDD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1319,17 +1337,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "结点经度",
         "chapter_path": "6",
         "data_name": "检测线"
       },
-      "chunk_index": 73
+      "chunk_index": 74
     },
     {
-      "node_id": "5568ab04-cf6b-404c-bdaf-12d0a68b5eb8",
+      "node_id": "a3f5f38c-e7ea-468d-ac78-87b388bdd196",
       "text": "# 7 结点大地\n\n高 jiedian_H 双精\n\n度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1337,17 +1355,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "结点大地",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 74
+      "chunk_index": 75
     },
     {
-      "node_id": "2eed2fd1-decb-4436-bcb1-9cc57e85d42d",
+      "node_id": "1e8e195e-ea7f-4431-a338-a6941307efed",
       "text": "# 8 端点北坐\n\n标 duandian_X 双精\n\n度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1355,17 +1373,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "端点北坐",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 75
+      "chunk_index": 76
     },
     {
-      "node_id": "2ebb71df-f27d-4d81-972c-7b0fdea18519",
+      "node_id": "4ef9b4d3-f1a7-4a93-b92e-08b4b454b19e",
       "text": "# 9 端点东坐\n\n标 duandian_Y 双精\n\n度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1373,17 +1391,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "端点东坐",
         "chapter_path": "9",
         "data_name": "检测线"
       },
-      "chunk_index": 76
+      "chunk_index": 77
     },
     {
-      "node_id": "317d85fa-c05a-437d-a922-e3d26513dab1",
+      "node_id": "21791767-937c-4cbb-ac12-6649b3549a4b",
       "text": "# 10 端点高程 duandian_H85 双精\n\n度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1391,17 +1409,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "端点高程 duandian_H85 双精",
         "chapter_path": "10",
         "data_name": "检测线"
       },
-      "chunk_index": 77
+      "chunk_index": 78
     },
     {
-      "node_id": "05fc0b03-79ea-4b3e-95bf-267c76dd668e",
+      "node_id": "14f4dc21-2984-4431-aa9e-a93febc43e12",
       "text": "# 11 结点北坐\n\n标 jiedian_X 双精\n\n度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1409,17 +1427,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "结点北坐",
         "chapter_path": "11",
         "data_name": "检测线"
       },
-      "chunk_index": 78
+      "chunk_index": 79
     },
     {
-      "node_id": "3b1a5999-48cd-44e9-ae8a-392ee9e85be8",
+      "node_id": "3a6270b0-4a88-428e-8e34-4996ffbd6acd",
       "text": "# 12 结点东坐\n\n标 jiedian_Y 双精\n\n度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1427,17 +1445,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "结点东坐",
         "chapter_path": "12",
         "data_name": "检测线"
       },
-      "chunk_index": 79
+      "chunk_index": 80
     },
     {
-      "node_id": "f76da0c1-2a18-474a-bf24-4829c2a62fdc",
+      "node_id": "1f6c2a4c-6969-4cde-8ca2-c338584a2ddc",
       "text": "# 13 结点高程 jiedian_H85 双精\n\n度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1445,17 +1463,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "13",
         "chapter_title": "结点高程 jiedian_H85 双精",
         "chapter_path": "13",
         "data_name": "检测线"
       },
-      "chunk_index": 80
+      "chunk_index": 81
     },
     {
-      "node_id": "d570bab6-fec9-4647-92cf-cc5707d94691",
+      "node_id": "6742c991-61e1-4b61-b334-e47c638ff7a8",
       "text": "# 14 检测线北\n\n坐标均值 junzhi_X 双精\n\n度型 — 3 — M 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1463,17 +1481,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "14",
         "chapter_title": "检测线北",
         "chapter_path": "14",
         "data_name": "检测线"
       },
-      "chunk_index": 81
+      "chunk_index": 82
     },
     {
-      "node_id": "17f2fdb5-17d7-4b96-b2a4-9eae32603265",
+      "node_id": "be91fd39-217c-40a5-9980-3e4ee9d94daf",
       "text": "# 15 检测线东\n\n坐标均值 junzhi_Y 双精\n\n度型 — 3 — M 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1481,17 +1499,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "15",
         "chapter_title": "检测线东",
         "chapter_path": "15",
         "data_name": "检测线"
       },
-      "chunk_index": 82
+      "chunk_index": 83
     },
     {
-      "node_id": "0b298228-99b5-45e0-9dab-9ca16ec62359",
+      "node_id": "6b7e4536-fc08-4a39-931b-f9967a0ba2bb",
       "text": "# 16 中央子午\n\n线 ZYZWX 双精\n\n度型 — — ≥0 M 见注10",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1499,17 +1517,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "16",
         "chapter_title": "中央子午",
         "chapter_path": "16",
         "data_name": "检测线"
       },
-      "chunk_index": 83
+      "chunk_index": 84
     },
     {
-      "node_id": "50581b55-2300-4a2f-a295-185939921984",
+      "node_id": "3d3a7469-4545-4b26-be29-aa19194dc459",
       "text": "# 17 投影面高\n\n程 h0 双精\n\n度型 — 3 — O 见注11",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1517,17 +1535,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "17",
         "chapter_title": "投影面高",
         "chapter_path": "17",
         "data_name": "检测线"
       },
-      "chunk_index": 84
+      "chunk_index": 85
     },
     {
-      "node_id": "426420a3-d411-43e5-a9fb-e20f206dc0f0",
+      "node_id": "f46a4d81-355f-425d-b549-bcf9ea1b8ffe",
       "text": "# 18 地物代码 DWDM 字符\n\n型 15 — DG_CZTZX M 见注12",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1535,17 +1553,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "18",
         "chapter_title": "地物代码 DWDM 字符",
         "chapter_path": "18",
         "data_name": "检测线"
       },
-      "chunk_index": 85
+      "chunk_index": 86
     },
     {
-      "node_id": "326603fb-e543-40a4-a706-c19d964425bd",
+      "node_id": "07f9c70c-153d-435b-8b68-8948faf490ca",
       "text": "# 19 地物名称 DWMC 字符\n\n型 30 — 电杆垂直特\n\n征线 M 见注13",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1553,17 +1571,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "19",
         "chapter_title": "地物名称 DWMC 字符",
         "chapter_path": "19",
         "data_name": "检测线"
       },
-      "chunk_index": 86
+      "chunk_index": 87
     },
     {
-      "node_id": "f4e99960-8615-41ab-9515-86841586b8c4",
+      "node_id": "e11908f3-41c9-4491-a422-a08174637b36",
       "text": "# 20 平面位置\n\n精度水平 GCJDSP 双精\n\n度型 — 2 ≥0 M 见注14",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1571,17 +1589,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "20",
         "chapter_title": "平面位置",
         "chapter_path": "20",
         "data_name": "检测线"
       },
-      "chunk_index": 87
+      "chunk_index": 88
     },
     {
-      "node_id": "ef526ba0-f45b-4278-9980-a3f69c86dd47",
+      "node_id": "47083fc6-02fd-4566-b000-497a9c8b1c27",
       "text": "# 21 采集方式 CJFS 字符\n\n型 20 —\n\n车载激光雷\n\n达实测、 机载\n\n激光雷达实\n\n测、MESH 模型\n\n内业采集\n\nM 见注15",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1589,17 +1607,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "21",
         "chapter_title": "采集方式 CJFS 字符",
         "chapter_path": "21",
         "data_name": "检测线"
       },
-      "chunk_index": 88
+      "chunk_index": 89
     },
     {
-      "node_id": "d178d815-8e24-4951-95ab-97459456e943",
+      "node_id": "2e3c8111-b7cf-480b-9eb1-7e80b2b95168",
       "text": "# 22 实地照片 ZP 字符\n\n型 254 — — O 见注16",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1607,17 +1625,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "22",
         "chapter_title": "实地照片 ZP 字符",
         "chapter_path": "22",
         "data_name": "检测线"
       },
-      "chunk_index": 89
+      "chunk_index": 90
     },
     {
-      "node_id": "5dceb439-800a-4561-bbf4-8c75c03abd8d",
+      "node_id": "22cba270-c962-4a89-bf9f-5bc776fc1f90",
       "text": "# 23 采集日期 RQ 日期\n\n型 — — YYYY/MM/DD M 见注17",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1625,17 +1643,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "23",
         "chapter_title": "采集日期 RQ 日期",
         "chapter_path": "23",
         "data_name": "检测线"
       },
-      "chunk_index": 90
+      "chunk_index": 91
     },
     {
-      "node_id": "3ffc50d8-ff3d-4546-ae6d-9fc15be0bbec",
+      "node_id": "bfff9c66-b78c-40ee-b5b1-303c8fd4f4fd",
       "text": "# 24 行政区代\n\n码 XZQDM 整型 10 — — M 见注18",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1643,17 +1661,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "24",
         "chapter_title": "行政区代",
         "chapter_path": "24",
         "data_name": "检测线"
       },
-      "chunk_index": 91
+      "chunk_index": 92
     },
     {
-      "node_id": "2e68ebfe-9954-4fe9-b70d-fab4dfe14484",
+      "node_id": "45ec9524-e465-4f16-8103-6a44ff736fe9",
       "text": "# 25 是否可用 SFKY 字符\n\n型 254 — — O 见注19",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1661,17 +1679,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "是否可用 SFKY 字符",
         "chapter_path": "25",
         "data_name": "检测线"
       },
-      "chunk_index": 92
+      "chunk_index": 93
     },
     {
-      "node_id": "fba65277-cb70-43ef-a70b-6cc7bfd5acf7",
+      "node_id": "b30f8f9a-98bd-4d95-be8d-220892c72ead",
       "text": "# 26 备注 BZ 字符\n\n型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时\n\n必须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数9 位。端点指该检测线高\n\n程值最低的点，结点指该检测线高程值最高的点。\n\n注 4：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1679,25 +1697,7 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "26",
-        "chapter_title": "备注 BZ 字符",
-        "chapter_path": "26",
-        "data_name": "检测线"
-      },
-      "chunk_index": 93
-    },
-    {
-      "node_id": "17b1c253-98b9-44e0-b2e1-fe0685b354b7",
-      "text": "注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的北坐标平均值及东坐标平均值，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -1707,15 +1707,15 @@
       "chunk_index": 94
     },
     {
-      "node_id": "0362d829-621b-44f8-aa6c-6d1b3dde8e8c",
-      "text": "注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14： 经评估的平面位置精度水平， 该检测线能用来进行高精度检测的最高平面位置中误差水平， 单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
+      "node_id": "ef972ea2-6757-475e-bcf3-b798099bffb9",
+      "text": "注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的北坐标平均值及东坐标平均值，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -1725,15 +1725,15 @@
       "chunk_index": 95
     },
     {
-      "node_id": "bcb03ce3-024f-4510-b457-0222ecbb76d6",
-      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足\n\n位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n表4 路灯检测线属性结构表\n\n路灯检测线属性结构表\n\n序\n\n号 字段名称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/\n\n条件 备注",
+      "node_id": "a344d7b6-0305-41fd-8621-cecd97e7444e",
+      "text": "注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14： 经评估的平面位置精度水平， 该检测线能用来进行高精度检测的最高平面位置中误差水平， 单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -1743,7 +1743,25 @@
       "chunk_index": 96
     },
     {
-      "node_id": "a58220bb-3534-4e9d-aed1-ac1e811c8589",
+      "node_id": "4d83b311-7013-4ffe-9551-e894e2dff2a1",
+      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足\n\n位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n表4 路灯检测线属性结构表\n\n路灯检测线属性结构表\n\n序\n\n号 字段名称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/\n\n条件 备注",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "备注 BZ 字符",
+        "chapter_path": "26",
+        "data_name": "检测线"
+      },
+      "chunk_index": 97
+    },
+    {
+      "node_id": "6831eece-3ac7-480b-b6e5-fa3c7b3be05d",
       "text": "# 1 检测线编\n\n号 jiancexianbianhao 字符\n\n型 20 — — M 见注2",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1751,17 +1769,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测线编",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 97
+      "chunk_index": 98
     },
     {
-      "node_id": "966ff4cd-8713-480b-8718-95baf9d36c83",
+      "node_id": "385b91fc-14ab-4a96-a8ec-67d3dacc892d",
       "text": "# 2 端点纬度\n\n值 duandian_B 双精\n\n度型 — 9 DD.DDDDDDDDD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1769,17 +1787,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "端点纬度",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 98
+      "chunk_index": 99
     },
     {
-      "node_id": "025190af-2eb0-49a5-81fb-f3e5fe002e33",
+      "node_id": "ef13a5af-f2f7-4279-9122-7fd16dc36b1c",
       "text": "# 3 端点经度\n\n值 duandian_L 双精\n\n度型 — 9 DDD.DDDDDDDD\n\nD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1787,17 +1805,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "端点经度",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 99
+      "chunk_index": 100
     },
     {
-      "node_id": "b5c26ee6-27b5-41a8-ad1a-73d984c45abd",
+      "node_id": "3155c888-59ad-4791-99dc-5adad3f386a7",
       "text": "# 4 端点大地\n\n高 duandian_H 双精\n\n度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1805,17 +1823,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "端点大地",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 100
+      "chunk_index": 101
     },
     {
-      "node_id": "92fa4b05-2085-4040-9ab8-44e021fa8b91",
+      "node_id": "f1e3e69c-7bb3-4a25-a9f3-d3f5ed586d4f",
       "text": "# 5 结点纬度\n\n值 jiedian_B 双精\n\n度型 — 9 DD.DDDDDDDDD M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1823,17 +1841,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "结点纬度",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 101
+      "chunk_index": 102
     },
     {
-      "node_id": "d7e8f915-5a87-476d-bad2-e97ca1623973",
+      "node_id": "67125212-ba7e-459b-9950-fa76a3d8fbc7",
       "text": "# 6 结点经度\n\n值 jiedian_L 双精\n\n度型 — 9 DDD.DDDDDDDD\n\nD M 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1841,17 +1859,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "结点经度",
         "chapter_path": "6",
         "data_name": "检测线"
       },
-      "chunk_index": 102
+      "chunk_index": 103
     },
     {
-      "node_id": "e7220aa0-5fc0-460d-9f6a-06654539b996",
+      "node_id": "e2a97d05-85f4-4010-9f69-21e9f315bd51",
       "text": "# 7 结点大地\n\n高 jiedian_H 双精\n\n度型 — 3 — M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1859,17 +1877,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "结点大地",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 103
+      "chunk_index": 104
     },
     {
-      "node_id": "64f5fda1-c2bb-473e-b7bf-cbd30bfbbe89",
+      "node_id": "c9a0599e-bcc3-40e5-a19b-9d52bca9ccea",
       "text": "# 8 端点北坐\n\n标 duandian_X 双精\n\n度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1877,17 +1895,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "端点北坐",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 104
+      "chunk_index": 105
     },
     {
-      "node_id": "23775842-ad4d-4158-85e2-9c0a5cb120e6",
+      "node_id": "7c8660e5-598c-402c-89a6-b48f879bdcfd",
       "text": "# 9 端点东坐\n\n标 duandian_Y 双精\n\n度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1895,17 +1913,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "端点东坐",
         "chapter_path": "9",
         "data_name": "检测线"
       },
-      "chunk_index": 105
+      "chunk_index": 106
     },
     {
-      "node_id": "1dca2a52-e8d3-4b65-8182-fcf1aabbe644",
+      "node_id": "4a6a586c-d83b-4076-9d30-d2e7dc0f55a8",
       "text": "# 10 端点高程 duandian_H85 双精\n\n度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1913,17 +1931,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "端点高程 duandian_H85 双精",
         "chapter_path": "10",
         "data_name": "检测线"
       },
-      "chunk_index": 106
+      "chunk_index": 107
     },
     {
-      "node_id": "4454b988-6699-420b-9258-5bf0102c4304",
+      "node_id": "c029cc7b-c0f0-4172-beb3-242b1e2aa69c",
       "text": "# 11 结点北坐\n\n标 jiedian_X 双精\n\n度型 — 3 ≥0 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1931,17 +1949,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "结点北坐",
         "chapter_path": "11",
         "data_name": "检测线"
       },
-      "chunk_index": 107
+      "chunk_index": 108
     },
     {
-      "node_id": "95c03a68-de18-4501-8171-c2e34030cd56",
+      "node_id": "50e60efc-e019-4b7c-a750-78bef5b677ec",
       "text": "# 12 结点东坐\n\n标 jiedian_Y 双精\n\n度型 — 3 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1949,17 +1967,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "结点东坐",
         "chapter_path": "12",
         "data_name": "检测线"
       },
-      "chunk_index": 108
+      "chunk_index": 109
     },
     {
-      "node_id": "89c6f2cc-9072-431e-b0db-e9d1ab079e35",
+      "node_id": "7f26d113-b88c-433e-9e8d-b3f3107dc27b",
       "text": "# 13 结点高程 jiedian_H85 双精\n\n度型 — 3 — M 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1967,17 +1985,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "13",
         "chapter_title": "结点高程 jiedian_H85 双精",
         "chapter_path": "13",
         "data_name": "检测线"
       },
-      "chunk_index": 109
+      "chunk_index": 110
     },
     {
-      "node_id": "fdd3685a-8285-4f01-b78d-37a21cb519e2",
+      "node_id": "82356a49-c04f-4a8b-af76-3dd973ace554",
       "text": "# 14 检测线北\n\n坐标均值 junzhi_X 双精\n\n度型 — 3 — M 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -1985,17 +2003,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "14",
         "chapter_title": "检测线北",
         "chapter_path": "14",
         "data_name": "检测线"
       },
-      "chunk_index": 110
+      "chunk_index": 111
     },
     {
-      "node_id": "b0c90868-e3f8-49f6-96c7-ddcdb318e722",
+      "node_id": "8c96b74d-382d-46f8-a758-03b246f2f85e",
       "text": "# 15 检测线东\n\n坐标均值 junzhi_Y 双精\n\n度型 — 3 — M 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2003,17 +2021,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "15",
         "chapter_title": "检测线东",
         "chapter_path": "15",
         "data_name": "检测线"
       },
-      "chunk_index": 111
+      "chunk_index": 112
     },
     {
-      "node_id": "5d14116b-e5e5-4cda-b18b-a7fe1fe47f71",
+      "node_id": "31285bed-cf8b-472a-916c-f1390dd95c2d",
       "text": "# 16 中央子午\n\n线 ZYZWX 双精\n\n度型 — — ≥0 M 见注10",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2021,17 +2039,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "16",
         "chapter_title": "中央子午",
         "chapter_path": "16",
         "data_name": "检测线"
       },
-      "chunk_index": 112
+      "chunk_index": 113
     },
     {
-      "node_id": "e66708ab-2d1c-4edc-a205-330e091d5b82",
+      "node_id": "3cf3f37c-cd72-4f79-a69b-5a6a13336143",
       "text": "# 17 投影面高\n\n程 h0 双精\n\n度型 — 3 — O 见注11",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2039,17 +2057,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "17",
         "chapter_title": "投影面高",
         "chapter_path": "17",
         "data_name": "检测线"
       },
-      "chunk_index": 113
+      "chunk_index": 114
     },
     {
-      "node_id": "ee484a9f-8810-4ead-a687-1edba81b7f18",
+      "node_id": "f74c454a-4b9a-4eb4-8ddb-b033a81ee17b",
       "text": "# 18 地物代码 DWDM 字符\n\n型 15 — LD_CZTZX M 见注12",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2057,17 +2075,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "18",
         "chapter_title": "地物代码 DWDM 字符",
         "chapter_path": "18",
         "data_name": "检测线"
       },
-      "chunk_index": 114
+      "chunk_index": 115
     },
     {
-      "node_id": "11a3583e-5610-4638-b57b-2ca47dc0566c",
+      "node_id": "355d5291-7f66-46ed-be00-3daccc923920",
       "text": "# 19 地物名称 DWMC 字符\n\n型 30 — 路灯垂直特征\n\n线 M 见注13",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2075,17 +2093,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "19",
         "chapter_title": "地物名称 DWMC 字符",
         "chapter_path": "19",
         "data_name": "检测线"
       },
-      "chunk_index": 115
+      "chunk_index": 116
     },
     {
-      "node_id": "b2c74b7d-873e-48fb-8058-5d11724beef6",
+      "node_id": "539ab73d-889e-43f2-b33f-eae71d580e1b",
       "text": "# 20 平面位置\n\n精度水平 GCJDSP 双精\n\n度型 — 2 ≥0 M 见注14",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2093,17 +2111,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "20",
         "chapter_title": "平面位置",
         "chapter_path": "20",
         "data_name": "检测线"
       },
-      "chunk_index": 116
+      "chunk_index": 117
     },
     {
-      "node_id": "5a704c74-c633-46a0-bc15-472b6008f97e",
+      "node_id": "d4933a14-51b3-4c9a-95d2-aa5e17a6ec80",
       "text": "# 21 采集方式 CJFS 字符\n\n型 20 —\n\n车载激光雷达\n\n实测、机载激\n\n光雷达实测、\n\nMESH 模型内业\n\n采集\n\nM 见注15",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2111,17 +2129,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "21",
         "chapter_title": "采集方式 CJFS 字符",
         "chapter_path": "21",
         "data_name": "检测线"
       },
-      "chunk_index": 117
+      "chunk_index": 118
     },
     {
-      "node_id": "761cf32a-8b65-4e3d-8670-fcdce660f181",
+      "node_id": "7952a9b7-fab2-4050-a993-1625a3ec6d94",
       "text": "# 22 实地照片 ZP 字符\n\n型 254 — — O 见注16",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2129,17 +2147,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "22",
         "chapter_title": "实地照片 ZP 字符",
         "chapter_path": "22",
         "data_name": "检测线"
       },
-      "chunk_index": 118
+      "chunk_index": 119
     },
     {
-      "node_id": "5a8e62f1-7f3b-4c56-a670-a95ffdd1a3bd",
+      "node_id": "05b9ba08-92b3-465e-afa5-2edf543448fe",
       "text": "# 23 采集日期 RQ 日期\n\n型 — — YYYY/MM/DD M 见注17",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2147,17 +2165,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "23",
         "chapter_title": "采集日期 RQ 日期",
         "chapter_path": "23",
         "data_name": "检测线"
       },
-      "chunk_index": 119
+      "chunk_index": 120
     },
     {
-      "node_id": "9fc5d91c-9414-4d69-b06d-dab3fe277a59",
+      "node_id": "0a70e747-0488-4921-9519-a2aeff2703db",
       "text": "# 24 行政区代\n\n码 XZQDM 整型 10 — — M 见注18",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2165,17 +2183,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "24",
         "chapter_title": "行政区代",
         "chapter_path": "24",
         "data_name": "检测线"
       },
-      "chunk_index": 120
+      "chunk_index": 121
     },
     {
-      "node_id": "7457ac58-7e57-49ce-9d32-d42a1824c173",
+      "node_id": "6aa00935-8439-4b56-81c7-52b5ee33b2c2",
       "text": "# 25 是否可用 SFKY 字符\n\n型 254 — — O 见注19",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2183,17 +2201,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "25",
         "chapter_title": "是否可用 SFKY 字符",
         "chapter_path": "25",
         "data_name": "检测线"
       },
-      "chunk_index": 121
+      "chunk_index": 122
     },
     {
-      "node_id": "8ddc4b0f-c909-4c48-9091-9c2a32b67dd0",
+      "node_id": "121ef480-7eb7-4478-b631-f38fce5cfe03",
       "text": "# 26 备注 BZ 字符\n\n型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时\n\n必须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。端点指该检测线\n\n高程值最低的点，结点指该检测线高程值最高的点。\n\n注 4：检测线端点、结点纬度地理坐标，单位为“度”，小数点后保留有效位数 9 位。\n\n注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2201,25 +2219,7 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "26",
-        "chapter_title": "备注 BZ 字符",
-        "chapter_path": "26",
-        "data_name": "检测线"
-      },
-      "chunk_index": 122
-    },
-    {
-      "node_id": "12f16e48-35d3-460a-989b-7614816735c4",
-      "text": "注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的北坐标平均值及东坐标平均值，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -2229,15 +2229,15 @@
       "chunk_index": 123
     },
     {
-      "node_id": "a874cf50-212b-480c-a796-878a7c182f39",
-      "text": "注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14： 经评估的平面位置精度水平， 该检测线能用来进行高精度检测的最高平面位置中误差水平， 单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
+      "node_id": "73aa167a-0a99-40e7-84a8-af9a3d22f161",
+      "text": "注 5：检测线端点、结点的大地高，单位：米，保留 3 位小数。\n\n注 6：检测线端点、结点北坐标（投影平面 x 坐标），单位：米，保留 3 位小数。\n\n注 7：检测线端点、结点东坐标（投影平面 y 坐标），单位：米，保留 3 位小数。\n\n注 8：检测线端点、结点的 85 高程，单位：米，保留 3 位小数。\n\n注 9：检测线端点与结点的北坐标平均值及东坐标平均值，单位：米，保留 3 位小数。\n\n注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -2247,15 +2247,15 @@
       "chunk_index": 124
     },
     {
-      "node_id": "79bb555c-def3-4722-a8d1-dd1f7bcffd52",
-      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不\n\n足位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n表5 路面漆检测线属性结构表\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n路面漆检测线属性结构表\n\n序号 字段名\n\n称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/\n\n条件 备注",
+      "node_id": "bcbb7e29-fd16-4a53-b410-d2cc90462cf8",
+      "text": "注 10：中央子午线，根据检测线实际的中央子午线填写。\n\n注 11：投影面高程，根据检测线实际的投影面高程填写。\n\n注 12：检测地物代码，取值见附录 B.1。\n\n注 13：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 14： 经评估的平面位置精度水平， 该检测线能用来进行高精度检测的最高平面位置中误差水平， 单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 15：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "26",
         "chapter_title": "备注 BZ 字符",
@@ -2265,7 +2265,25 @@
       "chunk_index": 125
     },
     {
-      "node_id": "a574fe9e-e695-4bbb-a562-803091517b8b",
+      "node_id": "9d84d39e-4ae7-49e4-abef-72ac8b201fb2",
+      "text": "注 16：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 17：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不\n\n足位的用 0 补足，例如“2024/03/06”。\n\n注 18：填写该检测点所属县级行政区代码。\n\n表5 路面漆检测线属性结构表\n\n注 19：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n路面漆检测线属性结构表\n\n序号 字段名\n\n称 字段代码 字段\n\n类型\n\n字段\n\n长度\n\n小数\n\n位数 值域 约束/\n\n条件 备注",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "备注 BZ 字符",
+        "chapter_path": "26",
+        "data_name": "检测线"
+      },
+      "chunk_index": 126
+    },
+    {
+      "node_id": "c88fe3d2-2060-48ed-8603-962fca46d7be",
       "text": "# 1 检测线\n\n编号 jiancexianbianhao 字符\n\n型 20 — — M 见注2",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2273,17 +2291,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测线",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 126
+      "chunk_index": 127
     },
     {
-      "node_id": "a0fd2ad3-9f93-4d78-9e3f-017f576e89a7",
+      "node_id": "fc92cfc9-b019-4a93-8201-4514b7924a1b",
       "text": "# 2 中央子\n\n午线 ZYZWX 双精\n\n度型 — — ≥0 M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2291,17 +2309,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "中央子",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 127
+      "chunk_index": 128
     },
     {
-      "node_id": "0afbc377-2507-4637-b9ba-420c95e16189",
+      "node_id": "d7beea0e-dd05-4530-8401-18af6d8e0f0a",
       "text": "# 3 投影面\n\n高程 h0 双精\n\n度型 — 3 — O 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2309,17 +2327,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "投影面",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 128
+      "chunk_index": 129
     },
     {
-      "node_id": "9e8f4a0d-dc81-4691-bd0b-9a12e95022cc",
+      "node_id": "ca4db934-1d70-44db-b52c-0561402d1559",
       "text": "# 4 地物代\n\n码 DWDM 字符\n\n型 15 — LMQ_LKX M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2327,17 +2345,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "地物代",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 129
+      "chunk_index": 130
     },
     {
-      "node_id": "7e73b2e1-df8a-4c85-8e4f-dcc41d8cc2de",
+      "node_id": "113e41ee-ed13-4a57-b364-e0bda35390f9",
       "text": "# 5 地物名\n\n称 DWMC 字符\n\n型 30 — 路面漆轮廓线 M 见注6\n\n平面位\n\n置精度\n\n水平\n\nGCJDSP 双精\n\n度型 — 2 ≥0 M 见注7\n\n表6 路边线检测网属性结构表",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2345,17 +2363,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "地物名",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 130
+      "chunk_index": 131
     },
     {
-      "node_id": "21b813c8-4168-49a1-987c-5044a455e7d4",
+      "node_id": "2fe498de-8ee3-48aa-be96-f3af8f4b68a0",
       "text": "# 7 采集方\n\n式 CJFS 字符\n\n型 20 —\n\n车载激光雷达\n\n实测、机载激\n\n光雷达实测、\n\nMESH 模型内业\n\n采集\n\nM 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2363,17 +2381,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "采集方",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 131
+      "chunk_index": 132
     },
     {
-      "node_id": "507a65e5-cd1b-4c90-8d9f-94c277a61f18",
+      "node_id": "6bb698fa-78ec-4554-b2c7-b8e070cd1d8c",
       "text": "# 8 实地照\n\n片 ZP 字符\n\n型 254 — — O 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2381,17 +2399,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "实地照",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 132
+      "chunk_index": 133
     },
     {
-      "node_id": "7fcbd788-90f9-4e55-a35b-91a73de69cc3",
+      "node_id": "b9fe6e8d-aaff-418b-b747-0e06bf29f539",
       "text": "# 9 采集日\n\n期 RQ 日期\n\n型 — — YYYY/MM/DD M 见注10",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2399,17 +2417,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "采集日",
         "chapter_path": "9",
         "data_name": "检测线"
       },
-      "chunk_index": 133
+      "chunk_index": 134
     },
     {
-      "node_id": "0d25fcf7-44a3-4262-b8ea-392ec4a924c9",
+      "node_id": "552c3c33-d4e8-44b1-814e-324f3ad8c44c",
       "text": "# 10 行政区\n\n代码 XZQDM 整型 10 — — M 见注11",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2417,17 +2435,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "行政区",
         "chapter_path": "10",
         "data_name": "检测线"
       },
-      "chunk_index": 134
+      "chunk_index": 135
     },
     {
-      "node_id": "c8829291-14f5-4e77-b54c-b505c987551e",
+      "node_id": "4a8feb6b-726a-4098-b065-1dc5cef3f9a0",
       "text": "# 11 是否可\n\n用 SFKY 字符\n\n型 254 — — O 见注12",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2435,17 +2453,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "是否可",
         "chapter_path": "11",
         "data_name": "检测线"
       },
-      "chunk_index": 135
+      "chunk_index": 136
     },
     {
-      "node_id": "bcee3a35-4d15-4259-ad2b-c3a69b0cb74a",
+      "node_id": "3a126355-d9e0-47d3-a77c-ba5a632e6560",
       "text": "# 12 备注 BZ 字符\n\n型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时\n\n必须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：中央子午线，根据检测线实际的中央子午线填写。\n\n注 4：投影面高程，根据检测线实际的投影面高程填写。\n\n注 5：检测地物代码，取值见附录 B.1。\n\n注 6：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 7：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单位：\n\n米。如：0.",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2453,25 +2471,7 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "12",
-        "chapter_title": "备注 BZ 字符",
-        "chapter_path": "12",
-        "data_name": "检测线"
-      },
-      "chunk_index": 136
-    },
-    {
-      "node_id": "16ae0f6c-069a-464c-9f7b-0024d9631831",
-      "text": "1。\n\n注 7：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 8：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 9：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 10：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足\n\n位的用 0 补足，例如“2024/03/06”。\n\n注 11：填写该检测点所属县级行政区代码。\n\n注 12：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "备注 BZ 字符",
@@ -2481,15 +2481,15 @@
       "chunk_index": 137
     },
     {
-      "node_id": "fbea6010-4f00-4e18-92e1-e170473be91d",
-      "text": "注 11：填写该检测点所属县级行政区代码。\n\n注 12：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n路边线检测网属性结构表\n\n序\n\n号 字段名称 字段代码 字段类型 字段长\n\n度\n\n小数位\n\n数 值域 约束/\n\n条件 备注",
+      "node_id": "f0d86401-ca51-40d3-9c90-87654c6a55e1",
+      "text": "1。\n\n注 7：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 8：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 9：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 10：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足\n\n位的用 0 补足，例如“2024/03/06”。\n\n注 11：填写该检测点所属县级行政区代码。\n\n注 12：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "备注 BZ 字符",
@@ -2499,7 +2499,25 @@
       "chunk_index": 138
     },
     {
-      "node_id": "150015fe-e950-4236-b459-30752f65b365",
+      "node_id": "d7cc70d7-572c-47a1-810f-0a439b59ccc5",
+      "text": "注 11：填写该检测点所属县级行政区代码。\n\n注 12：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。\n\n路边线检测网属性结构表\n\n序\n\n号 字段名称 字段代码 字段类型 字段长\n\n度\n\n小数位\n\n数 值域 约束/\n\n条件 备注",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "备注 BZ 字符",
+        "chapter_path": "12",
+        "data_name": "检测线"
+      },
+      "chunk_index": 139
+    },
+    {
+      "node_id": "2655fc85-d144-4dfd-a46a-5379a69792b5",
       "text": "# 1 检测线编\n\n号\n\njiancexianb\n\nianhao 字符型 20 — — M 见注2",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2507,17 +2525,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "检测线编",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 139
+      "chunk_index": 140
     },
     {
-      "node_id": "3355970f-b814-4ee9-b5af-d6c70b54d3fb",
+      "node_id": "850334e4-992a-4b00-907f-f458530fa8b9",
       "text": "# 2 中央子午\n\n线 ZYZWX 双精度型 — — ≥0 M 见注3",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2525,17 +2543,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "中央子午",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 140
+      "chunk_index": 141
     },
     {
-      "node_id": "65663e2e-2d9b-4ebb-a7d1-e5382a91de33",
+      "node_id": "0f788e61-ac6a-4423-8b70-48147b62a6e5",
       "text": "# 3 投影面高\n\n程 h0 双精度型 — 3 — O 见注4",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2543,17 +2561,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "3",
         "chapter_title": "投影面高",
         "chapter_path": "3",
         "data_name": "检测线"
       },
-      "chunk_index": 141
+      "chunk_index": 142
     },
     {
-      "node_id": "6ca53571-5f90-4cd3-9b83-147d20920ba0",
+      "node_id": "d35370ed-ed04-4ca0-88c7-14e92aa35d1a",
       "text": "# 4 地物代码 DWDM 字符型 15 — LBX M 见注5",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2561,17 +2579,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "4",
         "chapter_title": "地物代码 DWDM 字符型 15 — LBX M 见注5",
         "chapter_path": "4",
         "data_name": "检测线"
       },
-      "chunk_index": 142
+      "chunk_index": 143
     },
     {
-      "node_id": "b31ba5a1-336c-4293-9c3e-67789f5fd9b7",
+      "node_id": "e4a4b93d-6857-4450-90c4-0573b8a2ff70",
       "text": "# 5 地物名称 DWMC 字符型 30 — 路边线 M 见注6",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2579,17 +2597,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "5",
         "chapter_title": "地物名称 DWMC 字符型 30 — 路边线 M 见注6",
         "chapter_path": "5",
         "data_name": "检测线"
       },
-      "chunk_index": 143
+      "chunk_index": 144
     },
     {
-      "node_id": "76a3dc96-598d-4657-a149-bf109b433f63",
+      "node_id": "66169a1d-d244-401b-bbba-966beabf1c22",
       "text": "# 6 平面位置\n\n精度水平 GCJDSP 双精度型 — 2 ≥0 M 见注7",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2597,17 +2615,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "平面位置",
         "chapter_path": "6",
         "data_name": "检测线"
       },
-      "chunk_index": 144
+      "chunk_index": 145
     },
     {
-      "node_id": "99ed4c74-89af-4722-bfa6-0bdcc353c3dd",
+      "node_id": "ebc4f28c-f44e-402f-931f-bf3686c476d5",
       "text": "# 7 采集方式 CJFS 字符型 20 —\n\n车载激光雷达\n\n实测、机载激光\n\n雷达实测、MESH\n\n模型内业采集\n\nM 见注8",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2615,17 +2633,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "采集方式 CJFS 字符型 20 —",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 145
+      "chunk_index": 146
     },
     {
-      "node_id": "293e6e28-dba8-45c7-970f-04efad7925e4",
+      "node_id": "ea8c18c7-5a06-468a-b957-45d40508faac",
       "text": "# 8 实地照片 ZP 字符型 254 — — O 见注9",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2633,17 +2651,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "实地照片 ZP 字符型 254 — — O 见注9",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 146
+      "chunk_index": 147
     },
     {
-      "node_id": "4a0abd43-f5b4-4361-9ac2-c720837ec1d7",
+      "node_id": "0df023bb-0daa-49ef-ac12-f7c9a3a20d29",
       "text": "# 9 采集日期 RQ 日期型 — — YYYY/MM/DD M 见注10",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2651,17 +2669,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "采集日期 RQ 日期型 — — YYYY/MM/DD M 见注10",
         "chapter_path": "9",
         "data_name": "检测线"
       },
-      "chunk_index": 147
+      "chunk_index": 148
     },
     {
-      "node_id": "4272ed4b-b800-4273-a80e-8bc330a4fca1",
+      "node_id": "32965d2b-d31b-43be-a871-8919d1551a70",
       "text": "# 10 行政区代\n\n码 XZQDM 整型 10 — — M 见注11",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2669,17 +2687,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "10",
         "chapter_title": "行政区代",
         "chapter_path": "10",
         "data_name": "检测线"
       },
-      "chunk_index": 148
+      "chunk_index": 149
     },
     {
-      "node_id": "4899ad80-44cc-4f38-95b3-4ca253665e91",
+      "node_id": "e490fce9-481d-40ae-a301-c2c294b5a70e",
       "text": "# 11 是否可用 SFKY 字符型 254 — — O 见注12",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2687,17 +2705,17 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "11",
         "chapter_title": "是否可用 SFKY 字符型 254 — — O 见注12",
         "chapter_path": "11",
         "data_name": "检测线"
       },
-      "chunk_index": 149
+      "chunk_index": 150
     },
     {
-      "node_id": "3e564d65-2cb2-4127-a75b-d6ce3807cb91",
+      "node_id": "41aca7d7-ad65-4bd4-b03f-456cdaaf32f9",
       "text": "# 12 备注 BZ 字符型 254 — — O\n\n注 1：约束/条件：“M”为必选项，即必须填写的信息；“C”为条件必选项，即满足某一条件或要求时\n\n必须填写的信息；“O”为可选项，可根据实际情况选择填写。\n\n注 2：进行全库统一编码。\n\n注 3：中央子午线，根据检测线实际的中央子午线填写。\n\n注 4：投影面高程，根据检测线实际的投影面高程填写。\n\n注 5：检测地物代码，取值见附录 B.1。\n\n注 6：地物名称，采集地物的名称，取值见附录 B.1。\n\n注 7：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单位：\n\n米。",
       "metadata": {
         "file_name": "part3_检测线.md",
@@ -2705,25 +2723,7 @@
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "12",
-        "chapter_title": "备注 BZ 字符型 254 — — O",
-        "chapter_path": "12",
-        "data_name": "检测线"
-      },
-      "chunk_index": 150
-    },
-    {
-      "node_id": "d9ef34a7-b8cf-424f-8207-00cb08e4c620",
-      "text": "1。\n\n注 7：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 8：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 9：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 10：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足\n\n位的用 0 补足，例如“2024/03/06”。\n\n注 11：填写该检测点所属县级行政区代码。",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "备注 BZ 字符型 254 — — O",
@@ -2733,15 +2733,15 @@
       "chunk_index": 151
     },
     {
-      "node_id": "88e29241-71fe-4b41-9b78-33482fb76a80",
-      "text": "注 11：填写该检测点所属县级行政区代码。\n\n注 12：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。",
+      "node_id": "f4c09b50-c72a-40db-ad4d-34606ecfdb84",
+      "text": "1。\n\n注 7：经评估的平面位置精度水平，该检测线能用来进行高精度检测的最高平面位置中误差水平，单位：\n\n米。如：0.25 米、0.30 米、0.5 米、1.2 米等。\n\n注 8：车载激光雷达实测、机载激光雷达实测、MESH 模型内业采集等。\n\n注 9：存储实地照片文件所在的物理路径及文件名，当文件名不存在时此项为空。\n\n注 10：属性值域为“YYYY/MM/DD”表示日期，其中“Y”表示年份，“M”表示月份，“D”表示日，不足\n\n位的用 0 补足，例如“2024/03/06”。\n\n注 11：填写该检测点所属县级行政区代码。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
         "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "12",
         "chapter_title": "备注 BZ 字符型 254 — — O",
@@ -2751,195 +2751,195 @@
       "chunk_index": 152
     },
     {
-      "node_id": "f8bbf33f-ed3e-4c41-94f2-e46e429fb259",
+      "node_id": "46713839-49f6-46f3-936d-3a4eb2acdb6e",
+      "text": "注 11：填写该检测点所属县级行政区代码。\n\n注 12：记录检测点是否可用状态，如当检测点对应地物发生变化时，说明变化状态。",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "备注 BZ 字符型 254 — — O",
+        "chapter_path": "12",
+        "data_name": "检测线"
+      },
+      "chunk_index": 153
+    },
+    {
+      "node_id": "a6d72166-c12d-4c7b-aedb-de318f4b5b75",
       "text": "# 6 入库流程",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
         "is_table": false,
         "chapter_no": "6",
         "chapter_title": "入库流程",
         "chapter_path": "6",
         "data_name": "检测线"
       },
-      "chunk_index": 153
+      "chunk_index": 154
     },
     {
-      "node_id": "8ebd64bd-5071-41eb-b9ac-68c1db672489",
+      "node_id": "82872e76-9c93-4f98-aae5-598dee245a7b",
       "text": "## 6.1 数据收集及分类\n\n检测线数据源包含：\n\n（1）车载激光扫描测量点云数据，采用人工或自动的方式从点云数据中提\n\n取的检测线数据；\n\n（2） 无人机航空摄影测量建立MESH 模型后， 采用人工或自动的方式在模型\n\n上采集的检测线数据。\n\n将历年采集的检测数据汇集，并按照数据源的不同进行分类。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
         "is_table": false,
         "chapter_no": "6.1",
         "chapter_title": "数据收集及分类",
         "chapter_path": "6/6.1",
         "data_name": "检测线"
       },
-      "chunk_index": 154
+      "chunk_index": 155
     },
     {
-      "node_id": "94da17bb-2073-4116-9e83-34d3c9db8940",
+      "node_id": "d4215089-1c07-4633-9d0d-bdeb2390aaac",
       "text": "## 6.2 入库数据预处理\n\n入库数据预处理工作包括：",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
         "is_table": false,
         "chapter_no": "6.2",
         "chapter_title": "入库数据预处理",
         "chapter_path": "6.2",
         "data_name": "检测线"
       },
-      "chunk_index": 155
+      "chunk_index": 156
     },
     {
-      "node_id": "86759a05-b32d-467c-a52e-4e5500918b8e",
+      "node_id": "0d7d3c61-9bfe-4531-ba93-40cf0c6761fb",
       "text": "# 1 采用人机交互的方式，对自动提取的检测线数据进行可靠性判别，剔除\n\n提取错误的检测线数据。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "1",
         "chapter_title": "采用人机交互的方式，对自动提取的检测线数据进行可靠性判别，剔除",
         "chapter_path": "1",
         "data_name": "检测线"
       },
-      "chunk_index": 156
+      "chunk_index": 157
     },
     {
-      "node_id": "db755d8e-61f3-48ae-861d-b70d14f55d2e",
+      "node_id": "5cdbc14a-c7b7-4a98-bf06-98e24f0a2103",
       "text": "# 2 按照质检大数据库设计要求，将可靠的检测线数据进行格式转换、坐标\n\n转换、分层，并根据表 1 至表 6 录入属性值。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "2",
         "chapter_title": "按照质检大数据库设计要求，将可靠的检测线数据进行格式转换、坐标",
         "chapter_path": "2",
         "data_name": "检测线"
       },
-      "chunk_index": 157
+      "chunk_index": 158
     },
     {
-      "node_id": "e1951c6e-3b69-4776-b583-4bbcdb7dee66",
+      "node_id": "d8e4f040-fa24-45f1-abc0-462744b3a594",
       "text": "## 6.3 质量检查\n\n质量检查主要检查预处理后的数学基础、 属性精度、 数据结构和完整性。 发\n\n现数据要素或属性缺失的， 需结合补充数据进行修正和完善， 确保数据的现势性\n\n满足使用需求。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6.3",
         "chapter_title": "质量检查",
         "chapter_path": "2/6.3",
         "data_name": "检测线"
       },
-      "chunk_index": 158
+      "chunk_index": 159
     },
     {
-      "node_id": "74eabae3-d9e9-482b-8e35-e2901818eb27",
+      "node_id": "3adce32f-d5a5-4eaf-85c3-4b0ea5678ca1",
       "text": "## 6.4 数据入库\n\n根据检测线数据库图层及属性结构设计要求构建检测线数据库库体； 利用统\n\n一的工具将完成预处理的数据映射入库， 并对入库数据进行检查复核。 检测线数\n\n据入库后进行统一编码。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据库",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "6.4",
         "chapter_title": "数据入库",
         "chapter_path": "6.4",
         "data_name": "检测线"
       },
-      "chunk_index": 159
+      "chunk_index": 160
     },
     {
-      "node_id": "687cc7a1-c996-4c1f-b321-c906f914e213",
+      "node_id": "de424603-d0c8-470c-a647-085b1ddc4cfd",
       "text": "# 7 数据更新\n\n暂未编写……",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
         "is_table": false,
         "chapter_no": "7",
         "chapter_title": "数据更新",
         "chapter_path": "7",
         "data_name": "检测线"
       },
-      "chunk_index": 160
+      "chunk_index": 161
     },
     {
-      "node_id": "19503abb-c432-4ee9-87e2-5a6cc6151ec9",
+      "node_id": "7b7a366f-5da0-4cba-9125-25e18ce24aea",
       "text": "# 8 共享应用\n\n验各类型数字测绘成果精度检测、 重要要素的快速检查， 以节省外业工作， 提升\n\n质检工作的效率。 检测线数据应用方式主要以人工套合比对和软件自动检查方式。",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "8",
         "chapter_title": "共享应用",
         "chapter_path": "8",
         "data_name": "检测线"
       },
-      "chunk_index": 161
+      "chunk_index": 162
     },
     {
-      "node_id": "a900ccd7-ec37-4647-a3de-1dd6171da9ea",
+      "node_id": "af606374-36c9-48d7-a413-86b6d0b68fa0",
       "text": "# 9 成果提交\n\n质检大数据支撑库检测点子库建设项目提交的成果清单如下：\n\n（1）检测线数据库.gdb；\n\n（2）实景照片数据集；\n\n（3）技术设计方案.pdf；\n\n（4）质量检查报告.docx；\n\n（5）地物代码表.xlsx；\n\n（6）入库脚本或工具。\n\n附录A\n\n（资料性）\n\n图层、地物、地物代码关系表见表A.1。\n\n表A.1 图层、地物、地物代码关系表\n\n图层、地物、地物代码关系表\n\n图层名称 地物名称 地物代码\n\n建筑物水平特征检测线\n\n建筑物外轮廓水平特征线 JZWWLK_SPTZX\n\n建筑物门窗水平特征线 JZWMC_SPTZX\n\n围墙水平特征线",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
-        "is_table": false,
-        "chapter_no": "9",
-        "chapter_title": "成果提交",
-        "chapter_path": "9",
-        "data_name": "检测线"
-      },
-      "chunk_index": 162
-    },
-    {
-      "node_id": "be1f2973-e449-4ffe-99a0-6653ce61c2d2",
-      "text": "JZWWLK_SPTZX\n\n建筑物门窗水平特征线 JZWMC_SPTZX\n\n围墙水平特征线 WQ_SPTZX\n\n建筑物垂直特征检测线\n\n建筑物外轮廓垂直特征线 JZWWLK_CZTZX\n\n建筑物门窗垂直特征线 JZWMC_CZTZX\n\n围墙垂直特征线 WQ_CZTZX\n\n电杆检测线 电杆垂直特征线 DG_CZTZX\n\n路灯检测线 路灯垂直特征线 LD_CZTZX\n\n路面漆检测线 路面漆轮廓线 LMQ_LKX\n\n路边线检测网 路边线 LBX\n\n参 考 文 献\n\n[1] GB/T 2260 《中华人民共和国行政区划代码》；\n\n[2] GB/T 18521《地名分类与类别代码编制规则》；\n\n[3]",
-      "metadata": {
-        "file_name": "part3_检测线.md",
-        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
-        "part_number": 3,
-        "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "成果提交",
@@ -2949,15 +2949,15 @@
       "chunk_index": 163
     },
     {
-      "node_id": "2d024c3b-c2a9-4d8a-96b5-cf1fe656279d",
-      "text": "LBX\n\n参 考 文 献\n\n[1] GB/T 2260 《中华人民共和国行政区划代码》；\n\n[2] GB/T 18521《地名分类与类别代码编制规则》；\n\n[3] GB/T 23705《数字城市地理信息公共平台地名/地址编码规则》；\n\n[4] GB/T 33176 《国家基本比例尺地图1：500 1：1000 1：2000 地形图》；\n\n[5] GB/T 33453《基础地理信息数据库建设规范》；\n\n[6] GB/T 39616 《卫星导航定位基准站网络实时动态测量（RTK）规范》；\n\n[7] GB/T****《地理实体空间身份编码规则》；\n\n[8] CH/T 1020 《1：500、1：1000、1：2000 地形图质量检验技术规程》；\n\n[9] CH/T 2009",
+      "node_id": "5d44451b-f84b-45ac-ba34-b7ebf7c66260",
+      "text": "JZWWLK_SPTZX\n\n建筑物门窗水平特征线 JZWMC_SPTZX\n\n围墙水平特征线 WQ_SPTZX\n\n建筑物垂直特征检测线\n\n建筑物外轮廓垂直特征线 JZWWLK_CZTZX\n\n建筑物门窗垂直特征线 JZWMC_CZTZX\n\n围墙垂直特征线 WQ_CZTZX\n\n电杆检测线 电杆垂直特征线 DG_CZTZX\n\n路灯检测线 路灯垂直特征线 LD_CZTZX\n\n路面漆检测线 路面漆轮廓线 LMQ_LKX\n\n路边线检测网 路边线 LBX\n\n参 考 文 献\n\n[1] GB/T 2260 《中华人民共和国行政区划代码》；\n\n[2] GB/T 18521《地名分类与类别代码编制规则》；\n\n[3] GB/T",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "成果提交",
@@ -2967,15 +2967,15 @@
       "chunk_index": 164
     },
     {
-      "node_id": "2d917fcb-9deb-4f01-ab84-18b9f4364c4d",
-      "text": "CH/T 1020 《1：500、1：1000、1：2000 地形图质量检验技术规程》；\n\n[9] CH/T 2009 《全球定位系统实时动态测量（RTK）技术规范》；\n\n[10] CH/T 3003 《低空数字航空摄影测量内业规范》；\n\n[11] CH/T 3004 《低空数字航空摄影测量外业规范》；\n\n[12] CH/T 3005 《低空数字航空摄影规范》；\n\n[13] CH/T 6003 《车载移动测量数据规范》；\n\n[14] CH/T 6004 《车载移动测量技术规程》；\n\n[15] CH/T 8023 《机载激光雷达数据处理技术规范》；\n\n[16] CH/T 8024 《机载激光雷达数据获取技术规范》；\n\n[17]",
+      "node_id": "f4d20b7a-dd6f-4674-826b-e4c1a9b611e5",
+      "text": "考 文 献\n\n[1] GB/T 2260 《中华人民共和国行政区划代码》；\n\n[2] GB/T 18521《地名分类与类别代码编制规则》；\n\n[3] GB/T 23705《数字城市地理信息公共平台地名/地址编码规则》；\n\n[4] GB/T 33176 《国家基本比例尺地图1：500 1：1000 1：2000 地形图》；\n\n[5] GB/T 33453《基础地理信息数据库建设规范》；\n\n[6] GB/T 39616 《卫星导航定位基准站网络实时动态测量（RTK）规范》；\n\n[7] GB/T****《地理实体空间身份编码规则》；\n\n[8] CH/T 1020 《1：500、1：1000、1：2000 地形图质量检验技术规程》；\n\n[9] CH/T 2009",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "成果提交",
@@ -2985,15 +2985,15 @@
       "chunk_index": 165
     },
     {
-      "node_id": "86e6dca2-5df7-4760-b294-82133ef21c95",
-      "text": "CH/T 8023 《机载激光雷达数据处理技术规范》；\n\n[16] CH/T 8024 《机载激光雷达数据获取技术规范》；\n\n[17] CH/T****《基础地理实体分类、粒度及精度基本要求》；\n\n[18] CH/T****《基础地理实体数据元数据》。",
+      "node_id": "d1a907bd-fe5c-4e5f-ad02-07e4f2d7af5b",
+      "text": "CH/T 1020 《1：500、1：1000、1：2000 地形图质量检验技术规程》；\n\n[9] CH/T 2009 《全球定位系统实时动态测量（RTK）技术规范》；\n\n[10] CH/T 3003 《低空数字航空摄影测量内业规范》；\n\n[11] CH/T 3004 《低空数字航空摄影测量外业规范》；\n\n[12] CH/T 3005 《低空数字航空摄影规范》；\n\n[13] CH/T 6003 《车载移动测量数据规范》；\n\n[14] CH/T 6004 《车载移动测量技术规程》；\n\n[15] CH/T 8023 《机载激光雷达数据处理技术规范》；\n\n[16] CH/T 8024 《机载激光雷达数据获取技术规范》；\n\n[17]",
       "metadata": {
         "file_name": "part3_检测线.md",
         "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
         "part_number": 3,
         "part_name": "检测线",
-        "section_type": "术语定义",
-        "knowledge_type": "term_definition",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
         "is_table": false,
         "chapter_no": "9",
         "chapter_title": "成果提交",
@@ -3001,6 +3001,24 @@
         "data_name": "检测线"
       },
       "chunk_index": 166
+    },
+    {
+      "node_id": "58f42481-66f4-4852-8d98-9731e1667724",
+      "text": "CH/T 8023 《机载激光雷达数据处理技术规范》；\n\n[16] CH/T 8024 《机载激光雷达数据获取技术规范》；\n\n[17] CH/T****《基础地理实体分类、粒度及精度基本要求》；\n\n[18] CH/T****《基础地理实体数据元数据》。",
+      "metadata": {
+        "file_name": "part3_检测线.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part3_检测线.md",
+        "part_number": 3,
+        "part_name": "检测线",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "成果提交",
+        "chapter_path": "9",
+        "data_name": "检测线"
+      },
+      "chunk_index": 167
     }
   ]
 }

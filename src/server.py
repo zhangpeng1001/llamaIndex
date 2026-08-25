@@ -59,7 +59,7 @@ from qualityScheme.milvus_store import collection_has_data
 
 # 配置根 logger,让 src.* 的日志能输出到控制台
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
 logger = logging.getLogger(__name__)

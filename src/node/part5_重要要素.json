@@ -1,9 +1,9 @@
 {
   "source_file": "part5_重要要素.md",
-  "total_nodes": 2,
+  "total_nodes": 124,
   "nodes": [
     {
-      "node_id": "c8246a9c-4a2f-4eed-aee4-abfa48225099",
+      "node_id": "42eba2df-ebda-44bc-944c-1f946965c4ae",
       "text": "# 实景三维质检大数据支撑库 时空数据规范 第5部分 重要要素\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第5部分 重要要素.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第5 部分 重要要素\n\n（草案）\n\n2025 年 7 月\n\nI\n\n目  次\n\nI\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规\n\n则》的规定起草。\n\n第1部分 数据分类与基本规定\n\n第2部分 检测点\n\n第3部分 检测线\n\n第4部分 标志性地物\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。",
       "metadata": {
         "file_name": "part5_重要要素.md",
@@ -18,7 +18,7 @@
       "chunk_index": 0
     },
     {
-      "node_id": "b19eb147-05a7-46fd-855e-11d166e751e2",
+      "node_id": "918e7804-3984-4455-85e1-3084dd5652f1",
       "text": "本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：\n\nI\n\n引  言\n\n面对实景三维质检供给服务能力提升需求， 以及适应大数据、 人工智能等新技术的飞速\n\n发展对高可靠质检参考数据的要求， 充分利用高可信的时空信息数据， 开展实景三维质检大\n\n数据支撑库重要要素库建设，包括重要要素数据要求、数据结构、 数据处理、数据更新、检\n\n查方法等内容， 通过该数据库建设， 提升实景三维数据质量检验效率及正确性， 推进高质量\n\n发展，支撑质量强国建设。",
       "metadata": {
         "file_name": "part5_重要要素.md",
@@ -31,6 +31,2202 @@
         "data_name": "重要要素"
       },
       "chunk_index": 1
+    },
+    {
+      "node_id": "fdd9c3d3-24af-488a-8858-d33bd03ca532",
+      "text": "# 3 术语与定义\n\n下列术语与定义适用于本文件。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "术语与定义",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 2
+    },
+    {
+      "node_id": "1bd52b6a-0fa9-4e94-b2aa-5a131d7e0318",
+      "text": "# 3 1\n\n重要要素 important elements\n\n重要要素是指在测绘过程、 成果或应用中， 对目标实现、 精度保障、 法律有效性起决定\n\n性作用的关键成分。其缺失或偏差会直接导致测绘成果失效、应用出错甚至产生法律风险。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "术语定义",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "1",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 3
+    },
+    {
+      "node_id": "7003b124-38ea-46f3-80c2-9a8681b35da2",
+      "text": "# 4 数据要求",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "数据要求",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 4
+    },
+    {
+      "node_id": "eda274b5-c81a-4d87-8553-9a5beb37fc13",
+      "text": "## 4.1 时空基准\n\na)坐标系统：2000 国家大地坐标系，采用地理坐标系，单位为度；\n\nb)高程基准：1985 国家高程基准，单位为米；\n\nc)时间基准：公元纪年和北京时间。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.1",
+        "chapter_title": "时空基准",
+        "chapter_path": "4/4.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 5
+    },
+    {
+      "node_id": "b6bdad3b-4994-4ab2-ac04-ad164c7eb256",
+      "text": "## 4.2 数据存储\n\n重要要素数据库以*.gdb 格式存储，水系、交通、居民地、境界等不同类别数据分别以\n\n“数据集”形式存储，各数据集中的重要要素以点、线、面图层形式分类存储。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.2",
+        "chapter_title": "数据存储",
+        "chapter_path": "4.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 6
+    },
+    {
+      "node_id": "11dff09c-de95-4193-9569-72543941bb01",
+      "text": "## 4.3 重要要素构成",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.3",
+        "chapter_title": "重要要素构成",
+        "chapter_path": "4.2/4.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 7
+    },
+    {
+      "node_id": "76ae1a07-0223-44e1-bc3e-62c7bde2782a",
+      "text": "### 4.3.1 水系要素\n\n水系重要要素主要包含以下内容：\n\na）行政区划内主要水系干流及沿岸主要堤坝、标准海塘；\n\nb）小二型以上水库以及配套的溢洪道。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.3.1",
+        "chapter_title": "水系要素",
+        "chapter_path": "4.2/4.3/4.3.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 8
+    },
+    {
+      "node_id": "d61d599b-4a6b-405a-b5a1-e8bd95c897bb",
+      "text": "### 4.3.2 交通要素\n\n交通重要要素主要包含以下内容：\n\na）国道、省道、快速路、高架路及其相应的重要附属设施，如大型桥梁、隧道、高速\n\n公路出入口\\互通\\枢纽、服务区、收费站、汽车渡口等；\n\nb）高铁、地铁（轻轨、磁浮铁轨） 、普通铁路及其相应的重要附属设施；\n\nc）民用机场。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.3.2",
+        "chapter_title": "交通要素",
+        "chapter_path": "4.3.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 9
+    },
+    {
+      "node_id": "8c0169cf-7a02-4d86-9d07-1335f8541d9a",
+      "text": "### 4.3.3 居民地要素\n\n居民地重要要素主要包含以下内容：\n\na）乡级以上政府；\n\nb）教育行政主管机构中明确要求的大学、中学及小学；\n\nc）三级医院及其他著名的医院。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.3.3",
+        "chapter_title": "居民地要素",
+        "chapter_path": "4.3.2/4.3.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 10
+    },
+    {
+      "node_id": "4e8cdb60-e619-4a19-a59d-81718b084473",
+      "text": "### 4.3.4 境界要素\n\n境界重要要素主要包含乡镇及以上行政区域。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "时空基准",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4.3.4",
+        "chapter_title": "境界要素",
+        "chapter_path": "4.3.2/4.3.3/4.3.4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 11
+    },
+    {
+      "node_id": "dd3b7da3-a38f-4ec7-a5bc-656f9ce85ecc",
+      "text": "# 5 数据结构",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "数据结构",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 12
+    },
+    {
+      "node_id": "e324fe98-f92e-4944-a49f-20371a8b6528",
+      "text": "重要要素数据库数据结构如表1。\n\n表 1 重要要素数据结构",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "数据结构",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 13
+    },
+    {
+      "node_id": "d931de03-cdc8-492c-a62a-fbc511b29d3a",
+      "text": "序号 数据集名称 图层名称 图层别名 图层类型\n\n水系数据集\n\nHYD_SXGL_LN 水系干流（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "数据结构",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 14
+    },
+    {
+      "node_id": "689b2422-0527-4a9a-a528-b1e5ca0061be",
+      "text": "# 2 HYD_SXGL_PY 水系干流（范围面） 面图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "HYD_SXGL_PY 水系干流（范围面） 面图层",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 15
+    },
+    {
+      "node_id": "8ffce682-7da4-4026-afee-968fcd8a296e",
+      "text": "# 3 HYD_GLDB_LN 干流堤坝（线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "HYD_GLDB_LN 干流堤坝（线） 线图层",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 16
+    },
+    {
+      "node_id": "f641996e-9cf8-472b-ba13-27750bb6af83",
+      "text": "# 4 HYD_SK_PY 大中型水库（范围面） 面图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "HYD_SK_PY 大中型水库（范围面） 面图层",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 17
+    },
+    {
+      "node_id": "3ae1b001-841a-48e9-89f8-edcd4e1dd021",
+      "text": "# 5 HYD_YHD_PY 溢洪道（范围面） 面图层\n\n交通数据集\n\nTRA_GS_LN 高速（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "HYD_YHD_PY 溢洪道（范围面） 面图层",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 18
+    },
+    {
+      "node_id": "dba966a4-1caf-4ebd-9eef-5fa3a296b436",
+      "text": "# 7 TRA_GD_LN 国道（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "TRA_GD_LN 国道（结构线） 线图层",
+        "chapter_path": "7",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 19
+    },
+    {
+      "node_id": "83a88621-2fc2-4de6-979a-b652b3baa7fe",
+      "text": "# 8 TRA_SD_LN 省道（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "TRA_SD_LN 省道（结构线） 线图层",
+        "chapter_path": "8",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 20
+    },
+    {
+      "node_id": "cd638a7c-8bfd-4dc4-b023-34b7bc8bc8a8",
+      "text": "# 9 TRA_KS_LN 快速路及高架路（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "TRA_KS_LN 快速路及高架路（结构线） 线图层",
+        "chapter_path": "9",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 21
+    },
+    {
+      "node_id": "88405746-366e-4966-a6b3-367cc87a0428",
+      "text": "# 10 TRA_GT_LN 高铁（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "TRA_GT_LN 高铁（结构线） 线图层",
+        "chapter_path": "10",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 22
+    },
+    {
+      "node_id": "8e1fb144-0b80-4d13-a7b2-61fdbbe2407c",
+      "text": "# 11 TRA_DT_LN 地铁（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "TRA_DT_LN 地铁（结构线） 线图层",
+        "chapter_path": "11",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 23
+    },
+    {
+      "node_id": "b7c2bb8b-d067-44ea-a0c2-22b554aa9cf6",
+      "text": "# 12 TRA_PTDL_LN 普通铁路（结构线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "TRA_PTDL_LN 普通铁路（结构线） 线图层",
+        "chapter_path": "12",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 24
+    },
+    {
+      "node_id": "3752c1e7-0b93-4e65-905c-3d25fbd78659",
+      "text": "# 13 TRA_FSSS_PT 附属设施（点） 点图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "TRA_FSSS_PT 附属设施（点） 点图层",
+        "chapter_path": "13",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 25
+    },
+    {
+      "node_id": "89972b50-acd2-4bc8-989d-7d842bd55940",
+      "text": "# 14 TRA_FSSS_LN 附属设施（线） 线图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "TRA_FSSS_LN 附属设施（线） 线图层",
+        "chapter_path": "14",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 26
+    },
+    {
+      "node_id": "9125b0e9-d249-4ab8-80cd-a29b3cd59557",
+      "text": "# 15 TRA_FSSS_PY 附属设施（面） 面图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "TRA_FSSS_PY 附属设施（面） 面图层",
+        "chapter_path": "15",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 27
+    },
+    {
+      "node_id": "ed5ab9de-3e16-4015-926d-bd1eae08b421",
+      "text": "# 16 TRA_MYJC_PY 民用机场（范围面） 面图层\n\n居民地数据集\n\nRES_ZF_PT 乡级以上政府 点图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "TRA_MYJC_PY 民用机场（范围面） 面图层",
+        "chapter_path": "16",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 28
+    },
+    {
+      "node_id": "10b97f00-0228-4bb8-ae58-0ccafb46ab25",
+      "text": "# 18 RES_XX_PT 学校 点图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "RES_XX_PT 学校 点图层",
+        "chapter_path": "18",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 29
+    },
+    {
+      "node_id": "3e9110c0-2b36-4c28-bb70-30b9e2f31fd7",
+      "text": "# 19 RES_YY_PT 医院 点图层\n\n境界数据集\n\nBOU_PRO_PY 省级境界 面图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "RES_YY_PT 医院 点图层",
+        "chapter_path": "19",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 30
+    },
+    {
+      "node_id": "b9cc0037-5cea-4b17-b027-389baffa3800",
+      "text": "# 21 BOU_CIT_PY 地级境界 面图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "BOU_CIT_PY 地级境界 面图层",
+        "chapter_path": "21",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 31
+    },
+    {
+      "node_id": "a6365084-cc76-4299-b918-24321f70719c",
+      "text": "# 22 BOU_COU_PY 县级境界 面图层\n\n序号 数据集名称 图层名称 图层别名 图层类型",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "BOU_COU_PY 县级境界 面图层",
+        "chapter_path": "22",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 32
+    },
+    {
+      "node_id": "0718bc48-0218-45ff-9a9f-f340263bff73",
+      "text": "# 23 BOU_TOW_PY 乡级境界 面图层",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "BOU_TOW_PY 乡级境界 面图层",
+        "chapter_path": "23",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 33
+    },
+    {
+      "node_id": "4c80e2b9-92b4-4b38-8c40-38a2a75c7908",
+      "text": "## 5.1 水系数据集\n\n水系数据集主要包含水系干流（结构线） 、水系干流（范围面） 、干流堤坝（线） 、大中\n\n型水库、溢洪道 （范围面）等5 个图层。 各图层的字段属性均来源各参考数据源， 其中仅分\n\n类代码、 更新源、 现势性等字段属性为必填字段， 其他字段属性均为条件必填， 即参考数据\n\n源中有相关属性并正确时应填写，其他数据集填写要求相同，各图层属性结构如表2-表 5。\n\n表 2 水系干流（结构线）图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5.1",
+        "chapter_title": "水系数据集",
+        "chapter_path": "23/5.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 34
+    },
+    {
+      "node_id": "8ce6d597-dd98-49f0-8ea6-aaef07888330",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 35
+    },
+    {
+      "node_id": "889e1c96-0e4f-4d0e-9522-302933a35fa7",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 36
+    },
+    {
+      "node_id": "33be06f5-0fdc-4226-b89f-35194a894cdd",
+      "text": "# 3 FNAME2 名称 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "FNAME2 名称 2 Text（50） 条件必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 37
+    },
+    {
+      "node_id": "3d6ec553-c492-4bb1-84fc-9a2dd3fcbb02",
+      "text": "# 4 SUPRIVER 上级河流 Text（50） 条件必填",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "SUPRIVER 上级河流 Text（50） 条件必填",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 38
+    },
+    {
+      "node_id": "f7ffec02-f8c9-4a6e-8f2f-92a98a556ecb",
+      "text": "# 5 HYDCODE 水利编码 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "HYDCODE 水利编码 Text（50） 条件必填 /",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 39
+    },
+    {
+      "node_id": "1ccf0777-37af-413e-a0d1-43e3859eb3ee",
+      "text": "# 6 HYDCODE2 水利编码 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "HYDCODE2 水利编码 2 Text（50） 条件必填 /",
+        "chapter_path": "6",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 40
+    },
+    {
+      "node_id": "d5a0f22f-34c2-4e5f-bc8d-5dd0f1a7f84b",
+      "text": "# 7 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "7",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 41
+    },
+    {
+      "node_id": "b50f3995-f770-4ca5-8fe4-ec6d146c246a",
+      "text": "# 8 UPDATETIME 现势性 Text（14） 必填 /\n\n表 3 水系干流（范围面） 、大中型水库等图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "8",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 42
+    },
+    {
+      "node_id": "3a34a5bf-9a38-434c-a85e-ef3633b648fa",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 43
+    },
+    {
+      "node_id": "8e55aa18-3c72-4a6e-a65b-efc7eab9e5c6",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 44
+    },
+    {
+      "node_id": "564a96e5-776b-457b-9a56-ed2c607efdda",
+      "text": "# 3 FNAME2 名称 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "FNAME2 名称 2 Text（50） 条件必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 45
+    },
+    {
+      "node_id": "418643fe-197c-4f7d-aba9-13653d6c94e5",
+      "text": "# 4 FNAME3 名称 3 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "FNAME3 名称 3 Text（50） 条件必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 46
+    },
+    {
+      "node_id": "7296acc6-7383-4f79-a949-3829b4c80e91",
+      "text": "# 5 HYDCODE 水利编码 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "HYDCODE 水利编码 Text（50） 条件必填 /",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 47
+    },
+    {
+      "node_id": "440871c7-1c97-4558-bae8-1dae136579fe",
+      "text": "# 6 HYDCODE2 水利编码 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "HYDCODE2 水利编码 2 Text（50） 条件必填 /",
+        "chapter_path": "6",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 48
+    },
+    {
+      "node_id": "3cbf0d31-a213-4dca-93c5-d93c06024d7a",
+      "text": "# 7 HYDCODE3 水利编码 3 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "HYDCODE3 水利编码 3 Text（50） 条件必填 /",
+        "chapter_path": "7",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 49
+    },
+    {
+      "node_id": "ce5e5518-6759-465d-9dea-c9a6fadce31e",
+      "text": "# 8 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "8",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 50
+    },
+    {
+      "node_id": "1956318c-e7dd-4745-a7ee-303bd61e5b48",
+      "text": "# 9 UPDATETIME 现势性 Text（14） 必填 /\n\n表 4 干流堤坝（线）图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "9",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 51
+    },
+    {
+      "node_id": "bad76311-e171-4f0c-ba14-08f895aef673",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 52
+    },
+    {
+      "node_id": "7abf3617-f1a9-4974-b5b1-6322c8a70709",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 53
+    },
+    {
+      "node_id": "1abe9ec9-7066-4862-bad9-e23b7043d009",
+      "text": "# 3 FWIDTH 堤顶宽度 DOUBLE 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "FWIDTH 堤顶宽度 DOUBLE 条件必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 54
+    },
+    {
+      "node_id": "aa470c75-81e1-435c-9526-4d4bb3c17934",
+      "text": "# 4 ELEVATION 堤顶高程 DOUBLE 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "ELEVATION 堤顶高程 DOUBLE 条件必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 55
+    },
+    {
+      "node_id": "3b34caea-0dab-4f05-9e74-d9e417fac669",
+      "text": "# 5 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 56
+    },
+    {
+      "node_id": "400fafde-d816-4107-b89f-816c94c316dc",
+      "text": "# 6 UPDATETIME 现势性 Text（14） 必填 /\n\n表 5 溢洪道（范围面）图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "6",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 57
+    },
+    {
+      "node_id": "4b3dddf9-d1a9-4b73-a6ee-9c5f2d8776cc",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 58
+    },
+    {
+      "node_id": "9fbc04e8-51a6-470f-bd95-5ca7edd3c259",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 59
+    },
+    {
+      "node_id": "e094a9e4-4be4-462e-a929-56333a1929f3",
+      "text": "# 3 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 60
+    },
+    {
+      "node_id": "9d7f965f-59b0-43b7-8642-738a0d392a78",
+      "text": "# 4 UPDATETIME 现势性 Text（14） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 61
+    },
+    {
+      "node_id": "5fab921d-95d2-493a-af97-4276654bd59b",
+      "text": "## 5.2 交通数据集\n\n交通数据集主要包含高速（结构线） 、国道（结构线） 、省道（结构线） 、快速路及高架\n\n路（结构线） 、高铁（结构线） 、地铁（结构线） 、普通铁路（结构线） 、附属设施（点、线、\n\n面） 、民用机场（范围面）等11 个图层。各图层属性结构表6-表 8。\n\n表 6 高速、国道、省道、快速路及高架路等图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5.2",
+        "chapter_title": "交通数据集",
+        "chapter_path": "4/5.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 62
+    },
+    {
+      "node_id": "2f171323-4e47-4509-aae0-211f36558527",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 63
+    },
+    {
+      "node_id": "4e05ae44-b3df-453e-b9ed-6f6b056d3edd",
+      "text": "# 2 FCODE2 分类代码 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FCODE2 分类代码 2 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 64
+    },
+    {
+      "node_id": "d30f6465-a414-4ce2-8397-471ef592a77f",
+      "text": "# 3 FCODE3 分类代码 3 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "FCODE3 分类代码 3 Text（50） 条件必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 65
+    },
+    {
+      "node_id": "d34ae0e5-61fe-4df8-bd2d-83c4395b118e",
+      "text": "# 4 FCODE4 分类代码 4 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "FCODE4 分类代码 4 Text（50） 条件必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 66
+    },
+    {
+      "node_id": "e79d80f4-85df-47f1-b54a-efc110ebdf8a",
+      "text": "# 5 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 67
+    },
+    {
+      "node_id": "b5752588-68df-4d4a-8144-d380477d74fd",
+      "text": "# 6 FNAME2 名称 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "FNAME2 名称 2 Text（50） 条件必填 /",
+        "chapter_path": "6",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 68
+    },
+    {
+      "node_id": "641165f6-84d8-44c6-ac5f-0a7e17195863",
+      "text": "# 7 FNAME3 名称 3 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "FNAME3 名称 3 Text（50） 条件必填 /",
+        "chapter_path": "7",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 69
+    },
+    {
+      "node_id": "3a502103-d68c-4460-8b4f-b8b20d5b7476",
+      "text": "# 8 FNAME4 名称 4 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "FNAME4 名称 4 Text（50） 条件必填 /",
+        "chapter_path": "8",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 70
+    },
+    {
+      "node_id": "5321f902-e03d-4d46-a6d5-c9c37d530204",
+      "text": "# 9 ROADCODE 路线编码 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "ROADCODE 路线编码 Text（50） 条件必填 /",
+        "chapter_path": "9",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 71
+    },
+    {
+      "node_id": "8305ffa1-8648-488c-9fd7-e341b0d58d30",
+      "text": "# 10 ROADCODE2 路线编码 2 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "ROADCODE2 路线编码 2 Text（50） 条件必填 /",
+        "chapter_path": "10",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 72
+    },
+    {
+      "node_id": "fef29d93-4f60-4824-a637-303f31a58b24",
+      "text": "# 11 ROADCODE3 路线编码 3 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "ROADCODE3 路线编码 3 Text（50） 条件必填 /",
+        "chapter_path": "11",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 73
+    },
+    {
+      "node_id": "152de6e8-add5-4f06-84b2-7fff02efb744",
+      "text": "# 12 ROADCODE4 路线编码 4 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "ROADCODE4 路线编码 4 Text（50） 条件必填 /",
+        "chapter_path": "12",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 74
+    },
+    {
+      "node_id": "81d7c0d8-c9a1-4d09-a22b-1413d846441b",
+      "text": "# 13 FWIDTH 宽度 Double 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "FWIDTH 宽度 Double 条件必填 /",
+        "chapter_path": "13",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 75
+    },
+    {
+      "node_id": "115741f7-4420-4d96-bf13-f090b851b39b",
+      "text": "# 14 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "14",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 76
+    },
+    {
+      "node_id": "f6be2675-8c67-499c-90ba-25fbbc504ce3",
+      "text": "# 15 UPDATETIME 现势性 Text（14） 必填 /\n\n表 7 高铁、地铁、普通铁路等图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "15",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 77
+    },
+    {
+      "node_id": "b4591b49-ab6e-4782-9de3-9b7d273aaed9",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 78
+    },
+    {
+      "node_id": "c816a3d2-3d40-47b5-94dc-ceae19446e04",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 79
+    },
+    {
+      "node_id": "70a3fc7b-6842-481b-8e36-9360d7f8f374",
+      "text": "# 3 ROADCODE 路线编码 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "ROADCODE 路线编码 Text（50） 条件必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 80
+    },
+    {
+      "node_id": "17bd5948-0d82-4858-b4c5-259280a01fe1",
+      "text": "# 4 FDESC 描述 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "FDESC 描述 Text（50） 条件必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 81
+    },
+    {
+      "node_id": "6862451a-def8-4f37-aab7-c17a8294f62e",
+      "text": "# 5 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 82
+    },
+    {
+      "node_id": "64bab226-c029-4bda-8855-e0e7d7c7260f",
+      "text": "# 6 UPDATETIME 现势性 Text（14） 必填 /\n\n表 8 附属设施、民用机场等图层属性结构表\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "6",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 83
+    },
+    {
+      "node_id": "f3b48fc0-5467-404d-ae1f-820e88393eaa",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 84
+    },
+    {
+      "node_id": "88a29cd3-2eb4-4c91-85ac-6b594a1fda56",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 85
+    },
+    {
+      "node_id": "2b341f36-1545-4984-8ecf-cae9bb6654d7",
+      "text": "# 3 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 86
+    },
+    {
+      "node_id": "60ae516e-cc24-4491-b25d-0eb076e60730",
+      "text": "# 4 UPDATETIME 现势性 Text（14） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 87
+    },
+    {
+      "node_id": "604075d2-e471-450b-91e7-abdf8c86179a",
+      "text": "## 5.3 居民地数据集\n\n居民地数据集主要包含乡级以上政府、 学校、 医院等3 个图层。 各图层属性结构如表9。\n\n表 9 乡级以上政府、学校、医院等图层属性结构\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5.3",
+        "chapter_title": "居民地数据集",
+        "chapter_path": "4/5.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 88
+    },
+    {
+      "node_id": "e2f64e72-24a0-4d00-90f4-4702b4f8f1d4",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 89
+    },
+    {
+      "node_id": "377524eb-ef5f-45cf-b717-b92dd926bfd4",
+      "text": "# 2 FNAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "FNAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 90
+    },
+    {
+      "node_id": "b6ecdd50-57c0-4336-b085-5abe198a7120",
+      "text": "# 3 FTYPE 类别（级别） Text（50） 条件必填\n\n主要填写点要素所属的类别，如\n\n政府要素填写 “乡级” “县级” 等，\n\n医院要素填写“一级甲等”等，\n\n学校填写“小学” “中学”等。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "FTYPE 类别（级别） Text（50） 条件必填",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 91
+    },
+    {
+      "node_id": "3f2ccd9b-621d-4de6-8862-4be7fddf8084",
+      "text": "# 4 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 92
+    },
+    {
+      "node_id": "ffb939b3-3de2-4737-8e59-008e0aeb6687",
+      "text": "# 5 UPDATETIME 现势性 Text（14） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "5",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 93
+    },
+    {
+      "node_id": "1b6dc954-5716-48e7-b11e-557bdedf4dd1",
+      "text": "## 5.4 境界数据集\n\n境界数据集主要包含省级境界、 地级境界、 县级境界、 乡级境界等4 个图层。各图层属\n\n性结构如表10。\n\n表 10 境界数据集图层属性结构\n\n序号 字段名 字段中文名 字段类型 约束条件 备注",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5.4",
+        "chapter_title": "境界数据集",
+        "chapter_path": "5/5.4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 94
+    },
+    {
+      "node_id": "20bfddd1-7f7e-4bae-8e0b-1217c056da92",
+      "text": "# 1 FCODE 分类代码 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "FCODE 分类代码 Text（50） 必填 /",
+        "chapter_path": "1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 95
+    },
+    {
+      "node_id": "8133e320-dbf7-4640-be97-01b722409ff4",
+      "text": "# 2 NAME 名称 Text（50） 条件必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "NAME 名称 Text（50） 条件必填 /",
+        "chapter_path": "2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 96
+    },
+    {
+      "node_id": "65b67777-5f06-4871-a819-6c0b1be90a92",
+      "text": "# 3 USOURCE 更新源 Text（50） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "USOURCE 更新源 Text（50） 必填 /",
+        "chapter_path": "3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 97
+    },
+    {
+      "node_id": "fb788298-3b0d-4e68-93f5-47076f92301a",
+      "text": "# 4 UPDATETIME 现势性 Text（14） 必填 /",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "UPDATETIME 现势性 Text（14） 必填 /",
+        "chapter_path": "4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 98
+    },
+    {
+      "node_id": "4d2b85e5-85c3-40fe-b75a-15b7a81bd8c3",
+      "text": "# 6 数据处理\n\n以 1∶10000 基础地理信息、天地图等数据为主要数据源构建，以 1∶500 及 1∶2000\n\n基础地理信息、 城市国土空间监测、 收集的知识名录等数据为补充， 辅助验证重大要素正确\n\n性、 完整性及现势性。 数据处理技术流程主要包含数据源搜集及整理、 重大要素筛选及提取、\n\n重大要素检查及补充、数据入库等四个环节，技术流程如图1。\n\n图 1 技术流程图",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据处理",
+        "chapter_path": "6",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 99
+    },
+    {
+      "node_id": "850b3dbd-a54a-4cdc-9cf4-63c52b79dc6d",
+      "text": "## 6.1 数据源收集及整理\n\n数据源分为主要数据源和辅助数据源。\n\n主要数据源包含1∶10000 基础地理信息和天地图数据。主要数据源为必要数据，收集\n\n时应注意数据源的完整性、 现势性和有效性。 同时， 在收集成果数据时应注意收集与成果相",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "数据源收集及整理",
+        "chapter_path": "6/6.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 100
+    },
+    {
+      "node_id": "9026bd20-323d-4677-809d-85eb76234bc5",
+      "text": "对应的分类代码表。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "数据源收集及整理",
+        "chapter_path": "6.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 101
+    },
+    {
+      "node_id": "61b1912e-f723-4090-bdab-55576d4eb830",
+      "text": "辅助数据源主要为1∶500 及 1∶2000 基础地理信息、城市国土空间监测、收集的知识\n\n名录等相关数据。辅助数据源为非必要数据， 秉持 “应收尽收”原则，收集时应注意数据源\n\n的现势性、 有效性和权威性。 其中， 知识名录主要为相关行政主管部门或新闻媒体发布的与\n\n重大要素相关且具有权威性的信息。 同时， 在收集成果数据时应注意收集与成果相对应的分",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "数据源收集及整理",
+        "chapter_path": "6.1/6.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 102
+    },
+    {
+      "node_id": "4937d762-17c5-40b8-9558-e4928090ff0f",
+      "text": "类代码表。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "数据源收集及整理",
+        "chapter_path": "6.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 103
+    },
+    {
+      "node_id": "04a29ead-8ef4-40ab-b613-76784b3b83f8",
+      "text": "数据源完成收集后应按类别进行整理归类。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.1",
+        "chapter_title": "数据源收集及整理",
+        "chapter_path": "6.1/6.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 104
+    },
+    {
+      "node_id": "c85af55a-41a2-45ab-8b41-d0ab5136e479",
+      "text": "## 6.2 重要要素筛选及提取\n\n根据重要要素库中确定各类要素内容，结合1∶10000 基础地理信息等主要数据源的分",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "重要要素筛选及提取",
+        "chapter_path": "6.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 105
+    },
+    {
+      "node_id": "8a6d3aa1-7c80-41d6-94f3-098c49c166f4",
+      "text": "类代码表， 清洗、 筛选形成相应的重大要素分类代码表。 根据重大要素分类代码表从主要数",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "重要要素筛选及提取",
+        "chapter_path": "6.2/6.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 106
+    },
+    {
+      "node_id": "d512b421-0e78-4ec2-8bf7-936ef79791a4",
+      "text": "据源中对依次对各类别重大要素开展筛选及提取工作， 按数据集进行归类整理， 形成重要要\n\n素库底版。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.2",
+        "chapter_title": "重要要素筛选及提取",
+        "chapter_path": "6.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 107
+    },
+    {
+      "node_id": "1a31ac9a-d1ff-4028-ac47-c01099e605b3",
+      "text": "## 6.3 重要要素检查及补充\n\n基于 1∶500 及 1∶2000 基础地理信息、城市国土空间监测、收集的知识名录等相关数\n\n据，套合相关高分辨率影像数据，对筛选及提取形成的重要要素库中的重大要素的正确性、\n\n完整性及现势性进行检查、 修正和补充， 如个别重大要素漏采集或辅助要素现势性更强， 则\n\n对底版数据进行补采集或更新； 如个别重大要素属性与权威属性不一致或漏填写， 则根据权\n\n威数据进行属性补充等。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.3",
+        "chapter_title": "重要要素检查及补充",
+        "chapter_path": "6.2/6.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 108
+    },
+    {
+      "node_id": "eb442ac5-af27-409d-b517-2db924c47635",
+      "text": "## 6.4 数据映射入库",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "数据映射入库",
+        "chapter_path": "6.4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 109
+    },
+    {
+      "node_id": "7ec6c0fd-7f44-4854-aced-5265be9b9ed0",
+      "text": "根据重要要素库数据结构及图层属性结构要求构建重要要素标准库； 同时， 根据底版库\n\n与标准库之间的图层与字段的映射关系， 制作数据映射关系表， 实现底版库到标准库的数据",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "数据映射入库",
+        "chapter_path": "6.4/6.4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 110
+    },
+    {
+      "node_id": "95b617fa-8259-446d-a03a-ac5227b11909",
+      "text": "映射及入库，并对标准库数据进行检查和核实。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据库",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6.4",
+        "chapter_title": "数据映射入库",
+        "chapter_path": "6.4",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 111
+    },
+    {
+      "node_id": "c203332b-0e30-411f-bde7-02618e432024",
+      "text": "# 7 数据更新\n\n为更好的保证质检大数据支撑库重要要素数据的现势性、 正确性及完整性， 宜安排专门\n\n人员定期对数据库开展治理及更新工作。 数据更新方式主要包含数据源定期比对、 更新信息\n\n定期搜集、质检工作日常发现等三种。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "数据更新",
+        "chapter_path": "7",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 112
+    },
+    {
+      "node_id": "dfebbacb-fb7a-4a27-9e5e-4c6eeb1cc4aa",
+      "text": "## 7.1 数据源定期比对\n\n根据 1∶10000 基础地理信息和天地图数据等主要数据源的更新频率和更新变化信息，\n\n定期对重要要素库中的重大要素进行比对分析， 对已经发生变化的要素进行更新补充， 并填\n\n写更新要素的现势性信息。数据源比对更新频次一般以一个季度为周期。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.1",
+        "chapter_title": "数据源定期比对",
+        "chapter_path": "7/7.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 113
+    },
+    {
+      "node_id": "62494158-fafd-498f-ae68-6eb411495e0e",
+      "text": "## 7.2 更新信息定期搜集\n\n根据信息化检索技术定期从网络上检索与重大要素相关的新闻报道等权威信息， 专员定\n\n期对信息进行清理、核实及整理汇编，对核实无误的信息按一定周期更新至重要要素库中。\n\n更新信息定期搜集更新周期一般以一个月为周期。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.2",
+        "chapter_title": "更新信息定期搜集",
+        "chapter_path": "7.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 114
+    },
+    {
+      "node_id": "1babb2a8-3dc8-447a-bf72-f6c76080be32",
+      "text": "## 7.3 质检工作日常发现",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.3",
+        "chapter_title": "质检工作日常发现",
+        "chapter_path": "7.2/7.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 115
+    },
+    {
+      "node_id": "c359fe9d-d5df-478b-800a-c51f5337c6c0",
+      "text": "技术人员在开展日常的质检工作中发现的重大要素变化信息应按相应格式登记或提取",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7.3",
+        "chapter_title": "质检工作日常发现",
+        "chapter_path": "7.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 116
+    },
+    {
+      "node_id": "0e7c8f0d-a48f-4e6b-a9dc-d6f9c935c815",
+      "text": "变化信息矢量数据， 定期汇交至数据库管理专员， 有专员对变化信息核实后更新入库。 质检\n\n工作日常发现更新周期一般以一个月为周期。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7.3",
+        "chapter_title": "质检工作日常发现",
+        "chapter_path": "7.3/7.3",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 117
+    },
+    {
+      "node_id": "81985ab3-649a-4db7-8d4d-8580201a718c",
+      "text": "# 8 检查方法\n\n质检大数据支撑库重要要素库主要应用于对受检成果中重大要素的快速检查， 以提升质",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "检查方法",
+        "chapter_path": "8",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 118
+    },
+    {
+      "node_id": "f3dd4e4b-e322-4229-adb9-c99dc96f5ba9",
+      "text": "检工作效率和保障成果质量。重要要素库的应用方式主要有人工套合比对和软件自动比对两\n\n种应用路径。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "检查方法",
+        "chapter_path": "8",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 119
+    },
+    {
+      "node_id": "711ebd2f-2fd4-400d-8f7a-da1a73b7e771",
+      "text": "## 8.1 人工套合检查\n\n人工套合检查方式主要由技术人员在检查时， 将重要要素库数据加载到相应的地理信息\n\n软件中，与待检成果开展比对分析，检查待检成果中重大要素更新的完整性、正确性。",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8.1",
+        "chapter_title": "人工套合检查",
+        "chapter_path": "8/8.1",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 120
+    },
+    {
+      "node_id": "7ae6bd5b-3a1e-418f-ace4-2f47d91040e9",
+      "text": "## 8.2 软件自动比对",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8.2",
+        "chapter_title": "软件自动比对",
+        "chapter_path": "8.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 121
+    },
+    {
+      "node_id": "4b389b47-ebdc-495b-b64e-4546a79421bd",
+      "text": "软件自动比对方式主要由自动化检查软件以重要要素库中的重重大要素为参考数据， 对\n\n待检成果开展位置比对分析或属性比对分析， 以检查同名位置的重大要素更新的完整性及属",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8.2",
+        "chapter_title": "软件自动比对",
+        "chapter_path": "8.2/8.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 122
+    },
+    {
+      "node_id": "b7f20df4-1476-4bed-bda4-436fddef371c",
+      "text": "性的正确性。\n\n参 考 文 献\n\n[1]浙江省1∶10000 比例尺基础地理信息数据更新（2024 年）技术设计书",
+      "metadata": {
+        "file_name": "part5_重要要素.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part5_重要要素.md",
+        "part_number": 5,
+        "part_name": "重要要素",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8.2",
+        "chapter_title": "软件自动比对",
+        "chapter_path": "8.2",
+        "data_name": "重要要素"
+      },
+      "chunk_index": 123
     }
   ]
 }

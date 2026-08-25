@@ -1,9 +1,9 @@
 {
   "source_file": "part4_标志性地物.md",
-  "total_nodes": 1,
+  "total_nodes": 67,
   "nodes": [
     {
-      "node_id": "03261bc6-f99f-45c2-bfea-d81b370bc516",
+      "node_id": "57931f7b-2892-4983-a1d0-a0a0eb94360c",
       "text": "# 实景三维质检大数据支撑库 时空数据规范 第4部分 标志性地物\n\n> 来源：实景三维质检大数据支撑库 时空数据规范 第4部分 标志性地物.pdf（增强版提取，已去目录/页眉/页码噪声）\n\n\n第 4 部分 标志性地物\n\n（草案）\n\n2025 年7 月\n\n前 言\n\n本文件按照GB/T 1.1—2020《标准化工作导则  第1部分：标准化文件的结构和起草规\n\n则》的规定起草。\n\n第1部分 数据分类与基本规定\n\n第2部分 检测点\n\n第3部分 检测线\n\n第5部分 重要要素\n\n第6部分 高精度栅格数据\n\n第7部分 资源数据\n\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。\n\n起草单位：\n\n起草人员：",
       "metadata": {
         "file_name": "part4_标志性地物.md",
@@ -16,6 +16,1194 @@
         "data_name": "标志性地物"
       },
       "chunk_index": 0
+    },
+    {
+      "node_id": "eba1d967-9dc0-418e-a047-2c4580e38e01",
+      "text": "# 3 术语与定义\n\n标志性地物\n\n空间上具有显著位置特征， 视觉上具有独特性， 能够长期稳定性\n\n存在， 具有较高空间辨识度和典型代表性或承载一定的文化意义， 可\n\n作为实景三维成果质量检验的参照的地理实体， 如大型桥梁、 标志性\n\n建筑等。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "术语定义",
+        "knowledge_type": "term_definition",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "术语与定义",
+        "chapter_path": "3",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 1
+    },
+    {
+      "node_id": "da48dac6-5f7e-4a15-9a13-2b5e298b65ef",
+      "text": "# 4 选取原则\n\n（1）显著性及可识别性\n\n标志性地物应具有视觉独特性及空间位置特征显著性， 在遥感影\n\n像或实地环境中应具有较高的空间辨识度。 二维数据应具有清晰边界\n\n或点位特征，三维数据应具有立体特征。\n\n（2）稳定性及典型性\n\n标志性地物应长期存在， 不易受自然或人为因素影响而改变形态\n\n或位置， 应涵盖自然地理实体和人工地理实体， 确保质检大数据支撑\n\n库对多场景实景三维成果的适用性。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "选取原则",
+        "chapter_path": "4",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 2
+    },
+    {
+      "node_id": "a10e892e-ed88-4088-b6e2-2871c75df4b7",
+      "text": "（3）可靠性及高精度\n\n标志性地物应确保数学精度、 属性精度的准确可靠， 已确定的标\n\n志性地物应优先选取高精度成果， 其数学精度应符合相应尺度的成果\n\n规范要求， 保证比对检查的精度， 有利于实现多尺度实景三维成果质",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "选取原则",
+        "chapter_path": "4",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 3
+    },
+    {
+      "node_id": "753c8e5b-124b-4f71-a526-a46b7a81bebe",
+      "text": "量检验。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "选取原则",
+        "chapter_path": "4",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 4
+    },
+    {
+      "node_id": "186ce034-7d0c-4f28-8893-cdb165e366b7",
+      "text": "# 5 分类与代码\n\n依据 《基础地理实体分类与代码》 及 《基础地理信息要素分类与\n\n代码》 ， 确定标志性地物的基础地理实体、 基础地理信息要素及相应\n\n代码，详见附录A。各地可结合实景三维成果质量检验的应用需求，\n\n在附录A中选取标志性地物。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "分类与代码",
+        "chapter_path": "5",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 5
+    },
+    {
+      "node_id": "311e6b68-39e4-4f3d-8763-580093b5ed87",
+      "text": "# 6 数据要求",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据要求",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 6
+    },
+    {
+      "node_id": "49109643-e73e-4738-ba46-3b7fe49a9c5c",
+      "text": "（1）时空基准\n\n坐标系统： 2000国家大地坐标系（ China Geodetic Coordinate\n\nSystem 2000，CGCS2000）。\n\n高程基准：1985国家高程基准。\n\n时间基准：公元纪年和北京时间。\n\n地图投影与分带：高斯-克吕格3°分带投影，确有必要，也可采\n\n用高斯-克吕格1.5°分带投影。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据要求",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 7
+    },
+    {
+      "node_id": "523c8d11-ea57-4dfb-ac21-1b16e39fcff8",
+      "text": "（2）数学精度\n\n数学精度包括平面精度、 高程精度、 高度精度。 标志性地物具有\n\n多尺度特征， 选取入库的标志性地物数学精度应符合相应尺度的成果\n\n规范要求。\n\n（3）属性精度",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据要求",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 8
+    },
+    {
+      "node_id": "61cd4604-172d-4c5d-81c2-5a3e5b67249b",
+      "text": "标志性地物属性成果属性表结构、 属性项内容名称及值域等应符",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据要求",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 9
+    },
+    {
+      "node_id": "b5bab8f6-3579-46fd-a6d6-347835717153",
+      "text": "合附录B要求，各地可结合实景三维成果质量检验的应用需求，增加",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据要求",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 10
+    },
+    {
+      "node_id": "0a602574-8b64-4595-b79e-d929f091a8d9",
+      "text": "属性项。\n\n（4）存储格式\n\n二维标志性地物可采用ShapeFile、MDB、GDB数据格式。\n\n三维标志性地物可采用OBJ数据格式。\n\n地面照片、影像截图、纹理等可采用JPG、TIF数据格式\n\n（5）成果构成\n\n标志性地物数据成果由空间数据 （点、 线、 面、 体） 、 属性数据、\n\n地面照片、影像截图、纹理构成。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据采集",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "数据要求",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 11
+    },
+    {
+      "node_id": "e5794fc2-3eb8-4a9c-9511-b45673560ffc",
+      "text": "# 7 采集要求及数据结构\n\n（1）数据源\n\n基于多尺度数字线划图、 数字正射影像、 基础地理实体数据、城\n\n市国土空间监测、实景 三维模型、Mesh三维模型及其他资料生产或\n\n提取标志性地物成果，综合分析各数据源的情况，优先选取精度高、\n\n现势性强成果作为主要数据源。 对于复杂地物， 可补充外业实测数据。\n\n（2）采集要求\n\n基于各数据源提取标志性地物， 其几何精度应与数据源精度一致，\n\n其数据源的属性值中存在错误的， 应修改完善， 确保标志性地物准确\n\n可靠。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "采集要求及数据结构",
+        "chapter_path": "7",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 12
+    },
+    {
+      "node_id": "1b8615dc-3c06-468d-903c-f38017f1366a",
+      "text": "基于各数据源采集标志性地物， 根据标志性地物用途及数据源的\n\n实际情况，采集标志性地物 几何精度不低于来源影像或 Mesh三维模\n\n型， 达到1:500、1:1000、1:2000、1:5000、1:10000数字线划图或LOD1.3、\n\nLOD2.1、LOD2.2、LOD2.3、LOD3.1等三维模型数据几何精度。利用收\n\n集权威专题资料，按照附录B要求填写标志性地物基本属性。\n\n生产或提取标志性地物成果质量应符合《数字测绘成果质量检查\n\n与验收》《测绘成果质量检查与验收》 《实景三维中国建设技术大纲\n\n（2024）》相关要求。\n\n（3）数据结构",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "采集要求及数据结构",
+        "chapter_path": "7",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 13
+    },
+    {
+      "node_id": "54e7e0b4-3395-4ce2-9cfa-3d4e5b3ce3a3",
+      "text": "二维标志性地物以点、线、面图层形式存储，文件命名为BZXDW。\n\n数据结构如表1。\n\n表1 标志性地物子库数据结构\n\n编号 数据层名 类型 要素类中文名称",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "采集要求及数据结构",
+        "chapter_path": "7",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 14
+    },
+    {
+      "node_id": "103f950a-7d6e-4236-81d1-0c8d20b66b48",
+      "text": "# 1 BZXDW_P 点层 点状标志性地物",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "BZXDW_P 点层 点状标志性地物",
+        "chapter_path": "1",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 15
+    },
+    {
+      "node_id": "75a4eb0c-53c5-44fd-9b7d-75bf1681265f",
+      "text": "# 2 BZXDW_L 线层 线状标志性地物",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "BZXDW_L 线层 线状标志性地物",
+        "chapter_path": "2",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 16
+    },
+    {
+      "node_id": "fe409eed-5c97-4c5b-9813-ca4ae20723c4",
+      "text": "# 3 BZXDW_A 面层 面状标志性地物\n\n三维标志性地物以体形式存储，三维模型数据文件（.obj）结构\n\n按照《实景三维中国建设城市三维模型（LOD1.3级）快速构建技术规\n\n定》要求执行，数据文件名为“该建筑三维模型代码”-bz。\n\n纹理数据命名按照《实景三维中国建设城市三维模型（ LOD1.3\n\n级）快速构建技术规定》要求，采用18位字符，命名为“建（构）筑\n\n物所在街道的行政区划代码”“建（构）筑物序号” -“建（构）筑\n\n物纹理的位置标识”“纹理序号（两位）”。\n\n地面照片命名为“空间身份编码”-dmzp。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "BZXDW_A 面层 面状标志性地物",
+        "chapter_path": "3",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 17
+    },
+    {
+      "node_id": "c2fe8e14-df4b-407e-aeff-3b1adea3e1d1",
+      "text": "地面照片命名为“空间身份编码”-dmzp。\n\n影像截图命名为“空间身份编码”-yxjt。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "BZXDW_A 面层 面状标志性地物",
+        "chapter_path": "3",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 18
+    },
+    {
+      "node_id": "ea8fcd43-6daf-4078-a99d-2598f637abf8",
+      "text": "# 8 入库流程\n\n基于多尺度数字线划图、数字正射影像、三维模型及其他资料，\n\n生产或提取标志性地物成果。 经格式转换、 坐标转换等预处理后， 对",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "入库流程",
+        "chapter_path": "8",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 19
+    },
+    {
+      "node_id": "3c133024-4fdc-472f-8719-183ddce1ec7d",
+      "text": "标志性地物成果进行入库前质量检查， 合格成果入实景三维质检大数\n\n据支撑库。 入库完成后检查标志性地物成果质量， 经验收合格后， 形",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "质量要求",
+        "knowledge_type": "quality_rule",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "入库流程",
+        "chapter_path": "8",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 20
+    },
+    {
+      "node_id": "e2c3466e-a040-438e-9a5b-b01e2ee53d6c",
+      "text": "C。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "质量要求",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "入库流程",
+        "chapter_path": "8",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 21
+    },
+    {
+      "node_id": "224d1e3d-86d7-45ad-a93b-563073043d57",
+      "text": "# 9 数据应用\n\n标志性地物因其具有“空间显著性、视觉独特性，承载文化性”\n\n的特征， 在基础地理实体数据成果及传统测绘成果质量检验中具有重\n\n要意义。 在传统测绘成果质量检验中， 标志性地物可作为检查几何精\n\n度、属性精度、完整性检查提供高精度、高可靠性的参考数据。在基\n\n础地理实体数据成果质量检验中， 标志性地物因具有高度特征和纹理\n\n信息，可作为检查基础地理实体几何精度、属性精度、完整性、逻辑\n\n一致性、 场景效果的参考数据， 实现基础地理实体质量检查从规范符\n\n合性向场景适用性转变。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 22
+    },
+    {
+      "node_id": "ae4f8357-896b-4782-a156-5e3c26f1c301",
+      "text": "标志性地物子库应用方式主要有人工套合比对和软件自动比对\n\n两种应用路径，两种应用路径的主要内容和方式如下：\n\n（1）人工套合检查\n\n人工套合检查方式主要是质检人员在检查时， 将标志性地物子库\n\n数据加载到相应的地理信息软件中， 与待检成果开展比对分析， 检查\n\n待检成果更新的完整性、正确性。\n\n（2）软件自动比对\n\n软件自动比对方式主要是利用自动化检查软件， 将标志性地物子\n\n库中的标志性地物作为参考数据， 对待检成果开展位置比对分析或属\n\n性比对分析，以检查同名位置的实体的完整性及属性的正确性。",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 23
+    },
+    {
+      "node_id": "b8995d41-bb18-4c13-839b-58061731d034",
+      "text": "附录 A 标志性地物基础地理实体、基础地理信息要素及代码表",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 24
+    },
+    {
+      "node_id": "923a606a-3da0-453c-bbf5-be8c462a4582",
+      "text": "基础地理实体分类与代码 基础地理信息要素分类与代码\n\n用途\n\n一级类 二级类 分类代\n\n码 三级类 实体\n\n分类代码\n\n要素\n\n分类代码 要素名称\n\n山体 其他山体相关实体 110800 独立石 110802 750103 独立石 定位\n\n水利 水利附属设施 210400\n\n堤防 210401 270101 主要堤（含堤顶边线） 定位\n\n坝 210403\n\n270500 滚水坝（依比例） 定位\n\n270600 半依比例、依比例拦水坝\n\n（能通车的， 含依比例拦水坝坝顶线） 定位\n\n270601 半依比例拦水坝（不能通车的） 定位\n\n270700 防波堤、制水坝 定位\n\n交通 桥梁 220600\n\n铁路桥 220601 450305",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 25
+    },
+    {
+      "node_id": "a123b80a-5bf4-46d9-84a5-560974b7e8a0",
+      "text": "半依比例拦水坝（不能通车的） 定位\n\n270700 防波堤、制水坝 定位\n\n交通 桥梁 220600\n\n铁路桥 220601 450305 铁路桥（半依比例、依比例） 定位\n\n公路桥 220602 450301 公路桥（半依比例、依比例） 定位\n\n公铁两用桥 220603\n\n450302 铁路、公路两用双层桥 定位\n\n450303 车行并行桥 定位\n\n人行桥 220606 450502 人行桥（依比例） 定位\n\n450503 缆索桥 定位\n\n450504 级面桥、人行拱桥 定位\n\n450505 亭桥、廊桥 定位\n\n450506 溜索桥 定位\n\n450507 栈桥 定位\n\n建 （构）\n\n筑物及\n\n设施\n\n房屋 230100",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 26
+    },
+    {
+      "node_id": "88ac32a1-a92a-4def-9bb7-41f5d6ba2146",
+      "text": "定位\n\n450505 亭桥、廊桥 定位\n\n450506 溜索桥 定位\n\n450507 栈桥 定位\n\n建 （构）\n\n筑物及\n\n设施\n\n房屋 230100 普通房屋 230101\n\n310300 单幢房屋（依比例） 定位\n\n310400 突出房屋(依比例) 定位\n\n310500 高层房屋(依比例) 定位\n\n310501 超高层房屋(依比例) 定位\n\n名胜古迹设施 230900\n\n长城、古城墙 230901\n\n380101\n\n不依比例砖石城墙、长城 定位\n\n依比例砖石城墙、长城 定位\n\n380102\n\n不依比例砖石城墙、长城(破坏) 定位\n\n依比例砖石城墙、长城(破坏)",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 27
+    },
+    {
+      "node_id": "090e6b00-8e00-4642-868c-7e3907094d15",
+      "text": "定位\n\n380102\n\n不依比例砖石城墙、长城(破坏) 定位\n\n依比例砖石城墙、长城(破坏) 定位\n\n烽火台、碉堡 230902 350101 烽火台 定位\n\n350102 旧碉堡、旧地堡 定位\n\n牌楼、 牌坊、 彩\n\n门 230903 350203 彩门、牌坊、牌楼 定位\n\n钟鼓楼、城楼、\n\n古关塞 230904\n\n350204 钟楼、鼓楼、城楼、古关塞 定位\n\n311007 碉楼 定位\n\n碑、像 230905\n\n350206 文物碑石 定位\n\n350208 纪念像、艺术塑像 定位\n\n350201 纪念碑、柱、墩 定位\n\n亭、坛 230906 350205 亭",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 28
+    },
+    {
+      "node_id": "8029acc4-170e-4bf3-ab30-0c82e5f58bd4",
+      "text": "文物碑石 定位\n\n350208 纪念像、艺术塑像 定位\n\n350201 纪念碑、柱、墩 定位\n\n亭、坛 230906 350205 亭 定位\n\n观景塔、纪念\n\n塔、标志塔 230907\n\n321103 瞭望塔 定位\n\n360400 宝塔、经塔、纪念塔（纪念塔） 定位\n\n遗址 230908 350100 古遗迹、遗址 定位\n\n宗教设施 231000 宝塔、经塔 231001 360400 宝塔、经塔、纪念塔（宝塔、经塔） 定位\n\n院落 公共管理与公共服务 250200 机关团体新闻\n\n出版 250201\n\n311102 省级政府位置标识点 定性\n\n311103 地级政府位置标识点 定性\n\n311104",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 29
+    },
+    {
+      "node_id": "c6e99b70-cd34-423b-986b-3fc47fd7363c",
+      "text": "公共管理与公共服务 250200 机关团体新闻\n\n出版 250201\n\n311102 省级政府位置标识点 定性\n\n311103 地级政府位置标识点 定性\n\n311104 县级政府位置标识点 定性\n\n311105 乡级政府位置标识点 定性\n\n311106 村委会位置标识点 定性\n\n科教文卫 250202\n\n340101 学校（大学） 定性\n\n340111 学校（中、小学、职业教育学校） 定性\n\n340103 馆（科技馆、博物馆、展览馆） 定位\n\n340401 露天体育场 （依比例 TYPE： 球场除外） 定位\n\n340403 体育馆 定位\n\n交通运输 250600\n\n铁路场站 250601 410301 火车站 定性\n\n交通服务场站 250603 450103 长途汽车站",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 30
+    },
+    {
+      "node_id": "3a77439a-264b-46e6-8570-10e4600df7af",
+      "text": "定位\n\n340403 体育馆 定位\n\n交通运输 250600\n\n铁路场站 250601 410301 火车站 定性\n\n交通服务场站 250603 450103 长途汽车站 定性\n\n港口 250604 460101 水运港客运站 定性\n\n机场 250605 480100 飞机场 定性\n\n特殊场院 250700 宗教场院 250703\n\n360100 庙宇 定位\n\n360200 清真寺 定位\n\n360300 教堂 定位\n\n殡葬场院 250706\n\n340303 陵园 定性\n\n340701 公墓（依比例） 定位\n\n340704 殡葬场所 定性\n\n附录 B 标志性地物基本属性",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "data_spec",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 31
+    },
+    {
+      "node_id": "6e23888f-189a-46d1-8e37-33bc442ad4af",
+      "text": "序号 属性项名称 属性项中文简称 字段类型 约束条件 长度 值域或示例 备注",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "field_rule",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "数据应用",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 32
+    },
+    {
+      "node_id": "47a811f9-f2ec-4a18-94f9-607f7adb609f",
+      "text": "# 1 EntityName 实体名称 字符型 M 60  如果实体没有名称，填写null",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "1",
+        "chapter_title": "EntityName 实体名称 字符型 M 60  如果实体没有名称，填写null",
+        "chapter_path": "1",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 33
+    },
+    {
+      "node_id": "4ac4bf92-20ec-4a4b-aac3-ba41baf93043",
+      "text": "# 2 Alias 别名 字符型 C 50  当搜集到实体别名资料时，必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "2",
+        "chapter_title": "Alias 别名 字符型 C 50  当搜集到实体别名资料时，必填",
+        "chapter_path": "2",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 34
+    },
+    {
+      "node_id": "a319a9dc-0ab0-4944-8335-3e18a162dd43",
+      "text": "# 3 GB 要素分类代码 字符型 O 10  按照《基础地理信息要素分类与代码》\n\n填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "3",
+        "chapter_title": "GB 要素分类代码 字符型 O 10  按照《基础地理信息要素分类与代码》",
+        "chapter_path": "3",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 35
+    },
+    {
+      "node_id": "333bb53d-d917-41cd-ae24-427af6577e5e",
+      "text": "# 4 DWMC 要素名称 字符型 O 50  按照《基础地理信息要素分类与代码》\n\n填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "4",
+        "chapter_title": "DWMC 要素名称 字符型 O 50  按照《基础地理信息要素分类与代码》",
+        "chapter_path": "4",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 36
+    },
+    {
+      "node_id": "bdcaf3f1-d859-4e9d-ad55-272e06e35924",
+      "text": "# 5 EntityID 空间身份编码 字符型 M 100",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "5",
+        "chapter_title": "EntityID 空间身份编码 字符型 M 100",
+        "chapter_path": "5",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 37
+    },
+    {
+      "node_id": "ee541fb3-1c95-4a6d-99fd-8d81eaad35e2",
+      "text": "# 6 FormerID 历史空间身份编码 字符型 C 100  因实体变更产生新的编码时，必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "6",
+        "chapter_title": "FormerID 历史空间身份编码 字符型 C 100  因实体变更产生新的编码时，必填",
+        "chapter_path": "6",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 38
+    },
+    {
+      "node_id": "f7709fd8-fc04-4dd4-8694-b5ecd9e817cc",
+      "text": "# 7 LocationID 位置码 字符型 O 50",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "7",
+        "chapter_title": "LocationID 位置码 字符型 O 50",
+        "chapter_path": "7",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 39
+    },
+    {
+      "node_id": "d1502ffb-749a-4dac-a7b4-ea389abeb7c6",
+      "text": "# 8 ClassID 实体分类代码 字符型 M 6",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "8",
+        "chapter_title": "ClassID 实体分类代码 字符型 M 6",
+        "chapter_path": "8",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 40
+    },
+    {
+      "node_id": "d86e5ac9-f83b-49b0-9479-c06b350d27b9",
+      "text": "# 9 ClassName 分类名称 字符型 M 30",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "9",
+        "chapter_title": "ClassName 分类名称 字符型 M 30",
+        "chapter_path": "9",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 41
+    },
+    {
+      "node_id": "67e1a2a4-ffd0-47a6-a87d-4b2bc2a535fd",
+      "text": "# 10 LoadTime 入库时间 日期型 M   格式“YYYY/MM/DD”",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "10",
+        "chapter_title": "LoadTime 入库时间 日期型 M   格式“YYYY/MM/DD”",
+        "chapter_path": "10",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 42
+    },
+    {
+      "node_id": "ad3a1db6-bc16-4f8d-bcc8-0d2ced649334",
+      "text": "# 11 UpdateSts 更新状态 字符型 O 8 新增/修改/删除",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "11",
+        "chapter_title": "UpdateSts 更新状态 字符型 O 8 新增/修改/删除",
+        "chapter_path": "11",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 43
+    },
+    {
+      "node_id": "0aa2b60f-3504-4384-8713-f5ef6933c6af",
+      "text": "# 12 UpdateTime 更新时间 日期型 O   格式“YYYY/MM/DD”",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "12",
+        "chapter_title": "UpdateTime 更新时间 日期型 O   格式“YYYY/MM/DD”",
+        "chapter_path": "12",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 44
+    },
+    {
+      "node_id": "45687e41-b7f0-4172-b484-69fb5b6c304f",
+      "text": "# 13 ModelID 建筑三维模型代码 字符型 C 20  三维建（构）筑物及设施标志性地物必\n\n填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "13",
+        "chapter_title": "ModelID 建筑三维模型代码 字符型 C 20  三维建（构）筑物及设施标志性地物必",
+        "chapter_path": "13",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 45
+    },
+    {
+      "node_id": "4d427a37-7d99-4141-ab57-84a7d2eddb76",
+      "text": "# 14 Function 功用类型 字符型 C 20\n\n堤防：干堤/一般堤\n\n坝：拦水坝/滚水坝/制水\n\n坝\n\n院落：学校/医院//庙宇/\n\n清真寺/教堂/道观/长途\n\n客运站\n\n堤防、坝、学校、医院、/庙宇、清真\n\n寺、教堂、道观、长途客运站必填\n\n序号 属性项名称 属性项中文简称 字段类型 约束条件 长度 值域或示例 备注",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "14",
+        "chapter_title": "Function 功用类型 字符型 C 20",
+        "chapter_path": "14",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 46
+    },
+    {
+      "node_id": "e6cbd858-0dc6-4519-93b8-c033b7d66bad",
+      "text": "# 15 SubsType 表质类型 字符型 O 20 坝：砼/石 坝填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "15",
+        "chapter_title": "SubsType 表质类型 字符型 O 20 坝：砼/石 坝填写",
+        "chapter_path": "15",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 47
+    },
+    {
+      "node_id": "cb1a88ec-6485-4ef5-a446-bcaa5e8c4141",
+      "text": "# 16 Transit 通行性 字符型 C 10 通车/不通车/不能走人 坝必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "16",
+        "chapter_title": "Transit 通行性 字符型 C 10 通车/不通车/不能走人 坝必填",
+        "chapter_path": "16",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 48
+    },
+    {
+      "node_id": "aa02cbd8-a1fe-43f3-85ae-2cb03dc33891",
+      "text": "# 17 UseState 使用状态 字符型 O 10 利用/废弃/破坏 堤防、坝、桥梁填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "17",
+        "chapter_title": "UseState 使用状态 字符型 O 10 利用/废弃/破坏 堤防、坝、桥梁填写",
+        "chapter_path": "17",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 49
+    },
+    {
+      "node_id": "c5f1c11d-a83d-4b31-825e-8b60ee90acf5",
+      "text": "# 18 LoadCap 载重量 浮点型 C 10  桥梁必填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "18",
+        "chapter_title": "LoadCap 载重量 浮点型 C 10  桥梁必填写",
+        "chapter_path": "18",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 50
+    },
+    {
+      "node_id": "9cc2f470-37e7-4109-89b7-a95e7f48a27d",
+      "text": "# 19 MaxHeight 限高 浮点型 O 10  桥梁填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "19",
+        "chapter_title": "MaxHeight 限高 浮点型 O 10  桥梁填写",
+        "chapter_path": "19",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 51
+    },
+    {
+      "node_id": "096507bf-ba5c-4695-9dde-c15bc0d17c0d",
+      "text": "# 20 Length 长度 浮点型 O 10  桥梁填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "20",
+        "chapter_title": "Length 长度 浮点型 O 10  桥梁填写",
+        "chapter_path": "20",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 52
+    },
+    {
+      "node_id": "371e351e-b685-4069-a2ce-4b4585cc4a71",
+      "text": "# 21 ConstSts 建设状态 字符型 O 10 建筑中/建成 桥梁、普通房屋填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "21",
+        "chapter_title": "ConstSts 建设状态 字符型 O 10 建筑中/建成 桥梁、普通房屋填写",
+        "chapter_path": "21",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 53
+    },
+    {
+      "node_id": "80f70978-54bf-4538-b194-332c545d8145",
+      "text": "# 22 OpenYear 通车年份 日期型 O   桥梁填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "22",
+        "chapter_title": "OpenYear 通车年份 日期型 O   桥梁填写",
+        "chapter_path": "22",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 54
+    },
+    {
+      "node_id": "8ca34bc7-0013-4b14-b097-aae53d357d74",
+      "text": "# 23 FloorNum 房屋层数 整数型 C 6  普通房屋城市级成果必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "23",
+        "chapter_title": "FloorNum 房屋层数 整数型 C 6  普通房屋城市级成果必填",
+        "chapter_path": "23",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 55
+    },
+    {
+      "node_id": "2390a792-844a-423b-b787-d76d6a488991",
+      "text": "# 24 FloorNumUn 地下房屋层数 整数型 O 6  普通房屋城市级成果填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "24",
+        "chapter_title": "FloorNumUn 地下房屋层数 整数型 O 6  普通房屋城市级成果填写",
+        "chapter_path": "24",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 56
+    },
+    {
+      "node_id": "6cc94de1-50be-4b39-b0b7-d3290fca7bb4",
+      "text": "# 25 StrucType 结构类型 字符型 C 20 钢/ 钢筋混凝土 /混合 结\n\n构/砖（石）木 普通房屋城市级成果必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "25",
+        "chapter_title": "StrucType 结构类型 字符型 C 20 钢/ 钢筋混凝土 /混合 结",
+        "chapter_path": "25",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 57
+    },
+    {
+      "node_id": "46d5a77c-f971-417a-8592-70a3c04f3f1d",
+      "text": "# 26 ConstArea 建筑面积 浮点型 C 10  普通房屋城市级成果必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "26",
+        "chapter_title": "ConstArea 建筑面积 浮点型 C 10  普通房屋城市级成果必填",
+        "chapter_path": "26",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 58
+    },
+    {
+      "node_id": "b0ef433f-b727-42b5-81de-7e29019a0e37",
+      "text": "# 27 BaseArea 基底面积 浮点型 C 10  普通房屋城市级成果必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "27",
+        "chapter_title": "BaseArea 基底面积 浮点型 C 10  普通房屋城市级成果必填",
+        "chapter_path": "27",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 59
+    },
+    {
+      "node_id": "e0b078f2-7a83-4a6e-9194-b9ad7c4f2f21",
+      "text": "# 28 CpltAge 竣工年代 日期型 O   普通房屋填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "28",
+        "chapter_title": "CpltAge 竣工年代 日期型 O   普通房屋填写",
+        "chapter_path": "28",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 60
+    },
+    {
+      "node_id": "5b14f552-ae65-470c-ba00-1891938c6953",
+      "text": "# 29 Address 地址 字符型 O 100  普通房屋填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "29",
+        "chapter_title": "Address 地址 字符型 O 100  普通房屋填写",
+        "chapter_path": "29",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 61
+    },
+    {
+      "node_id": "06f0db07-a8ce-4ebb-a854-8b458926e551",
+      "text": "# 30 Function 功用类型 字符型 O 20 普通房屋：普通/突出/高\n\n层 普通房屋填写",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "30",
+        "chapter_title": "Function 功用类型 字符型 O 20 普通房屋：普通/突出/高",
+        "chapter_path": "30",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 62
+    },
+    {
+      "node_id": "25e44706-ee46-4cc2-bfef-86033dae73c9",
+      "text": "# 31 AdminRegion 所属行政区域 字符型 M 50  格式“**省**市***县***乡**村”",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "31",
+        "chapter_title": "AdminRegion 所属行政区域 字符型 M 50  格式“**省**市***县***乡**村”",
+        "chapter_path": "31",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 63
+    },
+    {
+      "node_id": "d5f1a609-009e-4751-9fb8-5f4c16ba4372",
+      "text": "# 32 Scale 比例尺 字符型 C 10 1:500 二维标志性地物必填\n\n33 LOD 三维模型LOD 层级 字符型 C 4 LOD1.3 三维标志性地物必填",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "32",
+        "chapter_title": "Scale 比例尺 字符型 C 10 1:500 二维标志性地物必填",
+        "chapter_path": "32",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 64
+    },
+    {
+      "node_id": "318a2135-ca4c-413a-b2f1-80a00dd5e187",
+      "text": "# 34 DataPhase 数据时相 整数型 M 10  格式“YYYY”",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "34",
+        "chapter_title": "DataPhase 数据时相 整数型 M 10  格式“YYYY”",
+        "chapter_path": "34",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 65
+    },
+    {
+      "node_id": "4ab1f870-d704-405b-95bd-6bdf492bc4ef",
+      "text": "# 35 Use 用途 字符型 M 4 定位/定性\n\n注 1：表中约束条件“M”为必选项，“C”为条件必选项，“O”为可选项。\n\n序号 属性项名称 属性项中文简称 字段类型 约束条件 长度 值域或示例 备注\n\n注 2：对于浮点型字段，除特殊情况外，保留小数点后2 位。\n\n附录 C 标志性地物选取入库流程图\n\n数据预处理\n\n入库前质量检查 问题数据修改N\n\n提取\n\n多尺度数字线划图 数字正射影像 三维模型 其他资料\n\n标志性地物成果\n\n生产\n\n数据库验收\n\n合格数据\n\n入库后质量检查\n\nY\n\n数据库更新\n\n管理系统运维",
+      "metadata": {
+        "file_name": "part4_标志性地物.md",
+        "file_path": "E:\\project\\agent\\llamaIndex\\src\\data\\part4_标志性地物.md",
+        "part_number": 4,
+        "part_name": "标志性地物",
+        "section_type": "数据整理",
+        "knowledge_type": "chapter_title",
+        "is_table": false,
+        "chapter_no": "35",
+        "chapter_title": "Use 用途 字符型 M 4 定位/定性",
+        "chapter_path": "35",
+        "data_name": "标志性地物"
+      },
+      "chunk_index": 66
     }
   ]
 }

@@ -22,5 +22,5 @@
   {"checkCode":"qualityCheckFieldRequiredValidation","checkName":"字段必填非空","checkDesc":"检查指定字段是否必填且不为空","paramNames":["fieldNames"]},
   {"checkCode":"QualityCheckFieldIntegrity","checkName":"属性字段完整性","checkDesc":"检查属性字段是否完整、符合规范","paramNames":["fieldNames","fieldTypes","fieldLengths"]},
   {"checkCode":"checkLayerElementEmptyGeometry","checkName":"空几何检查","checkDesc":"检查图层要素是否存在空几何对象","paramNames":[]},
-  {"checkCode":"QualityCheckLayerIntegrity","checkName":"图层完整性","checkDesc":"检查图层数据完整性","paramNames":["geometry_type"]},
+  {"checkCode":"QualityCheckLayerIntegrity","checkName":"图层完整性","checkDesc":"检查图层数据完整性","paramNames":["geometry_type"]}
 ]
