@@ -2,7 +2,7 @@
 
 按 RAG 四大阶段组织:
     - loading.py   加载(Loading): PDF→MD增强 + MD→Document
-    - indexing.py   索引(Indexing): 章节切块 + 嵌入 + 检查项Nodes
+    - indexing.py   索引(Indexing): 章节切块 + 嵌入 + Node JSON 导出
     - storing.py   存储(Storing): Milvus VectorStore + 写入 + manifest
     - querying.py  查询(Querying): Hybrid检索 + MetadataFilter + QueryEngine
 

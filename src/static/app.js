@@ -244,14 +244,13 @@ $("pl-indexing-run").addEventListener("click", async () => {
   setStageButton(btn, true, "索引中…");
   showStageResult(el, [
     "⏳ Indexing 开始",
-    "  章节感知切块(384/64) + 嵌入 + 检查项 Nodes ...",
+    "  章节感知切块(384/64) + 嵌入 + Node JSON 导出 ...",
   ]);
   try {
     const data = await postJSON("/api/indexing", {});
     showStageResult(el, [
       "✅ Indexing 完成",
       `  spec_nodes_count      = ${data.spec_nodes_count}`,
-      `  check_item_nodes     = ${data.check_item_nodes_count}`,
       `  total_nodes_count    = ${data.total_nodes_count}`,
       `  avg_chunk_length      = ${data.avg_chunk_length}`,
       `  chunk_length 范围     = [${data.min_chunk_length}, ${data.max_chunk_length}]`,
@@ -275,7 +274,7 @@ $("pl-storing-run").addEventListener("click", async () => {
   showStageResult(el, [
     "⏳ Storing 开始",
     `  rebuild = ${rebuild}`,
-    "  创建 MilvusVectorStore + 写入 Nodes + manifest ...",
+    "  创建 MilvusVectorStore + 写入规范 Nodes + manifest ...",
   ]);
   try {
     const data = await postJSON("/api/storing", { rebuild });

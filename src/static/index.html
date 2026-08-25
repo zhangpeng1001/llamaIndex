@@ -66,7 +66,7 @@
             <div class="stage-title"><span class="stage-step">2</span>切块索引(Indexing)</div>
             <button id="pl-indexing-run" class="btn btn-primary">切块索引</button>
           </div>
-          <div class="hint" style="margin:0;">章节感知切块(384/64)+ 嵌入 + 28 项检查项 Nodes</div>
+          <div class="hint" style="margin:0;">章节感知切块(384/64)+ 嵌入 + Node JSON 导出</div>
           <div id="pl-indexing-result" class="stage-result"></div>
         </div>
 
@@ -239,8 +239,8 @@ python -m src.server --provider openai</code></pre>
           <p>新版采用分阶段设计,启动后不自动构建索引。请在"流程"面板按顺序操作:</p>
           <ul>
             <li><b>Step 1 加载文档(Loading)</b>:从 PDF 提取增强 MD 或读取已有 MD,生成带富 metadata 的章节级 Document</li>
-            <li><b>Step 2 切块索引(Indexing)</b>:章节感知切块(384/64)+ 嵌入 + 28 项检查项 Nodes</li>
-            <li><b>Step 3 写入 Milvus(Storing)</b>:创建 MilvusVectorStore + 写入 Nodes + manifest</li>
+            <li><b>Step 2 切块索引(Indexing)</b>:章节感知切块(384/64)+ 嵌入,并按源文档导出 <code>src/node/*.json</code></li>
+            <li><b>Step 3 写入 Milvus(Storing)</b>:创建 MilvusVectorStore + 写入规范 Nodes + manifest</li>
             <li>或点击 <b>一键重建索引</b> 顺序执行三阶段(rebuild collection)</li>
           </ul>
           <p>注:若 Milvus 已有数据,启动时会自动加载 index,可直接使用查询功能无需重建。</p>
@@ -275,7 +275,7 @@ python -m src.server --provider openai</code></pre>
             <li><code>models.py</code> — 模型配置(Ollama/OpenAI)</li>
             <li><code>state.py</code> — RuntimeState 跨阶段共享状态 + Summary 缓存</li>
             <li><code>loading.py</code> — Loading 阶段:PDF→MD→Document</li>
-            <li><code>indexing.py</code> — Indexing 阶段:切块+嵌入+检查项Nodes</li>
+            <li><code>indexing.py</code> — Indexing 阶段:切块+嵌入+Node JSON 导出</li>
             <li><code>storing.py</code> — Storing 阶段:Milvus 写入 + manifest</li>
             <li><code>querying.py</code> — Querying 阶段:Hybrid 检索 + QueryEngine</li>
             <li><code>summary.py</code> — 全文总结(SummaryIndex + 两级缓存)</li>

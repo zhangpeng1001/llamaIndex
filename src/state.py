@@ -45,7 +45,6 @@ class RuntimeState:
         vector_store: MilvusVectorStore(Storing 时创建)。
         documents: Loading 阶段产出的章节级 Document 列表。
         nodes: Indexing 阶段产出的规范文档 Node 列表(spec_nodes)。
-        check_item_nodes: Indexing 阶段产出的检查项 Node 列表。
         index: Storing 阶段产出的 VectorStoreIndex(可查询)。
         loading_done: Loading 阶段完成标志。
         indexing_done: Indexing 阶段完成标志。
@@ -66,7 +65,6 @@ class RuntimeState:
         # 四阶段产物
         self.documents: list[Any] | None = None
         self.nodes: list[Any] | None = None  # spec_nodes
-        self.check_item_nodes: list[Any] | None = None
         self.index: Any = None  # VectorStoreIndex
 
         # 阶段完成标志
@@ -101,7 +99,6 @@ class RuntimeState:
         logger.info("重置 RuntimeState: 清空阶段产物 + summary 缓存")
         self.documents = None
         self.nodes = None
-        self.check_item_nodes = None
         self.index = None
         self.vector_store = None
         self.loading_done = False
@@ -119,7 +116,6 @@ class RuntimeState:
             "index_ready": self.index_ready,
             "documents_count": len(self.documents) if self.documents else 0,
             "nodes_count": len(self.nodes) if self.nodes else 0,
-            "check_item_nodes_count": len(self.check_item_nodes) if self.check_item_nodes else 0,
         }
 
     # ------------------------------------------------------------------

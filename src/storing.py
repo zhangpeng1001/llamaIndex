@@ -1,6 +1,6 @@
-"""【Storing 阶段】Milvus VectorStore 创建 + 写入 Nodes + manifest。
+"""【Storing 阶段】Milvus VectorStore 创建 + 写入规范 Nodes + manifest。
 
-对应 RAG 四大阶段的第三阶段:把 Indexing 产出的 Nodes 写入 Milvus 向量库,
+对应 RAG 四大阶段的第三阶段:把 Indexing 产出的规范 Nodes 写入 Milvus 向量库,
 后续 Querying 阶段可直接从 Milvus 检索。
 
 学习要点:
@@ -16,7 +16,8 @@
 业务背景:
     质检规范文档更新频率低,构建一次索引后可长期复用;首次启动会进行切块
     与嵌入(OpenAI 模式会消耗 API 额度),之后直接从 Milvus 加载即可。
-    向量存在 Milvus,本地只存 manifest 元信息(不含向量数据)。
+    向量存在 Milvus,本地只存 manifest 元信息(不含向量数据)。检查项清单不再作为 Node 写入
+    向量库,后续由 prompt/方案生成逻辑单独优化。
 
 复用模块:
     - qualityScheme.milvus_store.ensure_milvus_database: 确保 Milvus db 存在
@@ -56,17 +57,15 @@ def run_storing(
     config: "QualitySchemeConfig",
     embed_model: BaseEmbedding,
     spec_nodes: list[BaseNode],
-    check_item_nodes: list[BaseNode],
     *,
     rebuild: bool = False,
 ) -> VectorStoreIndex:
-    """执行 Storing 阶段:创建 MilvusVectorStore + 写入 Nodes + 写 manifest。
+    """执行 Storing 阶段:创建 MilvusVectorStore + 写入规范 Nodes + 写 manifest。
 
     参数:
         config: 质检业务配置(含 milvus_uri/db/collection、storage_dir)。
         embed_model: 嵌入模型(用于探测维度,且 VectorStoreIndex 加载时需要)。
         spec_nodes: 规范文档切块后的 Node 列表(Indexing 阶段产出)。
-        check_item_nodes: 检查项 Node 列表(Indexing 阶段产出)。
         rebuild: True 时删除并重建已有 collection(overwrite=True)。
 
     返回:
@@ -77,12 +76,12 @@ def run_storing(
         2. ensure_milvus_database(config.milvus_uri, config.milvus_db)
         3. create_milvus_vector_store(config, dim=dim, overwrite=rebuild)
         4. VectorStoreIndex.from_vector_store(vector_store, embed_model=embed_model)
-        5. index.insert_nodes(spec_nodes + check_item_nodes)  # 写入 Milvus
+        5. index.insert_nodes(spec_nodes)  # 仅写入规范文档 Node
         6. _write_manifest(config.storage_dir, embed_model, node_count=...)
 
     日志:
         - dim、collection、db、overwrite
-        - 写入节点数(spec + check_item)
+        - 写入节点数(spec)
         - manifest 路径
         - collection 行数(写入后校验)
 
@@ -92,19 +91,18 @@ def run_storing(
 
     logger.info("===== Storing 阶段开始 =====")
     logger.info(
-        "  入参: spec_nodes=%d, check_item_nodes=%d, rebuild=%s, "
+        "  入参: spec_nodes=%d, rebuild=%s, "
         "milvus_uri=%s..., db=%s, collection=%s",
         len(spec_nodes),
-        len(check_item_nodes),
         rebuild,
         config.milvus_uri[:40],
         config.milvus_db,
         config.milvus_collection,
     )
 
-    total_nodes = len(spec_nodes) + len(check_item_nodes)
+    total_nodes = len(spec_nodes)
     if total_nodes == 0:
-        logger.error("Storing 输入为空: spec=0, check_item=0")
+        logger.error("Storing 输入为空: spec=0")
         raise ValueError("Storing 阶段需要非空的 Node 列表,请先执行 Indexing")
 
     # ------------------------------------------------------------------
@@ -143,18 +141,16 @@ def run_storing(
     logger.info("  VectorStoreIndex 构建完成: %s", type(index).__name__)
 
     # ------------------------------------------------------------------
-    # Step 5: 写入 Nodes 到 Milvus(spec_nodes + check_item_nodes 一起写)
+    # Step 5: 写入规范 Nodes 到 Milvus
     # ------------------------------------------------------------------
-    all_nodes = list(spec_nodes) + list(check_item_nodes)
     logger.info(
-        "Step 5: 写入 Nodes 到 Milvus: 总数=%d (spec=%d + check_item=%d)",
-        len(all_nodes),
+        "Step 5: 写入规范 Nodes 到 Milvus: 总数=%d",
         len(spec_nodes),
-        len(check_item_nodes),
     )
-    # insert_nodes 会把 Node 的 embedding 和 metadata 一起写入 Milvus
-    index.insert_nodes(all_nodes)
-    logger.info("  Nodes 写入完成")
+    # insert_nodes 会把规范 Node 的 embedding 和 metadata 一起写入 Milvus。检查项不再入库,
+    # 避免固定检查项字典影响规范条款召回,后续由 prompt/方案生成链路自行组织候选项。
+    index.insert_nodes(list(spec_nodes))
+    logger.info("  规范 Nodes 写入完成")
 
     # ------------------------------------------------------------------
     # Step 6: 写 manifest(本地元信息,非向量数据)
@@ -165,7 +161,6 @@ def run_storing(
         embed_model,
         node_count=total_nodes,
         spec_count=len(spec_nodes),
-        check_item_count=len(check_item_nodes),
     )
 
     # ------------------------------------------------------------------
@@ -232,16 +227,14 @@ def _write_manifest(
     *,
     node_count: int,
     spec_count: int,
-    check_item_count: int,
 ) -> None:
     """写入 manifest,记录索引构建时的关键参数。
 
     参数:
         storage_dir: manifest 存放目录(src/storage)。
         embed_model: 嵌入模型(记录名称,加载时校验一致性)。
-        node_count: 写入的 Node 总数。
+        node_count: 写入的 Node 总数,当前与 spec_count 保持一致。
         spec_count: 规范文档 Node 数。
-        check_item_count: 检查项 Node 数。
 
     日志:
         - manifest 写入路径与内容摘要。
@@ -254,8 +247,8 @@ def _write_manifest(
         ),
         "node_count": node_count,
         "spec_node_count": spec_count,
-        "check_item_node_count": check_item_count,
-        "schema_version": 3,  # src 版本 schema(区别于 qualityScheme 的 v2)
+        # v4 表示 Milvus 中只存规范文档 Node,检查项不再作为向量节点入库。
+        "schema_version": 4,
         "vector_store": "milvus",
         "store_module": "src.storing",
     }

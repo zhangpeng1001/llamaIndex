@@ -19,9 +19,9 @@
 业务背景:
     质检规范问答以"按条款回答"为主,compact 模式足够;
     需要跨多部分综合时可切换到 refine。
-    方案生成时,典型查询模式是「分两步检索」:
-        Step A:用户需求 → 只检索 doc_type=check_item → Top3 候选检查项
-        Step B:每个子意图 → 过滤 data_name + knowledge_type=quality_rule → 检索规范条款
+    方案生成时,向量库只负责召回规范条款:
+        - 每个子意图可过滤 data_name + knowledge_type=quality_rule → 检索规范条款
+        - 检查项清单不再作为 Node 入库,后续由 prompt/方案生成逻辑自行组织候选项
 
 复用模块:
     - qualityScheme.metadata_filter.retrieve / retrieve_by_part: Hybrid 检索 + 过滤

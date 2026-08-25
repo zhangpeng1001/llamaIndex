@@ -267,7 +267,6 @@ def create_app() -> FastAPI:
         runtime_state.indexing_done = False
         runtime_state.storing_done = False
         runtime_state.nodes = None
-        runtime_state.check_item_nodes = None
         runtime_state.index = None
         logger.info("Loading 完成: documents=%d", len(documents))
 
@@ -290,28 +289,26 @@ def create_app() -> FastAPI:
 
     @app.post("/api/indexing")
     async def indexing() -> dict[str, Any]:
-        """执行 Indexing 阶段:Document→Nodes(切块+嵌入)+ 检查项 Nodes。"""
+        """执行 Indexing 阶段:Document→规范 Nodes(切块+嵌入+落盘)。"""
 
-        cfg, _, embed_model, _ = require_runtime()
+        _, _, embed_model, _ = require_runtime()
         if not runtime_state.loading_done or not runtime_state.documents:
             raise HTTPException(
                 status_code=400,
                 detail="Loading 阶段未完成,请先执行 Loading",
             )
         logger.info("/api/indexing: documents=%d", len(runtime_state.documents))
-        spec_nodes, check_item_nodes = await asyncio.to_thread(
+        spec_nodes = await asyncio.to_thread(
             run_indexing, runtime_state.documents, embed_model
         )
         runtime_state.nodes = spec_nodes
-        runtime_state.check_item_nodes = check_item_nodes
         runtime_state.indexing_done = True
         # Indexing 重做后,Storing 产物失效
         runtime_state.storing_done = False
         runtime_state.index = None
         logger.info(
-            "Indexing 完成: spec_nodes=%d, check_item_nodes=%d",
+            "Indexing 完成: spec_nodes=%d",
             len(spec_nodes),
-            len(check_item_nodes),
         )
 
         # 统计返回
@@ -320,8 +317,7 @@ def create_app() -> FastAPI:
         return {
             "status": "ok",
             "spec_nodes_count": len(spec_nodes),
-            "check_item_nodes_count": len(check_item_nodes),
-            "total_nodes_count": len(spec_nodes) + len(check_item_nodes),
+            "total_nodes_count": len(spec_nodes),
             "avg_chunk_length": round(avg_len, 1),
             "min_chunk_length": min(lens) if lens else 0,
             "max_chunk_length": max(lens) if lens else 0,
@@ -339,10 +335,9 @@ def create_app() -> FastAPI:
                 detail="Indexing 阶段未完成,请先执行 Indexing",
             )
         logger.info(
-            "/api/storing: rebuild=%s, spec_nodes=%d, check_item_nodes=%d",
+            "/api/storing: rebuild=%s, spec_nodes=%d",
             req.rebuild,
             len(runtime_state.nodes),
-            len(runtime_state.check_item_nodes or []),
         )
         # Storing 前,清空 summary 缓存(保证新旧数据不混杂)
         runtime_state.invalidate_summary_cache()
@@ -351,7 +346,6 @@ def create_app() -> FastAPI:
             cfg,
             embed_model,
             runtime_state.nodes,
-            runtime_state.check_item_nodes or [],
             rebuild=req.rebuild,
         )
         runtime_state.index = index
@@ -368,7 +362,7 @@ def create_app() -> FastAPI:
             "status": "ok",
             "storing_done": True,
             "collection_has_data": has_data,
-            "total_nodes_written": len(runtime_state.nodes) + len(runtime_state.check_item_nodes or []),
+            "total_nodes_written": len(runtime_state.nodes),
         }
 
     # ==================================================================
@@ -543,16 +537,14 @@ def create_app() -> FastAPI:
 
         # 阶段2: Indexing
         logger.info("  [2/3] Indexing 开始")
-        spec_nodes, check_item_nodes = await asyncio.to_thread(
+        spec_nodes = await asyncio.to_thread(
             run_indexing, documents, embed_model
         )
         runtime_state.nodes = spec_nodes
-        runtime_state.check_item_nodes = check_item_nodes
         runtime_state.indexing_done = True
         logger.info(
-            "  [2/3] Indexing 完成: spec=%d, check_item=%d",
+            "  [2/3] Indexing 完成: spec=%d",
             len(spec_nodes),
-            len(check_item_nodes),
         )
 
         # 阶段3: Storing(rebuild=True,overwrite collection)
@@ -562,7 +554,6 @@ def create_app() -> FastAPI:
             cfg,
             embed_model,
             spec_nodes,
-            check_item_nodes,
             rebuild=True,
         )
         runtime_state.index = index
@@ -575,7 +566,6 @@ def create_app() -> FastAPI:
             "message": "索引重建完成(Loading→Indexing→Storing 全流程)",
             "documents_count": len(documents),
             "spec_nodes_count": len(spec_nodes),
-            "check_item_nodes_count": len(check_item_nodes),
             "storing_done": True,
         }
 
