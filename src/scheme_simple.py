@@ -331,9 +331,9 @@ def build_generation_prompt(
 2. 顶层必须包含 schemeName、description、checkItem。
 3. checkItem 每项必须包含 checkCode、checkName、dataName、params。
 4. checkCode 只能从上述字典选择；checkName 必须使用字典标准名称。
-5. dataName 填被检查图层，无法确认时填 null；不得把 dataName 写入 params。
+5. dataName 填被检查图层，无法确认时填 null；不得把 dataName 写入 params,填写被检查的图层名称，如'检测点'、'电杆检测线'，如果在时空数据规范上下文中能匹配到对应的英文名称，则使用其英文名称，如'检测点'的英文名称为'JCD','电杆检测线'的英文名称为'DG_CZTZX'。
 6. params 只能使用字典列出的参数名；无法从需求或规范确定的值填 null。
-7. fieldNames 等多值参数使用英文逗号分隔字符串；不要添加用户未提出的检查项。
+7. fieldNames 字段名称，多个字段用英文逗号隔开（如：id,name）,使用字段在文档中的英文名称，如果没有英文名称的字段，则使用其中文名称。
 
 输出结构示例：
 {{"schemeName":"检测点质检方案","description":"检查检测点编号唯一性。","checkItem":[{{"checkCode":"QualityCheckUniqueValue","checkName":"字段唯一值检查","dataName":"JCD","params":{{"fieldNames":"id"}}}}]}}
